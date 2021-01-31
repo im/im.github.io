@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
+title: 糖小米 · 博客
+subtitle: '厚积薄发'
+description: '记录一些学习笔记, 前端开发技巧'
+keywords: '糖小米 tangxiaomi 前端 糖小米前端 糖小米blog javascript html css node npm webpack vue react'
+author: 糖小米
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
-url: http://example.com
+url: https://tangxiaomi.top
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
