@@ -10748,6 +10748,8 @@ body > .section {
 .image .avatar {
   height: 100%;
   object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
 }
 .image .fill {
   object-fit: cover;
@@ -10975,6 +10977,10 @@ a.article-nav-next span {
   .navbar-main .navbar-end {
     margin-left: 0;
   }
+}
+.navbar-logo {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 .navbar-logo img {
   max-height: 1.75rem;
