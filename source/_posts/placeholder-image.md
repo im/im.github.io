@@ -1,11 +1,12 @@
 ---
-title: 占位图服务
-date: 2020-04-01
+title: 占位图
+date: 2021-02-04
 tags:
     - images
 categories:
     - other
 cover: https://fakeimg.pl/1200x400/1186cd/FFFFFF/?text=images&font=noto
+thumbnail: https://fakeimg.pl/400x400/1186cd/FFFFFF/?text=images&font=noto
 ---
 
 写页面的有时候需要一些临时的占位符图片，下面是常用的几种免费占位图片网站
@@ -52,12 +53,3 @@ cover: https://fakeimg.pl/1200x400/1186cd/FFFFFF/?text=images&font=noto
 
 ![](https://fakeimg.pl/1200x400/ba8f6c/FFFFFF/?text=糖小米&font=noto)
 
-## [temp.im（国内）](http://temp.im/)
-
-
-| 图片地址      | 说明
-| --------  | :-----
-|http://temp.im/300x200 | 设置宽高
-|http://temp.im/300x200/333/EEE |设置背景颜色 字体颜色
-
-![](http://temp.im/300x200/333/EEE)

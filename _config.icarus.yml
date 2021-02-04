@@ -262,6 +262,7 @@ widgets:
       links:
           Markdown: 'https://tangxiaomi.top/md'
           Regexper: 'https://tangxiaomi.top/regexper/'
+          Photos: 'https://tangxiaomi.top/photos/'
     # Categories widget configurations
     - # Where should the widget be placed, left sidebar or right sidebar
       position: right
