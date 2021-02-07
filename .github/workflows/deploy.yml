@@ -1,39 +1,38 @@
 name: deploy github pages
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+        - main
 jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
-        steps:
-            - name: 1. Checkout
-              uses: actions/checkout@master
-            - name: Submodule Checkout
-              uses: jwsi/submodule-checkout@v1
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Checkout
+        uses: actions/checkout@master
+      - name: Submodule Checkout
+        uses: jwsi/submodule-checkout@v1
 
-            - name: 2. setup nodejs...
+      - name: 2. setup nodejs...
+        uses: actions/setup-node@v1
 
-              uses: actions/setup-node@v1
+      - name: 3. install hexo..
+        run: |
+          npm install hexo-cli -g
+          npm install
 
-            - name: 3. install hexo..
-              run: |
-                  npm install hexo-cli -g
-                  npm install
+      - name: 4. install theme..
+        cd themes/icarus
+        npm install
+        cd ../../
 
-            - name: 4. install theme..
-                  cd themes/icarus
-                  npm install
-                  cd ../../
+      - name: 5. hexo build...
+        run: |
+          hexo clean
+          hexo g
 
-            - name: 5. hexo build...
-              run: |
-                  hexo clean
-                  hexo g
-
-            - name: 6. deploy github pages
-              uses: JamesIves/github-pages-deploy-action@3.7.1
-              with:
-                  ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-                  BRANCH: gh-pages
-                  FOLDER: public
+      - name: 6. deploy github pages
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: public
