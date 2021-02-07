@@ -1,12 +1,12 @@
 ---
 title: 占位图
-date: 2021-02-04
+date: 2020-11-04
 tags:
     - images
 categories:
     - other
 cover: https://fakeimg.pl/1200x400/1186cd/FFFFFF/?text=images&font=noto
-thumbnail: https://fakeimg.pl/400x400/1186cd/FFFFFF/?text=images&font=noto
+thumbnail: https://fakeimg.pl/64x64/1186cd/FFFFFF/?text=images&font=noto
 ---
 
 写页面的有时候需要一些临时的占位符图片，下面是常用的几种免费占位图片网站
