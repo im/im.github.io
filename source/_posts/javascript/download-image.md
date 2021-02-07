@@ -9,20 +9,18 @@ cover: https://picsum.photos/id/103/2592/1936
 thumbnail: https://picsum.photos/id/103/64/64
 ---
 
-
 ## 实现思路
 
-* 将图片装换成 Data URLs
-* 下载图片
-  
+-   将图片装换成 Data URLs
+-   下载图片
 
 #### Data URLs
 
 > Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。
-Data URLs 由四个部分组成：前缀(data:)、指示数据类型的MIME类型、如果非文本则为可选的base64标记、数据本身：
-data:[<mediatype>][;base64],<data>
-mediatype 是个 MIME 类型的字符串，例如 "image/jpeg" 表示 JPEG 图像文件。如果被省略，则默认值为 text/plain;charset=US-ASCII
-如果数据是文本类型，你可以直接将文本嵌入 (根据文档类型，使用合适的实体字符或转义字符)。如果是二进制数据，你可以将数据进行 base64 编码之后再进行嵌入。
+> Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：
+> data:[<mediatype>][;base64],<data>
+> mediatype 是个 MIME 类型的字符串，例如 "image/jpeg" 表示 JPEG 图像文件。如果被省略，则默认值为 text/plain;charset=US-ASCII
+> 如果数据是文本类型，你可以直接将文本嵌入 (根据文档类型，使用合适的实体字符或转义字符)。如果是二进制数据，你可以将数据进行 base64 编码之后再进行嵌入。
 
 详细请看 MDN 对 [Data URLs](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/data_URIs) 的解释。
 
@@ -55,9 +53,7 @@ getImageDataURL(image) {
 
 执行上面的函数后会返回如下面的格式一样的字符串
 
-```
 data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAgAElEQVR4Xu1dB3hUxfb/bc3uppOeQOgIAioKCiqWJ/bysFd89vcXe0WfvSJ2wY6gPhX1WZ...
-```
 
 注意：图片越大，转换后的 base64 编码越长，尽量避免对大图进行 DataURL 转换，防止转换后的长度超出浏览器限制
 
