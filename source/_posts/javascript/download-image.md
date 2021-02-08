@@ -5,8 +5,8 @@ tags:
     - code blocks
 categories:
     - javascript
-cover: https://picsum.photos/id/103/2592/1936
-thumbnail: https://picsum.photos/id/103/64/64
+cover: /gallery/cover/03.svg
+thumbnail: /gallery/cover/03.svg
 ---
 
 ## 实现思路

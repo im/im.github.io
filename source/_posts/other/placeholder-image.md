@@ -5,8 +5,8 @@ tags:
     - images
 categories:
     - other
-cover: https://fakeimg.pl/1200x400/1186cd/FFFFFF/?text=images&font=noto
-thumbnail: https://fakeimg.pl/64x64/1186cd/FFFFFF/?text=images&font=noto
+cover: /gallery/cover/01.svg
+thumbnail: /gallery/cover/01.svg
 ---
 
 写页面的有时候需要一些临时的占位符图片，下面是常用的几种免费占位图片网站
