@@ -5,10 +5,9 @@ tags:
     - code blocks
 categories:
     - javascript
-cover: /gallery/cover/02.svg
-thumbnail: /gallery/cover/02.svg
+cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/02.svg
+thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/02.svg
 ---
-
 ## 实现思路
 
 html:

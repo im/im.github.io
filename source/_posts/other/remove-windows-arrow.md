@@ -3,8 +3,8 @@ title: 去除windows桌面图标小箭头
 date: 2021-02-23
 categories:
     - other
-cover: /gallery/cover/04.svg
-thumbnail: /gallery/cover/04.svg
+cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/04.svg
+thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/04.svg
 ---
 
 > 有点 强迫症， 看着玩意特别痛苦

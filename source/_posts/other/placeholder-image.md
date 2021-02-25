@@ -5,8 +5,8 @@ tags:
     - images
 categories:
     - other
-cover: /gallery/cover/01.svg
-thumbnail: /gallery/cover/01.svg
+cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/01.svg
+thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/01.svg
 ---
 
 写页面的有时候需要一些临时的占位符图片，下面是常用的几种免费占位图片网站
