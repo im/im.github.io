@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>在页面上隐藏元素的方法有哪些？</title>
+      <link href="/cactus/2021/02/27/interview/css/8/"/>
+      <url>/cactus/2021/02/27/interview/css/8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>在页面上隐藏元素的方法有哪些？ 并简述出第一种方法的应用场景和优劣势</p><span id="more"></span><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><h3 id="占位"><a href="#占位" class="headerlink" title="占位:"></a>占位:</h3><p><code>visibility: hidden;</code>  看不见但是会占据空间<br><code>margin-left: -100%;</code><br><code>opacity: 0;</code> 看不见但是会占据空间<br><code>transform: scale(0);</code><br><code>filter: opacity(0);</code></p><h3 id="不占位"><a href="#不占位" class="headerlink" title="不占位:"></a>不占位:</h3><p><code>display: none;</code>  页面不会渲染<br><code>width: 0;</code><br><code>height: 0;</code><br><code>overflow: hidden;</code> 页面会渲染但是不显示<br><code>position</code> 配合 <code>z-index</code>; 或者 <code>left/top/bottom/right ： -100%；</code><br><code>transform: scale(0);</code><br><code>translateX(+-100%);</code><br><code>translateY(+-100%);</code><br><code>rotateX(90deg);</code></p><h3 id="仅对块内文本元素"><a href="#仅对块内文本元素" class="headerlink" title="仅对块内文本元素:"></a>仅对块内文本元素:</h3><p><code>text-indent: -9999px;</code><br><code>font-size: 0;</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HTML全局属性(global attribute)有哪些（包含H5）？</title>
+      <link href="/cactus/2021/02/27/interview/html/7/"/>
+      <url>/cactus/2021/02/27/interview/html/7/</url>
+      
+        <content type="html"><![CDATA[<p><code>accesskey</code>   设置快捷键<br><code>class</code>  为元素设置类标识<br><code>contenteditable</code>  指定元素内容是否可编辑<br><code>contextmenu</code>  自定义鼠标右键弹出上下文菜单内容（仅firefox支持）<br><code>data-*</code>  为元素增加自定义属性<br>dir：设置元素文本方向（默认ltr；rtl）<br><code>draggable</code>  设置元素是否可拖拽<br><code>dropzone</code>  设置元素拖放类型（copy|move|link,H5新属性，主流均不支持）<br><code>hidden</code>  规定元素仍未或不在相关<br><code>id</code>  元素id，文档内唯一<br><code>lang</code>  元素内容的语言<br><code>spellcheck</code>  是否启动拼写和语法检查<br><code>style</code>  行内css样式<br><code>tabindex</code>  设置元素可以获得焦点，通过tab导航<br><code>title</code>  规定元素有关的额外信息</p><blockquote><p>相关链接：<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes">Global attributes</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>写一个方法去掉字符串中的空格</title>
+      <link href="/cactus/2021/02/27/interview/js/6/"/>
+      <url>/cactus/2021/02/27/interview/js/6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>写一个方法去掉字符串中的空格，要求传入不同的类型分别能去掉前、后、前后、中间的空格 </p><span id="more"></span><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">JSResult Skip Results Iframe</span><br><span class="line">EDIT ON</span><br><span class="line"><span class="keyword">const</span> str = <span class="string">&quot;  s t  r  &quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> POSITION = <span class="built_in">Object</span>.freeze(&#123;</span><br><span class="line">    left: <span class="built_in">Symbol</span>(),</span><br><span class="line">    right: <span class="built_in">Symbol</span>(),</span><br><span class="line">    both: <span class="built_in">Symbol</span>(),</span><br><span class="line">    center: <span class="built_in">Symbol</span>(),</span><br><span class="line">    all: <span class="built_in">Symbol</span>()</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">trim</span>(<span class="params">str, position = POSITION.both</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!!POSITION[position]) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&quot;unexpected position value&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">switch</span> (position) &#123;</span><br><span class="line">        <span class="keyword">case</span> POSITION.left:</span><br><span class="line">            str = str.replace(<span class="regexp">/^\s+/</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> POSITION.right:</span><br><span class="line">            str = str.replace(<span class="regexp">/\s+$/</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> POSITION.both:</span><br><span class="line">            str = str.replace(<span class="regexp">/^\s+/</span>, <span class="string">&quot;&quot;</span>).replace(<span class="regexp">/\s+$/</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> POSITION.center:</span><br><span class="line">            <span class="keyword">while</span> (str.match(<span class="regexp">/\w\s+\w/</span>)) &#123;</span><br><span class="line">                str = str.replace(<span class="regexp">/(\w)(\s+)(\w)/</span>, <span class="string">`$1$3`</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> POSITION.all:</span><br><span class="line">            str = str.replace(<span class="regexp">/\s/g</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> result = trim(str);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`|<span class="subst">$&#123;result&#125;</span>|`</span>); <span class="comment">//  |s t  r|</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Resources</span><br></pre></td></tr></table></figure><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p class="codepen" data-height="844" data-theme-id="light" data-default-tab="js" data-user="tangxiaomi" data-slug-hash="Jjbpqpq" style="height: 844px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title=" 写一个方法去掉字符串中的空格">  <span>See the Pen <a href="https://codepen.io/tangxiaomi/pen/Jjbpqpq">   写一个方法去掉字符串中的空格</a> by 糖小米 . (<a href="https://codepen.io/tangxiaomi">@tangxiaomi</a>)  on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>html的元素有哪些（包含H5）？</title>
+      <link href="/cactus/2021/02/27/interview/html/4/"/>
+      <url>/cactus/2021/02/27/interview/html/4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>区分出行内元素、块级元素、空元素并在后面简要标注下作用</p><h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2><ul><li>a</li><li>b</li><li>span</li><li>strong</li><li>i</li><li>em</li><li>button</li><li>input</li><li>label</li><li>br</li><li>textarea</li><li>select</li></ul><span id="more"></span><h2 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h2><ul><li>div</li><li>p</li><li>h1-h6</li><li>ol</li><li>ul</li><li>li</li><li>table</li><li>tbody</li><li>td</li><li>tr</li><li>thead</li><li>dl</li><li>dt</li><li>dd</li></ul><h2 id="H5新增元素"><a href="#H5新增元素" class="headerlink" title="H5新增元素"></a>H5新增元素</h2><ul><li><code>section</code>  标签定义文档中的节</li><li><code>article </code> 标签的内容独立于文档的其余部分</li><li><code>audio</code> 标签定义声音，比如音乐或其他音频流</li><li><code>video</code> 标签定义视频，比如电影片段或其他视频流</li><li><code>hearder</code> 标签定义文档的页眉（介绍信息）</li><li><code>footer</code> 标签定义文档或节的页脚</li><li><code>small</code> 标签呈现小号字体效果</li><li><code>canvas</code> 定义画布</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值</title>
+      <link href="/cactus/2021/02/27/interview/js/3/"/>
+      <url>/cactus/2021/02/27/interview/js/3/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）： </p><ul><li><p>生成一个长度为5的空数组 <code>arr</code> 。 </p></li><li><p>生成一个（2－32）之间的随机整数 <code>rand</code>。</p></li><li><p>把随机数 <code>rand</code> 插入到数组 <code>arr</code> 内，如果数组arr内已存在与 <code>rand</code> 相同的数字，则重新生成随机数<code>rand</code>并插入到<code>arr</code>内[需要使用递归实现，不能使用 <code>for/while</code> 等循环] </p></li><li><p>最终输出一个长度为5，且内容不重复的数组 <code>arr</code> 。</p></li></ul><span id="more"></span><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p class="codepen" data-height="280" data-theme-id="light" data-default-tab="js" data-user="tangxiaomi" data-slug-hash="dyOdago" style="height: 280px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title=" 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值">  <span>See the Pen <a href="https://codepen.io/tangxiaomi/pen/dyOdago">   用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值</a> by 糖小米 . (<a href="https://codepen.io/tangxiaomi">@tangxiaomi</a>)  on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+            <tag> algorithm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>圣杯布局和双飞翼布局的理解和区别，并用代码实现</title>
+      <link href="/cactus/2021/02/27/interview/css/2/"/>
+      <url>/cactus/2021/02/27/interview/css/2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h2><p>圣杯布局和双飞翼布局都是为了解决两边定宽，中间自适应且优先渲染的布局需求，那么为了自适应且优先渲染，必须要把中间的 <code>dom</code> 放在最顶端，以保证主要内容能最先被浏览器解析</p><h2 id="圣杯布局"><a href="#圣杯布局" class="headerlink" title="圣杯布局"></a>圣杯布局</h2><p>为了中间 <code>div</code> 内容不被遮挡，将中间 <code>div</code> 设置了左右 <code>padding-left</code> 和 <code>padding-right</code> 后，将左右两个 <code>div</code> 用相对布局 <code>position: relative</code> 并分别配合 <code>right</code> 和 <code>left</code> 属性，以便左右两栏 <code>div</code> 移动后不遮挡中间 <code>div</code></p><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;hd&quot;</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;bd&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;middle&quot;</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;left&quot;</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;right&quot;</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;footer&quot;</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="css"><a href="#css" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#hd</span></span><br><span class="line"><span class="attribute">height</span>: <span class="number">50px</span></span><br><span class="line">background: <span class="number">#666</span></span><br><span class="line">text-align: center</span><br><span class="line"></span><br><span class="line">#bd</span><br><span class="line">/* 左右栏通过添加负的margin放到正确的位置了，此段代码是为了摆正中间栏的位置 */</span><br><span class="line">padding: <span class="number">0</span> <span class="number">200px</span> <span class="number">0</span> <span class="number">180px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line"></span><br><span class="line">#middle</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">100%</span> /* 左栏上去到第一行 */</span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">background: blue</span><br><span class="line"></span><br><span class="line">#left</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">180px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">margin-left: -<span class="number">100%</span></span><br><span class="line">background: <span class="number">#0c9</span></span><br><span class="line">/* 中间栏的位置摆正之后，左栏的位置也相应右移，通过相对定位的left恢复到正确位置 */</span><br><span class="line">position: relative</span><br><span class="line">left: -<span class="number">180px</span></span><br><span class="line"></span><br><span class="line">#right</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">200px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">margin-left: -<span class="number">200px</span></span><br><span class="line">background: <span class="number">#0c9</span></span><br><span class="line">/* 中间栏的位置摆正之后，右栏的位置也相应左移，通过相对定位的right恢复到正确位置 */</span><br><span class="line">position: relative</span><br><span class="line">right: -<span class="number">200px</span></span><br><span class="line"></span><br><span class="line">#footer</span><br><span class="line">height: <span class="number">50px</span></span><br><span class="line">background: <span class="number">#666</span></span><br><span class="line">text-align: center</span><br></pre></td></tr></table></figure><p class="codepen" data-height="265" data-theme-id="light" data-default-tab="html,result" data-user="tangxiaomi" data-slug-hash="JjbpEeN" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="圣杯布局">  <span>See the Pen <a href="https://codepen.io/tangxiaomi/pen/JjbpEeN">  圣杯布局</a> by 糖小米 . (<a href="https://codepen.io/tangxiaomi">@tangxiaomi</a>)  on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><h2 id="双飞翼布局"><a href="#双飞翼布局" class="headerlink" title="双飞翼布局"></a>双飞翼布局</h2><p>为了中间 <code>div</code> 内容不被遮挡，直接在中间 <code>div</code> 内部创建子 <code>div</code> 用于放置内容，在该子 <code>div</code> 里用 <code>margin-left</code> 和 <code>margin-right</code> 为左右两栏 <code>div</code> 留出位置。多了1个 <code>div</code> ，少用大致4个 <code>css</code> 属性（圣杯布局中间 <code>div</code>   <code>padding-left</code> 和 <code>padding-right</code> 这2个属性，加上左右两个 <code>div</code> 用相对布局 <code>position: relative</code> 及对应的 <code>right</code> 和 <code>left</code> 共4个属性，一共6个；而双飞翼布局子div里用 <code>margin-left</code> 和 <code>margin-right</code> 共2个属性，6-2=4），个人感觉比圣杯布局思路更直接和简洁一点。</p><h3 id="hrml"><a href="#hrml" class="headerlink" title="hrml"></a>hrml</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;hd&quot;</span>&gt;</span>header<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;middle&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;inside&quot;</span>&gt;</span>middle<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;left&quot;</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;right&quot;</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;footer&quot;</span>&gt;</span>footer<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="css-1"><a href="#css-1" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#hd</span></span><br><span class="line"><span class="attribute">height</span>: <span class="number">50px</span></span><br><span class="line">background: <span class="number">#666</span></span><br><span class="line">text-align: center</span><br><span class="line"></span><br><span class="line">#middle</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">100%</span> /* 左栏上去到第一行 */</span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">background: blue</span><br><span class="line"></span><br><span class="line">#left</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">180px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">margin-left: -<span class="number">100%</span></span><br><span class="line">background: <span class="number">#0c9</span></span><br><span class="line"></span><br><span class="line">#right</span><br><span class="line">float: left</span><br><span class="line">width: <span class="number">200px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line">margin-left: -<span class="number">200px</span></span><br><span class="line">background: <span class="number">#0c9</span></span><br><span class="line"></span><br><span class="line">/* 给内部div添加margin，把内容放到中间栏，其实整个背景还是<span class="number">100%</span> */</span><br><span class="line">#inside</span><br><span class="line">margin: <span class="number">0</span> <span class="number">200px</span> <span class="number">0</span> <span class="number">180px</span></span><br><span class="line">height: <span class="number">100px</span></span><br><span class="line"></span><br><span class="line">#footer</span><br><span class="line">clear: both /* 记得清楚浮动 */</span><br><span class="line">height: <span class="number">50px</span></span><br><span class="line">background: <span class="number">#666</span></span><br><span class="line">text-align: center</span><br></pre></td></tr></table></figure><p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="tangxiaomi" data-slug-hash="qBqxgav" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="双飞翼布局">  <span>See the Pen <a href="https://codepen.io/tangxiaomi/pen/qBqxgav">  双飞翼布局</a> by 糖小米 . (<a href="https://codepen.io/tangxiaomi">@tangxiaomi</a>)  on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><h2 id="flex-实现圣杯布局"><a href="#flex-实现圣杯布局" class="headerlink" title="flex 实现圣杯布局"></a>flex 实现圣杯布局</h2><h3 id="html-1"><a href="#html-1" class="headerlink" title="html"></a>html</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;center&quot;</span>&gt;</span>center<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;left&quot;</span>&gt;</span>left<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;right&quot;</span>&gt;</span>right<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="css-2"><a href="#css-2" class="headerlink" title="css"></a>css</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span></span><br><span class="line"><span class="attribute">display</span>: flex</span><br><span class="line"></span><br><span class="line">#center</span><br><span class="line">flex: <span class="number">1</span></span><br><span class="line">height <span class="number">50px</span></span><br><span class="line">background blue</span><br><span class="line"></span><br><span class="line">#left</span><br><span class="line">flex: <span class="number">0</span> <span class="number">0</span> <span class="number">200px</span></span><br><span class="line">order: -<span class="number">1</span></span><br><span class="line">height <span class="number">50px</span></span><br><span class="line">background yellow</span><br><span class="line"></span><br><span class="line">#right</span><br><span class="line">flex: <span class="number">0</span> <span class="number">0</span> <span class="number">150px</span></span><br><span class="line">height <span class="number">50px</span></span><br><span class="line">background green</span><br></pre></td></tr></table></figure><p class="codepen" data-height="265" data-theme-id="light" data-default-tab="css,result" data-user="tangxiaomi" data-slug-hash="ExNQrwG" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="flex 圣杯布局">  <span>See the Pen <a href="https://codepen.io/tangxiaomi/pen/ExNQrwG">  flex 圣杯布局</a> by 糖小米 . (<a href="https://codepen.io/tangxiaomi">@tangxiaomi</a>)  on <a href="https://codepen.io">CodePen</a>.</span></p><script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><blockquote><p>参考文章： <a href="https://www.jianshu.com/p/81ef7e7094e8">圣杯布局和双飞翼布局的理解与思考</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> css </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>页面导入样式时，使用link和@import有什么区别?</title>
+      <link href="/cactus/2021/02/26/interview/html/1/"/>
+      <url>/cactus/2021/02/26/interview/html/1/</url>
+      
+        <content type="html"><![CDATA[<ol><li>link 是HTML标签，@import 是 css 提供的。</li><li>link 引入的样式页面加载时同时加载，@import 引入的样式需等页面加载完成后再加载。</li><li>link 没有兼容性问题，@import 不兼容 ie5 以下。</li><li>link 可以通过 js 操作 DOM 动态引入样式表改变样式，而 @import 不可以。</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>git 常用命令</title>
+      <link href="/cactus/2021/02/26/git/commend/"/>
+      <url>/cactus/2021/02/26/git/commend/</url>
+      
+        <content type="html"><![CDATA[<h3 id="恢复修改过的文件"><a href="#恢复修改过的文件" class="headerlink" title="恢复修改过的文件"></a>恢复修改过的文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout file_name</span><br></pre></td></tr></table></figure><h3 id="获取远程分支"><a href="#获取远程分支" class="headerlink" title="获取远程分支"></a>获取远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --track origin/branch_name</span><br></pre></td></tr></table></figure><h3 id="本地分支关联远程分支"><a href="#本地分支关联远程分支" class="headerlink" title="本地分支关联远程分支"></a>本地分支关联远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream-to=origin branch_name</span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="合并某一次提交"><a href="#合并某一次提交" class="headerlink" title="合并某一次提交"></a>合并某一次提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick commit_id</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>去除windows桌面图标小箭头</title>
+      <link href="/cactus/2021/02/23/other/remove-windows-arrow/"/>
+      <url>/cactus/2021/02/23/other/remove-windows-arrow/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>有点 强迫症， 看着玩意特别痛苦</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/im/oss@master/notes/images/2020/05/27/remove-windows-arrow.b6801c7f.jpg"></p><p>打开windows命令行工具，复制下面的命令运行</p><h2 id="去除："><a href="#去除：" class="headerlink" title="去除："></a>去除：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot;</span> /v 29 /d <span class="string">&quot;%systemroot%\system32\imageres.dll,197&quot;</span> /t reg_sz /f</span><br><span class="line">taskkill /f /im explorer.exe</span><br><span class="line">attrib -s -r -h <span class="string">&quot;%userprofile%\AppData\Local\iconcache.db&quot;</span></span><br><span class="line">del <span class="string">&quot;%userprofile%\AppData\Local\iconcache.db&quot;</span> /f /q</span><br><span class="line">start explorer</span><br><span class="line">pause</span><br></pre></td></tr></table></figure><h2 id="恢复："><a href="#恢复：" class="headerlink" title="恢复："></a>恢复：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reg delete <span class="string">&quot;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Shell Icons&quot;</span> /v 29 /f</span><br><span class="line">taskkill /f /im explorer.exe</span><br><span class="line">attrib -s -r -h <span class="string">&quot;%userprofile%\AppData\Local\iconcache.db&quot;</span></span><br><span class="line">del <span class="string">&quot;%userprofile%\AppData\Local\iconcache.db&quot;</span> /f /q</span><br><span class="line">start explorer</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 实现复制粘贴</title>
+      <link href="/cactus/2021/02/07/javascript/copy/"/>
+      <url>/cactus/2021/02/07/javascript/copy/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>html:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;copyToClip(&#x27;内容&#x27;)&quot;</span>&gt;</span>Copy<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><p>javascript:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 复制内容到粘贴板</span></span><br><span class="line"><span class="comment"> * content : 需要复制的内容</span></span><br><span class="line"><span class="comment"> * message : 复制完后的提示，不传则默认提示&quot;复制成功&quot;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyToClip</span>(<span class="params">content, message</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aux = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line">    aux.setAttribute(<span class="string">&#x27;value&#x27;</span>, content)</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(aux)</span><br><span class="line">    aux.select()</span><br><span class="line">    <span class="built_in">document</span>.execCommand(<span class="string">&#x27;copy&#x27;</span>)</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(aux)</span><br><span class="line">    <span class="keyword">if</span> (message == <span class="literal">null</span>) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;复制成功&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(mesage)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="clipboard-js-https-clipboardjs-com"><a href="#clipboard-js-https-clipboardjs-com" class="headerlink" title="(clipboard.js)[https://clipboardjs.com/]"></a>(clipboard.js)[<a href="https://clipboardjs.com/]">https://clipboardjs.com/]</a></h3><p>直接引用： <code>&lt;script src=&quot;dist/clipboard.min.js&quot;&gt;&lt;/script&gt;</code></p><p>包： <code>npm install clipboard --save </code>，然后 <code>import Clipboard from &#39;clipboard&#39;</code></p><p>html:</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;demoInput&quot;</span> <span class="attr">value</span>=<span class="string">&quot;hello world&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">data-clipboard-target</span>=<span class="string">&quot;#demoInput&quot;</span>&gt;</span>点我复制<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><p>javascript:</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Clipboard <span class="keyword">from</span> <span class="string">&#x27;clipboard&#x27;</span></span><br><span class="line"><span class="keyword">const</span> btnCopy = <span class="keyword">new</span> Clipboard(<span class="string">&#x27;btn&#x27;</span>)</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> code blocks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaScript 实现前端下载图片</title>
+      <link href="/cactus/2021/02/07/javascript/download-image/"/>
+      <url>/cactus/2021/02/07/javascript/download-image/</url>
+      
+        <content type="html"><![CDATA[<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><ul><li>  将图片装换成 Data URLs</li><li>  下载图片</li></ul><h4 id="Data-URLs"><a href="#Data-URLs" class="headerlink" title="Data URLs"></a>Data URLs</h4><blockquote><p>Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。<br>Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：<br>data:[<mediatype>][;base64],<data><br>mediatype 是个 MIME 类型的字符串，例如 “image/jpeg” 表示 JPEG 图像文件。如果被省略，则默认值为 text/plain;charset=US-ASCII<br>如果数据是文本类型，你可以直接将文本嵌入 (根据文档类型，使用合适的实体字符或转义字符)。如果是二进制数据，你可以将数据进行 base64 编码之后再进行嵌入。</p></blockquote><p>详细请看 MDN 对 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/data_URIs">Data URLs</a> 的解释。</p><span id="more"></span><h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>以下是获取图片 DataURL 的示例代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 获取图片的 base64 编码 DataURL</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param </span>image JS 图像对象</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return <span class="type">&#123;string&#125;</span> </span>已编码的 DataURL</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="title">getImageDataURL</span>(<span class="params">image</span>)</span> &#123;</span><br><span class="line">    <span class="comment">// 创建画布</span></span><br><span class="line">    <span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">&#x27;canvas&#x27;</span>);</span><br><span class="line">    canvas.width = image.width;</span><br><span class="line">    canvas.height = image.height;</span><br><span class="line">    <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">&#x27;2d&#x27;</span>);</span><br><span class="line">    <span class="comment">// 以图片为背景剪裁画布</span></span><br><span class="line">    ctx.drawImage(image, <span class="number">0</span>, <span class="number">0</span>, image.width, image.height);</span><br><span class="line">    <span class="comment">// 获取图片后缀名</span></span><br><span class="line">    <span class="keyword">const</span> extension = image.src.substring(image.src.lastIndexOf(<span class="string">&#x27;.&#x27;</span>) + <span class="number">1</span>).toLowerCase();</span><br><span class="line">    <span class="comment">// 某些图片 url 可能没有后缀名，默认是 png</span></span><br><span class="line">    <span class="keyword">return</span> canvas.toDataURL(<span class="string">&#x27;image/&#x27;</span> + extension, <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>执行上面的函数后会返回如下面的格式一样的字符串</p><p>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAgAElEQVR4Xu1dB3hUxfb/bc3uppOeQOgIAioKCiqWJ/bysFd89vcXe0WfvSJ2wY6gPhX1WZ…</p><p>注意：图片越大，转换后的 base64 编码越长，尽量避免对大图进行 DataURL 转换，防止转换后的长度超出浏览器限制</p><p>以下是下载图片的示例代码：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">downLoad</span>(<span class="params">downloadName, url</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> tag = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="comment">// 此属性的值就是下载时图片的名称，注意，名称中不能有半角点，否则下载时后缀名会错误</span></span><br><span class="line">    tag.setAttribute(<span class="string">&#x27;download&#x27;</span>, downloadName.replace(<span class="regexp">/\./g</span>, <span class="string">&#x27;。&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> image = <span class="keyword">new</span> Image();</span><br><span class="line">    <span class="comment">// 设置 image 的 url, 添加时间戳，防止浏览器缓存图片</span></span><br><span class="line">    image.src = url + <span class="string">&#x27;?time=&#x27;</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    <span class="comment">//重要，设置 crossOrigin 属性，否则图片跨域会报错</span></span><br><span class="line">    image.setAttribute(<span class="string">&#x27;crossOrigin&#x27;</span>, <span class="string">&#x27;Anonymous&#x27;</span>);</span><br><span class="line">    <span class="comment">// 图片未加载完成时操作会报错</span></span><br><span class="line">    image.onload = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        tag.href = getImageDataURL(image);</span><br><span class="line">        tag.click();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> code blocks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>占位图</title>
+      <link href="/cactus/2020/11/04/other/placeholder-image/"/>
+      <url>/cactus/2020/11/04/other/placeholder-image/</url>
+      
+        <content type="html"><![CDATA[<p>写页面的有时候需要一些临时的占位符图片，下面是常用的几种免费占位图片网站</p><h2 id="picsum-photos"><a href="#picsum-photos" class="headerlink" title="picsum.photos"></a><a href="https://picsum.photos/">picsum.photos</a></h2><p><code>支持https, 而且图片特别多, 随机图片, 模糊图片, 宽高, 唯一的缺点就是感觉请求有点慢</code></p><span id="more"></span><table><thead><tr><th>图片地址</th><th align="left">说明</th></tr></thead><tbody><tr><td><a href="https://picsum.photos/list">https://picsum.photos/list</a></td><td align="left">查看所有图片</td></tr><tr><td><a href="https://picsum.photos/200">https://picsum.photos/200</a></td><td align="left">正方形图片 只想要一个值</td></tr><tr><td><a href="https://picsum.photos/200/300">https://picsum.photos/200/300</a></td><td align="left">设置宽高</td></tr><tr><td><a href="https://picsum.photos/500/300/?random">https://picsum.photos/500/300/?random</a></td><td align="left">随机获取图片</td></tr><tr><td><a href="https://picsum.photos/id/0/200/300">https://picsum.photos/id/0/200/300</a></td><td align="left">指定特定图片</td></tr><tr><td><a href="https://picsum.photos/g/200/300">https://picsum.photos/g/200/300</a></td><td align="left">将图片变成灰色 只需要加一个 /g/</td></tr><tr><td><a href="https://picsum.photos/200/300/?blur">https://picsum.photos/200/300/?blur</a></td><td align="left">模糊图片</td></tr></tbody></table><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![<span class="string">random</span>](<span class="link">https://picsum.photos/1200/300/?random</span>)</span><br></pre></td></tr></table></figure><p><img src="https://picsum.photos/1200/300/?random"></p><h2 id="fakeimg-pl"><a href="#fakeimg-pl" class="headerlink" title="fakeimg.pl"></a><a href="https://fakeimg.pl/">fakeimg.pl</a></h2><p><code>如果你只需要使用文字，这个就特别好用了， 支持背景颜色，文字颜色，文字样式， 他的访问速度还很快</code></p><table><thead><tr><th>图片地址</th><th align="left">说明</th></tr></thead><tbody><tr><td><a href="https://fakeimg.pl/400x300">https://fakeimg.pl/400x300</a></td><td align="left">设置宽高</td></tr><tr><td><a href="https://fakeimg.pl/400x300/ba8f6c/FFFFFF/">https://fakeimg.pl/400x300/ba8f6c/FFFFFF/</a></td><td align="left">设置背景颜色 字体颜色</td></tr><tr><td><a href="https://fakeimg.pl/400x300/ba8f6c/FFFFFF/?text=text">https://fakeimg.pl/400x300/ba8f6c/FFFFFF/?text=text</a></td><td align="left">设置显示的文字</td></tr><tr><td><a href="https://fakeimg.pl/400x300/ba8f6c/FFFFFF/?text=RegExp&amp;font=noto">https://fakeimg.pl/400x300/ba8f6c/FFFFFF/?text=RegExp&amp;font=noto</a></td><td align="left">设置字体样式 font=lobster</td></tr></tbody></table><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](https://fakeimg.pl/1200x400/ba8f6c/FFFFFF/?text=糖小米&amp;font=noto)</span><br></pre></td></tr></table></figure><p><img src="https://fakeimg.pl/1200x400/ba8f6c/FFFFFF/?text=%E7%B3%96%E5%B0%8F%E7%B1%B3&font=noto"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> images </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
