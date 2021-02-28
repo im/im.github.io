@@ -2,3 +2,7 @@
 	path = themes/icarus
 	url = https://github.com/im/hexo-theme.git
 	branch = icarus
+[submodule "themes/cactus"]
+	path = themes/cactus
+	url = https://github.com/im/hexo-theme.git
+	branch = cactus

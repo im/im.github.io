@@ -17,7 +17,7 @@ donates:
 comment:
 widgets:
   - # Where should the widget be placed, left sidebar or right sidebar
-    position: right
+    position: left
     type: toc
     # Whether to show the index of each heading
     index: true
@@ -26,5 +26,5 @@ widgets:
     # Maximum level of headings to show (1-6)
     depth: 3
   - # Where should the widget be placed, left sidebar or right sidebar
-      position: right
+      position: left
       type: recent_posts
