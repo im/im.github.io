@@ -14,7 +14,7 @@ timezone: ''
 # URL
 ## If your site is put in a subdirectory, set url as 'http://example.com/child' and root as '/child/'
 url: https://tangxiaomi.top
-root: /
+root: /cactus/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -23,7 +23,7 @@ pretty_urls:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: public/cactus/
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -98,8 +98,8 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
-# theme: cactus
+# theme: icarus
+theme: cactus
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
