@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HTML5 Canvas生成粒子效果</title>
+      <link href="/cactus/2021/03/02/javascript/html5-canvas-particle-effect/"/>
+      <url>/cactus/2021/03/02/javascript/html5-canvas-particle-effect/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Install"><a href="#Install" class="headerlink" title="Install"></a>Install</h2><p><a href="https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js">breathing-halftone.pkgd.min.js</a></p><h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// get the image</span></span><br><span class="line"><span class="comment">// jquery</span></span><br><span class="line"><span class="keyword">var</span> img = $(<span class="string">&#x27;#hero img&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line"><span class="comment">// or vanilla JS</span></span><br><span class="line"><span class="keyword">var</span> img = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#hero img&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// init halftone</span></span><br><span class="line"><span class="keyword">new</span> BreathingHalftone(img, &#123;</span><br><span class="line">    <span class="comment">// options...</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><span id="more"></span><h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;dotSize&quot;</span>: <span class="number">1</span> / <span class="number">150</span>,</span><br><span class="line">    <span class="comment">//点的大小</span></span><br><span class="line">    <span class="comment">//作为图像对角线的一小部分</span></span><br><span class="line">    <span class="comment">//较小的点=较多的点=性能较差</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;dotSizeThreshold&quot;</span>: <span class="number">0.05</span>,</span><br><span class="line">    <span class="comment">//隐藏小于百分比的点</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;initVelocity&quot;</span>: <span class="number">0.1</span>,</span><br><span class="line">    <span class="comment">//点开始增长的速度</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;oscPeriod&quot;</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="comment">//点大小振荡或“呼吸”周期的持续时间（以秒为单位）</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;oscAmplitude&quot;</span>: <span class="number">0.2</span>,</span><br><span class="line">    <span class="comment">//振荡变化百分比</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;isAdditive&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">//添加剂是带有RGB点的黑色，</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//减法为带有CMK点的白色</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;isRadial&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="comment">//启用径向网格布局</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;channels&quot;</span>: [<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>],</span><br><span class="line">    <span class="comment">//点层</span></span><br><span class="line">    <span class="comment">//&#x27;lum&#x27;是另一个受支持的通道，以实现亮度</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;isChannelLens&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="comment">//禁用位移时更改点的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;friction&quot;</span>: <span class="number">0.06</span>,</span><br><span class="line">    <span class="comment">//较低的点使点更容易移动，较高的点使点更难</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;hoverDiameter&quot;</span>: <span class="number">0.2</span>,</span><br><span class="line">    <span class="comment">//悬停效果的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//作为图像对角线的一小部分</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;hoverForce&quot;</span>: <span class="number">0.01</span>,</span><br><span class="line">    <span class="comment">//悬停效果的力量</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//负值会拉入点，正值会拉出</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;activeDiameter&quot;</span>: <span class="number">0.6</span>,</span><br><span class="line">    <span class="comment">//点击/点击效果的大小</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//作为图像对角线的一小部分</span></span><br><span class="line"></span><br><span class="line">    <span class="attr">&quot;activeForce&quot;</span>: <span class="number">0.01</span></span><br><span class="line">    <span class="comment">//悬停效果的力量</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//负值会拉入点，正值会拉出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="Dome"><a href="#Dome" class="headerlink" title="Dome"></a>Dome</h2><script src="https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js"></script><img width="400" height="400" id="html5-canvas-particle-effect-dome" src="/images/header/avatar.jpg" /><script>window.onload = function () {    var img = document.getElementById('html5-canvas-particle-effect-dome')    new BreathingHalftone(img, {        "dotSize": 1 / 150    })}</script><h2 id="Quote"><a href="#Quote" class="headerlink" title="Quote"></a>Quote</h2><blockquote><p><a href="http://breathing-halftone.desandro.com/">http://breathing-halftone.desandro.com/</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git submodule</title>
       <link href="/cactus/2021/02/28/git/submodules/"/>
       <url>/cactus/2021/02/28/git/submodules/</url>
@@ -256,6 +281,8 @@
             
             <tag> code blocks </tag>
             
+            <tag> js </tag>
+            
         </tags>
       
     </entry>
@@ -280,6 +307,8 @@
         <tags>
             
             <tag> code blocks </tag>
+            
+            <tag> js </tag>
             
         </tags>
       
