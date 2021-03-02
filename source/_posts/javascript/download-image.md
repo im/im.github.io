@@ -3,6 +3,7 @@ title: JavaScript 实现前端下载图片
 date: 2021-02-07
 tags:
     - code blocks
+    - js
 categories:
     - javascript
 cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg
