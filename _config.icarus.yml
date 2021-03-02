@@ -104,6 +104,7 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
+        Links: /links
         Theme: /cactus
         # About: /about
     # Links to be shown on the right of the navigation bar
@@ -257,14 +258,14 @@ widgets:
       position: right
       type: recent_posts
     # Recommendation links widget configurations
-    - # Where should the widget be placed, left sidebar or right sidebar
-      position: left
-      type: links
-      # Names and URLs of the sites
-      links:
-          Markdown: 'https://tangxiaomi.top/md'
-          Regexper: 'https://tangxiaomi.top/regexper/'
-          Photos: 'https://tangxiaomi.top/photos/'
+    # - # Where should the widget be placed, left sidebar or right sidebar
+    #   position: left
+    #   type: links
+    #   # Names and URLs of the sites
+    #   links:
+    #       Markdown: 'https://tangxiaomi.top/md'
+    #       Regexper: 'https://tangxiaomi.top/regexper/'
+    #       Photos: 'https://tangxiaomi.top/photos/'
     # Categories widget configurations
     - # Where should the widget be placed, left sidebar or right sidebar
       position: right
