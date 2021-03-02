@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>jsdelivr CDN 使用和缓存刷新</title>
+      <link href="/cactus/2021/03/02/other/jsdelivr-cdn/"/>
+      <url>/cactus/2021/03/02/other/jsdelivr-cdn/</url>
+      
+        <content type="html"><![CDATA[<h2 id="github-cdn"><a href="#github-cdn" class="headerlink" title="github cdn"></a>github cdn</h2><ul><li><p>Load any GitHub release, commit, or branch:</p><p><code>https://cdn.jsdelivr.net/gh/im/repo@version/file</code></p></li><li><p>Load an exact version of a file:</p><p><code>https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/jquery.min.js https://cdn.jsdelivr.net/gh/jquery/jquery@32b00373b3f42e5cdcb709df53f3b08b7184a944/dist/jquery.min.js</code></p></li><li><p>Use a version range instead of an exact version:</p><p><code>https://cdn.jsdelivr.net/gh/jquery/jquery@3.2/dist/jquery.min.js https://cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js</code></p></li><li><p>Get a directory listing:</p><p><code>https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/ https://cdn.jsdelivr.net/gh/jquery/jquery@3.2.1/dist/</code></p></li></ul><h2 id="Cache"><a href="#Cache" class="headerlink" title="Cache"></a>Cache</h2><p><code>https://cdn.jsdelivr.net/</code></p><p>or</p><p><code>https://purge.jsdelivr.net/</code></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HTML5 Canvas生成粒子效果</title>
       <link href="/cactus/2021/03/02/javascript/html5-canvas-particle-effect/"/>
       <url>/cactus/2021/03/02/javascript/html5-canvas-particle-effect/</url>
@@ -200,6 +219,25 @@
     
     
     <entry>
+      <title>git 常用命令</title>
+      <link href="/cactus/2021/02/26/git/commend/"/>
+      <url>/cactus/2021/02/26/git/commend/</url>
+      
+        <content type="html"><![CDATA[<h3 id="恢复修改过的文件"><a href="#恢复修改过的文件" class="headerlink" title="恢复修改过的文件"></a>恢复修改过的文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout file_name</span><br></pre></td></tr></table></figure><h3 id="获取远程分支"><a href="#获取远程分支" class="headerlink" title="获取远程分支"></a>获取远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --track origin/branch_name</span><br></pre></td></tr></table></figure><h3 id="本地分支关联远程分支"><a href="#本地分支关联远程分支" class="headerlink" title="本地分支关联远程分支"></a>本地分支关联远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream-to=origin branch_name</span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="合并某一次提交"><a href="#合并某一次提交" class="headerlink" title="合并某一次提交"></a>合并某一次提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick commit_id</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>页面导入样式时，使用link和@import有什么区别?</title>
       <link href="/cactus/2021/02/26/interview/html/1/"/>
       <url>/cactus/2021/02/26/interview/html/1/</url>
@@ -219,25 +257,6 @@
             <tag> html </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>git 常用命令</title>
-      <link href="/cactus/2021/02/26/git/commend/"/>
-      <url>/cactus/2021/02/26/git/commend/</url>
-      
-        <content type="html"><![CDATA[<h3 id="恢复修改过的文件"><a href="#恢复修改过的文件" class="headerlink" title="恢复修改过的文件"></a>恢复修改过的文件</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout file_name</span><br></pre></td></tr></table></figure><h3 id="获取远程分支"><a href="#获取远程分支" class="headerlink" title="获取远程分支"></a>获取远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --track origin/branch_name</span><br></pre></td></tr></table></figure><h3 id="本地分支关联远程分支"><a href="#本地分支关联远程分支" class="headerlink" title="本地分支关联远程分支"></a>本地分支关联远程分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch --set-upstream-to=origin branch_name</span><br></pre></td></tr></table></figure><span id="more"></span><h3 id="合并某一次提交"><a href="#合并某一次提交" class="headerlink" title="合并某一次提交"></a>合并某一次提交</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git cherry-pick commit_id</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> git </category>
-          
-      </categories>
-      
       
     </entry>
     
