@@ -5,7 +5,7 @@ variant: default
 # Path or URL to the website's logo
 # logo: /img/logo.svg
 logo:
-    text: 糖小米 · 博客
+    text: 糖小米 · 笔记
 # Page metadata configurations
 head:
     # URL or path to the website's icon
