@@ -215,7 +215,8 @@ widgets:
       # Author's current location
       location: China, Shenzhen
       # URL or path to the avatar image
-      avatar: https://cdn.jsdelivr.net/gh/im/oss@master/header/header-0.jpeg
+      avatar: /images/header/avatar.jpg
+      avatar_breathing: true
       # Whether show the rounded avatar image
       avatar_rounded: false
       # Email address for the Gravatar
