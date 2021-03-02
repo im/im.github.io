@@ -10286,8 +10286,8 @@ body > .section {
   .is-1-column .container,
   .is-2-column .container,
   .is-3-column .container {
-    max-width: 85%;
-    width: 85%;
+    max-width: 90%;
+    width: 90%;
   }
   .column.is-3-widescreen {
     flex: none;
@@ -10778,6 +10778,9 @@ body > .section {
 .link-muted:hover {
   color: #fcee09 !important;
 }
+.image {
+  overflow: hidden;
+}
 .image.is-7by3 {
   padding-top: 42.8%;
 }
@@ -10793,6 +10796,9 @@ body > .section {
   object-fit: cover;
   border-radius: 50%;
   overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 2px;
 }
 .image .fill {
   object-fit: cover;
