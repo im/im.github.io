@@ -2,7 +2,7 @@ window.onload = function () {
     const img = document.querySelector('.avatar')
 
     new BreathingHalftone(img, {
-        dotSize: 1 / 150,
+        dotSize: 1 / 100,
         //点的大小
         //作为图像对角线的一小部分
         //较小的点=较多的点=性能较差
