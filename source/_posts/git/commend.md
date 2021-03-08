@@ -42,6 +42,12 @@ git log -3 -—stat
 
 ```
 
+### 命令行看提交记录图形
+
+```bash
+git log --oneline --graph 
+```
+
 ### 查看指定提交的内容 
 
 ```bash
