@@ -23,7 +23,7 @@ git checkout --track origin/branch_name
 ### 本地分支关联远程分支
 
 ```bash
-git branch --set-upstream-to=origin branch_name
+git branch --set-upstream-to=origin/[branch_name] [branch_name]
 ```
 
 <!--more-->
