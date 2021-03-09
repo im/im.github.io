@@ -22,6 +22,8 @@ git remote rm origin
 git remote add origin [url]
 ```
 
+<!--more-->
+
 ## 直接修改配置文件
 
 ```bash
