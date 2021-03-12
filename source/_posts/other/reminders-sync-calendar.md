@@ -10,7 +10,7 @@ thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/01.svg
 
 * AppStore 安装运行脚本的软件 `scriptable`
 
-[scriptable](https://docs.scriptable.app)
+[scriptable https://docs.scriptable.app](https://docs.scriptable.app)
 
 <!--more-->
 
