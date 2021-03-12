@@ -1,6 +1,8 @@
 ---
 title: ios 提醒事项同步日历快捷指令脚本
 date: 2021-03-12
+tags:
+    - ios
 categories:
     - other
 cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/01.svg
