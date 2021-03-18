@@ -46,7 +46,7 @@ var Main = {
 
 new Vue({
     el: '#app',
-    render: (h) => h(Main),
+    render: (h) => h(Main)
 })
 ```
 
