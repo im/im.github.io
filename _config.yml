@@ -96,10 +96,13 @@ exclude:
 ignore:
 
 # Extensions
-## Plugins: https://hexo.io/plugins/
+Plugins:
+  hexo-generator-feed
 ## Themes: https://hexo.io/themes/
 theme: icarus
 # theme: cactus
+
+rss: /atom.xml
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
