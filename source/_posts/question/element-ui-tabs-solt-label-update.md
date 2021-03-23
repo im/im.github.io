@@ -2,7 +2,7 @@
 title: element-ui tabs的label slot不能及时动态更新
 date: 2021-03-18
 categories:
-    - other
+    - element-ui
 cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg
 thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg
 ---

@@ -3,7 +3,7 @@ title: Mac 设置环境变量 path 的几种方法
 date: 2021-03-08
 toc: true
 tags:
-    mac
+    - mac
 categories:
     - other
 cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/37.svg
