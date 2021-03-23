@@ -9,15 +9,15 @@
     <meta name="description" content="打开命令窗口(以管理员身份运行)开始—-&gt;运行—-&gt;cmd，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下如何查看某个端口被谁占用">
-<meta property="og:url" content="https://tangxiaomi.top/2021/03/23/other/window-port/index.html">
+<meta property="og:url" content="https://tangxiaomi.top/2021/03/23/windows/window-port/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="打开命令窗口(以管理员身份运行)开始—-&gt;运行—-&gt;cmd，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/30.svg">
 <meta property="article:published_time" content="2021-03-23T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-23T01:36:52.008Z">
+<meta property="article:modified_time" content="2021-03-23T01:49:29.922Z">
 <meta property="article:author" content="糖小米">
-<meta property="article:tag" content="糖小米 tangxiaomi 前端 糖小米前端 糖小米blog javascript html css node npm webpack vue react">
+<meta property="article:tag" content="windows">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/30.svg">
     
@@ -81,7 +81,7 @@
       <ul>
         
         
-        <li><a class="icon" href="/cactus/2021/03/18/other/element-ui-tabs-solt-label-update/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/cactus/2021/03/18/question/element-ui-tabs-solt-label-update/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
@@ -94,17 +94,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/03/23/other/window-port/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/03/23/other/window-port/&text=Windows下如何查看某个端口被谁占用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/03/23/other/window-port/&is_video=false&description=Windows下如何查看某个端口被谁占用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Windows下如何查看某个端口被谁占用&body=Check out this article: https://tangxiaomi.top/2021/03/23/other/window-port/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/03/23/other/window-port/&name=Windows下如何查看某个端口被谁占用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/03/23/other/window-port/&t=Windows下如何查看某个端口被谁占用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/03/23/windows/window-port/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&text=Windows下如何查看某个端口被谁占用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&is_video=false&description=Windows下如何查看某个端口被谁占用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Windows下如何查看某个端口被谁占用&body=Check out this article: https://tangxiaomi.top/2021/03/23/windows/window-port/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&name=Windows下如何查看某个端口被谁占用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/03/23/windows/window-port/&t=Windows下如何查看某个端口被谁占用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -147,6 +147,11 @@
 
 
       
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/cactus/tags/windows/" rel="tag">windows</a>
+    </div>
+
 
     </div>
   </header>
@@ -192,17 +197,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/03/23/other/window-port/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/03/23/other/window-port/&text=Windows下如何查看某个端口被谁占用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/03/23/other/window-port/&is_video=false&description=Windows下如何查看某个端口被谁占用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Windows下如何查看某个端口被谁占用&body=Check out this article: https://tangxiaomi.top/2021/03/23/other/window-port/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/03/23/other/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/03/23/other/window-port/&name=Windows下如何查看某个端口被谁占用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/03/23/other/window-port/&t=Windows下如何查看某个端口被谁占用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/03/23/windows/window-port/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&text=Windows下如何查看某个端口被谁占用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&is_video=false&description=Windows下如何查看某个端口被谁占用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Windows下如何查看某个端口被谁占用&body=Check out this article: https://tangxiaomi.top/2021/03/23/windows/window-port/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&title=Windows下如何查看某个端口被谁占用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/03/23/windows/window-port/&name=Windows下如何查看某个端口被谁占用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/03/23/windows/window-port/&t=Windows下如何查看某个端口被谁占用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
