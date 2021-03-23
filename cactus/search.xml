@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Windows下如何查看某个端口被谁占用</title>
+      <link href="/cactus/2021/03/23/other/window-port/"/>
+      <url>/cactus/2021/03/23/other/window-port/</url>
+      
+        <content type="html"><![CDATA[<h2 id="打开命令窗口-以管理员身份运行"><a href="#打开命令窗口-以管理员身份运行" class="headerlink" title="打开命令窗口(以管理员身份运行)"></a>打开命令窗口(以管理员身份运行)</h2><p>开始—-&gt;运行—-&gt;<code>cmd</code>，或者是 <code>window+R</code> 组合键，调出命令窗口。</p><h2 id="查找所有运行的端口"><a href="#查找所有运行的端口" class="headerlink" title="查找所有运行的端口"></a>查找所有运行的端口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure><h2 id="查看被占用端口对应的-PID"><a href="#查看被占用端口对应的-PID" class="headerlink" title="查看被占用端口对应的 PID"></a>查看被占用端口对应的 PID</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -aon|findstr <span class="string">&quot;8081&quot;</span></span><br></pre></td></tr></table></figure><h2 id="查看指定-PID-的进程"><a href="#查看指定-PID-的进程" class="headerlink" title="查看指定 PID 的进程"></a>查看指定 PID 的进程</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist|findstr <span class="string">&quot;9088&quot;</span></span><br></pre></td></tr></table></figure><h2 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h2><p>强制（/F参数）杀死 pid 为 9088 的所有进程包括子进程（/T参数）：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /T /F /PID 9088 </span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> other </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>element-ui tabs的label slot不能及时动态更新</title>
       <link href="/cactus/2021/03/18/other/element-ui-tabs-solt-label-update/"/>
       <url>/cactus/2021/03/18/other/element-ui-tabs-solt-label-update/</url>
