@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# JavaScript 内存泄漏教程  程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理">
+    <meta name="description" content="程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。 123456char * buffer">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript内存泄漏教程">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# JavaScript 内存泄漏教程  程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理">
+<meta property="og:description" content="程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。 123456char * buffer">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -105,9 +105,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&name=JavaScript内存泄漏教程&description=&lt;pre&gt;&lt;code&gt;# JavaScript 内存泄漏教程
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&name=JavaScript内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;
@@ -144,7 +142,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -169,9 +167,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># JavaScript 内存泄漏教程
-</code></pre>
-<p>程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。</p>
+    <p>程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。</p>
 <p>对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。</p>
 <p><img src="/images/bg2017041701-1.png"><br>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。</p>
 <p>有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。</p>
@@ -208,7 +204,7 @@
 <p><img src="/images/bg2017041705.png"></p>
 <p>反之，就是内存泄漏了。</p>
 <p><img src="/images/bg2017041706.png"></p>
-<h3 id="3-2-命令行"><a href="#3-2-命令行" class="headerlink" title="3.2 命令行"></a>3.2 命令行</h3><p>命令行可以使用 Node 提供的 <a target="_blank" rel="noopener" href="https://nodejs.org/api/process.html_process_memoryusage">process.memoryUsage</a> 方法。</p>
+<h3 id="3-2-命令行"><a href="#3-2-命令行" class="headerlink" title="3.2 命令行"></a>3.2 命令行</h3><p>命令行可以使用 Node 提供的 <a target="_blank" rel="noopener" href="https://nodejs.org/api/process.html#process_process_memoryusage">process.memoryUsage</a> 方法。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(process.memoryUsage());</span><br><span class="line">// &#123; rss: 27709440,</span><br><span class="line">//  heapTotal: 5685248,</span><br><span class="line">//  heapUsed: 3449392,</span><br><span class="line">//  external: 8772 &#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>process.memoryUsage</code> 返回一个对象，包含了 Node 进程的内存占用信息。该对象包含四个字段，单位是字节， <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/12023359/what-do-the-return-values-of-node-js-process-memoryusage-stand-for">含义</a> 如下。</p>
@@ -222,7 +218,7 @@
 <p>判断内存泄漏，以 <code>heapUsed</code> 字段为准。</p>
 <h2 id="四、WeakMap"><a href="#四、WeakMap" class="headerlink" title="四、WeakMap"></a>四、WeakMap</h2><p>前面说过，及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。</p>
 <p>最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。</p>
-<p>ES6 考虑到了这一点，推出了两种新的数据结构： <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/-map">WeakSet</a> 和 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/-map">WeakMap</a> 。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个”Weak”，表示这是弱引用。</p>
+<p>ES6 考虑到了这一点，推出了两种新的数据结构： <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#docs/set-map#WeakSet">WeakSet</a> 和 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#docs/set-map#WeakMap">WeakMap</a> 。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个”Weak”，表示这是弱引用。</p>
 <p><img src="/images/bg2017041707.jpg"></p>
 <p>下面以 WeakMap 为例，看看它是怎么解决内存泄漏的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;example&#x27;</span>);</span><br><span class="line"></span><br><span class="line">wm.set(element, <span class="string">&#x27;some information&#x27;</span>);</span><br><span class="line">wm.get(element) <span class="comment">// &quot;some information&quot;</span></span><br></pre></td></tr></table></figure>
@@ -231,8 +227,8 @@
 <p>也就是说，DOM 节点对象的引用计数是 <code>1</code> ，而不是 <code>2</code> 。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。Weakmap 保存的这个键值对，也会自动消失。</p>
 <p>基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。</p>
 <h2 id="五、WeakMap-示例"><a href="#五、WeakMap-示例" class="headerlink" title="五、WeakMap 示例"></a>五、WeakMap 示例</h2><p>WeakMap 的例子很难演示，因为无法观察它里面的引用会自动消失。此时，其他引用都解除了，已经没有引用指向 WeakMap 的键名了，导致无法证实那个键名是不是存在。</p>
-<p>我一直想不出办法，直到有一天贺师俊老师 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/es6tutorial/issues/362-292109104">提示</a> ，如果引用所指向的值占用特别多的内存，就可以通过 <code>process.memoryUsage</code> 方法看出来。</p>
-<p>根据这个思路，网友 vtxf 补充了下面的 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/es6tutorial/issues/362-292451925">例子</a> 。</p>
+<p>我一直想不出办法，直到有一天贺师俊老师 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292109104">提示</a> ，如果引用所指向的值占用特别多的内存，就可以通过 <code>process.memoryUsage</code> 方法看出来。</p>
+<p>根据这个思路，网友 vtxf 补充了下面的 <a target="_blank" rel="noopener" href="https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292451925">例子</a> 。</p>
 <p>首先，打开 Node 命令行。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> node --expose-gc</span></span><br></pre></td></tr></table></figure>
 
@@ -242,6 +238,7 @@
 
 <p>上面代码中，只要外部的引用消失，WeakMap 内部的引用，就会自动被垃圾回收清除。由此可见，有了它的帮助，解决内存泄漏就会简单很多。</p>
 <p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2017/04/memory-leak.html">JavaScript 内存泄漏教程</a></p>
+<p>#javascript</p>
 
   </div>
 </article>
@@ -281,9 +278,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&title=JavaScript内存泄漏教程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&name=JavaScript内存泄漏教程&description=&lt;pre&gt;&lt;code&gt;# JavaScript 内存泄漏教程
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F%E6%95%99%E7%A8%8B/&name=JavaScript内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;

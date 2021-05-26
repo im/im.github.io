@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# Windows下如何查看某个端口被谁占用  开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进">
+    <meta name="description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows下如何查看某个端口被谁占用">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/Windows/Windows%E4%B8%8B%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E6%9F%90%E4%B8%AA%E7%AB%AF%E5%8F%A3%E8%A2%AB%E8%B0%81%E5%8D%A0%E7%94%A8/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# Windows下如何查看某个端口被谁占用  开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进">
+<meta property="og:description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
@@ -111,7 +111,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%89%80%E6%9C%89%E8%BF%90%E8%A1%8C%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">查找所有运行的端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%AF%B9%E5%BA%94%E7%9A%84-PID"><span class="toc-number">2.</span> <span class="toc-text">查看被占用端口对应的 PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A-PID-%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">查看指定 PID 的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">结束进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"></span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%89%80%E6%9C%89%E8%BF%90%E8%A1%8C%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">查找所有运行的端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%AF%B9%E5%BA%94%E7%9A%84-PID"><span class="toc-number">2.</span> <span class="toc-text">查看被占用端口对应的 PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A-PID-%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">查看指定 PID 的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">结束进程</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -135,7 +135,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -160,9 +160,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># Windows下如何查看某个端口被谁占用
-</code></pre>
-<p>开始—-&gt;运行—-&gt; <code>cmd</code> ，或者是 <code>window+R</code> 组合键，调出命令窗口。</p>
+    <p>开始—-&gt;运行—-&gt; <code>cmd</code> ，或者是 <code>window+R</code> 组合键，调出命令窗口。</p>
 <h2 id="查找所有运行的端口"><a href="#查找所有运行的端口" class="headerlink" title="查找所有运行的端口"></a>查找所有运行的端口</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure>
 
 <h2 id="查看被占用端口对应的-PID"><a href="#查看被占用端口对应的-PID" class="headerlink" title="查看被占用端口对应的 PID"></a>查看被占用端口对应的 PID</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -aon|findstr &quot;8081&quot;</span><br></pre></td></tr></table></figure>
@@ -172,7 +170,8 @@
 <h2 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h2><p>强制（/F参数）杀死 pid 为 9088 的所有进程包括子进程（/T参数）：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /T /F /PID 9088</span><br></pre></td></tr></table></figure>
 
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<p>#Windows#</p>
+
   </div>
 </article>
 
@@ -197,7 +196,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%89%80%E6%9C%89%E8%BF%90%E8%A1%8C%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">查找所有运行的端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%AF%B9%E5%BA%94%E7%9A%84-PID"><span class="toc-number">2.</span> <span class="toc-text">查看被占用端口对应的 PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A-PID-%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">查看指定 PID 的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">结束进程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text"></span></a>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%89%80%E6%9C%89%E8%BF%90%E8%A1%8C%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-number">1.</span> <span class="toc-text">查找所有运行的端口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%A2%AB%E5%8D%A0%E7%94%A8%E7%AB%AF%E5%8F%A3%E5%AF%B9%E5%BA%94%E7%9A%84-PID"><span class="toc-number">2.</span> <span class="toc-text">查看被占用端口对应的 PID</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8C%87%E5%AE%9A-PID-%E7%9A%84%E8%BF%9B%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">查看指定 PID 的进程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%BF%9B%E7%A8%8B"><span class="toc-number">4.</span> <span class="toc-text">结束进程</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

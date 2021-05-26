@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# 实时协同编辑的实现  在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我">
+    <meta name="description" content="在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我们需要解决两个技术点：实时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实时协同编辑的实现">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# 实时协同编辑的实现  在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我">
+<meta property="og:description" content="在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我们需要解决两个技术点：实时">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/34.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -105,9 +105,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&name=实时协同编辑的实现&description=&lt;pre&gt;&lt;code&gt;# 实时协同编辑的实现
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&name=实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
 &lt;h2 id=&#34;什么是实时协同编辑&#34;&gt;&lt;a href=&#34;#什么是实时协同编辑&#34; class=&#34;headerlink&#34; title=&#34;什么是实时协同编辑&#34;&gt;&lt;/a&gt;什么是实时协同编辑&lt;/h2&gt;&lt;p&gt;这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。&lt;/p&gt;
 &lt;p&gt;要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket，所以这里就不过多讨论了，重点将放在如何解决编辑冲突问题上。&lt;/p&gt;
 &lt;h2 id=&#34;可选方案&#34;&gt;&lt;a href=&#34;#可选方案&#34; class=&#34;headerlink&#34; title=&#34;可选方案&#34;&gt;&lt;/a&gt;可选方案&lt;/h2&gt;&lt;p&gt;接下来将从易至难的顺序来介绍几种可行的方案，分别是：「编辑锁」、「GNU diff-patch」、「Myer’s diff-patch」、「Operational Transformation」和「分布式 Operational Transformation」。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
@@ -140,7 +138,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -165,9 +163,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># 实时协同编辑的实现
-</code></pre>
-<p>在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。</p>
+    <p>在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。</p>
 <h2 id="什么是实时协同编辑"><a href="#什么是实时协同编辑" class="headerlink" title="什么是实时协同编辑"></a>什么是实时协同编辑</h2><p>这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。</p>
 <p>要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket，所以这里就不过多讨论了，重点将放在如何解决编辑冲突问题上。</p>
 <h2 id="可选方案"><a href="#可选方案" class="headerlink" title="可选方案"></a>可选方案</h2><p>接下来将从易至难的顺序来介绍几种可行的方案，分别是：「编辑锁」、「GNU diff-patch」、「Myer’s diff-patch」、「Operational Transformation」和「分布式 Operational Transformation」。</p>
@@ -184,13 +180,13 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[nwind@fex ~]$ diff old.txt other-new.txt &gt; old-to-other-new.patch</span><br><span class="line">[nwind@fex ~]$ cat old-to-other-new.patch</span><br><span class="line">1c1</span><br><span class="line">&lt; 百度 Web</span><br><span class="line">---</span><br><span class="line">&gt; 百度 Web 前端</span><br></pre></td></tr></table></figure>
 
 <p>在这个 diff 结果中， <code>1c1</code> 的第一个「1」代表修改前的第一行，后面的「c」代表「修改」，第二个「1」代表修改后的行，也就是说将第一行的「百度 Web」改成「百度 Web 前端」，修改后的内容放第一行。也就意味着如果两人同时修改一行就会冲突，可以通过下面的测试来确认：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[nwind@fex ~]$ cat my-new.txt</span><br><span class="line">Web [nwind@fex ~]$ patch my-new.txt &lt; old-to-other-new.patch</span><br><span class="line">patching file b-new.txt</span><br><span class="line">Hunk  FAILED at 1.</span><br><span class="line">1 out of 1 hunk FAILED -- saving rejects to file my-new.txt.rej [nwind@fex ~]$ cat my-new.txt.rej</span><br><span class="line">***************</span><br><span class="line">*** 1</span><br><span class="line">- 百度 Web--- 1 -----</span><br><span class="line">+ 百度 Web 前端</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[nwind@fex ~]$ cat my-new.txt</span><br><span class="line">Web [nwind@fex ~]$ patch my-new.txt &lt; old-to-other-new.patch</span><br><span class="line">patching file b-new.txt</span><br><span class="line">Hunk #1 FAILED at 1.</span><br><span class="line">1 out of 1 hunk FAILED -- saving rejects to file my-new.txt.rej [nwind@fex ~]$ cat my-new.txt.rej</span><br><span class="line">***************</span><br><span class="line">*** 1</span><br><span class="line">- 百度 Web--- 1 -----</span><br><span class="line">+ 百度 Web 前端</span><br></pre></td></tr></table></figure>
 
 <p>其中 <code>my-new.txt</code> 是我修改的版本，我去掉了前面的「百度 」，只留下「Web」，其实这两处修改是不冲突的，它们可以合并成「Web 前端」，如下图所示</p>
 <p><img src="/images/merge.png"><br>但使用 patch 命令部下，它在冲突后会生成一个新文件 <code>my-new.txt.rej</code> 来描述失败原因，这种展现方式不直观，需要打开两个文件比对，我们使用另一种方式来更好地展现，那就是接下来介绍的 merge 命令，它的使用方法如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[nwind@fex ~]$ merge my-new.txt old.txt other-new.txt</span><br><span class="line">merge: warning: conflicts during merge [nwind@fex ~]$ cat my-new.txt</span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; my-new.txt</span><br><span class="line">Web=======</span><br><span class="line">百度 Web 前端&gt;&gt;&gt;&gt;&gt;&gt;&gt; other-new.txt</span><br></pre></td></tr></table></figure>
 
-<p>可以看到它直接将冲突的地方写到 <code>my-new.txt</code> 里了，这点比 patch 看起来要方便些，对于这个结果估计大部分同学都会眼熟，因为 merge 命令和 Git 等工具 <a target="_blank" rel="noopener" href="https://github.com/git/git/blob/master/Documentation/git-merge.txt">中的合并算法是一样的</a> 。</p>
+<p>可以看到它直接将冲突的地方写到 <code>my-new.txt</code> 里了，这点比 patch 看起来要方便些，对于这个结果估计大部分同学都会眼熟，因为 merge 命令和 Git 等工具 <a target="_blank" rel="noopener" href="https://github.com/git/git/blob/master/Documentation/git-merge.txt#L211">中的合并算法是一样的</a> 。</p>
 <p>通过使用我们可以发现 merge 命令有个缺点，那就是需要使用 3 份完整的文本来进行比较，为了避免每次传递所有文本内容，我们可以结合使用 diff 来减小传输体积，在后端 patch 成新的文本。</p>
 <p>无论是 diff 还是 merge，由于它们的算法都是基于行进行比较，导致对同一行的编辑必然冲突，为了解决这个问题，我们可以尝试基于字符粒度的 diff 算法，那就是接下来将介绍的 Myer’s diff-patch。</p>
 <h3 id="Myer’s-diff-patch"><a href="#Myer’s-diff-patch" class="headerlink" title="Myer’s diff-patch"></a>Myer’s diff-patch</h3><p><a target="_blank" rel="noopener" href="http://neil.fraser.name/software/diff_match_patch/myers.pdf">Myer 算法</a> 是另一种 diff-patch 算法，它有很多 <a target="_blank" rel="noopener" href="https://code.google.com/p/google-diff-match-patch/">语言的开源实现</a> ，这里我们就不介绍细节算法了，直接用之前的例子来测试它的效果，首先看一下它的 diff 结果，调用代码如下：</p>
@@ -199,7 +195,7 @@
 <p>输出结果为</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@@ -1,6 +1,9 @@</span><br><span class="line"> 百度 Web</span><br><span class="line">+ 前端</span><br></pre></td></tr></table></figure>
 
-<p>其中第一行的 <code>-</code> 和 <code>+</code> 两个符号没有什么意义，这句话表示修改处之前的起始位置为 1（由于数组是从 0 开始的，所以内部计算时会先减一），长度为 6，后面的 <code>1,9</code> ，表示修改后的起始位置为 1，长度为 9。在接下来的两段文本代表修改的地方，注意「百度 Web」前面有空格，这代表相等，也就是直接添加这个字符串，而后面的 <code>+</code> 代表添加文本，具体细节可以通过它的 <a target="_blank" rel="noopener" href="https://code.google.com/p/google-diff-match-patch/source/browse/trunk/javascript/diff_match_patch_uncompressed.js">实现源码</a> 了解。</p>
+<p>其中第一行的 <code>-</code> 和 <code>+</code> 两个符号没有什么意义，这句话表示修改处之前的起始位置为 1（由于数组是从 0 开始的，所以内部计算时会先减一），长度为 6，后面的 <code>1,9</code> ，表示修改后的起始位置为 1，长度为 9。在接下来的两段文本代表修改的地方，注意「百度 Web」前面有空格，这代表相等，也就是直接添加这个字符串，而后面的 <code>+</code> 代表添加文本，具体细节可以通过它的 <a target="_blank" rel="noopener" href="https://code.google.com/p/google-diff-match-patch/source/browse/trunk/javascript/diff_match_patch_uncompressed.js#2100">实现源码</a> 了解。</p>
 <p>因此确定它的 diff 策略是基于字符匹配的，这样能否解决我们之前遇到的冲突问题呢？接下来来测试一下，源码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//相关代码同上</span><br><span class="line">var patches = dmp.patch_fromText(patch_text);</span><br><span class="line">var results = dmp.patch_apply(patches, &quot;Web&quot;); console.log(results[0]); //Web 前端</span><br></pre></td></tr></table></figure>
 
@@ -291,6 +287,7 @@
 <li>支持 undo</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://fex.baidu.com/blog/2014/04/realtime-collaboration/">实时协同编辑的实现</a></p>
+<p>#javascript </p>
 
   </div>
 </article>
@@ -330,9 +327,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&title=实时协同编辑的实现"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&name=实时协同编辑的实现&description=&lt;pre&gt;&lt;code&gt;# 实时协同编辑的实现
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/%E5%AE%9E%E6%97%B6%E5%8D%8F%E5%90%8C%E7%BC%96%E8%BE%91%E7%9A%84%E5%AE%9E%E7%8E%B0/&name=实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
 &lt;h2 id=&#34;什么是实时协同编辑&#34;&gt;&lt;a href=&#34;#什么是实时协同编辑&#34; class=&#34;headerlink&#34; title=&#34;什么是实时协同编辑&#34;&gt;&lt;/a&gt;什么是实时协同编辑&lt;/h2&gt;&lt;p&gt;这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。&lt;/p&gt;
 &lt;p&gt;要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket，所以这里就不过多讨论了，重点将放在如何解决编辑冲突问题上。&lt;/p&gt;
 &lt;h2 id=&#34;可选方案&#34;&gt;&lt;a href=&#34;#可选方案&#34; class=&#34;headerlink&#34; title=&#34;可选方案&#34;&gt;&lt;/a&gt;可选方案&lt;/h2&gt;&lt;p&gt;接下来将从易至难的顺序来介绍几种可行的方案，分别是：「编辑锁」、「GNU diff-patch」、「Myer’s diff-patch」、「Operational Transformation」和「分布式 Operational Transformation」。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>

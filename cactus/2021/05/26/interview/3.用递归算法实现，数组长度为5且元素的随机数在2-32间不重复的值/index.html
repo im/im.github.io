@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# 3. 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值  描述这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）：   生成一个长度为5的空数组 arr 。  生成一个（2－32）之间的随机整数 rand。 把随机数 rand 插入到数组 arr 内，如果数组arr内已存在与 rand 相同的数字，则重新生成随机数r">
+    <meta name="description" content="描述这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）：   生成一个长度为5的空数组 arr 。  生成一个（2－32）之间的随机整数 rand。 把随机数 rand 插入到数组 arr 内，如果数组arr内已存在与 rand 相同的数字，则重新生成随机数rand并插入到arr内[需要使用递归实现，不能使用 for&#x2F;while 等循环">
 <meta property="og:type" content="article">
 <meta property="og:title" content="3.用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/interview/3.%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%BA5%E4%B8%94%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%9C%A82-32%E9%97%B4%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# 3. 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值  描述这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）：   生成一个长度为5的空数组 arr 。  生成一个（2－32）之间的随机整数 rand。 把随机数 rand 插入到数组 arr 内，如果数组arr内已存在与 rand 相同的数字，则重新生成随机数r">
+<meta property="og:description" content="描述这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）：   生成一个长度为5的空数组 arr 。  生成一个（2－32）之间的随机整数 rand。 把随机数 rand 插入到数组 arr 内，如果数组arr内已存在与 rand 相同的数字，则重新生成随机数rand并插入到arr内[需要使用递归实现，不能使用 for&#x2F;while 等循环">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/02.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="interview">
 <meta property="article:tag" content="javascript">
@@ -136,7 +136,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -161,9 +161,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># 3. 用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值
-</code></pre>
-<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）： </p>
+    <h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）： </p>
 <ul>
 <li>生成一个长度为5的空数组 <code>arr</code> 。 </li>
 <li>生成一个（2－32）之间的随机整数 <code>rand</code>。</li>
@@ -172,6 +170,7 @@
 </ul>
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> randomNum = <span class="function">() =&gt;</span> (<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">31</span> + <span class="number">2</span>))</span><br><span class="line"><span class="keyword">const</span> randomArr = <span class="function">(<span class="params">n</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">const</span> num = randomNum();</span><br><span class="line">    <span class="keyword">if</span> (arr.includes(num)) <span class="keyword">return</span> randomArr(n)</span><br><span class="line">    arr[n -<span class="number">1</span>] = num;</span><br><span class="line">    <span class="keyword">return</span> randomArr(n - <span class="number">1</span>)</span><br><span class="line">&#125;;</span><br><span class="line">randomArr(arr.length)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>#interview/javascript</p>
 
   </div>
 </article>

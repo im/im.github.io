@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# JavaScript 实现前端下载图片  实现思路   将图片装换成 Data URLs   下载图片  Data URLs Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：data:[][;base64],">
+    <meta name="description" content="实现思路   将图片装换成 Data URLs   下载图片  Data URLs Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：data:[][;base64],mediative 是个 MIME 类型的字符">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript实现前端下载图片">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# JavaScript 实现前端下载图片  实现思路   将图片装换成 Data URLs   下载图片  Data URLs Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：data:[][;base64],">
+<meta property="og:description" content="实现思路   将图片装换成 Data URLs   下载图片  Data URLs Data URLs，即前缀为 data: 协议的的 URL，其允许内容创建者向文档中嵌入小文件。Data URLs 由四个部分组成：前缀(data:)、指示数据类型的 MIME 类型、如果非文本则为可选的 base64 标记、数据本身：data:[][;base64],mediative 是个 MIME 类型的字符">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -105,9 +105,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&name=JavaScript实现前端下载图片&description=&lt;pre&gt;&lt;code&gt;# JavaScript 实现前端下载图片
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;ul&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&name=JavaScript实现前端下载图片&description=&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;  将图片装换成 Data URLs&lt;/li&gt;
 &lt;li&gt;  下载图片&lt;/li&gt;
 &lt;/ul&gt;
@@ -144,7 +142,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -169,9 +167,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># JavaScript 实现前端下载图片
-</code></pre>
-<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><ul>
+    <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><ul>
 <li>  将图片装换成 Data URLs</li>
 <li>  下载图片</li>
 </ul>
@@ -190,6 +186,7 @@
 <p>以下是下载图片的示例代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">downLoad</span>(<span class="params">downloadName, url</span>)</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> tag = <span class="built_in">document</span>.createElement(<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    <span class="comment">// 此属性的值就是下载时图片的名称，注意，名称中不能有半角点，否则下载时后缀名会错误</span></span><br><span class="line">    tag.setAttribute(<span class="string">&#x27;download&#x27;</span>, downloadName.replace(<span class="regexp">/\./g</span>, <span class="string">&#x27;。&#x27;</span>));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> image = <span class="keyword">new</span> Image();</span><br><span class="line">    <span class="comment">// 设置 image 的 url, 添加时间戳，防止浏览器缓存图片</span></span><br><span class="line">    image.src = url + <span class="string">&#x27;?time=&#x27;</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">    <span class="comment">//重要，设置 crossOrigin 属性，否则图片跨域会报错</span></span><br><span class="line">    image.setAttribute(<span class="string">&#x27;crossOrigin&#x27;</span>, <span class="string">&#x27;Anonymous&#x27;</span>);</span><br><span class="line">    <span class="comment">// 图片未加载完成时操作会报错</span></span><br><span class="line">    image.onload = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        tag.href = getImageDataURL(image);</span><br><span class="line">        tag.click();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>#javascript</p>
 
   </div>
 </article>
@@ -229,9 +226,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&title=JavaScript实现前端下载图片"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&name=JavaScript实现前端下载图片&description=&lt;pre&gt;&lt;code&gt;# JavaScript 实现前端下载图片
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;ul&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/javascript/JavaScript%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E4%B8%8B%E8%BD%BD%E5%9B%BE%E7%89%87/&name=JavaScript实现前端下载图片&description=&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;  将图片装换成 Data URLs&lt;/li&gt;
 &lt;li&gt;  下载图片&lt;/li&gt;
 &lt;/ul&gt;

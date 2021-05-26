@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# css 中的 bfc（Block Formatting Contexts）  常见定位方案在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:  普通流 (normal flow)   在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，">
+    <meta name="description" content="常见定位方案在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:  普通流 (normal flow)   在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，否则所有元素默认都是普通流定位，也可以说，普通流中元素的位置由该元素在 HTML">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css中的bfc（BlockFormattingContexts）">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# css 中的 bfc（Block Formatting Contexts）  常见定位方案在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:  普通流 (normal flow)   在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，">
+<meta property="og:description" content="常见定位方案在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:  普通流 (normal flow)   在普通流中，元素按照其在 HTML 中的先后位置至上而下布局，在这个过程中，行内元素水平排列，直到当行被占满然后换行，块级元素则会被渲染为完整的一个新行，除非另外指定，否则所有元素默认都是普通流定位，也可以说，普通流中元素的位置由该元素在 HTML">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -105,9 +105,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&name=css中的bfc（BlockFormattingContexts）&description=&lt;pre&gt;&lt;code&gt;# css 中的 bfc（Block Formatting Contexts）
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;常见定位方案&#34;&gt;&lt;a href=&#34;#常见定位方案&#34; class=&#34;headerlink&#34; title=&#34;常见定位方案&#34;&gt;&lt;/a&gt;常见定位方案&lt;/h2&gt;&lt;p&gt;在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&name=css中的bfc（BlockFormattingContexts）&description=&lt;h2 id=&#34;常见定位方案&#34;&gt;&lt;a href=&#34;#常见定位方案&#34; class=&#34;headerlink&#34; title=&#34;常见定位方案&#34;&gt;&lt;/a&gt;常见定位方案&lt;/h2&gt;&lt;p&gt;在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;普通流 (normal flow)&lt;/li&gt;
 &lt;/ul&gt;
@@ -143,7 +141,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -168,9 +166,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># css 中的 bfc（Block Formatting Contexts）
-</code></pre>
-<h2 id="常见定位方案"><a href="#常见定位方案" class="headerlink" title="常见定位方案"></a>常见定位方案</h2><p>在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:</p>
+    <h2 id="常见定位方案"><a href="#常见定位方案" class="headerlink" title="常见定位方案"></a>常见定位方案</h2><p>在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:</p>
 <ul>
 <li>普通流 (normal flow)</li>
 </ul>
@@ -244,6 +240,7 @@
 
 
 <p>这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。</p>
+<p>#css</p>
 
   </div>
 </article>
@@ -283,9 +280,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&title=css中的bfc（BlockFormattingContexts）"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&name=css中的bfc（BlockFormattingContexts）&description=&lt;pre&gt;&lt;code&gt;# css 中的 bfc（Block Formatting Contexts）
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;常见定位方案&#34;&gt;&lt;a href=&#34;#常见定位方案&#34; class=&#34;headerlink&#34; title=&#34;常见定位方案&#34;&gt;&lt;/a&gt;常见定位方案&lt;/h2&gt;&lt;p&gt;在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/css%E4%B8%AD%E7%9A%84bfc%EF%BC%88BlockFormattingContexts%EF%BC%89/&name=css中的bfc（BlockFormattingContexts）&description=&lt;h2 id=&#34;常见定位方案&#34;&gt;&lt;a href=&#34;#常见定位方案&#34; class=&#34;headerlink&#34; title=&#34;常见定位方案&#34;&gt;&lt;/a&gt;常见定位方案&lt;/h2&gt;&lt;p&gt;在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;普通流 (normal flow)&lt;/li&gt;
 &lt;/ul&gt;

@@ -6,16 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="# Flex 布局教程：语法篇  网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支">
+    <meta name="description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flex布局教程：语法篇">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="# Flex 布局教程：语法篇  网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支">
+<meta property="og:description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg">
-<meta property="article:published_time" content="2021-05-26T07:12:52.301Z">
-<meta property="article:modified_time" content="2021-05-26T07:12:52.301Z">
+<meta property="article:published_time" content="2021-05-26T07:36:48.181Z">
+<meta property="article:modified_time" content="2021-05-26T07:36:48.181Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -105,9 +105,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&name=Flex布局教程：语法篇&description=&lt;pre&gt;&lt;code&gt;# Flex 布局教程：语法篇
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&name=Flex布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071001.gif&#34;&gt;&lt;br&gt;布局的传统解决方案，基于 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box_model&#34;&gt;盒状模型&lt;/a&gt; ，依赖 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/display&#34;&gt;display&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/position&#34;&gt;position&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/float&#34;&gt;float&lt;/a&gt; 属性。它对于那些特殊布局非常不方便，比如， &lt;a href=&#34;https://css-tricks.com/centering-css-complete-guide/&#34;&gt;垂直居中&lt;/a&gt; 就不容易实现。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071002.png&#34;&gt;&lt;br&gt;2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071003.jpg&#34;&gt;&lt;br&gt;Flex 布局将成为未来布局的首选方案。本文介绍它的语法， &lt;a href=&#34;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&#34;&gt;下一篇文章&lt;/a&gt; 给出常见布局的 Flex 写法。网友 &lt;a href=&#34;http://vgee.cn/&#34;&gt;JailBreak&lt;/a&gt; 为本文的所有示例制作了 &lt;a href=&#34;http://static.vgee.cn/static/index.html&#34;&gt;Demo&lt;/a&gt; ，也可以参考。&lt;/p&gt;
@@ -141,7 +139,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:12:52.301Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T07:36:48.181Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -166,9 +164,7 @@
   
 
   <div class="content" itemprop="articleBody">
-    <pre><code># Flex 布局教程：语法篇
-</code></pre>
-<p>网页布局（layout）是 CSS 的一个重点应用。</p>
+    <p>网页布局（layout）是 CSS 的一个重点应用。</p>
 <p><img src="/images/bg2015071001.gif"><br>布局的传统解决方案，基于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model">盒状模型</a> ，依赖 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display</a> 属性 + <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">position</a> 属性 + <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a> 属性。它对于那些特殊布局非常不方便，比如， <a target="_blank" rel="noopener" href="https://css-tricks.com/centering-css-complete-guide/">垂直居中</a> 就不容易实现。</p>
 <p><img src="/images/bg2015071002.png"><br>2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
 <p><img src="/images/bg2015071003.jpg"><br>Flex 布局将成为未来布局的首选方案。本文介绍它的语法， <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">下一篇文章</a> 给出常见布局的 Flex 写法。网友 <a target="_blank" rel="noopener" href="http://vgee.cn/">JailBreak</a> 为本文的所有示例制作了 <a target="_blank" rel="noopener" href="http://static.vgee.cn/static/index.html">Demo</a> ，也可以参考。</p>
@@ -290,6 +286,7 @@
 <p><img src="/images/bg2015071016.png"><br>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
 <p>（完）</p>
 <p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a></p>
+<p>#css</p>
 
   </div>
 </article>
@@ -329,9 +326,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&title=Flex布局教程：语法篇"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&name=Flex布局教程：语法篇&description=&lt;pre&gt;&lt;code&gt;# Flex 布局教程：语法篇
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/css/Flex%E5%B8%83%E5%B1%80%E6%95%99%E7%A8%8B%EF%BC%9A%E8%AF%AD%E6%B3%95%E7%AF%87/&name=Flex布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071001.gif&#34;&gt;&lt;br&gt;布局的传统解决方案，基于 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box_model&#34;&gt;盒状模型&lt;/a&gt; ，依赖 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/display&#34;&gt;display&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/position&#34;&gt;position&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/float&#34;&gt;float&lt;/a&gt; 属性。它对于那些特殊布局非常不方便，比如， &lt;a href=&#34;https://css-tricks.com/centering-css-complete-guide/&#34;&gt;垂直居中&lt;/a&gt; 就不容易实现。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071002.png&#34;&gt;&lt;br&gt;2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071003.jpg&#34;&gt;&lt;br&gt;Flex 布局将成为未来布局的首选方案。本文介绍它的语法， &lt;a href=&#34;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&#34;&gt;下一篇文章&lt;/a&gt; 给出常见布局的 Flex 写法。网友 &lt;a href=&#34;http://vgee.cn/&#34;&gt;JailBreak&lt;/a&gt; 为本文的所有示例制作了 &lt;a href=&#34;http://static.vgee.cn/static/index.html&#34;&gt;Demo&lt;/a&gt; ，也可以参考。&lt;/p&gt;
