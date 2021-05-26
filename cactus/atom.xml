@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>糖小米 · 博客</title>
+  
+  <subtitle>厚积薄发</subtitle>
+  <link href="https://tangxiaomi.top/atom.xml" rel="self"/>
+  
+  <link href="https://tangxiaomi.top/"/>
+  <updated>2021-05-26T06:01:13.360Z</updated>
+  <id>https://tangxiaomi.top/</id>
+  
+  <author>
+    <name>糖小米</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>编写JavaScript的10个小技巧</title>
+    <link href="https://tangxiaomi.top/2021/05/26/javascript/%E7%BC%96%E5%86%99JavaScript%E7%9A%8410%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/"/>
+    <id>https://tangxiaomi.top/2021/05/26/javascript/%E7%BC%96%E5%86%99JavaScript%E7%9A%8410%E4%B8%AA%E5%B0%8F%E6%8A%80%E5%B7%A7/</id>
+    <published>2021-05-26T06:01:13.360Z</published>
+    <updated>2021-05-26T06:01:13.360Z</updated>
+    
+    
+    
+    
+    <category term="javascript" scheme="https://tangxiaomi.top/categories/javascript/"/>
+    
+    
+    <category term="javascript" scheme="https://tangxiaomi.top/tags/javascript/"/>
+    
+  </entry>
+  
+</feed>
