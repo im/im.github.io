@@ -6,7 +6,7 @@ require('./getNotes.js')
 setTimeout(() => {
     simpleGit()
     .add('./*')
-    .commit(`notes update ${ moment().format('yyyy-MM-dd hh:mm:ss') }`)
+    .commit(`notes update ${ moment().format('yyyy-MM-DD HH:mm:ss') }`)
     .push(['-u', 'origin', 'main'], (e) => {
         // console.log('e: ', e);
     })
