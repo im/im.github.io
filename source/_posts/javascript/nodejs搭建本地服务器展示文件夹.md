@@ -1,14 +1,7 @@
 ---
-title: Nodejs 展示文件夹
-date: 2021-04-17
-tags:
-    - nodejs
-categories:
-    - javascript
-cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg
-thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg
+    {"title":"nodejs搭建本地服务器展示文件夹","tags":["javascript","nodejs"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg"}
 ---
-
+    # nodejs 搭建本地服务器 展示文件夹
 ```js
 const express = require('express')
 const http = require('http')
@@ -44,3 +37,4 @@ server.listen(port, () => {
     console.log(`Example app listening at http://${getIPAdress()}:${port}`)
 })
 ```
+

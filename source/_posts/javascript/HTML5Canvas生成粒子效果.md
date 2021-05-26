@@ -1,36 +1,26 @@
 ---
-title: HTML5 Canvas生成粒子效果
-date: 2021-03-02
-toc: true
-tags:
-    - js
-categories:
-    - javascript
-cover: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg
-thumbnail: https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg
+    {"title":"HTML5Canvas生成粒子效果","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/10.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/10.svg"}
 ---
-
+    # HTML5 Canvas生成粒子效果
 ## Install
 
-[breathing-halftone.pkgd.min.js](https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js)
+[breathing-halftone.pkgd.min.js](~https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js~)
 
 ## Usage
 
 ```js
 // get the image
 // jquery
-var img = $('#hero img')[0]
+var img = $(' img')[0]
 // or vanilla JS
-var img = document.querySelector('#hero img')
+var img = document.querySelector(' img')
 
 // init halftone
 new BreathingHalftone(img, {
     // options...
 })
 ```
-
-<!-- more -->
-
+<!--more-->
 ## Options
 
 ```json
@@ -93,6 +83,7 @@ new BreathingHalftone(img, {
 ```
 
 ## Dome
+```html
 <script src="https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js"></script>
 <img width="400" height="400" id="html5-canvas-particle-effect-dome" src="/images/header/avatar.jpg" />
 <script>
@@ -103,8 +94,9 @@ window.onload = function () {
     })
 }
 </script>
+```
 
 ## Quote
 
-> [http://breathing-halftone.desandro.com/](http://breathing-halftone.desandro.com/)
+> [http://breathing-halftone.desandro.com/](~http://breathing-halftone.desandro.com/~)  
 
