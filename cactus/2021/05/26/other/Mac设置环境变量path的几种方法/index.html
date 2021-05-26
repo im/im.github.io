@@ -14,8 +14,8 @@
 <meta property="og:description" content="Mac系统的环境变量，加载顺序为：  系统 &#x2F;etc&#x2F;profile &#x2F;etc&#x2F;paths    &#x2F;etc&#x2F;profile 和 &#x2F;etc&#x2F;paths 是系统级别的，系统启动就会加载  用户 ~&#x2F;.bash_profile  ~&#x2F;.bash_login  ~&#x2F;.profile  ~&#x2F;.bashrc    按照从前往后的顺序读取，如果 ~&#x2F;.bash_profile 文件存在，则后面的几个文件就会被忽">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg">
-<meta property="article:published_time" content="2021-05-26T07:40:04.529Z">
-<meta property="article:modified_time" content="2021-05-26T07:40:04.529Z">
+<meta property="article:published_time" content="2021-05-26T08:29:44.043Z">
+<meta property="article:modified_time" content="2021-05-26T08:29:44.043Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="other">
 <meta name="twitter:card" content="summary">
@@ -105,7 +105,27 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&name=Mac设置环境变量path的几种方法&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&name=Mac设置环境变量path的几种方法&description=&lt;p&gt;Mac系统的环境变量，加载顺序为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统&lt;ul&gt;
+&lt;li&gt;/etc/profile&lt;/li&gt;
+&lt;li&gt;/etc/paths&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;/etc/profile&lt;/code&gt; 和 &lt;code&gt;/etc/paths&lt;/code&gt; 是系统级别的，系统启动就会加载&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;用户&lt;ul&gt;
+&lt;li&gt;~/.bash_profile &lt;/li&gt;
+&lt;li&gt;~/.bash_login &lt;/li&gt;
+&lt;li&gt;~/.profile &lt;/li&gt;
+&lt;li&gt;~/.bashrc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;按照从前往后的顺序读取，如果 &lt;code&gt;~/.bash_profile&lt;/code&gt; 文件存在，则后面的几个文件就会被忽略不读了，如果 &lt;code&gt;~/.bash_profile&lt;/code&gt; 文件不存在，才会以此类推读取后面的文件。&lt;code&gt;~/.bashrc&lt;/code&gt; 没有上述规则，它是 &lt;code&gt;bash shell&lt;/code&gt; 打开的时候载入的&lt;/p&gt;
+&lt;p&gt;如果没特殊说明,设置PATH的语法都为：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;export PATH=$PATH:&amp;lt;PATH 1&amp;gt;:&amp;lt;PATH 2&amp;gt;:&amp;lt;PATH 3&amp;gt;:------:&amp;lt;PATH N&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&t=Mac设置环境变量path的几种方法"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -135,7 +155,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-05-26T07:40:04.529Z" itemprop="datePublished">2021-05-26</time>
+        <time datetime="2021-05-26T08:29:44.043Z" itemprop="datePublished">2021-05-26</time>
         
       
     </div>
@@ -181,7 +201,7 @@
 <p>按照从前往后的顺序读取，如果 <code>~/.bash_profile</code> 文件存在，则后面的几个文件就会被忽略不读了，如果 <code>~/.bash_profile</code> 文件不存在，才会以此类推读取后面的文件。<code>~/.bashrc</code> 没有上述规则，它是 <code>bash shell</code> 打开的时候载入的</p>
 <p>如果没特殊说明,设置PATH的语法都为：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export PATH=$PATH:&lt;PATH 1&gt;:&lt;PATH 2&gt;:&lt;PATH 3&gt;:------:&lt;PATH N&gt;</span><br></pre></td></tr></table></figure>
-
+<a id="more"></a>
 <h2 id="全局设置"><a href="#全局设置" class="headerlink" title="全局设置"></a>全局设置</h2><p>下面的几个文件设置是全局的，修改时需要root权限</p>
 <ol>
 <li><p><code>/etc/paths</code> （全局建议修改这个文件 ）<br>编辑 <code>paths</code>，将环境变量添加到 <code>paths</code> 文件中 ，一行一个路径<br>Hint：输入环境变量时，不用一个一个地输入，只要拖动文件夹到 Terminal 里就可以了。</p>
@@ -251,7 +271,27 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&title=Mac设置环境变量path的几种方法"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&name=Mac设置环境变量path的几种方法&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&name=Mac设置环境变量path的几种方法&description=&lt;p&gt;Mac系统的环境变量，加载顺序为：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;系统&lt;ul&gt;
+&lt;li&gt;/etc/profile&lt;/li&gt;
+&lt;li&gt;/etc/paths&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;/etc/profile&lt;/code&gt; 和 &lt;code&gt;/etc/paths&lt;/code&gt; 是系统级别的，系统启动就会加载&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;用户&lt;ul&gt;
+&lt;li&gt;~/.bash_profile &lt;/li&gt;
+&lt;li&gt;~/.bash_login &lt;/li&gt;
+&lt;li&gt;~/.profile &lt;/li&gt;
+&lt;li&gt;~/.bashrc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;按照从前往后的顺序读取，如果 &lt;code&gt;~/.bash_profile&lt;/code&gt; 文件存在，则后面的几个文件就会被忽略不读了，如果 &lt;code&gt;~/.bash_profile&lt;/code&gt; 文件不存在，才会以此类推读取后面的文件。&lt;code&gt;~/.bashrc&lt;/code&gt; 没有上述规则，它是 &lt;code&gt;bash shell&lt;/code&gt; 打开的时候载入的&lt;/p&gt;
+&lt;p&gt;如果没特殊说明,设置PATH的语法都为：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;export PATH=$PATH:&amp;lt;PATH 1&amp;gt;:&amp;lt;PATH 2&amp;gt;:&amp;lt;PATH 3&amp;gt;:------:&amp;lt;PATH N&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/26/other/Mac%E8%AE%BE%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8Fpath%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/&t=Mac设置环境变量path的几种方法"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
