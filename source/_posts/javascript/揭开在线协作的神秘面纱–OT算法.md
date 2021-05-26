@@ -1,5 +1,5 @@
 ---
-    {"title":"揭开在线协作的神秘面纱–OT算法","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/35.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/35.svg"}
+    {"title":"揭开在线协作的神秘面纱–OT算法","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/34.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/34.svg"}
 ---
     
 相信大家或多或少都有使用过在线文档，国内的像我们在做的 [腾讯文档](http://https://docs.qq.com/desktop/) 还有其他家的很多类似产品。今天主要为大家揭开在线协作的神秘面纱，那就是 OT 算法。
@@ -9,7 +9,7 @@
 在线文档，抽象一下，这些产品的模式都是富文本编辑器+后台，富文本编辑器产生内容，展示内容，然后后台负责保存。
 富文本编辑器现在业界已经有很多成熟的产品，像 [codeMirror](https://codemirror.net/) ，这一块本身也是很复杂的一块，也不是咱们这次关注的重点方向。
 不知道大家平常在用这些产品的时候有没有思考过一个问题，在线文档编辑的时候产生冲突怎么办？
-
+<!--more-->
 ### 举个栗子
 
 举个很简单的例子，现在大家的文本都是 ‘aaab’，A 用户在第 3 个字符行后面插入了一个 ‘c’，B 用户在第 3 个字符行后面插入了一个 ‘d’，这个时候 A 这边看到的是 ‘aaacb’，B 这边看到的是 ‘aaadb’, 我们假设 A 用户先提交了数据，那其实最后预期的数据其实应该是 ‘aaacdb’，这样就最大的保存了每个人的输入。 那我们现在来看看正常情况下这里会发生什么：

@@ -11,7 +11,7 @@ cat id_rsa.pub
 
 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 `id_rsa` 和 `id_rsa.pub` 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
 
-
+<!--more-->
 ## 全局配置
 
 ```bash

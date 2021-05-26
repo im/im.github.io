@@ -24,7 +24,7 @@ Mac系统的环境变量，加载顺序为：
 ```
 export PATH=$PATH:<PATH 1>:<PATH 2>:<PATH 3>:------:<PATH N>
 ```
-
+<!--more-->
 ## 全局设置
 下面的几个文件设置是全局的，修改时需要root权限
 

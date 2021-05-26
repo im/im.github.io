@@ -22,7 +22,7 @@ git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus
     url = https://github.com/im/hexo-theme.git
     branch = icarus
 ```
-
+<!--more-->
 ### 更新
 
 ```bash

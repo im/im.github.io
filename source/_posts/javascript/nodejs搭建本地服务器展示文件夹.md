@@ -1,5 +1,5 @@
 ---
-    {"title":"nodejs搭建本地服务器展示文件夹","tags":["javascript","nodejs"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg"}
+    {"title":"nodejs搭建本地服务器展示文件夹","tags":["javascript","nodejs"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg"}
 ---
     
 ```js

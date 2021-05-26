@@ -13,7 +13,7 @@ git checkout file_name
 ```bash
 git checkout --track origin/branch_name
 ```
-
+<!--more-->
 ### 本地分支关联远程分支 
 
 ```bash
