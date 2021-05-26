@@ -1,7 +1,7 @@
 ---
     {"title":"JavaScript内存泄漏教程","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg"}
 ---
-    # JavaScript 内存泄漏教程
+    
 程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
 
 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。
@@ -82,7 +82,7 @@ Chrome 浏览器查看内存占用，按照以下步骤操作。
 
 ### 3.2 命令行
 
-命令行可以使用 Node 提供的 [process.memoryUsage](https://nodejs.org/api/process.html_process_memoryusage) 方法。
+命令行可以使用 Node 提供的 [process.memoryUsage](https://nodejs.org/api/process.html#process_process_memoryusage) 方法。
 
 ```
 console.log(process.memoryUsage());
@@ -109,7 +109,7 @@ console.log(process.memoryUsage());
 
 最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。
 
-ES6 考虑到了这一点，推出了两种新的数据结构： [WeakSet](http://es6.ruanyifeng.com/-map) 和 [WeakMap](http://es6.ruanyifeng.com/-map) 。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个"Weak"，表示这是弱引用。
+ES6 考虑到了这一点，推出了两种新的数据结构： [WeakSet](http://es6.ruanyifeng.com/#docs/set-map#WeakSet) 和 [WeakMap](http://es6.ruanyifeng.com/#docs/set-map#WeakMap) 。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个"Weak"，表示这是弱引用。
 
 ![](/images/bg2017041707.jpg)
 
@@ -134,9 +134,9 @@ wm.get(element) // "some information"
 
 WeakMap 的例子很难演示，因为无法观察它里面的引用会自动消失。此时，其他引用都解除了，已经没有引用指向 WeakMap 的键名了，导致无法证实那个键名是不是存在。
 
-我一直想不出办法，直到有一天贺师俊老师 [提示](https://github.com/ruanyf/es6tutorial/issues/362-292109104) ，如果引用所指向的值占用特别多的内存，就可以通过 `process.memoryUsage` 方法看出来。
+我一直想不出办法，直到有一天贺师俊老师 [提示](https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292109104) ，如果引用所指向的值占用特别多的内存，就可以通过 `process.memoryUsage` 方法看出来。
 
-根据这个思路，网友 vtxf 补充了下面的 [例子](https://github.com/ruanyf/es6tutorial/issues/362-292451925) 。
+根据这个思路，网友 vtxf 补充了下面的 [例子](https://github.com/ruanyf/es6tutorial/issues/362#issuecomment-292451925) 。
 
 首先，打开 Node 命令行。
 
@@ -213,3 +213,4 @@ undefined
 
 [JavaScript 内存泄漏教程](http://www.ruanyifeng.com/blog/2017/04/memory-leak.html)
 
+#javascript

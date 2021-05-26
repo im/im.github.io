@@ -1,7 +1,7 @@
 ---
     {"title":"git修改远程仓库地址","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/21.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/21.svg"}
 ---
-    # git 修改远程仓库地址
+    
 
 ## 命令直接修改
 ```bash
@@ -44,3 +44,4 @@ git remote -v
 
 [git 修改远程仓库地址](https://tangxiaomi.top/2021/03/09/git/remote/)
 
+#git

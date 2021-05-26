@@ -1,7 +1,7 @@
 ---
     {"title":"HTML5Canvas生成粒子效果","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/10.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/10.svg"}
 ---
-    # HTML5 Canvas生成粒子效果
+    
 ## Install
 
 [breathing-halftone.pkgd.min.js](~https://cdn.jsdelivr.net/gh/im/oss@master/js/breathing-halftone.pkgd.min.js~)
@@ -11,9 +11,9 @@
 ```js
 // get the image
 // jquery
-var img = $(' img')[0]
+var img = $('#hero img')[0]
 // or vanilla JS
-var img = document.querySelector(' img')
+var img = document.querySelector('#hero img')
 
 // init halftone
 new BreathingHalftone(img, {
@@ -100,3 +100,4 @@ window.onload = function () {
 
 > [http://breathing-halftone.desandro.com/](~http://breathing-halftone.desandro.com/~)  
 
+#javascript

@@ -1,7 +1,7 @@
 ---
     {"title":"git添加sshkey","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/24.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/24.svg"}
 ---
-    # git 添加 ssh key
+    
 -   创建 SSH Key
 ```bash
 ssh-keygen -t rsa -C "tangxiaomiemail@gmail.com"
@@ -43,3 +43,4 @@ git config --global user.name    #(查看)全局配置账户是否已经移除
 git config --global user.email   #(查看)全局配置邮箱是否已经移除
 ```
 
+#git

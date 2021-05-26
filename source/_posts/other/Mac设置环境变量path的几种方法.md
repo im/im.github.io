@@ -1,7 +1,7 @@
 ---
     {"title":"Mac设置环境变量path的几种方法","tags":["other"],"date":"","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg"}
 ---
-    # Mac 设置环境变量 path 的几种方法
+    
 
 Mac系统的环境变量，加载顺序为：
 
@@ -77,4 +77,4 @@ $ source 相应的文件
 
 一般环境变量更改后，重启后生效。
 
-
+#other

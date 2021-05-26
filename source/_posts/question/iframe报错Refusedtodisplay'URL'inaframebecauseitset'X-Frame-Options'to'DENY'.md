@@ -1,7 +1,7 @@
 ---
     {"title":"iframe报错Refusedtodisplay'URL'inaframebecauseitset'X-Frame-Options'to'DENY'","tags":["question"],"date":"","categories":["question"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg"}
 ---
-    # iframe 报错 Refused to display 'URL' in a frame because it set 'X-Frame-Options' to 'DENY'
+    
 [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options)
 
 X-Frame-Options 有三个值:
@@ -32,3 +32,4 @@ app.use(frameguard({ action: 'SAMEORIGIN' }))
 
 ```
 
+#question

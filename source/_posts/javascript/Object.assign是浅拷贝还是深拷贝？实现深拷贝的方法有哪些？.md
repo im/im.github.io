@@ -1,7 +1,7 @@
 ---
     {"title":"Object.assign是浅拷贝还是深拷贝？实现深拷贝的方法有哪些？","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg"}
 ---
-    # Object.assign 是浅拷贝还是深拷贝？实现深拷贝的方法有哪些？
+    
 > Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。  
 
 * 如果目标对象中的属性具有相同的键，则属性将被源对象中的属性覆盖。后面的源对象的属性将类似地覆盖前面的源对象的属性。
@@ -87,3 +87,4 @@ function _deepClone(source) {
 
 [经典前端面试题: Object.assign 是浅拷贝还是深拷贝？实现深拷贝的方法有哪些？](https://www.cnblogs.com/LVBingo/p/11290637.html)
 
+#javascript

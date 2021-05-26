@@ -1,7 +1,7 @@
 ---
     {"title":"Flex布局教程：语法篇","tags":["css"],"date":"","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg"}
 ---
-    # Flex 布局教程：语法篇
+    
 网页布局（layout）是 CSS 的一个重点应用。
 
 ![](/images/bg2015071001.gif)
@@ -288,3 +288,4 @@ Webkit 内核的浏览器，必须加上 `-webkit` 前缀。
 
 [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
+#css

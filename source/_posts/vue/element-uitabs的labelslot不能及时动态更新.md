@@ -1,7 +1,7 @@
 ---
     {"title":"element-uitabs的labelslot不能及时动态更新","tags":["vue","javascript","question"],"date":"","categories":["vue"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/19.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/19.svg"}
 ---
-    # element-ui tabs的label slot不能及时动态更新
+    
 [https://github.com/ElemeFE/element/issues/2934](https://github.com/ElemeFE/element/issues/2934)
 
 ## 问题
@@ -39,7 +39,7 @@ var Main = {
 }
 
 new Vue({
-    el: '',
+    el: '#app',
     render: (h) => h(Main)
 })
 
@@ -54,4 +54,4 @@ new Vue({
 this.$refs.tabs.$refs.nav.$forceUpdate();
 ```
 
-#  
+#vue# #javascript #question

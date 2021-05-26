@@ -1,7 +1,7 @@
 ---
     {"title":"JavaScript实现前端下载图片","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg"}
 ---
-    # JavaScript 实现前端下载图片
+    
 ## 实现思路
 -   将图片装换成 Data URLs
 -   下载图片
@@ -70,3 +70,4 @@ downLoad(downloadName, url) {
 }
 ```
 
+#javascript

@@ -1,7 +1,7 @@
 ---
     {"title":"Windows下如何查看某个端口被谁占用","tags":["Windows"],"date":"","categories":["Windows"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg"}
 ---
-    # Windows下如何查看某个端口被谁占用
+    
 开始—->运行—-> `cmd` ，或者是 `window+R` 组合键，调出命令窗口。
 
 ## 查找所有运行的端口
@@ -26,4 +26,4 @@ tasklist|findstr "9088"
 taskkill /T /F /PID 9088
 ```
 
-#
+#Windows#

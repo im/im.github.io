@@ -1,7 +1,7 @@
 ---
     {"title":"JavaScript实现复制粘贴","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/13.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/13.svg"}
 ---
-    # JavaScript 实现复制粘贴
+    
 ## 实现思路
 
 ## html:
@@ -44,7 +44,7 @@ function copyToClip(content, message) {
 
 ```html
 <input id="demoInput" value="hello world" />
-<button class="btn" data-clipboard-target="">点我复制</button>
+<button class="btn" data-clipboard-target="#demoInput">点我复制</button>
 ```
 
 ## javascript:
@@ -54,3 +54,4 @@ import Clipboard from 'clipboard'
 const btnCopy = new Clipboard('btn')
 ```
 
+#javascript

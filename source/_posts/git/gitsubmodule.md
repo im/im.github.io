@@ -1,7 +1,7 @@
 ---
     {"title":"gitsubmodule","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg"}
 ---
-    # git submodule
+    
 ### 添加
 
 ```bash
@@ -40,3 +40,4 @@ git submodule update
 git submodule update --init --recursive
 ```
 
+#git

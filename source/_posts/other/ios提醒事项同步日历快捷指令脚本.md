@@ -1,7 +1,7 @@
 ---
     {"title":"ios提醒事项同步日历快捷指令脚本","tags":["other"],"date":"","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg"}
 ---
-    # ios 提醒事项同步日历快捷指令脚本
+    
 
 * AppStore 安装运行脚本的软件 `scriptable`
 
@@ -157,3 +157,4 @@ function updateEvent(event, reminder) {
 
 [ios 提醒事项同步日历快捷指令脚本](https://tangxiaomi.top/2021/03/12/other/reminders-sync-calendar/)
 
+#other

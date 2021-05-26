@@ -1,7 +1,7 @@
 ---
     {"title":"nodejs搭建本地服务器展示文件夹","tags":["javascript","nodejs"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/28.svg"}
 ---
-    # nodejs 搭建本地服务器 展示文件夹
+    
 ```js
 const express = require('express')
 const http = require('http')
@@ -38,3 +38,4 @@ server.listen(port, () => {
 })
 ```
 
+#javascript/nodejs

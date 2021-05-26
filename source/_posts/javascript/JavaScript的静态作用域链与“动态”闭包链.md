@@ -1,7 +1,7 @@
 ---
     {"title":"JavaScript的静态作用域链与“动态”闭包链","tags":["javascript","closure"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/14.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/14.svg"}
 ---
-    # JavaScript 的静态作用域链与“动态”闭包链
+    
 
 读完本文会解答你以下疑问：
 * 静态作用域链和动态作用域链的区别
@@ -236,3 +236,4 @@ JavaScript 是静态作用域的设计，闭包是为了解决子函数晚于父
 
 [JavaScript 的静态作用域链与“动态”闭包链](https://juejin.cn/post/6957913856488243237)
 
+#javascript/closure

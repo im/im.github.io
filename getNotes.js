@@ -100,8 +100,8 @@ module.exports = (() => {
     }
 
     const replaceContent = (content, fontMatter) => {
-        content = content.replace(/#[A-Za-z\/\d]+/g, '')
-        // content = content.replace(/^(#+)(.*)/g, '')
+        // content = content.replace(/#[A-Za-z\/\d]+/g, '')
+        content = content.replace(/^(#+)(.*)/g, '')
         content = content.replace(/::(\d+)年(\d+)月(\d+)日::/g, '')
         content = content.replace(/!\[(.*?)\]\((.*?)\)/g, (res, $1, $2) => {
             const arr = $2.split('/')

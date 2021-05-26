@@ -1,7 +1,7 @@
 ---
     {"title":"css中的bfc（BlockFormattingContexts）","tags":["css"],"date":"","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg"}
 ---
-    # css 中的 bfc（Block Formatting Contexts）
+    
 
 ## 常见定位方案
 在讲 BFC 之前，我们先来了解一下常见的定位方案，定位方案是控制元素的布局，有三种常见方案:
@@ -95,3 +95,4 @@ BFC 即 `Block Formatting Contexts` (块级格式化上下文)，它属于上述
 这个方法可以用来实现两列自适应布局，效果不错，这时候左边的宽度固定，右边的内容自适应宽度(去掉上面右边内容的宽度)。
 
 
+#css

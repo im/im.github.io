@@ -1,7 +1,7 @@
 ---
     {"title":"git常用命令","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/23.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/23.svg"}
 ---
-    # git 常用命令
+    
 ### 恢复修改过的文件
 
 ```bash
@@ -304,3 +304,4 @@ git checkout HEAD <file>
 git revert <commit>
 ```
 
+#git
