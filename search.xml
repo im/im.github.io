@@ -4,6 +4,60 @@
   
     
     <entry>
+      <title>3.用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值</title>
+      <link href="2021/05/28/interview/3.%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%BA5%E4%B8%94%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%9C%A82-32%E9%97%B4%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/"/>
+      <url>2021/05/28/interview/3.%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%BA5%E4%B8%94%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%9C%A82-32%E9%97%B4%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）： </p><ul><li>生成一个长度为5的空数组 <code>arr</code> 。 </li><li>生成一个（2－32）之间的随机整数 <code>rand</code>。</li><li>把随机数 <code>rand</code> 插入到数组 <code>arr</code> 内，如果数组arr内已存在与 <code>rand</code> 相同的数字，则重新生成随机数<code>rand</code>并插入到<code>arr</code>内[需要使用递归实现，不能使用 <code>for/while</code> 等循环] </li><li>最终输出一个长度为5，且内容不重复的数组 <code>arr</code> 。</li></ul><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> randomNum = <span class="function">() =&gt;</span> (<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">31</span> + <span class="number">2</span>))</span><br><span class="line"><span class="keyword">const</span> randomArr = <span class="function">(<span class="params">n</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">const</span> num = randomNum();</span><br><span class="line">    <span class="keyword">if</span> (arr.includes(num)) <span class="keyword">return</span> randomArr(n)</span><br><span class="line">    arr[n -<span class="number">1</span>] = num;</span><br><span class="line">    <span class="keyword">return</span> randomArr(n - <span class="number">1</span>)</span><br><span class="line">&#125;;</span><br><span class="line">randomArr(arr.length)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>#interview/javascript</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> interview </tag>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>4.html的元素有哪些（包含H5）？</title>
+      <link href="2021/05/28/interview/4.html%E7%9A%84%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%88%E5%8C%85%E5%90%ABH5%EF%BC%89%EF%BC%9F/"/>
+      <url>2021/05/28/interview/4.html%E7%9A%84%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%88%E5%8C%85%E5%90%ABH5%EF%BC%89%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>区分出行内元素、块级元素、空元素并在后面简要标注下作用</p><a id="more"></a><h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2><ul><li>a</li><li>b</li><li>span</li><li>strong</li><li>i</li><li>em</li><li>button</li><li>input</li><li>label</li><li>br</li><li>textarea</li><li>select</li></ul><h2 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h2><ul><li>div</li><li>p</li><li>h1-h6</li><li>ol</li><li>ul</li><li>li</li><li>table</li><li>tbody</li><li>td</li><li>tr</li><li>thead</li><li>dl</li><li>dt</li><li>dd</li></ul><h2 id="H5新增元素"><a href="#H5新增元素" class="headerlink" title="H5新增元素"></a>H5新增元素</h2><ul><li><code>section</code>  标签定义文档中的节</li><li><code>article </code> 标签的内容独立于文档的其余部分</li><li><code>audio</code> 标签定义声音，比如音乐或其他音频流</li><li><code>video</code> 标签定义视频，比如电影片段或其他视频流</li><li><code>hearder</code> 标签定义文档的页眉（介绍信息）</li><li><code>footer</code> 标签定义文档或节的页脚</li><li><code>small</code> 标签呈现小号字体效果</li><li><code>canvas</code> 定义画布</li></ul><p>#interview/html</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> interview </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> interview </tag>
+            
+            <tag> html </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>6.写一个方法去掉字符串中的空格</title>
       <link href="2021/05/28/interview/6.%E5%86%99%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/"/>
       <url>2021/05/28/interview/6.%E5%86%99%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95%E5%8E%BB%E6%8E%89%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E7%A9%BA%E6%A0%BC/</url>
@@ -864,60 +918,6 @@
             <tag> css </tag>
             
             <tag> interview </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>3.用递归算法实现，数组长度为5且元素的随机数在2-32间不重复的值</title>
-      <link href="2021/05/28/interview/3.%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%BA5%E4%B8%94%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%9C%A82-32%E9%97%B4%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/"/>
-      <url>2021/05/28/interview/3.%E7%94%A8%E9%80%92%E5%BD%92%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%EF%BC%8C%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6%E4%B8%BA5%E4%B8%94%E5%85%83%E7%B4%A0%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0%E5%9C%A82-32%E9%97%B4%E4%B8%8D%E9%87%8D%E5%A4%8D%E7%9A%84%E5%80%BC/</url>
-      
-        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>这是一道大题目，把考点拆成了4个小项；需要侯选人用递归算法实现（限制15行代码以内实现；限制时间10分钟内完成）： </p><ul><li>生成一个长度为5的空数组 <code>arr</code> 。 </li><li>生成一个（2－32）之间的随机整数 <code>rand</code>。</li><li>把随机数 <code>rand</code> 插入到数组 <code>arr</code> 内，如果数组arr内已存在与 <code>rand</code> 相同的数字，则重新生成随机数<code>rand</code>并插入到<code>arr</code>内[需要使用递归实现，不能使用 <code>for/while</code> 等循环] </li><li>最终输出一个长度为5，且内容不重复的数组 <code>arr</code> 。</li></ul><h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>);</span><br><span class="line"><span class="keyword">const</span> randomNum = <span class="function">() =&gt;</span> (<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">31</span> + <span class="number">2</span>))</span><br><span class="line"><span class="keyword">const</span> randomArr = <span class="function">(<span class="params">n</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n === <span class="number">0</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">const</span> num = randomNum();</span><br><span class="line">    <span class="keyword">if</span> (arr.includes(num)) <span class="keyword">return</span> randomArr(n)</span><br><span class="line">    arr[n -<span class="number">1</span>] = num;</span><br><span class="line">    <span class="keyword">return</span> randomArr(n - <span class="number">1</span>)</span><br><span class="line">&#125;;</span><br><span class="line">randomArr(arr.length)</span><br><span class="line"></span><br></pre></td></tr></table></figure><p>#interview/javascript</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> interview </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> interview </tag>
-            
-            <tag> javascript </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>4.html的元素有哪些（包含H5）？</title>
-      <link href="2021/05/28/interview/4.html%E7%9A%84%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%88%E5%8C%85%E5%90%ABH5%EF%BC%89%EF%BC%9F/"/>
-      <url>2021/05/28/interview/4.html%E7%9A%84%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%88%E5%8C%85%E5%90%ABH5%EF%BC%89%EF%BC%9F/</url>
-      
-        <content type="html"><![CDATA[<h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>区分出行内元素、块级元素、空元素并在后面简要标注下作用</p><a id="more"></a><h2 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h2><ul><li>a</li><li>b</li><li>span</li><li>strong</li><li>i</li><li>em</li><li>button</li><li>input</li><li>label</li><li>br</li><li>textarea</li><li>select</li></ul><h2 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h2><ul><li>div</li><li>p</li><li>h1-h6</li><li>ol</li><li>ul</li><li>li</li><li>table</li><li>tbody</li><li>td</li><li>tr</li><li>thead</li><li>dl</li><li>dt</li><li>dd</li></ul><h2 id="H5新增元素"><a href="#H5新增元素" class="headerlink" title="H5新增元素"></a>H5新增元素</h2><ul><li><code>section</code>  标签定义文档中的节</li><li><code>article </code> 标签的内容独立于文档的其余部分</li><li><code>audio</code> 标签定义声音，比如音乐或其他音频流</li><li><code>video</code> 标签定义视频，比如电影片段或其他视频流</li><li><code>hearder</code> 标签定义文档的页眉（介绍信息）</li><li><code>footer</code> 标签定义文档或节的页脚</li><li><code>small</code> 标签呈现小号字体效果</li><li><code>canvas</code> 定义画布</li></ul><p>#interview/html</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> interview </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> interview </tag>
-            
-            <tag> html </tag>
             
         </tags>
       
