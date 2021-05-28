@@ -7,7 +7,8 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "push": "node push.js"
+    "push": "node push.js",
+    "clear": "node clear.js"
   },
   "hexo": {
     "version": "5.4.0"

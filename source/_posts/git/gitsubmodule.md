@@ -14,7 +14,7 @@ git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus
 
 命令执行完成，会在当前工程根路径下生成一个名为 `.gitmodules` 的文件，其中记录了子模块的信息。
 
-.gitmodules
+### .gitmodules
 
 ```
 [submodule "themes/icarus"]
@@ -39,5 +39,12 @@ git submodule update
 ```bash
 git submodule update --init --recursive
 ```
+
+### 查看sumodule状态
+
+```bash
+git submodule foreach git status
+```
+
 
 #git
