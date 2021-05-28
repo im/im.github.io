@@ -1,5 +1,5 @@
 ---
-    {"title":"揭开在线协作的神秘面纱–OT算法","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/39.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/39.svg"}
+    {"title":"揭开在线协作的神秘面纱–OT算法","tags":["javascript"],"date":"2021-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/39.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/39.svg"}
 ---
     
 相信大家或多或少都有使用过在线文档，国内的像我们在做的 [腾讯文档](http://https://docs.qq.com/desktop/) 还有其他家的很多类似产品。今天主要为大家揭开在线协作的神秘面纱，那就是 OT 算法。

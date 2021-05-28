@@ -1,5 +1,5 @@
 ---
-    {"title":"Flex布局教程：实例篇","tags":["css"],"date":"","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg"}
+    {"title":"Flex布局教程：实例篇","tags":["css"],"date":"2021-05-28 17:57:43","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg"}
 ---
     
 [[Flex 布局教程：语法篇]] 介绍了Flex布局的语法，今天介绍常见布局的Flex写法。

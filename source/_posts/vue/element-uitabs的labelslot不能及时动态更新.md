@@ -1,5 +1,5 @@
 ---
-    {"title":"element-uitabs的labelslot不能及时动态更新","tags":["vue","javascript","question"],"date":"","categories":["vue"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg"}
+    {"title":"element-uitabs的labelslot不能及时动态更新","tags":["vue","javascript","question"],"date":"2021-05-28 17:57:43","categories":["vue"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg"}
 ---
     
 [https://github.com/ElemeFE/element/issues/2934](https://github.com/ElemeFE/element/issues/2934)

@@ -1,12 +1,40 @@
 module.exports = (() => {
     const fs = require('fs')
     const path = require('path')
+    const md5 = require('md5-node')
+    const moment = require('moment')
     const bearPath = path.join(__dirname, 'bear')
     const outPath = path.join(__dirname, '/source/_posts/')
     const outImgPath = path.join(__dirname, '/source/images/')
+    const datePath = path.join(__dirname, 'date.js')
 
     deleteFolder(outPath)
     // deleteFolder(outImgPath)
+
+    function setDate(obj) {
+        if (fs.existsSync(datePath)) {
+            const d = require('./date.js')
+            Object.keys(obj).forEach((item) => {
+                const arr = Object.keys(d)
+                if (!arr.includes(item)) {
+                    d[item] = moment().format('yyyy-MM-DD HH:mm:ss')
+                }
+            })
+            const str = `module.exports = ${JSON.stringify(d)}
+            `
+            fs.writeFileSync(datePath, str, 'utf-8')
+        } else {
+            const str = `module.exports = ${JSON.stringify(obj)}
+            `
+            fs.writeFileSync(datePath, str, 'utf-8')
+        }
+    }
+
+    function setMd5(content) {
+        const hash = md5(content)
+        if (fs.existsSync(datePath)) {
+        }
+    }
 
     function deleteFolder(path) {
         let files = []
@@ -28,8 +56,8 @@ module.exports = (() => {
         const tages = []
         const m = cont.match(/(.+)/g)
         if (m) {
-            const arr = (m[m.length - 1].match(/#[A-Za-z\/\d]+/g) || []).map((v) =>
-                v.replace(/#/g, '')
+            const arr = (m[m.length - 1].match(/#[A-Za-z\/\d]+/g) || []).map(
+                (v) => v.replace(/#/g, '')
             )
             arr.forEach((item) => {
                 if (item.split('/').length) {
@@ -145,12 +173,21 @@ module.exports = (() => {
 
     getFiles(bearPath)
 
+    const md5Obj = {}
     mdFiles.forEach((md, index) => {
         const buffer = fs.readFileSync(md)
         const mdContent = String(buffer)
+        md5Obj[md5(mdContent)] = moment().format('yyyy-MM-DD HH:mm:ss')
+    })
+
+    setDate(md5Obj)
+    const d = require('./date.js')
+    mdFiles.forEach((md, index) => {
+        const buffer = fs.readFileSync(md)
+        const mdContent = String(buffer)
+        const date = d[md5(mdContent)]
         const tags = formatTags(mdContent)
         const title = getTitle(mdContent)
-        const date = getDate(mdContent)
         const categories = tags[0] || ''
 
         const content = replaceContent(

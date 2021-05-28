@@ -1,5 +1,5 @@
 ---
-    {"title":"JavaScript实现前端下载图片","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg"}
+    {"title":"JavaScript实现前端下载图片","tags":["javascript"],"date":"2017-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg"}
 ---
     
 ## 实现思路

@@ -1,5 +1,5 @@
 ---
-    {"title":"编写JavaScript的10个小技巧","tags":["javascript"],"date":"","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg"}
+    {"title":"编写JavaScript的10个小技巧","tags":["javascript"],"date":"2021-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg"}
 ---
     
 ## 简化条件表达式
