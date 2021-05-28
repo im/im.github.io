@@ -1,5 +1,5 @@
 ---
-    {"title":"git常用命令","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/23.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/23.svg"}
+    {"title":"git常用命令","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/08.svg"}
 ---
     
 ### 恢复修改过的文件

@@ -1,5 +1,5 @@
 ---
-    {"title":"gitsubmodule","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/20.svg"}
+    {"title":"gitsubmodule","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg"}
 ---
     
 ### 添加
