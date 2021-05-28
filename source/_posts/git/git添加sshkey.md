@@ -1,5 +1,5 @@
 ---
-    {"title":"git添加sshkey","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/24.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/24.svg"}
+    {"title":"git添加sshkey","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg"}
 ---
     
 -   创建 SSH Key

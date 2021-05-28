@@ -1,5 +1,5 @@
 ---
-    {"title":"ios提醒事项同步日历快捷指令脚本","tags":["other"],"date":"","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg"}
+    {"title":"ios提醒事项同步日历快捷指令脚本","tags":["other"],"date":"","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg"}
 ---
     
 

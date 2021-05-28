@@ -1,5 +1,5 @@
 ---
-    {"title":"git修改远程仓库地址","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/21.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/21.svg"}
+    {"title":"git修改远程仓库地址","tags":["git"],"date":"","categories":["git"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/22.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/22.svg"}
 ---
     
 ## 命令直接修改
