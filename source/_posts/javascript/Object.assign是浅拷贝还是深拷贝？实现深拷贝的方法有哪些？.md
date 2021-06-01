@@ -1,5 +1,5 @@
 ---
-    {"title":"Object.assign是浅拷贝还是深拷贝？实现深拷贝的方法有哪些？","tags":["javascript"],"date":"2021-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg"}
+    {"title":"Object.assign是浅拷贝还是深拷贝？实现深拷贝的方法有哪些？","tags":["javascript"],"date":"2020-11-09 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg"}
 ---
     
 > Object.assign() 方法用于将所有可枚举属性的值从一个或多个源对象复制到目标对象。它将返回目标对象。  

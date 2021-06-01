@@ -1,5 +1,5 @@
 ---
-    {"title":"Flex布局教程：语法篇","tags":["css"],"date":"2021-05-28 17:57:43","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg"}
+    {"title":"Flex布局教程：语法篇","tags":["css"],"date":"2021-06-09 17:57:43","categories":["css"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg"}
 ---
     
 网页布局（layout）是 CSS 的一个重点应用。

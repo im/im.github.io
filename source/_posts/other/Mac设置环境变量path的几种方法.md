@@ -1,5 +1,5 @@
 ---
-    {"title":"Mac设置环境变量path的几种方法","tags":["other"],"date":"2021-05-28 17:57:43","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg"}
+    {"title":"Mac设置环境变量path的几种方法","tags":["other"],"date":"2020-12-03 17:57:43","categories":["other"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg"}
 ---
     
 

@@ -1,5 +1,5 @@
 ---
-    {"title":"TypeScript","tags":["typescript"],"date":"2021-05-28 17:57:43","categories":["typescript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/17.svg"}
+    {"title":"TypeScript","tags":["typescript"],"date":"2020-10-28 17:57:43","categories":["typescript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg"}
 ---
     
 ## 目录

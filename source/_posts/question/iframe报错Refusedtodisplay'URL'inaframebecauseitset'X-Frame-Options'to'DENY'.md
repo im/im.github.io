@@ -1,5 +1,5 @@
 ---
-    {"title":"iframe报错Refusedtodisplay'URL'inaframebecauseitset'X-Frame-Options'to'DENY'","tags":["question"],"date":"2021-05-28 17:57:43","categories":["question"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg"}
+    {"title":"iframe报错Refusedtodisplay'URL'inaframebecauseitset'X-Frame-Options'to'DENY'","tags":["question"],"date":"2019-01-18 17:57:43","categories":["question"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/27.svg"}
 ---
     
 [https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/X-Frame-Options)

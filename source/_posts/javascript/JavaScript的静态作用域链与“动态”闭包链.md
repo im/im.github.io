@@ -1,5 +1,5 @@
 ---
-    {"title":"JavaScript的静态作用域链与“动态”闭包链","tags":["javascript","closure"],"date":"2021-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/14.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/14.svg"}
+    {"title":"JavaScript的静态作用域链与“动态”闭包链","tags":["javascript","closure"],"date":"2020-01-15 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg"}
 ---
     
 

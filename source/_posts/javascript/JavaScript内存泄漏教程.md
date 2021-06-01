@@ -1,5 +1,5 @@
 ---
-    {"title":"JavaScript内存泄漏教程","tags":["javascript"],"date":"2021-05-28 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg"}
+    {"title":"JavaScript内存泄漏教程","tags":["javascript"],"date":"2020-04-12 17:57:43","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg"}
 ---
     
 程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。
