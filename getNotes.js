@@ -185,7 +185,8 @@ module.exports = (() => {
     mdFiles.forEach((md, index) => {
         const buffer = fs.readFileSync(md)
         const mdContent = String(buffer)
-        const date = d[md5(mdContent)]
+        const hash = md5(mdContent)
+        const date = d[hash]
         const tags = formatTags(mdContent)
         const title = getTitle(mdContent)
         const categories = tags[0] || ''
@@ -198,7 +199,7 @@ module.exports = (() => {
         fs.existsSync(outPath) || fs.mkdirSync(outPath)
         const categoriesPath = path.join(outPath, categories)
         fs.existsSync(categoriesPath) || fs.mkdirSync(categoriesPath)
-        const filePath = path.join(categoriesPath, `${title}.md`)
+        const filePath = path.join(categoriesPath, `${hash}.md`)
         fs.existsSync(filePath) || fs.writeFileSync(filePath, content, 'utf-8')
     })
 
