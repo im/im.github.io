@@ -1,5 +1,16 @@
 ---
-    {"title":"函数","tags":["typescript"],"date":"2021-06-01 16:17:08","categories":["typescript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/33.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/33.svg"}
+    {
+  "title": "函数",
+  "tags": [
+    "typescript"
+  ],
+  "date": "2021-06-01 16:17:08",
+  "categories": [
+    "typescript"
+  ],
+  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/33.svg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/33.svg"
+}
 ---
     
 

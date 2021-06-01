@@ -30,12 +30,6 @@ module.exports = (() => {
         }
     }
 
-    function setMd5(content) {
-        const hash = md5(content)
-        if (fs.existsSync(datePath)) {
-        }
-    }
-
     function deleteFolder(path) {
         let files = []
         if (fs.existsSync(path)) {
@@ -122,7 +116,7 @@ module.exports = (() => {
         }
 
         return `---
-    ${JSON.stringify(obj)}
+    ${JSON.stringify(obj, null, 2)}
 ---
     `
     }
