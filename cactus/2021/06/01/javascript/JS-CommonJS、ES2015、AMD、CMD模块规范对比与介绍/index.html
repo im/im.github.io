@@ -9,15 +9,15 @@
     <meta name="description" content="CommonJS 基本介绍 CommonJS 是一种思想，它是为 JS 的表现来制定规范。由于 JS 没有模块系统、标准库较少、缺乏包管理工具，因此 CommonJS 应运而生。 CommonJS 的目标是希望 JS 可以在任何地方运行，不只是浏览器中。只要我们的 JavaScript 是根据 CommonJS API 编写的，那么就可以在与 CommonJS 兼容的系统上运行。 根据 Commo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍">
-<meta property="og:url" content="https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/index.html">
+<meta property="og:url" content="https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="CommonJS 基本介绍 CommonJS 是一种思想，它是为 JS 的表现来制定规范。由于 JS 没有模块系统、标准库较少、缺乏包管理工具，因此 CommonJS 应运而生。 CommonJS 的目标是希望 JS 可以在任何地方运行，不只是浏览器中。只要我们的 JavaScript 是根据 CommonJS API 编写的，那么就可以在与 CommonJS 兼容的系统上运行。 根据 Commo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg">
-<meta property="article:published_time" content="2021-06-01T16:17:08.000Z">
-<meta property="article:modified_time" content="2021-06-01T08:17:41.088Z">
+<meta property="article:published_time" content="2021-06-01T16:20:18.000Z">
+<meta property="article:modified_time" content="2021-06-01T08:20:53.349Z">
 <meta property="article:author" content="糖小米">
-<meta property="article:tag" content="糖小米 tangxiaomi 前端 糖小米前端 糖小米blog javascript html css node npm webpack vue react">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg">
     
@@ -96,17 +96,28 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&text=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&is_video=false&description=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&body=Check out this article: https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&name=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&t=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&text=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&is_video=false&description=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&body=Check out this article: https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&name=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&description=&lt;h3 id=&#34;CommonJS-基本介绍&#34;&gt;&lt;a href=&#34;#CommonJS-基本介绍&#34; class=&#34;headerlink&#34; title=&#34;CommonJS 基本介绍&#34;&gt;&lt;/a&gt;CommonJS 基本介绍&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;CommonJS 是一种思想，它是为 JS 的表现来制定规范。由于 JS 没有模块系统、标准库较少、缺乏包管理工具，因此 CommonJS 应运而生。&lt;/li&gt;
+&lt;li&gt;CommonJS 的目标是希望 JS 可以在任何地方运行，不只是浏览器中。只要我们的 JavaScript 是根据 CommonJS API 编写的，那么就可以在与 CommonJS 兼容的系统上运行。&lt;/li&gt;
+&lt;li&gt;根据 CommonJS API 编写的 JavaScript 可以做下面这些事情：&lt;ul&gt;
+&lt;li&gt;编写服务端应用&lt;/li&gt;
+&lt;li&gt;编写命令行工具&lt;/li&gt;
+&lt;li&gt;编写基于 GUI 的桌面应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CommonJS 规范有很多实现，最有名要数 NodeJS 了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;CommonJS-的模块规范&#34;&gt;&lt;a href=&#34;#CommonJS-的模块规范&#34; class=&#34;headerlink&#34; title=&#34;CommonJS 的模块规范&#34;&gt;&lt;/a&gt;CommonJS 的模块规范&lt;/h3&gt;&lt;p&gt;一个文件就是一个模块，拥有单独的作用域。普通方式定义的变量、函数、对象都属于该模块内。&lt;br&gt;    * 通过 require 来加载模块。&lt;br&gt;    * 通过 exports 和 modul.exports 来暴露模块中的内容。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&t=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -135,15 +146,25 @@
       
     <div class="postdate">
       
-        <time datetime="2021-06-01T16:17:08.000Z" itemprop="datePublished">2021-06-01</time>
+        <time datetime="2021-06-01T16:20:18.000Z" itemprop="datePublished">2021-06-01</time>
         
       
     </div>
 
 
       
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/cactus/categories/javascript/">javascript</a>
+    </div>
+
 
       
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/cactus/tags/javascript/" rel="tag">javascript</a>
+    </div>
+
 
     </div>
   </header>
@@ -162,6 +183,7 @@
 <li>CommonJS 规范有很多实现，最有名要数 NodeJS 了。</li>
 </ol>
 <h3 id="CommonJS-的模块规范"><a href="#CommonJS-的模块规范" class="headerlink" title="CommonJS 的模块规范"></a>CommonJS 的模块规范</h3><p>一个文件就是一个模块，拥有单独的作用域。普通方式定义的变量、函数、对象都属于该模块内。<br>    * 通过 require 来加载模块。<br>    * 通过 exports 和 modul.exports 来暴露模块中的内容。</p>
+<a id="more"></a>
 <h3 id="使用-exports-暴露模块接口"><a href="#使用-exports-暴露模块接口" class="headerlink" title="使用 exports 暴露模块接口"></a>使用 exports 暴露模块接口</h3><ol>
 <li><p>下面我们在 Node.js 中创建一个模块，文件名为：hangge.js</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Hello hangge.com&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -280,6 +302,7 @@
 <ol start="3">
 <li>控制台输出如下：<br><img src="/images/2017052216214198614%202.png"></li>
 </ol>
+<p>#javascript</p>
 
   </div>
 </article>
@@ -310,17 +333,28 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&text=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&is_video=false&description=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&body=Check out this article: https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&name=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/01/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&t=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&text=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&is_video=false&description=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&body=Check out this article: https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&title=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&name=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍&description=&lt;h3 id=&#34;CommonJS-基本介绍&#34;&gt;&lt;a href=&#34;#CommonJS-基本介绍&#34; class=&#34;headerlink&#34; title=&#34;CommonJS 基本介绍&#34;&gt;&lt;/a&gt;CommonJS 基本介绍&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;CommonJS 是一种思想，它是为 JS 的表现来制定规范。由于 JS 没有模块系统、标准库较少、缺乏包管理工具，因此 CommonJS 应运而生。&lt;/li&gt;
+&lt;li&gt;CommonJS 的目标是希望 JS 可以在任何地方运行，不只是浏览器中。只要我们的 JavaScript 是根据 CommonJS API 编写的，那么就可以在与 CommonJS 兼容的系统上运行。&lt;/li&gt;
+&lt;li&gt;根据 CommonJS API 编写的 JavaScript 可以做下面这些事情：&lt;ul&gt;
+&lt;li&gt;编写服务端应用&lt;/li&gt;
+&lt;li&gt;编写命令行工具&lt;/li&gt;
+&lt;li&gt;编写基于 GUI 的桌面应用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CommonJS 规范有很多实现，最有名要数 NodeJS 了。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;CommonJS-的模块规范&#34;&gt;&lt;a href=&#34;#CommonJS-的模块规范&#34; class=&#34;headerlink&#34; title=&#34;CommonJS 的模块规范&#34;&gt;&lt;/a&gt;CommonJS 的模块规范&lt;/h3&gt;&lt;p&gt;一个文件就是一个模块，拥有单独的作用域。普通方式定义的变量、函数、对象都属于该模块内。&lt;br&gt;    * 通过 require 来加载模块。&lt;br&gt;    * 通过 exports 和 modul.exports 来暴露模块中的内容。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/01/javascript/JS-CommonJS%E3%80%81ES2015%E3%80%81AMD%E3%80%81CMD%E6%A8%A1%E5%9D%97%E8%A7%84%E8%8C%83%E5%AF%B9%E6%AF%94%E4%B8%8E%E4%BB%8B%E7%BB%8D/&t=JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
