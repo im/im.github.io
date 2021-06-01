@@ -1,5 +1,5 @@
 ---
-    {"title":"JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍","tags":[],"date":"2021-06-01 16:17:08","categories":[""],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg"}
+    {"title":"JS-CommonJS、ES2015、AMD、CMD模块规范对比与介绍","tags":["javascript"],"date":"2021-06-01 16:20:18","categories":["javascript"],"cover":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg","thumbnail":"https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg"}
 ---
     
 ### CommonJS 基本介绍
@@ -16,6 +16,8 @@
 一个文件就是一个模块，拥有单独的作用域。普通方式定义的变量、函数、对象都属于该模块内。
 	* 通过 require 来加载模块。
 	* 通过 exports 和 modul.exports 来暴露模块中的内容。
+
+<!--more-->
 	
 ### 使用 exports 暴露模块接口
 
@@ -294,3 +296,5 @@ define(function(require, exports, module) {
 
 3. 控制台输出如下：
 ![](/images/2017052216214198614%202.png)
+
+#javascript
