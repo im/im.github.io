@@ -193,7 +193,7 @@ module.exports = (() => {
         fs.existsSync(outPath) || fs.mkdirSync(outPath)
         const categoriesPath = path.join(outPath, categories)
         fs.existsSync(categoriesPath) || fs.mkdirSync(categoriesPath)
-        const filePath = path.join(categoriesPath, `${hash}.md`)
+        const filePath = path.join(categoriesPath, `${hash.toString().substr(0, 10)}.md`)
         fs.existsSync(filePath) || fs.writeFileSync(filePath, content, 'utf-8')
     })
 
