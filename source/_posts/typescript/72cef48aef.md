@@ -4,7 +4,7 @@
   "tags": [
     "typescript"
   ],
-  "date": "2021-06-01 16:17:08",
+  "date": "2021-06-02 14:40:06",
   "categories": [
     "typescript"
   ],
@@ -16,6 +16,8 @@
 
 ## 介绍
 为了让程序有价值，我们需要能够处理最简单的数据单元：数字，字符串，结构体，布尔值等。 TypeScript支持与JavaScript几乎相同的数据类型，此外还提供了实用的枚举类型方便我们使用。
+
+<!--more-->
 
 ## Boolean
 最基本的数据类型就是简单的true/false值，在JavaScript和TypeScript里叫做`boolean`（其它语言中也一样）。
