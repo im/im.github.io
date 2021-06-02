@@ -4,7 +4,7 @@
   "tags": [
     "javascript"
   ],
-  "date": "2016-02-102 17:57:43",
+  "date": "2016-02-10 17:57:43",
   "categories": [
     "javascript"
   ],
