@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。 123456char * buffer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript内存泄漏教程">
+<meta property="og:title" content=" JavaScript 内存泄漏教程">
 <meta property="og:url" content="https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。 123456char * buffer">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/12.svg">
 <meta property="article:published_time" content="2020-04-12T17:57:43.000Z">
-<meta property="article:modified_time" content="2021-06-02T02:57:27.315Z">
+<meta property="article:modified_time" content="2021-06-02T03:00:08.037Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
       
     
     <!-- title -->
-    <title>JavaScript内存泄漏教程</title>
+    <title> JavaScript 内存泄漏教程</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/cactus/css/style.css">
@@ -97,15 +97,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&text=JavaScript内存泄漏教程"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&is_video=false&description=JavaScript内存泄漏教程"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JavaScript内存泄漏教程&body=Check out this article: https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&name=JavaScript内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&text= JavaScript 内存泄漏教程"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&is_video=false&description= JavaScript 内存泄漏教程"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 内存泄漏教程&body=Check out this article: https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&name= JavaScript 内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;
@@ -113,7 +113,7 @@
 
 &lt;p&gt;上面是 C 语言代码， &lt;code&gt;malloc&lt;/code&gt; 方法用来申请内存，使用完毕之后，必须自己用 &lt;code&gt;free&lt;/code&gt; 方法释放内存。&lt;/p&gt;
 &lt;p&gt;这很麻烦，所以大多数语言提供自动内存管理，减轻程序员的负担，这被称为”垃圾回收机制”（&lt;strong&gt;garbage collector&lt;/strong&gt;）。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&t=JavaScript内存泄漏教程"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&t= JavaScript 内存泄漏教程"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -130,7 +130,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        JavaScript内存泄漏教程
+         JavaScript 内存泄漏教程
     </h1>
 
 
@@ -270,15 +270,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&text=JavaScript内存泄漏教程"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&is_video=false&description=JavaScript内存泄漏教程"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JavaScript内存泄漏教程&body=Check out this article: https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title=JavaScript内存泄漏教程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&name=JavaScript内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&text= JavaScript 内存泄漏教程"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&is_video=false&description= JavaScript 内存泄漏教程"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 内存泄漏教程&body=Check out this article: https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&title= JavaScript 内存泄漏教程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&name= JavaScript 内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;
@@ -286,7 +286,7 @@
 
 &lt;p&gt;上面是 C 语言代码， &lt;code&gt;malloc&lt;/code&gt; 方法用来申请内存，使用完毕之后，必须自己用 &lt;code&gt;free&lt;/code&gt; 方法释放内存。&lt;/p&gt;
 &lt;p&gt;这很麻烦，所以大多数语言提供自动内存管理，减轻程序员的负担，这被称为”垃圾回收机制”（&lt;strong&gt;garbage collector&lt;/strong&gt;）。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&t=JavaScript内存泄漏教程"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/04/12/javascript/6ddb35e87f3c7bc5c75c010c7880a365/&t= JavaScript 内存泄漏教程"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

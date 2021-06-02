@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="柯里化 - 维基百科，自由的百科全书把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。    柯里化有3个常见作用： 参数复用 提前确定 延迟计算&#x2F;运行  基本实现12345var foo &#x3D; function(a) &amp;#123;    return function(b) &amp;#123;        return a *">
 <meta property="og:type" content="article">
-<meta property="og:title" content="函数柯里化">
+<meta property="og:title" content=" 函数柯里化">
 <meta property="og:url" content="https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="柯里化 - 维基百科，自由的百科全书把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。    柯里化有3个常见作用： 参数复用 提前确定 延迟计算&#x2F;运行  基本实现12345var foo &#x3D; function(a) &amp;#123;    return function(b) &amp;#123;        return a *">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/35.svg">
 <meta property="article:published_time" content="2018-02-04T17:57:43.000Z">
-<meta property="article:modified_time" content="2021-06-02T02:57:27.319Z">
+<meta property="article:modified_time" content="2021-06-02T03:00:08.041Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
       
     
     <!-- title -->
-    <title>函数柯里化</title>
+    <title> 函数柯里化</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/cactus/css/style.css">
@@ -97,15 +97,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&text=函数柯里化"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&is_video=false&description=函数柯里化"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=函数柯里化&body=Check out this article: https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&name=函数柯里化&description=&lt;blockquote&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&text= 函数柯里化"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&is_video=false&description= 函数柯里化"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 函数柯里化&body=Check out this article: https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&name= 函数柯里化&description=&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96&#34;&gt;柯里化 - 维基百科，自由的百科全书&lt;/a&gt;&lt;br&gt;把接受多个&lt;code&gt;参数&lt;/code&gt;的&lt;code&gt;函数&lt;/code&gt;变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。  &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;柯里化有3个常见作用：&#34;&gt;&lt;a href=&#34;#柯里化有3个常见作用：&#34; class=&#34;headerlink&#34; title=&#34;柯里化有3个常见作用：&#34;&gt;&lt;/a&gt;柯里化有3个常见作用：&lt;/h2&gt;&lt;ol&gt;
@@ -116,7 +116,7 @@
 &lt;h2 id=&#34;基本实现&#34;&gt;&lt;a href=&#34;#基本实现&#34; class=&#34;headerlink&#34; title=&#34;基本实现&#34;&gt;&lt;/a&gt;基本实现&lt;/h2&gt;&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; foo = &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;a&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;b&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a * a + b * b;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;调用上述函数：&lt;code&gt;(foo(3))(4)&lt;/code&gt;，或直接&lt;code&gt;foo(3)(4)&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&t=函数柯里化"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&t= 函数柯里化"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -133,7 +133,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        函数柯里化
+         函数柯里化
     </h1>
 
 
@@ -230,15 +230,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&text=函数柯里化"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&is_video=false&description=函数柯里化"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=函数柯里化&body=Check out this article: https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title=函数柯里化"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&name=函数柯里化&description=&lt;blockquote&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&text= 函数柯里化"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&is_video=false&description= 函数柯里化"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 函数柯里化&body=Check out this article: https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&title= 函数柯里化"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&name= 函数柯里化&description=&lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://zh.wikipedia.org/wiki/%E6%9F%AF%E9%87%8C%E5%8C%96&#34;&gt;柯里化 - 维基百科，自由的百科全书&lt;/a&gt;&lt;br&gt;把接受多个&lt;code&gt;参数&lt;/code&gt;的&lt;code&gt;函数&lt;/code&gt;变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。  &lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;柯里化有3个常见作用：&#34;&gt;&lt;a href=&#34;#柯里化有3个常见作用：&#34; class=&#34;headerlink&#34; title=&#34;柯里化有3个常见作用：&#34;&gt;&lt;/a&gt;柯里化有3个常见作用：&lt;/h2&gt;&lt;ol&gt;
@@ -249,7 +249,7 @@
 &lt;h2 id=&#34;基本实现&#34;&gt;&lt;a href=&#34;#基本实现&#34; class=&#34;headerlink&#34; title=&#34;基本实现&#34;&gt;&lt;/a&gt;基本实现&lt;/h2&gt;&lt;figure class=&#34;highlight js&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; foo = &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;a&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;b&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; a * a + b * b;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
 &lt;p&gt;调用上述函数：&lt;code&gt;(foo(3))(4)&lt;/code&gt;，或直接&lt;code&gt;foo(3)(4)&lt;/code&gt;&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&t=函数柯里化"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2018/02/04/javascript/f35160fe91b54c2d9777f6cf771e3cea/&t= 函数柯里化"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

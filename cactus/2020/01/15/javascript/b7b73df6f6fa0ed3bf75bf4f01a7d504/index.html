@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="读完本文会解答你以下疑问：  静态作用域链和动态作用域链的区别 为什么会有闭包 闭包什么时候创建的 [[scopes]] 属性是什么 闭包保存什么内容 闭包存储在哪 为什么 eval 性能不好 eval 什么情况下会创建闭包  在 JavaScript 里面，函数、块、模块都可以形成作用域（一个存放变量的独立空间），他们之间可以相互嵌套，作用域之间会形成引用关系，这条链叫做作用域链。 作用域链具体">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript的静态作用域链与“动态”闭包链">
+<meta property="og:title" content=" JavaScript 的静态作用域链与“动态”闭包链">
 <meta property="og:url" content="https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="读完本文会解答你以下疑问：  静态作用域链和动态作用域链的区别 为什么会有闭包 闭包什么时候创建的 [[scopes]] 属性是什么 闭包保存什么内容 闭包存储在哪 为什么 eval 性能不好 eval 什么情况下会创建闭包  在 JavaScript 里面，函数、块、模块都可以形成作用域（一个存放变量的独立空间），他们之间可以相互嵌套，作用域之间会形成引用关系，这条链叫做作用域链。 作用域链具体">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg">
 <meta property="article:published_time" content="2020-01-15T17:57:43.000Z">
-<meta property="article:modified_time" content="2021-06-02T02:57:27.319Z">
+<meta property="article:modified_time" content="2021-06-02T03:00:08.037Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="closure">
@@ -40,7 +40,7 @@
       
     
     <!-- title -->
-    <title>JavaScript的静态作用域链与“动态”闭包链</title>
+    <title> JavaScript 的静态作用域链与“动态”闭包链</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/cactus/css/style.css">
@@ -98,15 +98,15 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&text=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&is_video=false&description=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JavaScript的静态作用域链与“动态”闭包链&body=Check out this article: https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&name=JavaScript的静态作用域链与“动态”闭包链&description=&lt;p&gt;读完本文会解答你以下疑问：&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&text= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&is_video=false&description= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 的静态作用域链与“动态”闭包链&body=Check out this article: https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&name= JavaScript 的静态作用域链与“动态”闭包链&description=&lt;p&gt;读完本文会解答你以下疑问：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;静态作用域链和动态作用域链的区别&lt;/li&gt;
 &lt;li&gt;为什么会有闭包&lt;/li&gt;
@@ -119,7 +119,7 @@
 &lt;/ul&gt;
 &lt;p&gt;在 JavaScript 里面，函数、块、模块都可以形成作用域（一个存放变量的独立空间），他们之间可以相互嵌套，作用域之间会形成引用关系，这条链叫做作用域链。&lt;/p&gt;
 &lt;p&gt;作用域链具体是什么样呢？&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&t=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&t= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -136,7 +136,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        JavaScript的静态作用域链与“动态”闭包链
+         JavaScript 的静态作用域链与“动态”闭包链
     </h1>
 
 
@@ -298,15 +298,15 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&text=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&is_video=false&description=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=JavaScript的静态作用域链与“动态”闭包链&body=Check out this article: https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&name=JavaScript的静态作用域链与“动态”闭包链&description=&lt;p&gt;读完本文会解答你以下疑问：&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&text= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&is_video=false&description= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 的静态作用域链与“动态”闭包链&body=Check out this article: https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&title= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&name= JavaScript 的静态作用域链与“动态”闭包链&description=&lt;p&gt;读完本文会解答你以下疑问：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;静态作用域链和动态作用域链的区别&lt;/li&gt;
 &lt;li&gt;为什么会有闭包&lt;/li&gt;
@@ -319,7 +319,7 @@
 &lt;/ul&gt;
 &lt;p&gt;在 JavaScript 里面，函数、块、模块都可以形成作用域（一个存放变量的独立空间），他们之间可以相互嵌套，作用域之间会形成引用关系，这条链叫做作用域链。&lt;/p&gt;
 &lt;p&gt;作用域链具体是什么样呢？&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&t=JavaScript的静态作用域链与“动态”闭包链"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2020/01/15/javascript/b7b73df6f6fa0ed3bf75bf4f01a7d504/&t= JavaScript 的静态作用域链与“动态”闭包链"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

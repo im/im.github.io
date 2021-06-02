@@ -8,14 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flex布局教程：语法篇">
+<meta property="og:title" content=" Flex 布局教程：语法篇">
 <meta property="og:url" content="https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/09.svg">
 <meta property="article:published_time" content="2021-05-09T17:57:43.000Z">
-<meta property="article:modified_time" content="2021-06-02T02:57:27.315Z">
+<meta property="article:modified_time" content="2021-06-02T03:00:08.037Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -39,7 +39,7 @@
       
     
     <!-- title -->
-    <title>Flex布局教程：语法篇</title>
+    <title> Flex 布局教程：语法篇</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/cactus/css/style.css">
@@ -97,20 +97,20 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&text=Flex布局教程：语法篇"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&is_video=false&description=Flex布局教程：语法篇"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Flex布局教程：语法篇&body=Check out this article: https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&name=Flex布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&text= Flex 布局教程：语法篇"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&is_video=false&description= Flex 布局教程：语法篇"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= Flex 布局教程：语法篇&body=Check out this article: https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&name= Flex 布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071001.gif&#34;&gt;&lt;br&gt;布局的传统解决方案，基于 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box_model&#34;&gt;盒状模型&lt;/a&gt; ，依赖 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/display&#34;&gt;display&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/position&#34;&gt;position&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/float&#34;&gt;float&lt;/a&gt; 属性。它对于那些特殊布局非常不方便，比如， &lt;a href=&#34;https://css-tricks.com/centering-css-complete-guide/&#34;&gt;垂直居中&lt;/a&gt; 就不容易实现。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071002.png&#34;&gt;&lt;br&gt;2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071003.jpg&#34;&gt;&lt;br&gt;Flex 布局将成为未来布局的首选方案。本文介绍它的语法， &lt;a href=&#34;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&#34;&gt;下一篇文章&lt;/a&gt; 给出常见布局的 Flex 写法。网友 &lt;a href=&#34;http://vgee.cn/&#34;&gt;JailBreak&lt;/a&gt; 为本文的所有示例制作了 &lt;a href=&#34;http://static.vgee.cn/static/index.html&#34;&gt;Demo&lt;/a&gt; ，也可以参考。&lt;/p&gt;
 &lt;p&gt;以下内容主要参考了下面两篇文章： &lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;A Complete Guide to Flexbox&lt;/a&gt; 和 &lt;a href=&#34;https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties&#34;&gt;A Visual Guide to CSS3 Flexbox Properties&lt;/a&gt; 。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&t=Flex布局教程：语法篇"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&t= Flex 布局教程：语法篇"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -127,7 +127,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Flex布局教程：语法篇
+         Flex 布局教程：语法篇
     </h1>
 
 
@@ -318,20 +318,20 @@
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&text=Flex布局教程：语法篇"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&is_video=false&description=Flex布局教程：语法篇"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Flex布局教程：语法篇&body=Check out this article: https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title=Flex布局教程：语法篇"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&name=Flex布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&text= Flex 布局教程：语法篇"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&is_video=false&description= Flex 布局教程：语法篇"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= Flex 布局教程：语法篇&body=Check out this article: https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&title= Flex 布局教程：语法篇"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&name= Flex 布局教程：语法篇&description=&lt;p&gt;网页布局（layout）是 CSS 的一个重点应用。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071001.gif&#34;&gt;&lt;br&gt;布局的传统解决方案，基于 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/box_model&#34;&gt;盒状模型&lt;/a&gt; ，依赖 &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/display&#34;&gt;display&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/position&#34;&gt;position&lt;/a&gt; 属性 + &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/CSS/float&#34;&gt;float&lt;/a&gt; 属性。它对于那些特殊布局非常不方便，比如， &lt;a href=&#34;https://css-tricks.com/centering-css-complete-guide/&#34;&gt;垂直居中&lt;/a&gt; 就不容易实现。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071002.png&#34;&gt;&lt;br&gt;2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/images/bg2015071003.jpg&#34;&gt;&lt;br&gt;Flex 布局将成为未来布局的首选方案。本文介绍它的语法， &lt;a href=&#34;http://www.ruanyifeng.com/blog/2015/07/flex-examples.html&#34;&gt;下一篇文章&lt;/a&gt; 给出常见布局的 Flex 写法。网友 &lt;a href=&#34;http://vgee.cn/&#34;&gt;JailBreak&lt;/a&gt; 为本文的所有示例制作了 &lt;a href=&#34;http://static.vgee.cn/static/index.html&#34;&gt;Demo&lt;/a&gt; ，也可以参考。&lt;/p&gt;
 &lt;p&gt;以下内容主要参考了下面两篇文章： &lt;a href=&#34;https://css-tricks.com/snippets/css/a-guide-to-flexbox/&#34;&gt;A Complete Guide to Flexbox&lt;/a&gt; 和 &lt;a href=&#34;https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties&#34;&gt;A Visual Guide to CSS3 Flexbox Properties&lt;/a&gt; 。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&t=Flex布局教程：语法篇"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/05/09/css/5e06940b3b6f95adcc75c7057a505777/&t= Flex 布局教程：语法篇"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
