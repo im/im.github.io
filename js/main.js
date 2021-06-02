@@ -134,15 +134,15 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
-    // document.onkeydown = function(e) {
-    //     const keyCode = e.keyCode || e.which || e.charCode;
-    //     const ctrlKey = e.ctrlKey ;
-    //     console.log('ctrlKey: ', ctrlKey);
-    //     if(ctrlKey && keyCode == 70) {
-    //         $('.navbar-item.search').click();
-    //         e.preventDefault();
-    //         return false;
-    //     }
-    // }
+    document.onkeydown = function(e) {
+        const keyCode = e.keyCode || e.which || e.charCode;
+        const ctrlKey = e.ctrlKey;
+        console.log('ctrlKey: ', ctrlKey);
+        if (ctrlKey && keyCode === 75) {
+            $('.navbar-item.search').click();
+            e.preventDefault();
+            return false;
+        }
+    }
 
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
