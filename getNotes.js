@@ -47,7 +47,7 @@ module.exports = (() => {
     }
 
     const formatTags = (cont) => {
-        const tages = []
+        const tags = []
         const m = cont.match(/(.+)/g)
         if (m) {
             const arr = (m[m.length - 1].match(/#[A-Za-z\/\d]+/g) || []).map(
@@ -56,10 +56,10 @@ module.exports = (() => {
             arr.forEach((item) => {
                 if (item.split('/').length) {
                     item.split('/').forEach((t) => {
-                        tages.push(t)
+                        tags.push(t)
                     })
                 } else {
-                    tages.push(item)
+                    tags.push(item)
                 }
             })
         }
@@ -70,13 +70,13 @@ module.exports = (() => {
         // arr.forEach((item) => {
         //     if (item.split('/').length) {
         //         item.split('/').forEach((t) => {
-        //             tages.push(t)
+        //             tags.push(t)
         //         })
         //     } else {
-        //         tages.push(item)
+        //         tags.push(item)
         //     }
         // })
-        return tages
+        return tags
     }
 
     const getTitle = (cont) => {
