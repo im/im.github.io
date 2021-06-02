@@ -108,3 +108,7 @@ rss: /atom.xml
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+algolia:
+    applicationID: LT263LMVXP
+    indexName: hexo
+    apiKey: cebb1f717a8accd3f2cba60716c7ab71
