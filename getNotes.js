@@ -83,7 +83,7 @@ module.exports = (() => {
         const title = cont.match(/^(#+)(.*)/g)
             ? cont.match(/^(#+)(.*)/g)[0]
             : ''
-        return title.replace(/#/g, '').replace(/\s/g, '')
+        return title.replace(/#/g, '')
     }
 
     const getDate = (cont) => {

@@ -1,6 +1,6 @@
 ---
     {
-  "title": "编写JavaScript的10个小技巧",
+  "title": " 编写JavaScript的10个小技巧",
   "tags": [
     "javascript"
   ],
