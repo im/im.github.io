@@ -1,167 +1,8 @@
-<!DOCTYPE html>
-<html lang=zh>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="SVN与Git比较的优缺点差异 一、 集中式vs分布式1. Subversion属于集中式的版本控制系统集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。  Subversion的特点概括起来主要由以下几条：   每个版本库有唯一的URL（官方地址），每个用户都从这个地址获取代码和数据；   获取代码">
-<meta property="og:type" content="article">
-<meta property="og:title" content=" SVN与Git比较的优缺点差异">
-<meta property="og:url" content="https://tangxiaomi.top/2021/06/02/git/b813957de9/index.html">
-<meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="SVN与Git比较的优缺点差异 一、 集中式vs分布式1. Subversion属于集中式的版本控制系统集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。  Subversion的特点概括起来主要由以下几条：   每个版本库有唯一的URL（官方地址），每个用户都从这个地址获取代码和数据；   获取代码">
-<meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg">
-<meta property="article:published_time" content="2021-06-02T14:35:54.000Z">
-<meta property="article:modified_time" content="2021-06-02T06:40:41.412Z">
-<meta property="article:author" content="糖小米">
-<meta property="article:tag" content="git">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/cactus/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/cactus/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/cactus/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title> SVN与Git比较的优缺点差异</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/cactus/css/style.css">
-
-    <!-- persian styles -->
-    
-      
-<link rel="stylesheet" href="/cactus/css/rtl.css">
-
-    
-    <!-- rss -->
-    
-    
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/cactus/atom.xml" title="糖小米 · 博客" type="application/atom+xml">
-</head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/cactus/">首页</a></li>
-         
-          <li><a href="/cactus/tags/">标签</a></li>
-         
-          <li><a href="/cactus/archives/">归档</a></li>
-         
-          <li><a href="/cactus/search/">搜索</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" href="/cactus/2021/06/02/typescript/b1d5e8c189/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" href="/cactus/2021/06/02/git/8a00b72c59/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">上一篇</span>
-      <span id="i-next" class="info" style="display:none;">下一篇</span>
-      <span id="i-top" class="info" style="display:none;">返回顶部</span>
-      <span id="i-share" class="info" style="display:none;">分享文章</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/02/git/b813957de9/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&text= SVN与Git比较的优缺点差异"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&is_video=false&description= SVN与Git比较的优缺点差异"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject= SVN与Git比较的优缺点差异&body=Check out this article: https://tangxiaomi.top/2021/06/02/git/b813957de9/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&name= SVN与Git比较的优缺点差异&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/02/git/b813957de9/&t= SVN与Git比较的优缺点差异"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E9%9B%86%E4%B8%AD%E5%BC%8Fvs%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一、 集中式vs分布式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Subversion%E5%B1%9E%E4%BA%8E%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. Subversion属于集中式的版本控制系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%B1%9E%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Git属于分布式的版本控制系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%8E%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">二、 版本库与工作区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E7%9A%84%E7%89%88%E6%9C%AC%E5%BA%93%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%98%AF%E5%88%86%E7%A6%BB%E7%9A%84"><span class="toc-number">2.1.</span> <span class="toc-text">1. SVN的版本库和工作区是分离的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Git-%E7%9A%84%E7%89%88%E6%9C%AC%E5%BA%93%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BD%A2"><span class="toc-number">2.2.</span> <span class="toc-text">2 .Git 的版本库和工作区如影随形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E5%85%A8%E5%B1%80%E7%89%88%E6%9C%AC%E5%8F%B7%E5%92%8C%E5%85%A8%E7%90%83%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">三、 全局版本号和全球版本号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E4%B8%8EGit%E7%89%88%E6%9C%AC%E5%8F%B7%E6%AF%94%E8%BE%83"><span class="toc-number">3.1.</span> <span class="toc-text">1. SVN与Git版本号比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81-%E9%83%A8%E5%88%86%E6%A3%80%E5%87%BA"><span class="toc-number">4.</span> <span class="toc-text">四、 部分检出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E7%9A%84%E9%83%A8%E5%88%86%E6%A3%80%E5%87%BA"><span class="toc-number">4.1.</span> <span class="toc-text">1. SVN的部分检出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Git%E7%9A%84%E6%A3%80%E5%87%BA"><span class="toc-number">4.2.</span> <span class="toc-text">2. Git的检出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81-%E6%9B%B4%E6%96%B0%E5%92%8C%E6%8F%90%E4%BA%A4"><span class="toc-number">5.</span> <span class="toc-text">五、 更新和提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E%E6%9B%B4%E6%96%B0%E6%93%8D%E4%BD%9C"><span class="toc-number">5.1.</span> <span class="toc-text">1．更新操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8ESVN%E4%B8%AD%E7%9A%84commit%E5%91%BD%E4%BB%A4"><span class="toc-number">5.2.</span> <span class="toc-text">2．SVN中的commit命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8EGit%E4%B8%AD%E7%9A%84%E6%9A%82%E5%AD%98%E5%8C%BA%E5%9F%9F%EF%BC%88stage%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">3．Git中的暂存区域（stage）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81-%E5%88%86%E6%94%AF%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.</span> <span class="toc-text">六、 分支和里程碑的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8ESubversion%E7%9A%84%E5%88%86%E6%94%AF-%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="toc-number">6.1.</span> <span class="toc-text">1．Subversion的分支&#x2F;里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit-%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%88%86%E6%94%AF%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="toc-number">6.2.</span> <span class="toc-text">2．Git 的轻量级分支和里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8E%E5%A4%9A%E5%88%86%E6%94%AF%E9%97%B4%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-number">6.3.</span> <span class="toc-text">3．多分支间的切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81-%E5%88%86%E6%94%AF%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-number">7.</span> <span class="toc-text">七、 分支与合并</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E-SVN%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="toc-number">7.1.</span> <span class="toc-text">1． SVN的分支合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="toc-number">7.2.</span> <span class="toc-text">2．Git的分支合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81-%E6%92%A4%E6%B6%88%E6%93%8D%E4%BD%9C"><span class="toc-number">8.</span> <span class="toc-text">八、 撤消操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E%E6%8F%90%E4%BA%A4%E7%9A%84%E6%92%A4%E9%94%80"><span class="toc-number">8.1.</span> <span class="toc-text">1．提交的撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8E%E6%8F%90%E4%BA%A4%E8%AF%B4%E6%98%8E%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-number">8.2.</span> <span class="toc-text">2．提交说明的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8E%E4%BF%AE%E6%94%B9%E5%92%8C%E9%87%8D%E6%9E%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4"><span class="toc-number">8.3.</span> <span class="toc-text">3．修改和重构历史提交</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">9.</span> <span class="toc-text">九、 权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E4%BC%98%E7%BC%BA%E7%82%B9%E6%AF%94%E8%BE%83"><span class="toc-number">10.</span> <span class="toc-text">十、优缺点比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8ESVN%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">10.1.</span> <span class="toc-text">1．SVN优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">10.2.</span> <span class="toc-text">2．Git优缺点</span></a></li></ol></li></ol>
-    </div>
-  </span>
-</div>
-
-    
-    <div class="content index py4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-         SVN与Git比较的优缺点差异
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">糖小米</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2021-06-02T14:35:54.000Z" itemprop="datePublished">2021-06-02</time>
-        
-      
-    </div>
-
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/cactus/categories/git/">git</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/cactus/tags/git/" rel="tag">git</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sungeek/p/9152223.html">SVN与Git比较的优缺点差异</a></p>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title> SVN与Git比较的优缺点差异 - 糖小米 · 笔记</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="糖小米 · 笔记"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/im/oss@master/logo/logo.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="糖小米 · 笔记"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="SVN与Git比较的优缺点差异 一、 集中式vs分布式1. Subversion属于集中式的版本控制系统集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。"><meta property="og:type" content="blog"><meta property="og:title" content=" SVN与Git比较的优缺点差异"><meta property="og:url" content="https://tangxiaomi.top/2021/06/02/git/7d4043b8a9/"><meta property="og:site_name" content="糖小米 · 笔记"><meta property="og:description" content="SVN与Git比较的优缺点差异 一、 集中式vs分布式1. Subversion属于集中式的版本控制系统集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg"><meta property="article:published_time" content="2021-06-02T15:16:12.000Z"><meta property="article:modified_time" content="2021-06-02T07:16:43.531Z"><meta property="article:author" content="糖小米"><meta property="article:tag" content="git"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangxiaomi.top/2021/06/02/git/7d4043b8a9/"},"headline":"糖小米 · 笔记","image":[],"datePublished":"2021-06-02T15:16:12.000Z","dateModified":"2021-06-02T07:16:43.531Z","author":{"@type":"Person","name":"糖小米"},"description":"SVN与Git比较的优缺点差异 一、 集中式vs分布式1. Subversion属于集中式的版本控制系统集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。"}</script><link rel="canonical" href="https://tangxiaomi.top/2021/06/02/git/7d4043b8a9/"><link rel="alternate" href="/./atom.xml" title="糖小米 · 笔记" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/im/oss@master/logo/logo.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/im/hexo-theme@icarus/source/fontawesome/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">糖小米 · 笔记</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/links">Links</a><a class="navbar-item" href="/cactus">Theme</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/im"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="RSS" href="/./atom.xml"><i class="fas fa-rss"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-image"><span class="image is-7by3"><img class="fill" src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg" alt=" SVN与Git比较的优缺点差异"></span></div><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-06-02T15:16:12.000Z" title="2021-06-02T15:16:12.000Z">2021-06-02</time>发表</span><span class="level-item"><time dateTime="2021-06-02T07:16:43.531Z" title="2021-06-02T07:16:43.531Z">2021-06-02</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/git/">git</a></span><span class="level-item">1 小时读完 (大约9014个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"> SVN与Git比较的优缺点差异</h1><div class="content"><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Sungeek/p/9152223.html">SVN与Git比较的优缺点差异</a></p>
 <h2 id="一、-集中式vs分布式"><a href="#一、-集中式vs分布式" class="headerlink" title="一、 集中式vs分布式"></a>一、 集中式vs分布式</h2><h3 id="1-Subversion属于集中式的版本控制系统"><a href="#1-Subversion属于集中式的版本控制系统" class="headerlink" title="1. Subversion属于集中式的版本控制系统"></a>1. Subversion属于集中式的版本控制系统</h3><p>集中式的版本控制系统都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。<br> <img src="/images/aHR0cHM6Ly9pbWFnZXMyMDE4LmNuYmxvZ3MuY29tL2Jsb2cvODcyNjEwLzIwMTgwNi84NzI2MTAtMjAxODA2MDgxNDU5NDY3ODktMTE3NjM5NjE1Mi5wbmc.png"></p>
+<a id="more"></a> 
+
 <p><strong>Subversion的特点概括起来主要由以下几条：</strong></p>
 <ul>
 <li><p> 每个版本库有唯一的URL（官方地址），每个用户都从这个地址获取代码和数据；</p>
@@ -371,143 +212,48 @@
 </li>
 </ol>
 <p>#git</p>
-
-  </div>
-</article>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/cactus/">首页</a></li>
-         
-          <li><a href="/cactus/tags/">标签</a></li>
-         
-          <li><a href="/cactus/archives/">归档</a></li>
-         
-          <li><a href="/cactus/search/">搜索</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81-%E9%9B%86%E4%B8%AD%E5%BC%8Fvs%E5%88%86%E5%B8%83%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">一、 集中式vs分布式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-Subversion%E5%B1%9E%E4%BA%8E%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.</span> <span class="toc-text">1. Subversion属于集中式的版本控制系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Git%E5%B1%9E%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.</span> <span class="toc-text">Git属于分布式的版本控制系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-%E7%89%88%E6%9C%AC%E5%BA%93%E4%B8%8E%E5%B7%A5%E4%BD%9C%E5%8C%BA"><span class="toc-number">2.</span> <span class="toc-text">二、 版本库与工作区</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E7%9A%84%E7%89%88%E6%9C%AC%E5%BA%93%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%98%AF%E5%88%86%E7%A6%BB%E7%9A%84"><span class="toc-number">2.1.</span> <span class="toc-text">1. SVN的版本库和工作区是分离的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Git-%E7%9A%84%E7%89%88%E6%9C%AC%E5%BA%93%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%A6%82%E5%BD%B1%E9%9A%8F%E5%BD%A2"><span class="toc-number">2.2.</span> <span class="toc-text">2 .Git 的版本库和工作区如影随形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81-%E5%85%A8%E5%B1%80%E7%89%88%E6%9C%AC%E5%8F%B7%E5%92%8C%E5%85%A8%E7%90%83%E7%89%88%E6%9C%AC%E5%8F%B7"><span class="toc-number">3.</span> <span class="toc-text">三、 全局版本号和全球版本号</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E4%B8%8EGit%E7%89%88%E6%9C%AC%E5%8F%B7%E6%AF%94%E8%BE%83"><span class="toc-number">3.1.</span> <span class="toc-text">1. SVN与Git版本号比较</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81-%E9%83%A8%E5%88%86%E6%A3%80%E5%87%BA"><span class="toc-number">4.</span> <span class="toc-text">四、 部分检出</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SVN%E7%9A%84%E9%83%A8%E5%88%86%E6%A3%80%E5%87%BA"><span class="toc-number">4.1.</span> <span class="toc-text">1. SVN的部分检出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Git%E7%9A%84%E6%A3%80%E5%87%BA"><span class="toc-number">4.2.</span> <span class="toc-text">2. Git的检出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81-%E6%9B%B4%E6%96%B0%E5%92%8C%E6%8F%90%E4%BA%A4"><span class="toc-number">5.</span> <span class="toc-text">五、 更新和提交</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E%E6%9B%B4%E6%96%B0%E6%93%8D%E4%BD%9C"><span class="toc-number">5.1.</span> <span class="toc-text">1．更新操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8ESVN%E4%B8%AD%E7%9A%84commit%E5%91%BD%E4%BB%A4"><span class="toc-number">5.2.</span> <span class="toc-text">2．SVN中的commit命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8EGit%E4%B8%AD%E7%9A%84%E6%9A%82%E5%AD%98%E5%8C%BA%E5%9F%9F%EF%BC%88stage%EF%BC%89"><span class="toc-number">5.3.</span> <span class="toc-text">3．Git中的暂存区域（stage）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81-%E5%88%86%E6%94%AF%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">6.</span> <span class="toc-text">六、 分支和里程碑的实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8ESubversion%E7%9A%84%E5%88%86%E6%94%AF-%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="toc-number">6.1.</span> <span class="toc-text">1．Subversion的分支&#x2F;里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit-%E7%9A%84%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%88%86%E6%94%AF%E5%92%8C%E9%87%8C%E7%A8%8B%E7%A2%91"><span class="toc-number">6.2.</span> <span class="toc-text">2．Git 的轻量级分支和里程碑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8E%E5%A4%9A%E5%88%86%E6%94%AF%E9%97%B4%E7%9A%84%E5%88%87%E6%8D%A2"><span class="toc-number">6.3.</span> <span class="toc-text">3．多分支间的切换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81-%E5%88%86%E6%94%AF%E4%B8%8E%E5%90%88%E5%B9%B6"><span class="toc-number">7.</span> <span class="toc-text">七、 分支与合并</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E-SVN%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="toc-number">7.1.</span> <span class="toc-text">1． SVN的分支合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit%E7%9A%84%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6"><span class="toc-number">7.2.</span> <span class="toc-text">2．Git的分支合并</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AB%E3%80%81-%E6%92%A4%E6%B6%88%E6%93%8D%E4%BD%9C"><span class="toc-number">8.</span> <span class="toc-text">八、 撤消操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8E%E6%8F%90%E4%BA%A4%E7%9A%84%E6%92%A4%E9%94%80"><span class="toc-number">8.1.</span> <span class="toc-text">1．提交的撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8E%E6%8F%90%E4%BA%A4%E8%AF%B4%E6%98%8E%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="toc-number">8.2.</span> <span class="toc-text">2．提交说明的修改</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8E%E4%BF%AE%E6%94%B9%E5%92%8C%E9%87%8D%E6%9E%84%E5%8E%86%E5%8F%B2%E6%8F%90%E4%BA%A4"><span class="toc-number">8.3.</span> <span class="toc-text">3．修改和重构历史提交</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%9D%E3%80%81-%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="toc-number">9.</span> <span class="toc-text">九、 权限管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%81%E3%80%81%E4%BC%98%E7%BC%BA%E7%82%B9%E6%AF%94%E8%BE%83"><span class="toc-number">10.</span> <span class="toc-text">十、优缺点比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8ESVN%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">10.1.</span> <span class="toc-text">1．SVN优缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8EGit%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">10.2.</span> <span class="toc-text">2．Git优缺点</span></a></li></ol></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/02/git/b813957de9/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&text= SVN与Git比较的优缺点差异"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&is_video=false&description= SVN与Git比较的优缺点差异"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject= SVN与Git比较的优缺点差异&body=Check out this article: https://tangxiaomi.top/2021/06/02/git/b813957de9/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&title= SVN与Git比较的优缺点差异"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/02/git/b813957de9/&name= SVN与Git比较的优缺点差异&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/02/git/b813957de9/&t= SVN与Git比较的优缺点差异"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
-        <!-- <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a> -->
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
-    </div>
-
-  </div>
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2021
-    糖小米
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/cactus/">首页</a></li>
-         
-          <li><a href="/cactus/tags/">标签</a></li>
-         
-          <li><a href="/cactus/archives/">归档</a></li>
-         
-          <li><a href="/cactus/search/">搜索</a></li>
-        
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-<link rel="stylesheet" href="/cactus/lib/font-awesome/css/all.min.css">
-
-
-<link rel="stylesheet" href="/cactus/lib/justified-gallery/css/justifiedGallery.min.css">
-
-
-    <!-- jquery -->
-
-<script src="/cactus/lib/jquery/jquery.min.js"></script>
-
-
-<script src="/cactus/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
-
-<!-- clipboard -->
-
-  
-<script src="/cactus/lib/clipboard/clipboard.min.js"></script>
-
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "复制成功!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
-
-<script src="/cactus/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-
-</body>
-</html>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/git/">git</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2021/06/02/typescript/1a08ac1c5a/"><span class="level-item"> 枚举</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><figure class="media-left"><a class="image" href="/2021/06/02/git/7d4043b8a9/"><img src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/18.svg" alt=" SVN与Git比较的优缺点差异"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-06-02T15:16:12.000Z">2021-06-02</time></p><p class="title"><a href="/2021/06/02/git/7d4043b8a9/"> SVN与Git比较的优缺点差异</a></p><p class="categories"><a href="/categories/git/">git</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/06/02/typescript/1a08ac1c5a/"><img src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/03.svg" alt=" 枚举"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-06-02T14:40:06.000Z">2021-06-02</time></p><p class="title"><a href="/2021/06/02/typescript/1a08ac1c5a/"> 枚举</a></p><p class="categories"><a href="/categories/typescript/">typescript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/06/02/typescript/5e4e456de9/"><img src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/04.svg" alt=" 泛型"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-06-02T14:40:06.000Z">2021-06-02</time></p><p class="title"><a href="/2021/06/02/typescript/5e4e456de9/"> 泛型</a></p><p class="categories"><a href="/categories/typescript/">typescript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/06/02/typescript/72cef48aef/"><img src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/38.svg" alt=" 基础类型"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-06-02T14:40:06.000Z">2021-06-02</time></p><p class="title"><a href="/2021/06/02/typescript/72cef48aef/"> 基础类型</a></p><p class="categories"><a href="/categories/typescript/">typescript</a></p></div></article><article class="media"><figure class="media-left"><a class="image" href="/2021/06/02/typescript/b5f2897384/"><img src="https://cdn.jsdelivr.net/gh/im/oss@master/gallery/39.svg" alt=" 字面量类型"></a></figure><div class="media-content"><p class="date"><time dateTime="2021-06-02T14:40:06.000Z">2021-06-02</time></p><p class="title"><a href="/2021/06/02/typescript/b5f2897384/"> 字面量类型</a></p><p class="categories"><a href="/categories/typescript/">typescript</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">糖小米 · 笔记</a><p class="is-size-7"><span>&copy; 2021 糖小米</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/im/im.github.io"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
