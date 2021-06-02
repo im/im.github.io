@@ -8,8 +8,8 @@
   "categories": [
     "git"
   ],
-  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/25.svg"
+  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/26.svg"
 }
 ---
     
