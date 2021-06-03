@@ -15,6 +15,7 @@ sidebar:
 #     type: sharejs
 donates:
 comment:
+toc: true
 widgets:
   - # Where should the widget be placed, left sidebar or right sidebar
     position: left
@@ -24,7 +25,7 @@ widgets:
     # Whether to collapse sub-headings when they are out-of-view
     collapsed: true
     # Maximum level of headings to show (1-6)
-    depth: 3
+    depth: 4
   - # Where should the widget be placed, left sidebar or right sidebar
       position: left
       type: recent_posts
