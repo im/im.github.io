@@ -5,7 +5,7 @@
     "interview",
     "javascript",
     "interview",
-    "3"
+    "everyday"
   ],
   "date": "2021-06-03",
   "categories": [
@@ -69,4 +69,4 @@ console.log(`|${result}|`); //  |s t  r|
 
 
 
-#interview/javascript #interview/3+1
+#interview/javascript #interview/everyday
