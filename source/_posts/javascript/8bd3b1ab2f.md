@@ -9,8 +9,8 @@
   "categories": [
     "javascript"
   ],
-  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/15.svg"
+  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/16.svg"
 }
 ---
     

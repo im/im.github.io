@@ -3,7 +3,9 @@
   "title": " 6 . 写一个方法去掉字符串中的空格",
   "tags": [
     "interview",
-    "javascript"
+    "javascript",
+    "interview",
+    "3"
   ],
   "date": "2021-06-03",
   "categories": [
@@ -67,4 +69,4 @@ console.log(`|${result}|`); //  |s t  r|
 
 
 
-#interview/javascript
+#interview/javascript #interview/3+1

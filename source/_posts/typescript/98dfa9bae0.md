@@ -8,8 +8,8 @@
   "categories": [
     "typescript"
   ],
-  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg"
+  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/07.svg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/07.svg"
 }
 ---
     
