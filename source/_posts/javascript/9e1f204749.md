@@ -8,8 +8,8 @@
   "categories": [
     "javascript"
   ],
-  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/04.svg",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/04.svg"
+  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg",
+  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/05.svg"
 }
 ---
     
