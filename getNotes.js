@@ -17,7 +17,7 @@ module.exports = (() => {
             Object.keys(obj).forEach((item) => {
                 const arr = Object.keys(d)
                 if (!arr.includes(item)) {
-                    d[item] = moment().format('yyyy-MM-DD HH:mm:ss')
+                    d[item] = moment().format('yyyy-MM-DD')
                 }
             })
             const str = `module.exports = ${JSON.stringify(d)}
@@ -171,7 +171,8 @@ module.exports = (() => {
     mdFiles.forEach((md, index) => {
         const buffer = fs.readFileSync(md)
         const mdContent = String(buffer)
-        md5Obj[md5(mdContent)] = moment().format('yyyy-MM-DD HH:mm:ss')
+        const title = getTitle(mdContent)
+        md5Obj[md5(title)] = moment().format('yyyy-MM-DD')
     })
 
     setDate(md5Obj)
@@ -179,10 +180,10 @@ module.exports = (() => {
     mdFiles.forEach((md, index) => {
         const buffer = fs.readFileSync(md)
         const mdContent = String(buffer)
-        const hash = md5(mdContent)
-        const date = d[hash]
         const tags = formatTags(mdContent)
         const title = getTitle(mdContent)
+        const hash = md5(title)
+        const date = d[hash]
         const categories = tags[0] || ''
 
         const content = replaceContent(
