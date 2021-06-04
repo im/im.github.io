@@ -14,7 +14,6 @@ sidebar:
 # share:
 #     type: sharejs
 donates:
-comment:
 toc: true
 widgets:
   - # Where should the widget be placed, left sidebar or right sidebar
