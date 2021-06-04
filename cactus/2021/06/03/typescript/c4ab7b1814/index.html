@@ -14,7 +14,7 @@
 <meta property="og:description" content="介绍TypeScript 的核心原则之一是对值所具有的_结构_进行类型检查。 它有时被称做“鸭式辨型法”或“结构性子类型化”。 在 TypeScript 里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-04T06:57:22.255Z">
+<meta property="article:modified_time" content="2021-06-04T07:05:35.013Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="typescript">
 <meta name="twitter:card" content="summary">
@@ -282,7 +282,6 @@
 
 <p>在上面的例子里，<code>SelectableControl</code>包含了<code>Control</code>的所有成员，包括私有成员<code>state</code>。 因为<code>state</code>是私有成员，所以只能够是<code>Control</code>的子类们才能实现<code>SelectableControl</code>接口。 因为只有<code>Control</code>的子类才能够拥有一个声明于<code>Control</code>的私有成员<code>state</code>，这对私有成员的兼容性是必需的。</p>
 <p>在<code>Control</code>类内部，是允许通过<code>SelectableControl</code>的实例来访问私有成员<code>state</code>的。 实际上，<code>SelectableControl</code>就像<code>Control</code>一样，并拥有一个<code>select</code>方法。 <code>Button</code>和<code>TextBox</code>类是<code>SelectableControl</code>的子类（因为它们都继承自<code>Control</code>并有<code>select</code>方法）。而对于 <code>ImageControl</code> 类，它有自身的私有成员 <code>state</code> 而不是通过继承 <code>Control</code> 得来的，所以它不可以实现 <code>SelectableControl</code> 。</p>
-<p>#typescript</p>
 
   </div>
 </article>

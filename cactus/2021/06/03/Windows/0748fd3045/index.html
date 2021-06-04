@@ -14,7 +14,7 @@
 <meta property="og:description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-04T06:57:22.251Z">
+<meta property="article:modified_time" content="2021-06-04T07:05:35.009Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
@@ -168,7 +168,6 @@
 <h2 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h2><p>强制（/F参数）杀死 pid 为 9088 的所有进程包括子进程（/T参数）：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /T /F /PID 9088</span><br></pre></td></tr></table></figure>
 
-<p>#Windows#</p>
 
   </div>
 </article>

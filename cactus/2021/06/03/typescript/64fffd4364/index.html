@@ -14,7 +14,7 @@
 <meta property="og:description" content="介绍函数是JavaScript应用程序的基础。 它帮助你实现抽象层，模拟类，信息隐藏和模块。 在TypeScript里，虽然已经支持类，命名空间和模块，但函数仍然是主要的定义_行为_的地方。 TypeScript为JavaScript函数添加了额外的功能，让我们可以更容易地使用。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-04T06:57:22.255Z">
+<meta property="article:modified_time" content="2021-06-04T07:05:35.013Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="typescript">
 <meta name="twitter:card" content="summary">
@@ -253,7 +253,6 @@
 <p>这样改变后，重载的<code>pickCard</code>函数在调用的时候会进行正确的类型检查。</p>
 <p>为了让编译器能够选择正确的检查类型，它与JavaScript里的处理流程相似。 它查找重载列表，尝试使用第一个重载定义。 如果匹配的话就使用这个。 因此，在定义重载的时候，一定要把最精确的定义放在最前面。</p>
 <p>注意，<code>function pickCard(x): any</code>并不是重载列表的一部分，因此这里只有两个重载：一个是接收对象另一个接收数字。 以其它参数调用<code>pickCard</code>会产生错误。</p>
-<p>#typescript</p>
 
   </div>
 </article>

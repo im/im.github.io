@@ -14,7 +14,7 @@
 <meta property="og:description" content="Array.prototype.flat()flat() 方法会按照一个可指定的深度递归遍历数组，并将所有元素与遍历到的子数组中的元素合并为一个新数组返回。 12345678910const arr1 &#x3D; [0, 1, 2, [3, 4]];console.log(arr1.flat());&#x2F;&#x2F; expected output: [0, 1, 2, 3, 4]const arr2 &#x3D; [0, 1,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-03T05:36:57.000Z">
-<meta property="article:modified_time" content="2021-06-04T06:57:22.255Z">
+<meta property="article:modified_time" content="2021-06-04T07:05:35.013Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -173,7 +173,6 @@
 
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 递归版本的反嵌套</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">flatten</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> flattend = [];</span><br><span class="line">  (<span class="function"><span class="keyword">function</span> <span class="title">flat</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    array.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">el</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(el)) flat(el);</span><br><span class="line">      <span class="keyword">else</span> flattend.push(el);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;)(array);</span><br><span class="line">  <span class="keyword">return</span> flattend;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>#javascript</p>
 
   </div>
 </article>
