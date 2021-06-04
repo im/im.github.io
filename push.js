@@ -10,7 +10,7 @@ module.exports = (() => {
             .add('./*')
             .commit(`notes update ${moment().format('yyyy-MM-DD HH:mm:ss')}`)
             .push(['-u', 'origin', 'main'], (e) => {
-                require('./clear.js')
+                // require('./clear.js')
             })
     }, 3000)
 })()
