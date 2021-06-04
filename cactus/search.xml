@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title> Node.js的版本升级</title>
+      <link href="/cactus/2021/06/04/javascript/b893a6f276/"/>
+      <url>/cactus/2021/06/04/javascript/b893a6f276/</url>
+      
+        <content type="html"><![CDATA[<h2 id="查看本地node版本"><a href="#查看本地node版本" class="headerlink" title="查看本地node版本"></a>查看本地node版本</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure><h2 id="安装n模块"><a href="#安装n模块" class="headerlink" title="安装n模块"></a>安装n模块</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g n（mac需要在命令的前面加上sudo）</span><br></pre></td></tr></table></figure><h2 id="升级到指定的版本-最新版本，升级之前，可以执行n-ls（查看可以升级的版本）"><a href="#升级到指定的版本-最新版本，升级之前，可以执行n-ls（查看可以升级的版本）" class="headerlink" title="升级到指定的版本/最新版本，升级之前，可以执行n ls（查看可以升级的版本）"></a>升级到指定的版本/最新版本，升级之前，可以执行n ls（查看可以升级的版本）</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n 8.10.1（版本号）</span><br><span class="line">或者你可以安装最新的稳定版本</span><br><span class="line">n stable</span><br></pre></td></tr></table></figure><h2 id="4-安装完成以后，检查一下是否升级成功"><a href="#4-安装完成以后，检查一下是否升级成功" class="headerlink" title="4.安装完成以后，检查一下是否升级成功"></a>4.安装完成以后，检查一下是否升级成功</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> javascript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+            <tag> nodejs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title> Linux软连接和硬链接</title>
       <link href="/cactus/2021/06/04/linux/fa6eb7f527/"/>
       <url>/cactus/2021/06/04/linux/fa6eb7f527/</url>
