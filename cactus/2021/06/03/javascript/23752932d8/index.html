@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="简化条件表达式经常碰到这种情况，要判断某个变量是否为指定的某些值，用常规的逻辑表达式会很长。我的做法是把这些值放进数组里： 12345678&#x2F;&#x2F; 太长的逻辑表达式if (x &#x3D;&#x3D;&#x3D; &amp;#x27;abc&amp;#x27; || x &#x3D;&#x3D;&#x3D; &amp;#x27;def&amp;#x27; || x &#x3D;&#x3D;&#x3D; &amp;#x27;ghi&amp;#x27; || x &#x3D;&#x3D;&#x3D;&amp;#x27;jkl&amp;#x27;) &amp;#123;    &#x2F;&#x2F;其他逻辑&amp;#">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" 编写JavaScript的10个小技巧">
+<meta property="og:url" content="https://tangxiaomi.top/2021/06/03/javascript/23752932d8/index.html">
+<meta property="og:site_name" content="糖小米 · 博客">
+<meta property="og:description" content="简化条件表达式经常碰到这种情况，要判断某个变量是否为指定的某些值，用常规的逻辑表达式会很长。我的做法是把这些值放进数组里： 12345678&#x2F;&#x2F; 太长的逻辑表达式if (x &#x3D;&#x3D;&#x3D; &amp;#x27;abc&amp;#x27; || x &#x3D;&#x3D;&#x3D; &amp;#x27;def&amp;#x27; || x &#x3D;&#x3D;&#x3D; &amp;#x27;ghi&amp;#x27; || x &#x3D;&#x3D;&#x3D;&amp;#x27;jkl&amp;#x27;) &amp;#123;    &#x2F;&#x2F;其他逻辑&amp;#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-04T02:48:49.769Z">
+<meta property="article:author" content="糖小米">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/cactus/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/cactus/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/cactus/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title> 编写JavaScript的10个小技巧</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/cactus/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/cactus/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/cactus/atom.xml" title="糖小米 · 博客" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/cactus/2021/06/03/javascript/0eec0217cd/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/cactus/2021/06/03/javascript/23d05c6dd2/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&text= 编写JavaScript的10个小技巧"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&is_video=false&description= 编写JavaScript的10个小技巧"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 编写JavaScript的10个小技巧&body=Check out this article: https://tangxiaomi.top/2021/06/03/javascript/23752932d8/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&name= 编写JavaScript的10个小技巧&description=&lt;h2 id=&#34;简化条件表达式&#34;&gt;&lt;a href=&#34;#简化条件表达式&#34; class=&#34;headerlink&#34; title=&#34;简化条件表达式&#34;&gt;&lt;/a&gt;简化条件表达式&lt;/h2&gt;&lt;p&gt;经常碰到这种情况，要判断某个变量是否为指定的某些值，用常规的逻辑表达式会很长。我的做法是把这些值放进数组里：&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 太长的逻辑表达式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;abc&amp;#x27;&lt;/span&gt; || x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;def&amp;#x27;&lt;/span&gt; || x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;ghi&amp;#x27;&lt;/span&gt; || x ===&lt;span class=&#34;string&#34;&gt;&amp;#x27;jkl&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;//其他逻辑&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 简写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ([&lt;span class=&#34;string&#34;&gt;&amp;#x27;abc&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;def&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;ghi&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;jkl&amp;#x27;&lt;/span&gt;].includes(x)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;comment&#34;&gt;//其他逻辑&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&t= 编写JavaScript的10个小技巧"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">简化条件表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96-if-%E2%80%A6-else"><span class="toc-number">2.</span> <span class="toc-text">简化 if … else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E7%A9%BA%E5%B9%B6%E8%B5%8B%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">判空并赋默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%86%99%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86"><span class="toc-number">4.</span> <span class="toc-text">简写循环遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96-switch"><span class="toc-number">5.</span> <span class="toc-text">简化 switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">简化多行字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%96%84%E7%94%A8%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%AE%80%E5%8C%96-return"><span class="toc-number">7.</span> <span class="toc-text">善用箭头函数简化 return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.</span> <span class="toc-text">简化分支条件语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2-N-%E6%AC%A1"><span class="toc-number">9.</span> <span class="toc-text">重复字符串 N 次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">10.</span> <span class="toc-text">指数运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">11.</span> <span class="toc-text">数字分隔符</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+         编写JavaScript的10个小技巧
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">糖小米</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-06-03T00:00:00.000Z" itemprop="datePublished">2021-06-03</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/cactus/categories/javascript/">javascript</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/cactus/tags/javascript/" rel="tag">javascript</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="简化条件表达式"><a href="#简化条件表达式" class="headerlink" title="简化条件表达式"></a>简化条件表达式</h2><p>经常碰到这种情况，要判断某个变量是否为指定的某些值，用常规的逻辑表达式会很长。我的做法是把这些值放进数组里：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 太长的逻辑表达式</span></span><br><span class="line"><span class="keyword">if</span> (x === <span class="string">&#x27;abc&#x27;</span> || x === <span class="string">&#x27;def&#x27;</span> || x === <span class="string">&#x27;ghi&#x27;</span> || x ===<span class="string">&#x27;jkl&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">//其他逻辑</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line"><span class="keyword">if</span> ([<span class="string">&#x27;abc&#x27;</span>, <span class="string">&#x27;def&#x27;</span>, <span class="string">&#x27;ghi&#x27;</span>, <span class="string">&#x27;jkl&#x27;</span>].includes(x)) &#123;</span><br><span class="line">   <span class="comment">//其他逻辑</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="简化-if-…-else"><a href="#简化-if-…-else" class="headerlink" title="简化 if … else"></a>简化 if … else</h2><p>if…else太常用了，以至于很多人都忘了其实还有其他方式来判断条件。比如简单的变量赋值，完全没必要用这种冗长的语句，一行表达式就搞定了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 新手的写法</span></span><br><span class="line"><span class="keyword">let</span> test= boolean;</span><br><span class="line"><span class="keyword">if</span> (x &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    test = <span class="literal">true</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    test = <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写表达式</span></span><br><span class="line"><span class="keyword">let</span> test = (x &gt; <span class="number">10</span>) ? <span class="literal">true</span> : <span class="literal">false</span>;</span><br><span class="line"><span class="comment">// 更直接的</span></span><br><span class="line"><span class="keyword">let</span> test = x &gt; <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(test);</span><br></pre></td></tr></table></figure>
+
+<p>三元表达式可以做复杂的条件分支判断，不过牺牲了一些可读性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> x = <span class="number">300</span>,</span><br><span class="line"><span class="keyword">let</span> test2 = (x &gt; <span class="number">100</span>) ? <span class="string">&#x27;greater 100&#x27;</span> : (x &lt; <span class="number">50</span>) ? <span class="string">&#x27;less 50&#x27;</span> : <span class="string">&#x27;between 50 and 100&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(test2); <span class="comment">// &quot;greater than 100&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="判空并赋默认值"><a href="#判空并赋默认值" class="headerlink" title="判空并赋默认值"></a>判空并赋默认值</h2><p>Code Review 的时候我经常看到这样的代码，判断变量不是null，undefined，’’的时候赋值给第二个变量，否则给个默认值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (first !== <span class="literal">null</span> || first !== <span class="literal">undefined</span> || first !== <span class="string">&#x27;&#x27;</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> second = first;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 简写</span></span><br><span class="line"><span class="keyword">let</span> second = first || <span class="string">&#x27;&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="简写循环遍历"><a href="#简写循环遍历" class="headerlink" title="简写循环遍历"></a>简写循环遍历</h2><p>for  循环是最基本的，但是有点繁琐。可以用 for…in、for…of 或者 forEach 代替：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Longhand</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; testData.length; i++)</span><br><span class="line"></span><br><span class="line"><span class="comment">// Shorthand</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">in</span> testData) or  <span class="keyword">for</span> (<span class="keyword">let</span> i <span class="keyword">of</span> testData)</span><br></pre></td></tr></table></figure>
+
+<p>数组遍历：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">testData</span>(<span class="params">element, index, array</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;test[&#x27;</span> + index + <span class="string">&#x27;] = &#x27;</span> + element);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">[<span class="number">11</span>, <span class="number">24</span>, <span class="number">32</span>].forEach(testData);</span><br><span class="line"><span class="comment">// 打印输出: test[0] = 11, test[1] = 24, test[2] = 32</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="简化-switch"><a href="#简化-switch" class="headerlink" title="简化 switch"></a>简化 switch</h2><p>这个技巧也很常用，把switch  转换成对象的key-value形式，代码简洁多了：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Longhand</span></span><br><span class="line"><span class="keyword">switch</span> (data) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">    test1();</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    test2();</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    test();</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">  <span class="comment">// And so on...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Shorthand</span></span><br><span class="line"><span class="keyword">var</span> data = &#123;</span><br><span class="line">  <span class="number">1</span>: test1,</span><br><span class="line">  <span class="number">2</span>: test2,</span><br><span class="line">  <span class="number">3</span>: test</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">data[anything] &amp;&amp; data[anything]();</span><br></pre></td></tr></table></figure>
+
+<h2 id="简化多行字符串拼接"><a href="#简化多行字符串拼接" class="headerlink" title="简化多行字符串拼接"></a>简化多行字符串拼接</h2><p>如果一个字符串表达式过长，我们可能会拆成多行拼接的方式。不过随着 ES6 的普及，更好的做法是用模板字符串：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//longhand</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="string">&#x27;abc abc abc abc abc abc\n\t&#x27;</span></span><br><span class="line">    + <span class="string">&#x27;test test,test test test test\n\t&#x27;</span></span><br><span class="line"><span class="comment">//shorthand</span></span><br><span class="line"><span class="keyword">const</span> data = <span class="string">`abc abc abc abc abc abc</span></span><br><span class="line"><span class="string">         test test,test test test test`</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="善用箭头函数简化-return"><a href="#善用箭头函数简化-return" class="headerlink" title="善用箭头函数简化 return"></a>善用箭头函数简化 return</h2><p>ES6 的箭头函数真是个好东西，当函数简单到只需要返回一个表达式时，用箭头函数最合适不过了，return都不用写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Longhand:</span><br><span class="line"><span class="comment">//longhand</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getArea</span>(<span class="params">diameter</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Math</span>.PI * diameter</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//shorthand</span></span><br><span class="line">getArea = <span class="function"><span class="params">diameter</span> =&gt;</span> (</span><br><span class="line">  <span class="built_in">Math</span>.PI * diameter;</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h2 id="简化分支条件语句"><a href="#简化分支条件语句" class="headerlink" title="简化分支条件语句"></a>简化分支条件语句</h2><p>又是你，if…else if…else！跟 switch类似，也可以用key-value形式简化：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Longhand</span></span><br><span class="line"><span class="keyword">if</span> (type === <span class="string">&#x27;test1&#x27;</span>) &#123;</span><br><span class="line">  test1();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&#x27;test2&#x27;</span>) &#123;</span><br><span class="line">  test2();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&#x27;test3&#x27;</span>) &#123;</span><br><span class="line">  test3();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (type === <span class="string">&#x27;test4&#x27;</span>) &#123;</span><br><span class="line">  test4();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;Invalid value &#x27;</span> + type);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Shorthand</span></span><br><span class="line"><span class="keyword">var</span> types = &#123;</span><br><span class="line">  <span class="attr">test1</span>: test1,</span><br><span class="line">  <span class="attr">test2</span>: test2,</span><br><span class="line">  <span class="attr">test3</span>: test3,</span><br><span class="line">  <span class="attr">test4</span>: test4</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> func = types[type];</span><br><span class="line">(!func) &amp;&amp; <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">&#x27;Invalid value &#x27;</span> + type); func();</span><br></pre></td></tr></table></figure>
+
+<h2 id="重复字符串-N-次"><a href="#重复字符串-N-次" class="headerlink" title="重复字符串 N 次"></a>重复字符串 N 次</h2><p>有时候出于某种目的需要将字符串重复 N 次，最笨的方法就是用for循环拼接。其实更简单的方法是用repeat：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//longhand </span></span><br><span class="line"><span class="keyword">let</span> test = <span class="string">&#x27;&#x27;</span>; </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i ++) &#123; </span><br><span class="line">  test += <span class="string">&#x27;test &#x27;</span>; </span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">console</span>.log(str); <span class="comment">// test test test test test </span></span><br><span class="line"><span class="comment">//shorthand </span></span><br><span class="line"><span class="string">&#x27;test &#x27;</span>.repeat(<span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="指数运算"><a href="#指数运算" class="headerlink" title="指数运算"></a>指数运算</h2><p>能省则省，低碳环保。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//longhand</span></span><br><span class="line"><span class="built_in">Math</span>.pow(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">// 8</span></span><br><span class="line"><span class="comment">//shorthand</span></span><br><span class="line"><span class="number">2</span>**<span class="number">3</span> <span class="comment">// 8</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="数字分隔符"><a href="#数字分隔符" class="headerlink" title="数字分隔符"></a>数字分隔符</h2><p>这是比较新的语法，ES2021 提出来的，数字字面量可以用下划线分割，提高了大数字的可读性：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 旧语法</span></span><br><span class="line"><span class="keyword">let</span> number = <span class="number">98234567</span></span><br><span class="line"><span class="comment">// 新语法</span></span><br><span class="line"><span class="keyword">let</span> number = <span class="number">98_234_567</span></span><br></pre></td></tr></table></figure>
+
+<p>#javascript </p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E6%9D%A1%E4%BB%B6%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.</span> <span class="toc-text">简化条件表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96-if-%E2%80%A6-else"><span class="toc-number">2.</span> <span class="toc-text">简化 if … else</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A4%E7%A9%BA%E5%B9%B6%E8%B5%8B%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="toc-number">3.</span> <span class="toc-text">判空并赋默认值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%86%99%E5%BE%AA%E7%8E%AF%E9%81%8D%E5%8E%86"><span class="toc-number">4.</span> <span class="toc-text">简写循环遍历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96-switch"><span class="toc-number">5.</span> <span class="toc-text">简化 switch</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E5%A4%9A%E8%A1%8C%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8B%BC%E6%8E%A5"><span class="toc-number">6.</span> <span class="toc-text">简化多行字符串拼接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%96%84%E7%94%A8%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E7%AE%80%E5%8C%96-return"><span class="toc-number">7.</span> <span class="toc-text">善用箭头函数简化 return</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8C%96%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5"><span class="toc-number">8.</span> <span class="toc-text">简化分支条件语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E4%B8%B2-N-%E6%AC%A1"><span class="toc-number">9.</span> <span class="toc-text">重复字符串 N 次</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E8%BF%90%E7%AE%97"><span class="toc-number">10.</span> <span class="toc-text">指数运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E5%88%86%E9%9A%94%E7%AC%A6"><span class="toc-number">11.</span> <span class="toc-text">数字分隔符</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&text= 编写JavaScript的10个小技巧"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&is_video=false&description= 编写JavaScript的10个小技巧"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 编写JavaScript的10个小技巧&body=Check out this article: https://tangxiaomi.top/2021/06/03/javascript/23752932d8/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&title= 编写JavaScript的10个小技巧"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&name= 编写JavaScript的10个小技巧&description=&lt;h2 id=&#34;简化条件表达式&#34;&gt;&lt;a href=&#34;#简化条件表达式&#34; class=&#34;headerlink&#34; title=&#34;简化条件表达式&#34;&gt;&lt;/a&gt;简化条件表达式&lt;/h2&gt;&lt;p&gt;经常碰到这种情况，要判断某个变量是否为指定的某些值，用常规的逻辑表达式会很长。我的做法是把这些值放进数组里：&lt;/p&gt;
+&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 太长的逻辑表达式&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;abc&amp;#x27;&lt;/span&gt; || x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;def&amp;#x27;&lt;/span&gt; || x === &lt;span class=&#34;string&#34;&gt;&amp;#x27;ghi&amp;#x27;&lt;/span&gt; || x ===&lt;span class=&#34;string&#34;&gt;&amp;#x27;jkl&amp;#x27;&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;//其他逻辑&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// 简写&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ([&lt;span class=&#34;string&#34;&gt;&amp;#x27;abc&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;def&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;ghi&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;jkl&amp;#x27;&lt;/span&gt;].includes(x)) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;   &lt;span class=&#34;comment&#34;&gt;//其他逻辑&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/03/javascript/23752932d8/&t= 编写JavaScript的10个小技巧"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <!-- <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a> -->
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021
+    糖小米
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/cactus/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/cactus/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/cactus/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/cactus/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/cactus/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/cactus/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
