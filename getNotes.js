@@ -127,7 +127,6 @@ module.exports = (() => {
         content = content.replace(/::(\d+)年(\d+)月(\d+)日::/g, '')
         content = content.replace(/!\[(.*?)\]\((.*?)\)/g, (res, $1, $2) => {
             const arr = $2.split('/')
-            console.log('arr: ', arr)
             return `![](/images/${arr[arr.length - 1]})`
         })
 
@@ -136,7 +135,6 @@ module.exports = (() => {
             const endLine = m[m.length - 1]
             const reg = new RegExp(endLine)
             content = content.replace(reg, '')
-            console.log()
         }
         return fontMatter + content
     }
