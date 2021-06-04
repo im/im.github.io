@@ -5,7 +5,7 @@
     "javascript",
     "closure"
   ],
-  "date": "2021-06-03",
+  "date": "2019-09-03",
   "categories": [
     "javascript"
   ]

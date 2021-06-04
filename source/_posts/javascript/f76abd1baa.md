@@ -4,7 +4,7 @@
   "tags": [
     "javascript"
   ],
-  "date": "2021-06-03",
+  "date": "2020-06-01",
   "categories": [
     "javascript"
   ]
