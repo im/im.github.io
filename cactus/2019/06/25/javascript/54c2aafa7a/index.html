@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="实现思路html:1&lt;button onclick&#x3D;&quot;copyToClip(&amp;#x27;内容&amp;#x27;)&quot;&gt;Copy&lt;&#x2F;button&gt;  javascript:123456789101112131415161718&#x2F;** * 复制内容到粘贴板 * content : 需要复制的内容 * message : 复制完后的提示，不传则默认提示&quot;复制">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" JavaScript 实现复制粘贴">
+<meta property="og:url" content="https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/index.html">
+<meta property="og:site_name" content="糖小米 · 博客">
+<meta property="og:description" content="实现思路html:1&lt;button onclick&#x3D;&quot;copyToClip(&amp;#x27;内容&amp;#x27;)&quot;&gt;Copy&lt;&#x2F;button&gt;  javascript:123456789101112131415161718&#x2F;** * 复制内容到粘贴板 * content : 需要复制的内容 * message : 复制完后的提示，不传则默认提示&quot;复制">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-25T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-04T07:12:44.178Z">
+<meta property="article:author" content="糖小米">
+<meta property="article:tag" content="javascript">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/cactus/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/cactus/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/cactus/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title> JavaScript 实现复制粘贴</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/cactus/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/cactus/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/cactus/atom.xml" title="糖小米 · 博客" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/cactus/2019/07/03/javascript/54108de862/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/cactus/2019/06/03/other/4a3b3f2e02/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&text= JavaScript 实现复制粘贴"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&is_video=false&description= JavaScript 实现复制粘贴"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 实现复制粘贴&body=Check out this article: https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&name= JavaScript 实现复制粘贴&description=&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;h2 id=&#34;html&#34;&gt;&lt;a href=&#34;#html&#34; class=&#34;headerlink&#34; title=&#34;html:&#34;&gt;&lt;/a&gt;html:&lt;/h2&gt;&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;onclick&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;copyToClip(&amp;#x27;内容&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Copy&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;javascript&#34;&gt;&lt;a href=&#34;#javascript&#34; class=&#34;headerlink&#34; title=&#34;javascript:&#34;&gt;&lt;/a&gt;javascript:&lt;/h2&gt;&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * 复制内容到粘贴板&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * content : 需要复制的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * message : 复制完后的提示，不传则默认提示&amp;quot;复制成功&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;copyToClip&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;content, message&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; aux = &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.createElement(&lt;span class=&#34;string&#34;&gt;&amp;#x27;input&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aux.setAttribute(&lt;span class=&#34;string&#34;&gt;&amp;#x27;value&amp;#x27;&lt;/span&gt;, content)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.appendChild(aux)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aux.select()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.execCommand(&lt;span class=&#34;string&#34;&gt;&amp;#x27;copy&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.removeChild(aux)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (message == &lt;span class=&#34;literal&#34;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        alert(&lt;span class=&#34;string&#34;&gt;&amp;#x27;复制成功&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        alert(mesage)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&t= JavaScript 实现复制粘贴"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-number">2.</span> <span class="toc-text">html:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript"><span class="toc-number">3.</span> <span class="toc-text">javascript:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clipboard-js-https-clipboardjs-com"><span class="toc-number">4.</span> <span class="toc-text">(clipboard.js)[https:&#x2F;&#x2F;clipboardjs.com&#x2F;]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-1"><span class="toc-number">5.</span> <span class="toc-text">html:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-1"><span class="toc-number">6.</span> <span class="toc-text">javascript:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+         JavaScript 实现复制粘贴
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">糖小米</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2019-06-25T00:00:00.000Z" itemprop="datePublished">2019-06-25</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/cactus/categories/javascript/">javascript</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/cactus/tags/javascript/" rel="tag">javascript</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><h2 id="html"><a href="#html" class="headerlink" title="html:"></a>html:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">&quot;copyToClip(&#x27;内容&#x27;)&quot;</span>&gt;</span>Copy<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="javascript"><a href="#javascript" class="headerlink" title="javascript:"></a>javascript:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 复制内容到粘贴板</span></span><br><span class="line"><span class="comment"> * content : 需要复制的内容</span></span><br><span class="line"><span class="comment"> * message : 复制完后的提示，不传则默认提示&quot;复制成功&quot;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyToClip</span>(<span class="params">content, message</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> aux = <span class="built_in">document</span>.createElement(<span class="string">&#x27;input&#x27;</span>)</span><br><span class="line">    aux.setAttribute(<span class="string">&#x27;value&#x27;</span>, content)</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(aux)</span><br><span class="line">    aux.select()</span><br><span class="line">    <span class="built_in">document</span>.execCommand(<span class="string">&#x27;copy&#x27;</span>)</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(aux)</span><br><span class="line">    <span class="keyword">if</span> (message == <span class="literal">null</span>) &#123;</span><br><span class="line">        alert(<span class="string">&#x27;复制成功&#x27;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        alert(mesage)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+<h2 id="clipboard-js-https-clipboardjs-com"><a href="#clipboard-js-https-clipboardjs-com" class="headerlink" title="(clipboard.js)[https://clipboardjs.com/]"></a>(clipboard.js)[<a target="_blank" rel="noopener" href="https://clipboardjs.com/]">https://clipboardjs.com/]</a></h2><p>直接引用： <code>&lt;script src=&quot;dist/clipboard.min.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>包： <code>npm install clipboard --save </code>，然后 <code>import Clipboard from &#39;clipboard&#39;</code></p>
+<h2 id="html-1"><a href="#html-1" class="headerlink" title="html:"></a>html:</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;demoInput&quot;</span> <span class="attr">value</span>=<span class="string">&quot;hello world&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">data-clipboard-target</span>=<span class="string">&quot;#demoInput&quot;</span>&gt;</span>点我复制<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="javascript-1"><a href="#javascript-1" class="headerlink" title="javascript:"></a>javascript:</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Clipboard <span class="keyword">from</span> <span class="string">&#x27;clipboard&#x27;</span></span><br><span class="line"><span class="keyword">const</span> btnCopy = <span class="keyword">new</span> Clipboard(<span class="string">&#x27;btn&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">实现思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html"><span class="toc-number">2.</span> <span class="toc-text">html:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript"><span class="toc-number">3.</span> <span class="toc-text">javascript:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#clipboard-js-https-clipboardjs-com"><span class="toc-number">4.</span> <span class="toc-text">(clipboard.js)[https:&#x2F;&#x2F;clipboardjs.com&#x2F;]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#html-1"><span class="toc-number">5.</span> <span class="toc-text">html:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript-1"><span class="toc-number">6.</span> <span class="toc-text">javascript:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&text= JavaScript 实现复制粘贴"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&is_video=false&description= JavaScript 实现复制粘贴"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= JavaScript 实现复制粘贴&body=Check out this article: https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&title= JavaScript 实现复制粘贴"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&name= JavaScript 实现复制粘贴&description=&lt;h2 id=&#34;实现思路&#34;&gt;&lt;a href=&#34;#实现思路&#34; class=&#34;headerlink&#34; title=&#34;实现思路&#34;&gt;&lt;/a&gt;实现思路&lt;/h2&gt;&lt;h2 id=&#34;html&#34;&gt;&lt;a href=&#34;#html&#34; class=&#34;headerlink&#34; title=&#34;html:&#34;&gt;&lt;/a&gt;html:&lt;/h2&gt;&lt;figure class=&#34;highlight html&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;tag&#34;&gt;&amp;lt;&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt; &lt;span class=&#34;attr&#34;&gt;onclick&lt;/span&gt;=&lt;span class=&#34;string&#34;&gt;&amp;quot;copyToClip(&amp;#x27;内容&amp;#x27;)&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;Copy&lt;span class=&#34;tag&#34;&gt;&amp;lt;/&lt;span class=&#34;name&#34;&gt;button&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&#34;javascript&#34;&gt;&lt;a href=&#34;#javascript&#34; class=&#34;headerlink&#34; title=&#34;javascript:&#34;&gt;&lt;/a&gt;javascript:&lt;/h2&gt;&lt;figure class=&#34;highlight javascript&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;/**&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * 复制内容到粘贴板&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * content : 需要复制的内容&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; * message : 复制完后的提示，不传则默认提示&amp;quot;复制成功&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;copyToClip&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;content, message&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;var&lt;/span&gt; aux = &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.createElement(&lt;span class=&#34;string&#34;&gt;&amp;#x27;input&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aux.setAttribute(&lt;span class=&#34;string&#34;&gt;&amp;#x27;value&amp;#x27;&lt;/span&gt;, content)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.appendChild(aux)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    aux.select()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.execCommand(&lt;span class=&#34;string&#34;&gt;&amp;#x27;copy&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;document&lt;/span&gt;.body.removeChild(aux)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; (message == &lt;span class=&#34;literal&#34;&gt;null&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        alert(&lt;span class=&#34;string&#34;&gt;&amp;#x27;复制成功&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125; &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        alert(mesage)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2019/06/25/javascript/54c2aafa7a/&t= JavaScript 实现复制粘贴"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <!-- <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a> -->
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021
+    糖小米
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/cactus/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/cactus/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/cactus/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/cactus/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/cactus/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/cactus/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
