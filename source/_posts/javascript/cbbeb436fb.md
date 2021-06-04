@@ -54,6 +54,8 @@ for (var index in myArray) {    // 不推荐这样
 不推荐用for-in来循环一个数组，因为，不像对象，数组的index跟普通的对象属性不一样，是重要的数值序列指标。
 总之，for–in是用来循环带有字符串key的对象的方法。
 
+<!--more-->
+
 ## for-of循环
 JavaScript6里引入了一种新的循环方法，它就是for-of循环，它既比传统的for循环简洁，同时弥补了forEach和for-in循环的短板。
 我们看一下它的for-of的语法：
@@ -198,4 +200,3 @@ for (let n of fibonacci()) {
 ```
 
 
-#javascript

@@ -184,4 +184,3 @@ a1 === a2; // true, a1和a2是同一对象
 
 
 
-#javascript

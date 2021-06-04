@@ -68,4 +68,3 @@
 	* [架构概述](zh/wiki/architectural-overview.md)
 	* [发展路线图](zh/wiki/roadmap.md)
 
-#typescript

@@ -296,4 +296,3 @@ createInstance(Lion).keeper.nametag;  // typechecks!
 createInstance(Bee).keeper.hasMask;   // typechecks!
 ```
 
-#typescript

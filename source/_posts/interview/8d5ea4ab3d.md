@@ -67,4 +67,3 @@ console.log(`|${result}|`); //  |s t  r|
 
 
 
-#interview/javascript #interview/everyday

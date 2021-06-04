@@ -104,7 +104,7 @@ module.exports = (() => {
             title,
             tags,
             date,
-            categories: [categories]
+            categories: [categories],
             // cover: `https://cdn.jsdelivr.net/gh/im/oss@master/gallery/${PrefixInteger(
             //     index % 40 || 1,
             //     2
@@ -127,18 +127,17 @@ module.exports = (() => {
         content = content.replace(/::(\d+)年(\d+)月(\d+)日::/g, '')
         content = content.replace(/!\[(.*?)\]\((.*?)\)/g, (res, $1, $2) => {
             const arr = $2.split('/')
+            console.log('arr: ', arr)
             return `![](/images/${arr[arr.length - 1]})`
         })
-        // const reg = /(\n)/g
-        // let index = 1
-        // content = content.replace(reg, (reg, $1, $2) => {
-        //     if (index === 10) {
-        //         index++
-        //         return '\n <!--more-->'
-        //     }
-        //     index++
-        //     return reg
-        // })
+
+        const m = content.match(/(.+)/g)
+        if (m) {
+            const endLine = m[m.length - 1]
+            const reg = new RegExp(endLine)
+            content = content.replace(reg, '')
+            console.log()
+        }
         return fontMatter + content
     }
 
@@ -194,7 +193,10 @@ module.exports = (() => {
         fs.existsSync(outPath) || fs.mkdirSync(outPath)
         const categoriesPath = path.join(outPath, categories)
         fs.existsSync(categoriesPath) || fs.mkdirSync(categoriesPath)
-        const filePath = path.join(categoriesPath, `${hash.toString().substr(0, 10)}.md`)
+        const filePath = path.join(
+            categoriesPath,
+            `${hash.toString().substr(0, 10)}.md`
+        )
         fs.existsSync(filePath) || fs.writeFileSync(filePath, content, 'utf-8')
     })
 

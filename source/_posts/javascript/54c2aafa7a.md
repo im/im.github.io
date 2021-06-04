@@ -63,4 +63,3 @@ import Clipboard from 'clipboard'
 const btnCopy = new Clipboard('btn')
 ```
 
-#javascript
