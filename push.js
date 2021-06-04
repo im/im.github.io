@@ -3,7 +3,7 @@ module.exports = (() => {
     const moment = require('moment')
     require('./deletePersonal.js')
     require('./getNotes.js')
-    require('./clear.js')
+    // require('./clear.js')
 
     setTimeout(() => {
         simpleGit()
