@@ -9,7 +9,7 @@
     <meta name="description" content="在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我们需要解决两个技术点：实时">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" 实时协同编辑的实现">
-<meta property="og:url" content="https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/index.html">
+<meta property="og:url" content="https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。 什么是实时协同编辑这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。 要实现实时编辑，我们需要解决两个技术点：实时">
 <meta property="og:locale" content="zh_CN">
@@ -18,8 +18,8 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/data-atomic.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/version-problem.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/version-solution.png">
-<meta property="article:published_time" content="2021-06-22T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-04T07:15:23.335Z">
+<meta property="article:published_time" content="2021-01-22T00:00:00.000Z">
+<meta property="article:modified_time" content="2021-06-04T07:19:50.471Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -84,10 +84,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/cactus/2021/07/03/typescript/98dfa9bae0/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/cactus/2021/01/28/typescript/64fffd4364/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/cactus/2021/06/03/javascript/fa59b4bb32/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/cactus/2021/01/03/javascript/31cb92dd1f/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
@@ -100,20 +100,20 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&text= 实时协同编辑的实现"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&is_video=false&description= 实时协同编辑的实现"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject= 实时协同编辑的实现&body=Check out this article: https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&name= 实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&text= 实时协同编辑的实现"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&is_video=false&description= 实时协同编辑的实现"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 实时协同编辑的实现&body=Check out this article: https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&name= 实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
 &lt;h2 id=&#34;什么是实时协同编辑&#34;&gt;&lt;a href=&#34;#什么是实时协同编辑&#34; class=&#34;headerlink&#34; title=&#34;什么是实时协同编辑&#34;&gt;&lt;/a&gt;什么是实时协同编辑&lt;/h2&gt;&lt;p&gt;这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。&lt;/p&gt;
 &lt;p&gt;要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket，所以这里就不过多讨论了，重点将放在如何解决编辑冲突问题上。&lt;/p&gt;
 &lt;h2 id=&#34;可选方案&#34;&gt;&lt;a href=&#34;#可选方案&#34; class=&#34;headerlink&#34; title=&#34;可选方案&#34;&gt;&lt;/a&gt;可选方案&lt;/h2&gt;&lt;p&gt;接下来将从易至难的顺序来介绍几种可行的方案，分别是：「编辑锁」、「GNU diff-patch」、「Myer’s diff-patch」、「Operational Transformation」和「分布式 Operational Transformation」。&lt;/p&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&t= 实时协同编辑的实现"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&t= 实时协同编辑的实现"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -142,7 +142,7 @@
       
     <div class="postdate">
       
-        <time datetime="2021-06-22T00:00:00.000Z" itemprop="datePublished">2021-06-22</time>
+        <time datetime="2021-01-22T00:00:00.000Z" itemprop="datePublished">2021-01-22</time>
         
       
     </div>
@@ -321,20 +321,20 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&text= 实时协同编辑的实现"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&is_video=false&description= 实时协同编辑的实现"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject= 实时协同编辑的实现&body=Check out this article: https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&name= 实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&text= 实时协同编辑的实现"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&is_video=false&description= 实时协同编辑的实现"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 实时协同编辑的实现&body=Check out this article: https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&title= 实时协同编辑的实现"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&name= 实时协同编辑的实现&description=&lt;p&gt;在最近某个项目中打算使用协同编辑来解决冲突问题，因此抽空调研了现有的实现方案，结果发现要想做完美是很难的，但我们可以低成本地做到不错的效果，本文将介绍几种实现方法，大家在项目中如果有需要可以参考。&lt;/p&gt;
 &lt;h2 id=&#34;什么是实时协同编辑&#34;&gt;&lt;a href=&#34;#什么是实时协同编辑&#34; class=&#34;headerlink&#34; title=&#34;什么是实时协同编辑&#34;&gt;&lt;/a&gt;什么是实时协同编辑&lt;/h2&gt;&lt;p&gt;这里所说的实时协同编辑，是指多人同时编辑一个文档，最典型的例子是 Google Docs，你可以实时看到别人做出的修改，不用手动刷新页面。&lt;/p&gt;
 &lt;p&gt;要实现实时编辑，我们需要解决两个技术点：实时通信问题、编辑冲突问题，其中实时通信问题比较好解决，可以使用 long pull 或 WebSocket，所以这里就不过多讨论了，重点将放在如何解决编辑冲突问题上。&lt;/p&gt;
 &lt;h2 id=&#34;可选方案&#34;&gt;&lt;a href=&#34;#可选方案&#34; class=&#34;headerlink&#34; title=&#34;可选方案&#34;&gt;&lt;/a&gt;可选方案&lt;/h2&gt;&lt;p&gt;接下来将从易至难的顺序来介绍几种可行的方案，分别是：「编辑锁」、「GNU diff-patch」、「Myer’s diff-patch」、「Operational Transformation」和「分布式 Operational Transformation」。&lt;/p&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/22/javascript/18a23f4c21/&t= 实时协同编辑的实现"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/01/22/javascript/18a23f4c21/&t= 实时协同编辑的实现"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
