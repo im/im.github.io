@@ -13,19 +13,19 @@
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。 对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。 不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。 有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。 123456char * buffer">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041701-1.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041703.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041704.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041705.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041706.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041702-1.png">
-<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041707.jpg">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041701-1%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041703%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041704%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041705%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041706%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041702-1%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/bg2017041707%202.jpg">
 <meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-04T02:48:49.769Z">
+<meta property="article:modified_time" content="2021-06-04T06:57:22.251Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tangxiaomi.top/images/bg2017041701-1.png">
+<meta name="twitter:image" content="https://tangxiaomi.top/images/bg2017041701-1%202.png">
     
     
       
@@ -113,7 +113,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23d05c6dd2/&title= JavaScript 内存泄漏教程"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/03/javascript/23d05c6dd2/&name= JavaScript 内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1%202.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;char&lt;/span&gt; * buffer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;buffer = (&lt;span class=&#34;keyword&#34;&gt;char&lt;/span&gt;*) &lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// Do something with buffer&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(buffer);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 
@@ -175,7 +175,7 @@
   <div class="content" itemprop="articleBody">
     <p>程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。</p>
 <p>对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。</p>
-<p><img src="/images/bg2017041701-1.png"><br>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。</p>
+<p><img src="/images/bg2017041701-1%202.png"><br>不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。</p>
 <p>有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> * buffer;</span><br><span class="line">buffer = (<span class="keyword">char</span>*) <span class="built_in">malloc</span>(<span class="number">42</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Do something with buffer</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">free</span>(buffer);</span><br></pre></td></tr></table></figure>
 
@@ -184,7 +184,7 @@
 <a id="more"></a>
 <h2 id="二、垃圾回收机制"><a href="#二、垃圾回收机制" class="headerlink" title="二、垃圾回收机制"></a>二、垃圾回收机制</h2><p>垃圾回收机制怎么知道，哪些内存不再需要呢？</p>
 <p>最常使用的方法叫做 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Reference_counting">“引用计数”</a> （reference counting）：语言引擎有一张”引用表”，保存了内存里面所有的资源（通常是各种值）的引用次数。如果一个值的引用次数是 <code>0</code> ，就表示这个值不再用到了，因此可以将这块内存释放。</p>
-<p><img src="/images/bg2017041703.png"></p>
+<p><img src="/images/bg2017041703%202.png"></p>
 <p>上图中，左下角的两个值，没有任何引用，所以可以释放。</p>
 <p>如果一个值不再需要了，引用数却不为 <code>0</code> ，垃圾回收机制无法释放这块内存，从而导致内存泄漏。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;hello world&#x27;</span>);</span><br></pre></td></tr></table></figure>
@@ -198,7 +198,7 @@
 <h2 id="三、内存泄漏的识别方法"><a href="#三、内存泄漏的识别方法" class="headerlink" title="三、内存泄漏的识别方法"></a>三、内存泄漏的识别方法</h2><p>怎样可以观察到内存泄漏呢？</p>
 <p><a target="_blank" rel="noopener" href="https://www.toptal.com/nodejs/debugging-memory-leaks-node-js-applications">经验法则</a> 是，如果连续五次垃圾回收之后，内存占用一次比一次大，就有内存泄漏。这就要求实时查看内存占用。</p>
 <h3 id="3-1-浏览器"><a href="#3-1-浏览器" class="headerlink" title="3.1 浏览器"></a>3.1 浏览器</h3><p>Chrome 浏览器查看内存占用，按照以下步骤操作。</p>
-<p><img src="/images/bg2017041704.png"></p>
+<p><img src="/images/bg2017041704%202.png"></p>
 <ol>
 <li>打开开发者工具，选择 Timeline 面板</li>
 <li>在顶部的 <code>Capture</code> 字段里面勾选 Memory</li>
@@ -207,14 +207,14 @@
 <li>一段时间后，点击对话框的 stop 按钮，面板上就会显示这段时间的内存占用情况。</li>
 </ol>
 <p>如果内存占用基本平稳，接近水平，就说明不存在内存泄漏。</p>
-<p><img src="/images/bg2017041705.png"></p>
+<p><img src="/images/bg2017041705%202.png"></p>
 <p>反之，就是内存泄漏了。</p>
-<p><img src="/images/bg2017041706.png"></p>
+<p><img src="/images/bg2017041706%202.png"></p>
 <h3 id="3-2-命令行"><a href="#3-2-命令行" class="headerlink" title="3.2 命令行"></a>3.2 命令行</h3><p>命令行可以使用 Node 提供的 <a target="_blank" rel="noopener" href="https://nodejs.org/api/process.html#process_process_memoryusage">process.memoryUsage</a> 方法。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">console.log(process.memoryUsage());</span><br><span class="line">// &#123; rss: 27709440,</span><br><span class="line">//  heapTotal: 5685248,</span><br><span class="line">//  heapUsed: 3449392,</span><br><span class="line">//  external: 8772 &#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>process.memoryUsage</code> 返回一个对象，包含了 Node 进程的内存占用信息。该对象包含四个字段，单位是字节， <a target="_blank" rel="noopener" href="http://stackoverflow.com/questions/12023359/what-do-the-return-values-of-node-js-process-memoryusage-stand-for">含义</a> 如下。</p>
-<p><img src="/images/bg2017041702-1.png"></p>
+<p><img src="/images/bg2017041702-1%202.png"></p>
 <ul>
 <li>rss（resident set size）：所有内存占用，包括指令区和堆栈。</li>
 <li>heapTotal：”堆”占用的内存，包括用到的和没用到的。</li>
@@ -225,7 +225,7 @@
 <h2 id="四、WeakMap"><a href="#四、WeakMap" class="headerlink" title="四、WeakMap"></a>四、WeakMap</h2><p>前面说过，及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。</p>
 <p>最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。</p>
 <p>ES6 考虑到了这一点，推出了两种新的数据结构： <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#docs/set-map#WeakSet">WeakSet</a> 和 <a target="_blank" rel="noopener" href="http://es6.ruanyifeng.com/#docs/set-map#WeakMap">WeakMap</a> 。它们对于值的引用都是不计入垃圾回收机制的，所以名字里面才会有一个”Weak”，表示这是弱引用。</p>
-<p><img src="/images/bg2017041707.jpg"></p>
+<p><img src="/images/bg2017041707%202.jpg"></p>
 <p>下面以 WeakMap 为例，看看它是怎么解决内存泄漏的。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> wm = <span class="keyword">new</span> <span class="built_in">WeakMap</span>();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> element = <span class="built_in">document</span>.getElementById(<span class="string">&#x27;example&#x27;</span>);</span><br><span class="line"></span><br><span class="line">wm.set(element, <span class="string">&#x27;some information&#x27;</span>);</span><br><span class="line">wm.get(element) <span class="comment">// &quot;some information&quot;</span></span><br></pre></td></tr></table></figure>
 
@@ -286,7 +286,7 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/03/javascript/23d05c6dd2/&title= JavaScript 内存泄漏教程"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/03/javascript/23d05c6dd2/&name= JavaScript 内存泄漏教程&description=&lt;p&gt;程序的运行需要内存。只要程序提出要求，操作系统或者运行时（runtime）就必须供给内存。&lt;/p&gt;
 &lt;p&gt;对于持续运行的服务进程（daemon），必须及时释放不再用到的内存。否则，内存占用越来越高，轻则影响系统性能，重则导致进程崩溃。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/bg2017041701-1%202.png&#34;&gt;&lt;br&gt;不再用到的内存，没有及时释放，就叫做内存泄漏（memory leak）。&lt;/p&gt;
 &lt;p&gt;有些语言（比如 C 语言）必须手动释放内存，程序员负责内存管理。&lt;/p&gt;
 &lt;figure class=&#34;highlight c&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;char&lt;/span&gt; * buffer;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;buffer = (&lt;span class=&#34;keyword&#34;&gt;char&lt;/span&gt;*) &lt;span class=&#34;built_in&#34;&gt;malloc&lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;// Do something with buffer&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;free&lt;/span&gt;(buffer);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 

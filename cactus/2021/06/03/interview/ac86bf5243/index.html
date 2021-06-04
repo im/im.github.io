@@ -13,14 +13,14 @@
 <meta property="og:site_name" content="糖小米 · 博客">
 <meta property="og:description" content="setTimeout(fn,time): 等待time时间后执行fnsetInterval(fn,time):  每隔time时间执行fn 我们希望setInterval是每隔一段时间自动执行，但是实际应用中，setInterval并不会按照我们预想的那样，它通常存在如下两个缺点。 1. 在执行的时候可能会跳过指定时间间隔 2. 多个定时器函数会立刻执行  我们就实际场景来说一下这两个缺陷">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://tangxiaomi.top/images/20200609111645389.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/20200609111645389%202.png">
 <meta property="article:published_time" content="2021-06-03T01:49:36.000Z">
-<meta property="article:modified_time" content="2021-06-04T02:48:49.769Z">
+<meta property="article:modified_time" content="2021-06-04T06:57:22.251Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="Interview">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://tangxiaomi.top/images/20200609111645389.png">
+<meta name="twitter:image" content="https://tangxiaomi.top/images/20200609111645389%202.png">
     
     
       
@@ -176,7 +176,7 @@
 
 <h2 id="时间间隔"><a href="#时间间隔" class="headerlink" title="时间间隔"></a>时间间隔</h2><p>首先明确一个概念，定时器的时间间隔指的是什么？<br>它不是指函数的执行时间，而是函数<strong>被推入到消息队列的时间</strong>。<br>也就是说每隔time时间，fn就会被放入消息队列中，而不是执行。另外何时执行取决于何时被主线程的事件循环取到</p>
 <p>另外，如果前一个任务没有被执行，也就是还处于消息队列中怎么办呢？ 浏览器规定<strong>：只有当前消息队列中不存在该任务，才会将下一个任务推进去</strong></p>
-<p><img src="/images/20200609111645389.png"></p>
+<p><img src="/images/20200609111645389%202.png"></p>
 <p>我们分析一下上面的情况，</p>
 <pre><code>* 隔了100ms之后，将t1推进去，因为js栈中主进程还没有执行完，所以t1这时候等待执行，
 * 又过了100ms，t1已经执行，t2被压入队列中
