@@ -76,10 +76,10 @@ traverse(ast, {
 ```
 
 结果是
-![](/images/72f12fc7e7164cc0af23f3e16f03bb06~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/72f12fc7e7164cc0af23f3e16f03bb06~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 用图可视化一下就是这样的
-![](/images/df0acc1d0b904b8194b87622ac66f097~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/df0acc1d0b904b8194b87622ac66f097~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 函数和块的作用域内的变量声明会在作用域 （scope） 内创建一个绑定（变量名绑定到具体的值，也就是 binding），然后其余地方可以引用 （refer） 这个 binding，这样就是静态作用域链的变量访问顺序。
 
@@ -142,18 +142,18 @@ const func2 = func();
 我们所考虑的这个解决方案：销毁父作用域后，把用到的变量包起来，打包给子函数，放到一个属性上。这就是闭包的机制。
 
 我们来试验一下闭包的特性：
-![](/images/6c21f15ec42443b892baa191e9bcf898~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/6c21f15ec42443b892baa191e9bcf898~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 这个 func3 需不需要打包一些东西？ 会不会有闭包？
-![](/images/88178215cc7d4e76a77df1add6de120e~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/88178215cc7d4e76a77df1add6de120e~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 其实还是有闭包的，闭包最少会包含全局作用域。
 
 但是为啥 guang、ssh、suzhe 都没有 ？ suzhe是因为不是外部的，只有外部变量的时候才会生成，比如我们改动下代码，打印下这 3 个变量。
-![](/images/a96d6398cb6941c0a953e50b14271111~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/a96d6398cb6941c0a953e50b14271111~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 再次查看 [[`Scopes`]] （打包带走的闭包环境）：
-![](/images/0a1d1964e1cb40ada4b3eeeffbebd5af~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/0a1d1964e1cb40ada4b3eeeffbebd5af~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 这时候就有俩闭包了，为什么呢？ suzhe 哪去了？
 
@@ -167,7 +167,7 @@ const func2 = func();
 
 这里思考一个问题： 调试代码的时候为什么遇到过某个变量明明在作用域内能访问到，但就是没有相关信息呢？
 
-![](/images/2679bca268984d4893bb01f24257ce39~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/2679bca268984d4893bb01f24257ce39~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 这个 traverse，明明能访问到的，为啥就是不显示信息呢？是 debugger 做的太烂了么？
 
@@ -175,7 +175,7 @@ const func2 = func();
 
 所以我们只要访问一下，就能在调试的时候访问到了。
 
-![](/images/219a40756ad2432d969c077b18ab656d~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/219a40756ad2432d969c077b18ab656d~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 是不是突然知道为啥调试的时候不能看一些变量的信息了，能解释清楚这个现象，就算理解闭包了。
 
@@ -187,15 +187,15 @@ const func2 = func();
 
 验证一下：
 
-![](/images/f15d3641cc7845669300c78a7e88eb11~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/f15d3641cc7845669300c78a7e88eb11~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 这个就像上面所说的，会把外部引用的打包成闭包
 
-![](/images/143b186936554141aa84525a708c7eea~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/143b186936554141aa84525a708c7eea~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 这个就是 eval 的实现，因为没法静态分析动态内容所以全部打包成闭包了，本来闭包就是为了不保存全部的作用域链的内容，结果 eval 导致全部保存了，所以尽量不要用 eval。会导致闭包保存内容过多。
 
-![](/images/e1d4d856b2484661beac889915761bcc~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/e1d4d856b2484661beac889915761bcc~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 但是 JS 引擎只处理了直接调用，也就是说直接调用 eval 才会打包整个作用域，如果不直接调用 eval，就没法分析引用，也就没法形成闭包了。
 
@@ -225,7 +225,7 @@ JavaScript 是静态作用域的设计，闭包是为了解决子函数晚于父
 
 我们知道 JavaScript 引擎会把内存分为函数调用栈、全局作用域和堆，其中堆用于放一些动态的对象，调用栈每一个栈帧放一个函数的执行上下文，里面有一个 local 变量环境用于放内部声明的一些变量，如果是对象，会在堆上分配空间，然后把引用保存在栈帧的 local 环境中。全局作用域也是一样，只不过一般用于放静态的一些东西，有时候也叫静态域。
 
-![](/images/41c5c82d485b469ca92a36aec5b73ac0~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/41c5c82d485b469ca92a36aec5b73ac0~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 每个栈帧的执行上下文包含函数执行需要访问的所有环境，包括 local 环境、作用域链、this等。
 
@@ -233,7 +233,7 @@ JavaScript 是静态作用域的设计，闭包是为了解决子函数晚于父
 
 首先父函数的栈帧会销毁，子函数这个时候其实还没有被调用，所以还是一个堆中的对象，没有对应的栈帧，这时候父函数把作用域链过滤出需要用到的，形成闭包链，设置到子函数的 [[Scopes]] 属性上。
 
-![](/images/473fde71299f47fd81bc4d2e1cbd90bb~tplv-k3u1fbpfcp-watermark.image.png)
+![](/images/473fde71299f47fd81bc4d2e1cbd90bb~tplv-k3u1fbpfcp-watermark.image%202.png)
 
 父函数销毁，栈帧对应的内存马上释放，用到的 ssh Obj 会被 gc 回收，而返回的函数会把作用域链过滤出用到的引用形成闭包链放在堆中。 这就导致了一个隐患： 如果一个很大的对象被函数引用，本来函数调用结束就能销毁，但是现在引用却被通过闭包保存到了堆里，而且还一直用不到，那这块堆内存就一直没法使用，严重到一定程度就算是内存泄漏了。所以闭包不要乱用，少打包一点东西到堆内存。
 
