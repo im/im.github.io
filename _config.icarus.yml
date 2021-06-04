@@ -151,7 +151,7 @@ article:
 search:
     type: insight
 comment:
-  type: gitalk
+  type: gitment
   client_id: b5b53b3c7256700567b5
   client_secret: c6d4a0611585e5584f30108dd75c50b9c28fcc6f
   repo: im.github.io
