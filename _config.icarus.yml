@@ -156,7 +156,7 @@ comment:
   client_secret: c6d4a0611585e5584f30108dd75c50b9c28fcc6f
   repo: im.github.io
   owner: im 
-  admin: im
+  # admin: im
   # per_page: 20 # 可选填 
   # distraction_free_mode: false # 可选填 
   # pager_direction: last # 可选填 
@@ -164,7 +164,7 @@ comment:
   # proxy: # 可选填 
   # flip_move_options: # 可选填 
   # enable_hotkey: true # 可选填 
-  language: zh-CN # 可选填
+  # language: zh-CN # 可选填
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 # comment:
