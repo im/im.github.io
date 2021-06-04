@@ -7,9 +7,7 @@
   "date": "2021-06-03",
   "categories": [
     "javascript"
-  ],
-  "cover": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg",
-  "thumbnail": "https://cdn.jsdelivr.net/gh/im/oss@master/gallery/11.svg"
+  ]
 }
 ---
     

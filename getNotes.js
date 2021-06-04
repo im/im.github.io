@@ -104,15 +104,15 @@ module.exports = (() => {
             title,
             tags,
             date,
-            categories: [categories],
-            cover: `https://cdn.jsdelivr.net/gh/im/oss@master/gallery/${PrefixInteger(
-                index % 40 || 1,
-                2
-            )}.svg`,
-            thumbnail: `https://cdn.jsdelivr.net/gh/im/oss@master/gallery/${PrefixInteger(
-                index % 40 || 1,
-                2
-            )}.svg`,
+            categories: [categories]
+            // cover: `https://cdn.jsdelivr.net/gh/im/oss@master/gallery/${PrefixInteger(
+            //     index % 40 || 1,
+            //     2
+            // )}.svg`,
+            // thumbnail: `https://cdn.jsdelivr.net/gh/im/oss@master/gallery/${PrefixInteger(
+            //     index % 40 || 1,
+            //     2
+            // )}.svg`,
         }
 
         return `---

@@ -150,6 +150,21 @@ article:
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Search/
 search:
     type: insight
+comment:
+  type: gitalk
+  client_id: b5b53b3c7256700567b5
+  client_secret: c6d4a0611585e5584f30108dd75c50b9c28fcc6f
+  repo: im.github.io
+  owner: im 
+  admin: im
+  # per_page: 20 # 可选填 
+  # distraction_free_mode: false # 可选填 
+  # pager_direction: last # 可选填 
+  # create_issue_manually: false # 可选填 
+  # proxy: # 可选填 
+  # flip_move_options: # 可选填 
+  # enable_hotkey: true # 可选填 
+  language: zh-CN # 可选填
 # Comment plugin configurations
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Plugins/Comment/
 # comment:
@@ -255,7 +270,7 @@ widgets:
       position: left
       type: tags
     - # Where should the widget be placed, left sidebar or right sidebar
-      position: right
+      position: left
       type: recent_posts
     # Recommendation links widget configurations
     # - # Where should the widget be placed, left sidebar or right sidebar
@@ -268,13 +283,13 @@ widgets:
     #       Photos: 'https://tangxiaomi.top/photos/'
     # Categories widget configurations
     - # Where should the widget be placed, left sidebar or right sidebar
-      position: right
+      position: left
       type: categories
     # Recent posts widget configurations
 
     # Archives widget configurations
     - # Where should the widget be placed, left sidebar or right sidebar
-      position: right
+      position: left
       type: archives
     # Tags widget configurations
 
