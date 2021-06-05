@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title> vue3.0 六大亮点</title>
+      <link href="/cactus/2021/06/06/vue3/11682f46f1/"/>
+      <url>/cactus/2021/06/06/vue3/11682f46f1/</url>
+      
+        <content type="html"><![CDATA[<ol><li>performance: 性能比vue2.x块1.2~2倍;</li><li>Tree shaking support: 按需编译，体积比vue2.x更小;</li><li>Composition API: 组合API（类似React Hooks）;</li><li>Better TypeScript support: 更好的 ts 支持;</li><li>Custom Render API: 暴露了自定义渲染的API ;</li><li>Fragment, Teleport(Protal): 更先进的组件 ;</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title> 修改 hosts</title>
       <link href="/cactus/2021/06/05/macos/c6ecda4c57/"/>
       <url>/cactus/2021/06/05/macos/c6ecda4c57/</url>
