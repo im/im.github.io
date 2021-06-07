@@ -3,8 +3,6 @@
   "title": " 6 . 写一个方法去掉字符串中的空格",
   "tags": [
     "interview",
-    "javascript",
-    "interview",
     "everyday"
   ],
   "date": "2020-08-11",
