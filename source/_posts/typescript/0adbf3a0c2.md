@@ -4,7 +4,7 @@
   "tags": [
     "typescript"
   ],
-  "date": "2018-09-09",
+  "date": "2019-09-09",
   "categories": [
     "typescript"
   ]
