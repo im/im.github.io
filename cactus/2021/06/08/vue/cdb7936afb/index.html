@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="解读背景 在学习 vue 源码，nextTick 方法借助了浏览器的 event loop 事件循环做到了异步更新。 在公司面试的时候，笔试题最喜欢出关于 JavaScript 运行机制，Promise&#x2F;A+ 等关于 event loop 线程的题目。 学会 nextTick 原理帮助定位 BUG , 使用 Vue 会更加灵活。  什么是 event loop  先执行同步阻塞任务，同步任务会等待">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" 从 Event Loop 角度解读 Vue NextTick 源码">
+<meta property="og:url" content="https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/index.html">
+<meta property="og:site_name" content="糖小米 · 博客">
+<meta property="og:description" content="解读背景 在学习 vue 源码，nextTick 方法借助了浏览器的 event loop 事件循环做到了异步更新。 在公司面试的时候，笔试题最喜欢出关于 JavaScript 运行机制，Promise&#x2F;A+ 等关于 event loop 线程的题目。 学会 nextTick 原理帮助定位 BUG , 使用 Vue 会更加灵活。  什么是 event loop  先执行同步阻塞任务，同步任务会等待">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tangxiaomi.top/images/640.gif">
+<meta property="og:image" content="https://tangxiaomi.top/images/640.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/640%202.png">
+<meta property="og:image" content="https://tangxiaomi.top/images/640%203.png">
+<meta property="article:published_time" content="2021-06-08T09:04:03.000Z">
+<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:author" content="糖小米">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tangxiaomi.top/images/640.gif">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/cactus/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/cactus/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/cactus/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title> 从 Event Loop 角度解读 Vue NextTick 源码</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/cactus/css/style.css">
+
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/cactus/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/cactus/atom.xml" title="糖小米 · 博客" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/cactus/2021/06/08/macos/579cc29de2/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/cactus/2021/06/07/interview/0bab1e5161/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <!-- <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li> -->
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">上一篇</span>
+      <span id="i-next" class="info" style="display:none;">下一篇</span>
+      <span id="i-top" class="info" style="display:none;">返回顶部</span>
+      <span id="i-share" class="info" style="display:none;">分享文章</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&text= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&is_video=false&description= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 从 Event Loop 角度解读 Vue NextTick 源码&body=Check out this article: https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&name= 从 Event Loop 角度解读 Vue NextTick 源码&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&t= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E8%AF%BB%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">解读背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-event-loop"><span class="toc-number">2.</span> <span class="toc-text">什么是 event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nextTick-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">$nextTick 的实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nextTick-%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">nextTick 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timerFunc-%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">timerFunc 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise-%E5%88%86%E6%94%AF"><span class="toc-number">5.1.</span> <span class="toc-text">Promise 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MutationObserver-%E5%88%86%E6%94%AF"><span class="toc-number">5.2.</span> <span class="toc-text">MutationObserver 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setImmediate-%E5%88%86%E6%94%AF"><span class="toc-number">5.3.</span> <span class="toc-text">setImmediate 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout-%E5%88%86%E6%94%AF"><span class="toc-number">5.4.</span> <span class="toc-text">setTimeout 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%99%8D%E7%BA%A7"><span class="toc-number">5.5.</span> <span class="toc-text">执行降级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flushCallbacks-%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">flushCallbacks 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+         从 Event Loop 角度解读 Vue NextTick 源码
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">糖小米</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2021-06-08T09:04:03.000Z" itemprop="datePublished">2021-06-08</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/cactus/categories/vue/">vue</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/cactus/tags/vue/" rel="tag">vue</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h2 id="解读背景"><a href="#解读背景" class="headerlink" title="解读背景"></a>解读背景</h2><ol>
+<li>在学习 <strong>vue</strong> 源码，<strong>nextTick</strong> 方法借助了浏览器的 <strong>event loop</strong> 事件循环做到了异步更新。</li>
+<li>在公司面试的时候，笔试题最喜欢出关于 <strong>JavaScript</strong> 运行机制，<strong>Promise/A+</strong> 等关于 <strong>event loop</strong> 线程的题目。</li>
+<li>学会 <strong>nextTick</strong> 原理帮助定位 <strong>BUG</strong> , 使用 <strong>Vue</strong> 会更加灵活。</li>
+</ol>
+<h2 id="什么是-event-loop"><a href="#什么是-event-loop" class="headerlink" title="什么是 event loop"></a>什么是 event loop</h2><p><img src="/images/640.gif"></p>
+<ol>
+<li>先执行同步阻塞任务，同步任务会等待上一个执行完毕以后执行下一个，当同步任务执行完毕，再执行异步任务，遇到异步任务会将异步任务的回调函数注册在异步任务队列里。注意，如果主线程上没有同步任务会直接调用异步任务的微任务。</li>
+<li>执行宏任务，遇到微任务将都添加到微任务队列里。</li>
+<li>开始执行微任务队列，当宏任务执行完后执行微任务队列，直到微任务队列全部执行完，微任务队列为空。</li>
+<li>执行宏任务，如果在执行宏任务期间有微任务，将微任务添加到微任务队列里，执行完宏任务之后执行微任务，直到微任务队列全部执行完。</li>
+<li>继续执行宏任务队列。</li>
+</ol>
+<p><strong>重复2, 3, 4，5……直到宏微任务为空。</strong></p>
+<h2 id="nextTick-的实现原理"><a href="#nextTick-的实现原理" class="headerlink" title="$nextTick 的实现原理"></a>$nextTick 的实现原理</h2><p>从字面意思理解，<strong>next</strong> 下一个，<strong>tick</strong> 滴答（钟表）来源于定时器的周期性中断（输出脉冲），一次中断表示一个 <strong>tick</strong>，也被称做一个“时钟滴答”），<strong>nextTick</strong> 顾名思义就是下一个时钟滴答。看源码，在 <strong>Vue 2.x</strong> 版本中，<strong>nextTick</strong> 在 <strong>src\core\util</strong> 中的一个单独的文件 <strong>next-tick.js</strong> ，可见 <strong>nextTick</strong> 的重要性，虽然短短 <strong>200</strong> 多行，尤大却单独创建一个文件去维护。<br>接下来我们来看整个文件。</p>
+<ol>
+<li>声明了三个全局变量，<strong>callbacks: [] ，pending: Boolean，timerFunc: undefined</strong>。</li>
+<li>声明了一个函数 <strong>flushCallbacks</strong>。</li>
+<li>一堆 **if，else if **判断。</li>
+<li>抛出了一个函数 <strong>nextTick</strong>。</li>
+</ol>
+<h2 id="nextTick-函数"><a href="#nextTick-函数" class="headerlink" title="nextTick 函数"></a>nextTick 函数</h2><p><img src="/images/640.png"></p>
+<ol>
+<li>声明一个局部变量 <strong>_resolve</strong> 。</li>
+<li>把所有回调函数压进 <strong>callbacks</strong> 中，以栈的形式的存储所有 <strong>callback</strong>。</li>
+<li>当 <strong>pending</strong> 为 <strong>false</strong> 时，执行 <strong>timerFunc</strong> 函数。</li>
+<li>当没有 <strong>callback</strong> 的时候，返回一个 <strong>Promise</strong> 的调用方式，可以用 <strong>.then</strong> 接收。</li>
+</ol>
+<h2 id="timerFunc-函数"><a href="#timerFunc-函数" class="headerlink" title="timerFunc 函数"></a>timerFunc 函数</h2><p>我们开始说了，timerFunc 为全局变量，现在调用 timerFunc ，timerFunc 是什么时候被赋值为一个函数，并且函数里执行代码又是什么？</p>
+<p><img src="/images/640%202.png"></p>
+<p>我们看到，这段判断代码总共有四个分支，四个分支里对 timerFunc 有不同的赋值，我们先来看第一个分支。</p>
+<h3 id="Promise-分支"><a href="#Promise-分支" class="headerlink" title="Promise 分支"></a>Promise 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Promise</span> !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(<span class="built_in">Promise</span>)) &#123;</span><br><span class="line">  <span class="keyword">const</span> p = <span class="built_in">Promise</span>.resolve()</span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    p.then(flushCallbacks)</span><br><span class="line">    <span class="comment">// In problematic UIWebViews, Promise.then doesn&#x27;t completely break, but</span></span><br><span class="line">    <span class="comment">// it can get stuck in a weird state where callbacks are pushed into the</span></span><br><span class="line">    <span class="comment">// microtask queue but the queue isn&#x27;t being flushed, until the browser</span></span><br><span class="line">    <span class="comment">// needs to do some other work, e.g. handle a timer. Therefore we can</span></span><br><span class="line">    <span class="comment">// &quot;force&quot; the microtask queue to be flushed by adding an empty timer.</span></span><br><span class="line">    <span class="keyword">if</span> (isIOS) <span class="built_in">setTimeout</span>(noop)</span><br><span class="line">  &#125;</span><br><span class="line">  isUsingMicroTask = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>判断环境是否支持 Promise 并且 <strong>Promise</strong> 是否为原生。</li>
+<li>使用 <strong>Promise</strong> 异步调用 <strong>flushCallbacks</strong> 函数。</li>
+<li>当执行环境是 <strong>iPhone</strong> 等，使用 <strong>setTimeout</strong> 异步调用 <strong>noop</strong> ，<strong>iOS</strong> <strong>中在一些异常的webview</strong> 中，<strong>promise</strong> 结束后任务队列并没有刷新所以强制执行 <strong>setTimeout</strong> 刷新任务队列。</li>
+</ol>
+<h3 id="MutationObserver-分支"><a href="#MutationObserver-分支" class="headerlink" title="MutationObserver 分支"></a>MutationObserver 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (!isIE &amp;&amp; <span class="keyword">typeof</span> MutationObserver !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; (</span><br><span class="line">  isNative(MutationObserver) ||</span><br><span class="line">  <span class="comment">// PhantomJS and iOS 7.x</span></span><br><span class="line">  MutationObserver.toString() === <span class="string">&#x27;[object MutationObserverConstructor]&#x27;</span></span><br><span class="line">)) &#123;</span><br><span class="line">  <span class="comment">// Use MutationObserver where native Promise is not available,</span></span><br><span class="line">  <span class="comment">// e.g. PhantomJS, iOS7, Android 4.4</span></span><br><span class="line">  <span class="comment">// (#6466 MutationObserver is unreliable in IE11)</span></span><br><span class="line">  <span class="keyword">let</span> counter = <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> observer = <span class="keyword">new</span> MutationObserver(flushCallbacks)</span><br><span class="line">  <span class="keyword">const</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="built_in">String</span>(counter))</span><br><span class="line">  observer.observe(textNode, &#123;</span><br><span class="line">    <span class="attr">characterData</span>: <span class="literal">true</span></span><br><span class="line">  &#125;)</span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    counter = (counter + <span class="number">1</span>) % <span class="number">2</span></span><br><span class="line">    textNode.data = <span class="built_in">String</span>(counter)</span><br><span class="line">  &#125;</span><br><span class="line">  isUsingMicroTask = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>对非IE浏览器和是否可以使用 <strong>HTML5</strong> 新特性 <strong>MutationObserver</strong> 进行判断。</li>
+<li>实例一个 <strong>MutationObserver</strong> 对象，这个对象主要是对浏览器 <strong>DOM</strong> 变化进行监听，当实例化 <strong>MutationObserver</strong> 对象并且执行对象 <strong>observe</strong>，设置 <strong>DOM</strong> 节点发生改变时自动触发回调。</li>
+<li>把 <strong>timerFunc</strong> 赋值为一个改变 <strong>DOM</strong> 节点的方法，当 <strong>DOM</strong> 节点发生改变，触发 <strong>flushCallbacks</strong> 。（这里其实就是想用利用 <strong>MutationObserver</strong> 的特性进行异步操作）</li>
+</ol>
+<h3 id="setImmediate-分支"><a href="#setImmediate-分支" class="headerlink" title="setImmediate 分支"></a>setImmediate 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> setImmediate !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(setImmediate)) &#123;</span><br><span class="line">  <span class="comment">// Fallback to setImmediate.</span></span><br><span class="line">  <span class="comment">// Technically it leverages the (macro) task queue,</span></span><br><span class="line">  <span class="comment">// but it is still a better choice than setTimeout.</span></span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setImmediate(flushCallbacks)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>判断 <strong>setImmediate</strong> 是否存在，<strong>setImmediate</strong> 是高版本 <strong>IE</strong> （IE10+） 和 <strong>edge</strong> 才支持的。</li>
+<li>如果存在，传入 <strong>flushCallbacks</strong> 执行 <strong>setImmediate</strong> 。</li>
+</ol>
+<h3 id="setTimeout-分支"><a href="#setTimeout-分支" class="headerlink" title="setTimeout 分支"></a>setTimeout 分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">else &#123;</span><br><span class="line">  // Fallback to setTimeout.</span><br><span class="line">  timerFunc = () =&gt; &#123;</span><br><span class="line">    setTimeout(flushCallbacks, 0)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>当以上所有分支异步 <strong>api</strong> 都不支持的时候，使用 <strong>macro</strong> <strong>task</strong> （宏任务）的 <strong>setTimeout</strong> 执行 <strong>flushCallbacks</strong> 。</li>
+</ol>
+<h3 id="执行降级"><a href="#执行降级" class="headerlink" title="执行降级"></a>执行降级</h3><p>我们可以发现，给 timerFunc 赋值是一个降级的过程。为什么呢，因为 Vue 在执行的过程中，执行环境不同，所以要适配环境。</p>
+<p><img src="/images/640%203.png"></p>
+<p>这张图便于我们更清晰的了解到降级的过程。</p>
+<h2 id="flushCallbacks-函数"><a href="#flushCallbacks-函数" class="headerlink" title="flushCallbacks 函数"></a>flushCallbacks 函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function flushCallbacks () &#123;</span><br><span class="line">  pending = false</span><br><span class="line">  const copies = callbacks.slice(0)</span><br><span class="line">  callbacks.length = 0</span><br><span class="line">  for (let i = 0; i &lt; copies.length; i++) &#123;</span><br><span class="line">    copies[i]()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>循环遍历，按照 <strong>队列</strong> 数据结构 <strong>“先进先出”</strong> 的原则，逐一执行所有 <strong>callback</strong> 。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就全部讲完了，<strong>nextTick</strong> 的原理就是利用 <strong>Event</strong> <strong>loop</strong> 事件线程去异步重新渲染，分支判断首要选择 <strong>Promise</strong> 的原因是当同步JS代码执行完毕，执行栈清空会首先查看 <strong>micro</strong> <strong>task</strong> （微任务）队列是否为空，不为空首先执行微任务。在我们 <strong>DOM</strong> 依赖数据发生变化的时候，会异步重新渲染 <strong>DOM</strong> ，但是比如像 <strong>echarts</strong> ，<strong>canvas</strong>……这些 <strong>Vue</strong> 无法在初始状态下收集依赖的 <strong>DOM</strong> ，我们就需要手动执行 <strong>nextTick</strong> 方法使其重新渲染。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E8%AF%BB%E8%83%8C%E6%99%AF"><span class="toc-number">1.</span> <span class="toc-text">解读背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-event-loop"><span class="toc-number">2.</span> <span class="toc-text">什么是 event loop</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nextTick-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="toc-number">3.</span> <span class="toc-text">$nextTick 的实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nextTick-%E5%87%BD%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">nextTick 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timerFunc-%E5%87%BD%E6%95%B0"><span class="toc-number">5.</span> <span class="toc-text">timerFunc 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Promise-%E5%88%86%E6%94%AF"><span class="toc-number">5.1.</span> <span class="toc-text">Promise 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MutationObserver-%E5%88%86%E6%94%AF"><span class="toc-number">5.2.</span> <span class="toc-text">MutationObserver 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setImmediate-%E5%88%86%E6%94%AF"><span class="toc-number">5.3.</span> <span class="toc-text">setImmediate 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout-%E5%88%86%E6%94%AF"><span class="toc-number">5.4.</span> <span class="toc-text">setTimeout 分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%99%8D%E7%BA%A7"><span class="toc-number">5.5.</span> <span class="toc-text">执行降级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flushCallbacks-%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">flushCallbacks 函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">7.</span> <span class="toc-text">总结</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&text= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&is_video=false&description= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject= 从 Event Loop 角度解读 Vue NextTick 源码&body=Check out this article: https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&title= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&name= 从 Event Loop 角度解读 Vue NextTick 源码&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/08/vue/cdb7936afb/&t= 从 Event Loop 角度解读 Vue NextTick 源码"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <!-- <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a> -->
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2021
+    糖小米
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/cactus/">首页</a></li>
+         
+          <li><a href="/cactus/tags/">标签</a></li>
+         
+          <li><a href="/cactus/archives/">归档</a></li>
+         
+          <li><a href="/cactus/search/">搜索</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/cactus/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/cactus/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/cactus/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/cactus/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/cactus/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/cactus/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+
+</body>
+</html>
