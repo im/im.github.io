@@ -46,11 +46,11 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
-  auto_detect: false
-  tab_replace: ''
-  wrap: true
-  hljs: false
+  line_number: false
+  auto_detect: true
+  tab_replace: ""
+  wrap: false
+  hljs: true
 prismjs:
   enable: false
   preprocess: true
@@ -99,7 +99,7 @@ ignore:
 Plugins:
   hexo-generator-feed
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: github
 # theme: cactus
 
 rss: /atom.xml
@@ -112,3 +112,13 @@ algolia:
     applicationID: LT263LMVXP
     indexName: hexo
     apiKey: cebb1f717a8accd3f2cba60716c7ab71
+theme_config:
+  profile:
+    avatar: "/images/header/avatar.jpg"
+    nickname: "糖小米 ."
+    username: "im"
+    description: "记录一些学习笔记, 前端开发技巧"
+    organization: "PingAn"
+    location: "China / ShenZhen"
+    email: "tangxiaomiemail@gmail.com"
+    link: "http://tangxiaomi.top"
