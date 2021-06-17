@@ -15,7 +15,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://tangxiaomi.top/images/20200609111645389.png">
 <meta property="article:published_time" content="2021-06-02T01:49:36.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="Interview">
 <meta property="article:tag" content="javascript">
@@ -187,7 +187,11 @@
 <h2 id="setTimeout-模拟-setInterval"><a href="#setTimeout-模拟-setInterval" class="headerlink" title="setTimeout 模拟 setInterval"></a>setTimeout 模拟 setInterval</h2><p>可以这么理解：<br>setTimeout执行后会立刻将fn放入到消息队列中，而setInterval每次在放入之前都会判断消息队列中存不存在上一个任务。</p>
 <p>setTimeout的执行机制，也就是浏览器的事件循环机制，setTimeout是一个宏任务，当js栈空了，就会依次执行宏任务。</p>
 <p>代码实现：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">//.....</span></span><br><span class="line">    <span class="built_in">setTimeout</span>(a,time)</span><br><span class="line"></span><br><span class="line">&#125;,time)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">a</span>(<span class="hljs-params"></span>)</span>&#123;
+    <span class="hljs-comment">//.....</span>
+    <span class="hljs-built_in">setTimeout</span>(a,time)
+
+&#125;,time)</code></pre>
 
 <h2 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h2><p>在一个定时器执行完以前不会插入另一个定时器<br>确保了每个函数执行的等待时间间隔</p>
 

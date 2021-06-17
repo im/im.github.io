@@ -14,7 +14,7 @@
 <meta property="og:description" content="https:&#x2F;&#x2F;developer.mozilla.org&#x2F;zh-CN&#x2F;docs&#x2F;Web&#x2F;HTTP&#x2F;X-Frame-Options X-Frame-Options 有三个值:  DENY表示该页面不允许在 frame 中展示，即便是在相同域名的页面中嵌套也不允许。  SAMEORIGIN表示该页面可以在相同域名页面的 frame 中展示。  ALLOW-FROM uri表示该页面可以在指定来源的">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="question">
 <meta name="twitter:card" content="summary">
@@ -169,10 +169,14 @@
 </li>
 </ul>
 <p>换一句话说，如果设置为 DENY，不光在别人的网站 frame 嵌入时会无法加载，在同域名页面中同样会无法加载。另一方面，如果设置为 SAMEORIGIN，那么页面就可以在同域名页面的 frame 中嵌套。</p>
-<h2 id="express-配置"><a href="#express-配置" class="headerlink" title="express 配置"></a>express 配置</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> helmet = <span class="built_in">require</span>(<span class="string">&#x27;helmet&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line">app.use(helmet.frameguard(&#123; <span class="attr">action</span>: <span class="string">&#x27;SAMEORIGIN&#x27;</span> &#125;))</span><br></pre></td></tr></table></figure>
+<h2 id="express-配置"><a href="#express-配置" class="headerlink" title="express 配置"></a>express 配置</h2><pre><code class="hljs js"><span class="hljs-keyword">const</span> helmet = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;helmet&#x27;</span>);
+<span class="hljs-keyword">const</span> app = express();
+app.use(helmet.frameguard(&#123; <span class="hljs-attr">action</span>: <span class="hljs-string">&#x27;SAMEORIGIN&#x27;</span> &#125;))</code></pre>
 
 <p>或者使用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> frameguard = <span class="built_in">require</span>(<span class="string">&#x27;frameguard&#x27;</span>)</span><br><span class="line">app.use(frameguard(&#123; <span class="attr">action</span>: <span class="string">&#x27;SAMEORIGIN&#x27;</span> &#125;))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> frameguard = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;frameguard&#x27;</span>)
+app.use(frameguard(&#123; <span class="hljs-attr">action</span>: <span class="hljs-string">&#x27;SAMEORIGIN&#x27;</span> &#125;))
+</code></pre>
 
 
   </div>

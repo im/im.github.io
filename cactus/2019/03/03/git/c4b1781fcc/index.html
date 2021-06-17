@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="命令直接修改1git remote set-url origin [url]  先删后加12git remote rm origingit remote add origin [url]">
+    <meta name="description" content="命令直接修改git remote set-url origin [url]  先删后加git remote rm origin git remote add origin [url]">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" git 修改远程仓库地址">
 <meta property="og:url" content="https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="命令直接修改1git remote set-url origin [url]  先删后加12git remote rm origingit remote add origin [url]">
+<meta property="og:description" content="命令直接修改git remote set-url origin [url]  先删后加git remote rm origin git remote add origin [url]">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-03-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
@@ -103,9 +103,10 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&name= git 修改远程仓库地址&description=&lt;h2 id=&#34;命令直接修改&#34;&gt;&lt;a href=&#34;#命令直接修改&#34; class=&#34;headerlink&#34; title=&#34;命令直接修改&#34;&gt;&lt;/a&gt;命令直接修改&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git remote set-url origin [url]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&name= git 修改远程仓库地址&description=&lt;h2 id=&#34;命令直接修改&#34;&gt;&lt;a href=&#34;#命令直接修改&#34; class=&#34;headerlink&#34; title=&#34;命令直接修改&#34;&gt;&lt;/a&gt;命令直接修改&lt;/h2&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git remote set-url origin [url]&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;先删后加&#34;&gt;&lt;a href=&#34;#先删后加&#34; class=&#34;headerlink&#34; title=&#34;先删后加&#34;&gt;&lt;/a&gt;先删后加&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git remote rm origin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git remote add origin [url]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;先删后加&#34;&gt;&lt;a href=&#34;#先删后加&#34; class=&#34;headerlink&#34; title=&#34;先删后加&#34;&gt;&lt;/a&gt;先删后加&lt;/h2&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git remote rm origin
+git remote add origin [url]&lt;/code&gt;&lt;/pre&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&t= git 修改远程仓库地址"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -160,15 +161,35 @@
   
 
   <div class="content" itemprop="articleBody">
-    <h2 id="命令直接修改"><a href="#命令直接修改" class="headerlink" title="命令直接修改"></a>命令直接修改</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin [url]</span><br></pre></td></tr></table></figure>
+    <h2 id="命令直接修改"><a href="#命令直接修改" class="headerlink" title="命令直接修改"></a>命令直接修改</h2><pre><code class="hljs bash">git remote set-url origin [url]</code></pre>
 
-<h2 id="先删后加"><a href="#先删后加" class="headerlink" title="先删后加"></a>先删后加</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git remote rm origin</span><br><span class="line">git remote add origin [url]</span><br></pre></td></tr></table></figure>
+<h2 id="先删后加"><a href="#先删后加" class="headerlink" title="先删后加"></a>先删后加</h2><pre><code class="hljs bash">git remote rm origin
+git remote add origin [url]</code></pre>
 <a id="more"></a>
-<h2 id="直接修改配置文件"><a href="#直接修改配置文件" class="headerlink" title="直接修改配置文件"></a>直接修改配置文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> .git</span><br><span class="line">vim config</span><br></pre></td></tr></table></figure>
+<h2 id="直接修改配置文件"><a href="#直接修改配置文件" class="headerlink" title="直接修改配置文件"></a>直接修改配置文件</h2><pre><code class="hljs bash"><span class="hljs-built_in">cd</span> .git
+vim config</code></pre>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">    repositoryformatversion = 0</span><br><span class="line">    filemode = <span class="literal">true</span></span><br><span class="line">    bare = <span class="literal">false</span></span><br><span class="line">    logallrefupdates = <span class="literal">true</span></span><br><span class="line">    ignorecase = <span class="literal">true</span></span><br><span class="line">    precomposeunicode = <span class="literal">true</span></span><br><span class="line">[remote <span class="string">&quot;origin&quot;</span>]</span><br><span class="line">    url = https://github.com/im/im.github.io.git</span><br><span class="line">    fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[branch <span class="string">&quot;main&quot;</span>]</span><br><span class="line">    remote = origin</span><br><span class="line">    merge = refs/heads/main</span><br><span class="line">[submodule <span class="string">&quot;themes/icarus&quot;</span>]</span><br><span class="line">    active = <span class="literal">true</span></span><br><span class="line">    url = https://github.com/im/hexo-theme.git</span><br><span class="line">[submodule <span class="string">&quot;themes/cactus&quot;</span>]</span><br><span class="line">    url = https://github.com/im/hexo-theme.git</span><br><span class="line">    active = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs bash">[core]
+    repositoryformatversion = 0
+    filemode = <span class="hljs-literal">true</span>
+    bare = <span class="hljs-literal">false</span>
+    logallrefupdates = <span class="hljs-literal">true</span>
+    ignorecase = <span class="hljs-literal">true</span>
+    precomposeunicode = <span class="hljs-literal">true</span>
+[remote <span class="hljs-string">&quot;origin&quot;</span>]
+    url = https://github.com/im/im.github.io.git
+    fetch = +refs/heads/*:refs/remotes/origin/*
+[branch <span class="hljs-string">&quot;main&quot;</span>]
+    remote = origin
+    merge = refs/heads/main
+[submodule <span class="hljs-string">&quot;themes/icarus&quot;</span>]
+    active = <span class="hljs-literal">true</span>
+    url = https://github.com/im/hexo-theme.git
+[submodule <span class="hljs-string">&quot;themes/cactus&quot;</span>]
+    url = https://github.com/im/hexo-theme.git
+    active = <span class="hljs-literal">true</span></code></pre>
 
-<h2 id="查看远程地址"><a href="#查看远程地址" class="headerlink" title="查看远程地址"></a>查看远程地址</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+<h2 id="查看远程地址"><a href="#查看远程地址" class="headerlink" title="查看远程地址"></a>查看远程地址</h2><pre><code class="hljs bash">git remote -v</code></pre>
 
 
   </div>
@@ -209,9 +230,10 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&title= git 修改远程仓库地址"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&name= git 修改远程仓库地址&description=&lt;h2 id=&#34;命令直接修改&#34;&gt;&lt;a href=&#34;#命令直接修改&#34; class=&#34;headerlink&#34; title=&#34;命令直接修改&#34;&gt;&lt;/a&gt;命令直接修改&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git remote set-url origin [url]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&name= git 修改远程仓库地址&description=&lt;h2 id=&#34;命令直接修改&#34;&gt;&lt;a href=&#34;#命令直接修改&#34; class=&#34;headerlink&#34; title=&#34;命令直接修改&#34;&gt;&lt;/a&gt;命令直接修改&lt;/h2&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git remote set-url origin [url]&lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;先删后加&#34;&gt;&lt;a href=&#34;#先删后加&#34; class=&#34;headerlink&#34; title=&#34;先删后加&#34;&gt;&lt;/a&gt;先删后加&lt;/h2&gt;&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;git remote rm origin&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;git remote add origin [url]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+&lt;h2 id=&#34;先删后加&#34;&gt;&lt;a href=&#34;#先删后加&#34; class=&#34;headerlink&#34; title=&#34;先删后加&#34;&gt;&lt;/a&gt;先删后加&lt;/h2&gt;&lt;pre&gt;&lt;code class=&#34;hljs bash&#34;&gt;git remote rm origin
+git remote add origin [url]&lt;/code&gt;&lt;/pre&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2019/03/03/git/c4b1781fcc/&t= git 修改远程仓库地址"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 

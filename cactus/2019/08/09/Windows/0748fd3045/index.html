@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的">
+    <meta name="description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口netstat -ano  查看被占用端口对应的 PIDnetstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的所有进">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" Windows下如何查看某个端口被谁占用">
 <meta property="og:url" content="https://tangxiaomi.top/2019/08/09/Windows/0748fd3045/index.html">
 <meta property="og:site_name" content="糖小米 · 博客">
-<meta property="og:description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口1netstat -ano  查看被占用端口对应的 PID1netstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程1tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的">
+<meta property="og:description" content="开始—-&gt;运行—-&gt; cmd ，或者是 window+R 组合键，调出命令窗口。 查找所有运行的端口netstat -ano  查看被占用端口对应的 PIDnetstat -aon|findstr &quot;8081&quot;  查看指定 PID 的进程tasklist|findstr &quot;9088&quot;  结束进程强制（&#x2F;F参数）杀死 pid 为 9088 的所有进">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2019-08-09T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.043Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="Windows">
 <meta name="twitter:card" content="summary">
@@ -159,14 +159,14 @@
 
   <div class="content" itemprop="articleBody">
     <p>开始—-&gt;运行—-&gt; <code>cmd</code> ，或者是 <code>window+R</code> 组合键，调出命令窗口。</p>
-<h2 id="查找所有运行的端口"><a href="#查找所有运行的端口" class="headerlink" title="查找所有运行的端口"></a>查找所有运行的端口</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano</span><br></pre></td></tr></table></figure>
+<h2 id="查找所有运行的端口"><a href="#查找所有运行的端口" class="headerlink" title="查找所有运行的端口"></a>查找所有运行的端口</h2><pre><code class="hljs shell">netstat -ano</code></pre>
 
-<h2 id="查看被占用端口对应的-PID"><a href="#查看被占用端口对应的-PID" class="headerlink" title="查看被占用端口对应的 PID"></a>查看被占用端口对应的 PID</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -aon|findstr &quot;8081&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="查看被占用端口对应的-PID"><a href="#查看被占用端口对应的-PID" class="headerlink" title="查看被占用端口对应的 PID"></a>查看被占用端口对应的 PID</h2><pre><code class="hljs shell">netstat -aon|findstr &quot;8081&quot;</code></pre>
 
-<h2 id="查看指定-PID-的进程"><a href="#查看指定-PID-的进程" class="headerlink" title="查看指定 PID 的进程"></a>查看指定 PID 的进程</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist|findstr &quot;9088&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="查看指定-PID-的进程"><a href="#查看指定-PID-的进程" class="headerlink" title="查看指定 PID 的进程"></a>查看指定 PID 的进程</h2><pre><code class="hljs shell">tasklist|findstr &quot;9088&quot;</code></pre>
 
 <h2 id="结束进程"><a href="#结束进程" class="headerlink" title="结束进程"></a>结束进程</h2><p>强制（/F参数）杀死 pid 为 9088 的所有进程包括子进程（/T参数）：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill /T /F /PID 9088</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs shell">taskkill /T /F /PID 9088</code></pre>
 
 
   </div>

@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/640%202.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/640%203.png">
 <meta property="article:published_time" content="2021-06-08T09:04:03.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.051Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -194,27 +194,70 @@
 <h2 id="timerFunc-函数"><a href="#timerFunc-函数" class="headerlink" title="timerFunc 函数"></a>timerFunc 函数</h2><p>我们开始说了，timerFunc 为全局变量，现在调用 timerFunc ，timerFunc 是什么时候被赋值为一个函数，并且函数里执行代码又是什么？</p>
 <p><img src="/images/640%202.png"></p>
 <p>我们看到，这段判断代码总共有四个分支，四个分支里对 timerFunc 有不同的赋值，我们先来看第一个分支。</p>
-<h3 id="Promise-分支"><a href="#Promise-分支" class="headerlink" title="Promise 分支"></a>Promise 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> <span class="built_in">Promise</span> !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(<span class="built_in">Promise</span>)) &#123;</span><br><span class="line">  <span class="keyword">const</span> p = <span class="built_in">Promise</span>.resolve()</span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    p.then(flushCallbacks)</span><br><span class="line">    <span class="comment">// In problematic UIWebViews, Promise.then doesn&#x27;t completely break, but</span></span><br><span class="line">    <span class="comment">// it can get stuck in a weird state where callbacks are pushed into the</span></span><br><span class="line">    <span class="comment">// microtask queue but the queue isn&#x27;t being flushed, until the browser</span></span><br><span class="line">    <span class="comment">// needs to do some other work, e.g. handle a timer. Therefore we can</span></span><br><span class="line">    <span class="comment">// &quot;force&quot; the microtask queue to be flushed by adding an empty timer.</span></span><br><span class="line">    <span class="keyword">if</span> (isIOS) <span class="built_in">setTimeout</span>(noop)</span><br><span class="line">  &#125;</span><br><span class="line">  isUsingMicroTask = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Promise-分支"><a href="#Promise-分支" class="headerlink" title="Promise 分支"></a>Promise 分支</h3><pre><code class="hljs js"><span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Promise</span> !== <span class="hljs-string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(<span class="hljs-built_in">Promise</span>)) &#123;
+  <span class="hljs-keyword">const</span> p = <span class="hljs-built_in">Promise</span>.resolve()
+  timerFunc = <span class="hljs-function">() =&gt;</span> &#123;
+    p.then(flushCallbacks)
+    <span class="hljs-comment">// In problematic UIWebViews, Promise.then doesn&#x27;t completely break, but</span>
+    <span class="hljs-comment">// it can get stuck in a weird state where callbacks are pushed into the</span>
+    <span class="hljs-comment">// microtask queue but the queue isn&#x27;t being flushed, until the browser</span>
+    <span class="hljs-comment">// needs to do some other work, e.g. handle a timer. Therefore we can</span>
+    <span class="hljs-comment">// &quot;force&quot; the microtask queue to be flushed by adding an empty timer.</span>
+    <span class="hljs-keyword">if</span> (isIOS) <span class="hljs-built_in">setTimeout</span>(noop)
+  &#125;
+  isUsingMicroTask = <span class="hljs-literal">true</span>
+&#125;</code></pre>
 
 <ol>
 <li>判断环境是否支持 Promise 并且 <strong>Promise</strong> 是否为原生。</li>
 <li>使用 <strong>Promise</strong> 异步调用 <strong>flushCallbacks</strong> 函数。</li>
 <li>当执行环境是 <strong>iPhone</strong> 等，使用 <strong>setTimeout</strong> 异步调用 <strong>noop</strong> ，<strong>iOS</strong> <strong>中在一些异常的webview</strong> 中，<strong>promise</strong> 结束后任务队列并没有刷新所以强制执行 <strong>setTimeout</strong> 刷新任务队列。</li>
 </ol>
-<h3 id="MutationObserver-分支"><a href="#MutationObserver-分支" class="headerlink" title="MutationObserver 分支"></a>MutationObserver 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (!isIE &amp;&amp; <span class="keyword">typeof</span> MutationObserver !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; (</span><br><span class="line">  isNative(MutationObserver) ||</span><br><span class="line">  <span class="comment">// PhantomJS and iOS 7.x</span></span><br><span class="line">  MutationObserver.toString() === <span class="string">&#x27;[object MutationObserverConstructor]&#x27;</span></span><br><span class="line">)) &#123;</span><br><span class="line">  <span class="comment">// Use MutationObserver where native Promise is not available,</span></span><br><span class="line">  <span class="comment">// e.g. PhantomJS, iOS7, Android 4.4</span></span><br><span class="line">  <span class="comment">// (#6466 MutationObserver is unreliable in IE11)</span></span><br><span class="line">  <span class="keyword">let</span> counter = <span class="number">1</span></span><br><span class="line">  <span class="keyword">const</span> observer = <span class="keyword">new</span> MutationObserver(flushCallbacks)</span><br><span class="line">  <span class="keyword">const</span> textNode = <span class="built_in">document</span>.createTextNode(<span class="built_in">String</span>(counter))</span><br><span class="line">  observer.observe(textNode, &#123;</span><br><span class="line">    <span class="attr">characterData</span>: <span class="literal">true</span></span><br><span class="line">  &#125;)</span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    counter = (counter + <span class="number">1</span>) % <span class="number">2</span></span><br><span class="line">    textNode.data = <span class="built_in">String</span>(counter)</span><br><span class="line">  &#125;</span><br><span class="line">  isUsingMicroTask = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="MutationObserver-分支"><a href="#MutationObserver-分支" class="headerlink" title="MutationObserver 分支"></a>MutationObserver 分支</h3><pre><code class="hljs js"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!isIE &amp;&amp; <span class="hljs-keyword">typeof</span> MutationObserver !== <span class="hljs-string">&#x27;undefined&#x27;</span> &amp;&amp; (
+  isNative(MutationObserver) ||
+  <span class="hljs-comment">// PhantomJS and iOS 7.x</span>
+  MutationObserver.toString() === <span class="hljs-string">&#x27;[object MutationObserverConstructor]&#x27;</span>
+)) &#123;
+  <span class="hljs-comment">// Use MutationObserver where native Promise is not available,</span>
+  <span class="hljs-comment">// e.g. PhantomJS, iOS7, Android 4.4</span>
+  <span class="hljs-comment">// (#6466 MutationObserver is unreliable in IE11)</span>
+  <span class="hljs-keyword">let</span> counter = <span class="hljs-number">1</span>
+  <span class="hljs-keyword">const</span> observer = <span class="hljs-keyword">new</span> MutationObserver(flushCallbacks)
+  <span class="hljs-keyword">const</span> textNode = <span class="hljs-built_in">document</span>.createTextNode(<span class="hljs-built_in">String</span>(counter))
+  observer.observe(textNode, &#123;
+    <span class="hljs-attr">characterData</span>: <span class="hljs-literal">true</span>
+  &#125;)
+  timerFunc = <span class="hljs-function">() =&gt;</span> &#123;
+    counter = (counter + <span class="hljs-number">1</span>) % <span class="hljs-number">2</span>
+    textNode.data = <span class="hljs-built_in">String</span>(counter)
+  &#125;
+  isUsingMicroTask = <span class="hljs-literal">true</span>
+&#125;</code></pre>
 
 <ol>
 <li>对非IE浏览器和是否可以使用 <strong>HTML5</strong> 新特性 <strong>MutationObserver</strong> 进行判断。</li>
 <li>实例一个 <strong>MutationObserver</strong> 对象，这个对象主要是对浏览器 <strong>DOM</strong> 变化进行监听，当实例化 <strong>MutationObserver</strong> 对象并且执行对象 <strong>observe</strong>，设置 <strong>DOM</strong> 节点发生改变时自动触发回调。</li>
 <li>把 <strong>timerFunc</strong> 赋值为一个改变 <strong>DOM</strong> 节点的方法，当 <strong>DOM</strong> 节点发生改变，触发 <strong>flushCallbacks</strong> 。（这里其实就是想用利用 <strong>MutationObserver</strong> 的特性进行异步操作）</li>
 </ol>
-<h3 id="setImmediate-分支"><a href="#setImmediate-分支" class="headerlink" title="setImmediate 分支"></a>setImmediate 分支</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> setImmediate !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(setImmediate)) &#123;</span><br><span class="line">  <span class="comment">// Fallback to setImmediate.</span></span><br><span class="line">  <span class="comment">// Technically it leverages the (macro) task queue,</span></span><br><span class="line">  <span class="comment">// but it is still a better choice than setTimeout.</span></span><br><span class="line">  timerFunc = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    setImmediate(flushCallbacks)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="setImmediate-分支"><a href="#setImmediate-分支" class="headerlink" title="setImmediate 分支"></a>setImmediate 分支</h3><pre><code class="hljs js"><span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> setImmediate !== <span class="hljs-string">&#x27;undefined&#x27;</span> &amp;&amp; isNative(setImmediate)) &#123;
+  <span class="hljs-comment">// Fallback to setImmediate.</span>
+  <span class="hljs-comment">// Technically it leverages the (macro) task queue,</span>
+  <span class="hljs-comment">// but it is still a better choice than setTimeout.</span>
+  timerFunc = <span class="hljs-function">() =&gt;</span> &#123;
+    setImmediate(flushCallbacks)
+  &#125;
+&#125;</code></pre>
 
 <ol>
 <li>判断 <strong>setImmediate</strong> 是否存在，<strong>setImmediate</strong> 是高版本 <strong>IE</strong> （IE10+） 和 <strong>edge</strong> 才支持的。</li>
 <li>如果存在，传入 <strong>flushCallbacks</strong> 执行 <strong>setImmediate</strong> 。</li>
 </ol>
-<h3 id="setTimeout-分支"><a href="#setTimeout-分支" class="headerlink" title="setTimeout 分支"></a>setTimeout 分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">else &#123;</span><br><span class="line">  // Fallback to setTimeout.</span><br><span class="line">  timerFunc = () =&gt; &#123;</span><br><span class="line">    setTimeout(flushCallbacks, 0)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="setTimeout-分支"><a href="#setTimeout-分支" class="headerlink" title="setTimeout 分支"></a>setTimeout 分支</h3><pre><code class="hljs coffeescript"><span class="hljs-keyword">else</span> &#123;
+  <span class="hljs-regexp">//</span> Fallback to <span class="hljs-built_in">setTimeout</span>.
+<span class="hljs-function">  <span class="hljs-title">timerFunc</span> = <span class="hljs-params">()</span> =&gt;</span> &#123;
+    <span class="hljs-built_in">setTimeout</span>(flushCallbacks, <span class="hljs-number">0</span>)
+  &#125;
+&#125;</code></pre>
 
 <ol>
 <li>当以上所有分支异步 <strong>api</strong> 都不支持的时候，使用 <strong>macro</strong> <strong>task</strong> （宏任务）的 <strong>setTimeout</strong> 执行 <strong>flushCallbacks</strong> 。</li>
@@ -222,7 +265,14 @@
 <h3 id="执行降级"><a href="#执行降级" class="headerlink" title="执行降级"></a>执行降级</h3><p>我们可以发现，给 timerFunc 赋值是一个降级的过程。为什么呢，因为 Vue 在执行的过程中，执行环境不同，所以要适配环境。</p>
 <p><img src="/images/640%203.png"></p>
 <p>这张图便于我们更清晰的了解到降级的过程。</p>
-<h2 id="flushCallbacks-函数"><a href="#flushCallbacks-函数" class="headerlink" title="flushCallbacks 函数"></a>flushCallbacks 函数</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function flushCallbacks () &#123;</span><br><span class="line">  pending = false</span><br><span class="line">  const copies = callbacks.slice(0)</span><br><span class="line">  callbacks.length = 0</span><br><span class="line">  for (let i = 0; i &lt; copies.length; i++) &#123;</span><br><span class="line">    copies[i]()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="flushCallbacks-函数"><a href="#flushCallbacks-函数" class="headerlink" title="flushCallbacks 函数"></a>flushCallbacks 函数</h2><pre><code class="hljs nix">function flushCallbacks () &#123;
+  <span class="hljs-attr">pending</span> = <span class="hljs-literal">false</span>
+  const <span class="hljs-attr">copies</span> = callbacks.slice(<span class="hljs-number">0</span>)
+  callbacks.<span class="hljs-attr">length</span> = <span class="hljs-number">0</span>
+  for (<span class="hljs-keyword">let</span> <span class="hljs-attr">i</span> = <span class="hljs-number">0</span>; i &lt; copies.length; i++) &#123;
+    copies[i]()
+  &#125;
+&#125;</code></pre>
 
 <p>循环遍历，按照 <strong>队列</strong> 数据结构 <strong>“先进先出”</strong> 的原则，逐一执行所有 <strong>callback</strong> 。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>到这里就全部讲完了，<strong>nextTick</strong> 的原理就是利用 <strong>Event</strong> <strong>loop</strong> 事件线程去异步重新渲染，分支判断首要选择 <strong>Promise</strong> 的原因是当同步JS代码执行完毕，执行栈清空会首先查看 <strong>micro</strong> <strong>task</strong> （微任务）队列是否为空，不为空首先执行微任务。在我们 <strong>DOM</strong> 依赖数据发生变化的时候，会异步重新渲染 <strong>DOM</strong> ，但是比如像 <strong>echarts</strong> ，<strong>canvas</strong>……这些 <strong>Vue</strong> 无法在初始状态下收集依赖的 <strong>DOM</strong> ，我们就需要手动执行 <strong>nextTick</strong> 方法使其重新渲染。</p>

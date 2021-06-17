@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/2017052216214198614.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/2017052216214198614%202.png">
 <meta property="article:published_time" content="2019-03-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -192,10 +192,13 @@
 <a id="more"></a>
 <h3 id="使用-exports-暴露模块接口"><a href="#使用-exports-暴露模块接口" class="headerlink" title="使用 exports 暴露模块接口"></a>使用 exports 暴露模块接口</h3><ol>
 <li><p>下面我们在 Node.js 中创建一个模块，文件名为：hangge.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exports</span>.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Hello hangge.com&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-built_in">exports</span>.hello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Hello hangge.com&#x27;</span>);
+&#125;</code></pre>
 </li>
 <li><p>创建一个 main.js 文件，引入这个模块并调用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> hangge = <span class="built_in">require</span>(<span class="string">&#x27;./hangge&#x27;</span>);</span><br><span class="line">hangge.hello();</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> hangge = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./hangge&#x27;</span>);
+hangge.hello();</code></pre>
 </li>
 <li><p>运行结果如下：</p>
 </li>
@@ -203,10 +206,27 @@
 <p><img src="/images/2017052214293263636.png"></p>
 <h3 id="使用-modul-exports-暴露模块对象"><a href="#使用-modul-exports-暴露模块对象" class="headerlink" title="使用 modul.exports 暴露模块对象"></a>使用 modul.exports 暴露模块对象</h3><ol>
 <li><p>下面我们把一个对象封装到模块中，文件名为：hangge.js</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//私有变量</span></span><br><span class="line"><span class="keyword">var</span> test = <span class="number">110</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//公开方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Hangge</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name;</span><br><span class="line">    <span class="built_in">this</span>.setName = <span class="function"><span class="keyword">function</span>(<span class="params">thyName</span>) </span>&#123;</span><br><span class="line">        name = thyName;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">this</span>.hello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;Hello &#x27;</span> + name);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">module</span>.exports = Hangge;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-comment">//私有变量</span>
+<span class="hljs-keyword">var</span> test = <span class="hljs-number">110</span>;
+
+<span class="hljs-comment">//公开方法</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Hangge</span>(<span class="hljs-params"></span>) </span>&#123;
+ <span class="hljs-keyword">var</span> name;
+ <span class="hljs-built_in">this</span>.setName = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">thyName</span>) </span>&#123;
+     name = thyName;
+ &#125;;
+ <span class="hljs-built_in">this</span>.hello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Hello &#x27;</span> + name);
+ &#125;;
+&#125;;
+
+<span class="hljs-built_in">module</span>.exports = Hangge;</code></pre>
 </li>
 <li><p>创建一个 main.js 文件，引入这个模块并调用。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Hangge = <span class="built_in">require</span>(<span class="string">&#x27;./hangge&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> hello = <span class="keyword">new</span> Hangge();</span><br><span class="line">hello.setName(<span class="string">&#x27;hangge.com&#x27;</span>);</span><br><span class="line">hello.hello();</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">var</span> Hangge = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;./hangge&#x27;</span>);
+<span class="hljs-keyword">var</span> hello = <span class="hljs-keyword">new</span> Hangge();
+hello.setName(<span class="hljs-string">&#x27;hangge.com&#x27;</span>);
+hello.hello();</code></pre>
 </li>
 <li><p>运行结果如下：</p>
 </li>
@@ -221,12 +241,24 @@
 </ul>
 <h3 id="使用-export-命令规定对外接口"><a href="#使用-export-命令规定对外接口" class="headerlink" title="使用 export 命令规定对外接口"></a>使用 export 命令规定对外接口</h3><ol>
 <li><p>下面我们在 Node.js 中创建一个模块，文件名为：hangge.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//圆面积计算</span><br><span class="line">export function area(radius) &#123;</span><br><span class="line">  return Math.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//圆周长计算</span><br><span class="line">export function circumference(radius) &#123;</span><br><span class="line">  return 2 * Math.PI * radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs javascript"><span class="hljs-comment">//圆面积计算</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">area</span>(<span class="hljs-params">radius</span>) </span>&#123;
+<span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * radius * radius;
+&#125;
+
+<span class="hljs-comment">//圆周长计算</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">circumference</span>(<span class="hljs-params">radius</span>) </span>&#123;
+<span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI * radius;
+&#125;</code></pre>
 </li>
 <li><p>创建一个 main.js 文件，引入这个模块并调用。这里 import 命令使用大括号的形式加载模块对外的接口。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import &#123;area,circumference&#125; from &#x27;./hangge&#x27;;</span><br><span class="line">console.log(&#x27;圆面积：&#x27; + area(10));</span><br><span class="line">console.log(&#x27;圆周长：&#x27; + circumference(11));</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> &#123;area,circumference&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hangge&#x27;</span>;
+console.log(<span class="hljs-string">&#x27;圆面积：&#x27;</span> + area(<span class="hljs-number">10</span>));
+console.log(<span class="hljs-string">&#x27;圆周长：&#x27;</span> + circumference(<span class="hljs-number">11</span>));</code></pre>
 <p>当然也可以使用星号（*）指定一个对象，实现模块的整体加载。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import * as circle from &#x27;./hangge&#x27;;</span><br><span class="line">console.log(&#x27;圆面积：&#x27; + circle.area(10));</span><br><span class="line">console.log(&#x27;圆周长：&#x27; + circle.circumference(11));</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> <span class="hljs-type">circle</span> <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hangge&#x27;</span>;
+console.log(<span class="hljs-string">&#x27;圆面积：&#x27;</span> + <span class="hljs-type">circle</span>.area(<span class="hljs-number">10</span>));
+console.log(<span class="hljs-string">&#x27;圆周长：&#x27;</span> + <span class="hljs-type">circle</span>.circumference(<span class="hljs-number">11</span>));</code></pre>
 </li>
 <li><p>由于 NodeJS 目前还不支持 ES2015 的 Module，这里我们借助 babel-node 来执行，运行结果如下：</p>
 </li>
@@ -234,10 +266,20 @@
 <p><img src="/images/2017052310253156591.png"></p>
 <h3 id="使用-export-default-命令来输出模块"><a href="#使用-export-default-命令来输出模块" class="headerlink" title="使用 export default 命令来输出模块"></a>使用 export default 命令来输出模块</h3><ol>
 <li><p>下面我们使用 export default 命令用于指定模块的默认输出。模块文件名为：hangge.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//圆面积计算（作为默认接口）</span><br><span class="line">export default function(radius) &#123;</span><br><span class="line">  return Math.PI * radius * radius;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//圆周长计算</span><br><span class="line">export function circumference(radius) &#123;</span><br><span class="line">  return 2 * Math.PI * radius;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs javascript"><span class="hljs-comment">//圆面积计算（作为默认接口）</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">radius</span>) </span>&#123;
+<span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.PI * radius * radius;
+&#125;
+
+<span class="hljs-comment">//圆周长计算</span>
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">circumference</span>(<span class="hljs-params">radius</span>) </span>&#123;
+<span class="hljs-keyword">return</span> <span class="hljs-number">2</span> * <span class="hljs-built_in">Math</span>.PI * radius;
+&#125;</code></pre>
 </li>
 <li><p>创建一个 main.js 文件，引入这个模块并调用。注意：对于 export default 指定模块的默认输出，import 语句不需要使用大括号。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import area, &#123;circumference&#125; from &#x27;./hangge&#x27;;</span><br><span class="line">console.log(&#x27;圆面积：&#x27; + area(10));</span><br><span class="line">console.log(&#x27;圆周长：&#x27; + circumference(11));</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs pgsql"><span class="hljs-keyword">import</span> area, &#123;circumference&#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./hangge&#x27;</span>;
+console.log(<span class="hljs-string">&#x27;圆面积：&#x27;</span> + area(<span class="hljs-number">10</span>));
+console.log(<span class="hljs-string">&#x27;圆周长：&#x27;</span> + circumference(<span class="hljs-number">11</span>));</code></pre>
 </li>
 <li><p>同样借助 babel-node 来执行，运行结果如下：</p>
 </li>
@@ -257,20 +299,57 @@
 * factory：一个需要进行实例化的函数或者一个对象。
 * AMD 规范允许输出模块兼容 CommonJS 规范，这时 define 方法如下：
 </code></pre>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(function (require, exports, module) &#123;</span><br><span class="line">    var reqModule = require(&quot;./someModule&quot;);</span><br><span class="line">    requModule.test();</span><br><span class="line">      </span><br><span class="line">    exports.asplode = function () &#123;</span><br><span class="line">        //someing</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"><span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>&#123;
+    <span class="hljs-keyword">var</span> reqModule = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;./someModule&quot;</span>);
+    requModule.test();
+      
+    <span class="hljs-built_in">exports</span>.asplode = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-comment">//someing</span>
+    &#125;
+&#125;);</code></pre>
 
 <h3 id="独立模块"><a href="#独立模块" class="headerlink" title="独立模块"></a>独立模块</h3><ol>
 <li><p>我们使用 RequireJS 定义一个不依赖其他模块得独立模块，文件名：hangge.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(function()&#123;</span><br><span class="line">    var add = function(x,y) &#123;</span><br><span class="line">        return x + y;</span><br><span class="line">    &#125;;</span><br><span class="line">    return &#123;</span><br><span class="line">        add : add</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs sas">define(functi<span class="hljs-meta">on(</span>)&#123;
+ var <span class="hljs-meta">add</span> = functi<span class="hljs-meta">on(</span><span class="hljs-meta">x</span>,y) &#123;
+     <span class="hljs-meta">return</span> <span class="hljs-meta">x</span> + y;
+ &#125;;
+ <span class="hljs-meta">return</span> &#123;
+     <span class="hljs-meta">add</span> : <span class="hljs-meta">add</span>
+ &#125;
+&#125;);</code></pre>
 </li>
 <li><p>接着创建一个 html 页面，其内部加载并调用这个模块。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;require.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">          require([&#x27;hangge&#x27;], function (m)&#123;</span><br><span class="line">            console.log(m.add(2,3));</span><br><span class="line">          &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;require.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+     <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span>
+<span class="javascript">          <span class="hljs-built_in">require</span>([<span class="hljs-string">&#x27;hangge&#x27;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m</span>)</span>&#123;</span>
+<span class="javascript">            <span class="hljs-built_in">console</span>.log(m.add(<span class="hljs-number">2</span>,<span class="hljs-number">3</span>));</span>
+<span class="javascript">          &#125;);</span>
+<span class="javascript">        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 </li>
 <li><p>控制台输出如下：<br><img src="/images/2017052215410526448.png"></p>
 </li>
 </ol>
 <h3 id="使用样例2：存在依赖的函数式定义"><a href="#使用样例2：存在依赖的函数式定义" class="headerlink" title="使用样例2：存在依赖的函数式定义"></a>使用样例2：存在依赖的函数式定义</h3><p>下面定义的模块又依赖于 cart 和 inventory 这两个模块（它们都处在同一个文件夹下）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">define([&quot;./cart&quot;, &quot;./inventory&quot;], function(cart, inventory) &#123;</span><br><span class="line">        //return an object to define the &quot;my/shirt&quot; module.</span><br><span class="line">        return &#123;</span><br><span class="line">            color: &quot;blue&quot;,</span><br><span class="line">            size: &quot;large&quot;,</span><br><span class="line">            addToCart: function() &#123;</span><br><span class="line">                inventory.decrement(this);</span><br><span class="line">                cart.add(this);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs actionscript">define([<span class="hljs-string">&quot;./cart&quot;</span>, <span class="hljs-string">&quot;./inventory&quot;</span>], <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(cart, inventory)</span> </span>&#123;
+        <span class="hljs-comment">//return an object to define the &quot;my/shirt&quot; module.</span>
+        <span class="hljs-keyword">return</span> &#123;
+            color: <span class="hljs-string">&quot;blue&quot;</span>,
+            size: <span class="hljs-string">&quot;large&quot;</span>,
+            addToCart: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>&#123;
+                inventory.decrement(<span class="hljs-keyword">this</span>);
+                cart.add(<span class="hljs-keyword">this</span>);
+            &#125;
+        &#125;
+    &#125;
+);</code></pre>
 
 <h3 id="CMD-基本介绍"><a href="#CMD-基本介绍" class="headerlink" title="CMD 基本介绍"></a>CMD 基本介绍</h3><ol>
 <li><p>CMD 全称为 Common Module Definition，它是国内玉伯大神在开发 SeaJS 的时候提出来的。 </p>
@@ -286,24 +365,65 @@
 </ul>
 </li>
 <li><p>下面使用 sea.js 创建一个模块，文件名为：hangge.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">define(function(require, exports) &#123;</span><br><span class="line">    // 对外提供name属性</span><br><span class="line">    exports.name = &#x27;hangge&#x27;;</span><br><span class="line">    // 对外提供hello方法</span><br><span class="line">    exports.hello = function() &#123;</span><br><span class="line">      console.log(&#x27;Hello hangge.com&#x27;);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span></span>) </span>&#123;
+ <span class="hljs-comment">// 对外提供name属性</span>
+ <span class="hljs-built_in">exports</span>.name = <span class="hljs-string">&#x27;hangge&#x27;</span>;
+ <span class="hljs-comment">// 对外提供hello方法</span>
+ <span class="hljs-built_in">exports</span>.hello = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Hello hangge.com&#x27;</span>);
+ &#125;;
+&#125;);</code></pre>
 </li>
 <li><p>接着创建一个 html 页面，其内部加载并调用这个模块。</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;sea.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">          //加载一个模块，在加载完成时，执行回调</span><br><span class="line">          seajs.use(&#x27;hangge&#x27;, function(a) &#123;</span><br><span class="line">            a.hello();</span><br><span class="line">          &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sea.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span>
+<span class="javascript">          <span class="hljs-comment">//加载一个模块，在加载完成时，执行回调</span></span>
+<span class="javascript">          seajs.use(<span class="hljs-string">&#x27;hangge&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>) </span>&#123;</span>
+<span class="javascript">            a.hello();</span>
+<span class="javascript">          &#125;);</span>
+<span class="javascript">        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
 <ol start="3">
 <li>控制台输出如下：<br><img src="/images/2017052216214198614.png"></li>
 </ol>
 <h3 id="使用-modul-exports-暴露模块对象-1"><a href="#使用-modul-exports-暴露模块对象-1" class="headerlink" title="使用 modul.exports 暴露模块对象"></a>使用 modul.exports 暴露模块对象</h3><ol>
 <li><p>下面我们把一个对象封装到模块中，文件名为：hangge.js</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">define(function(require, exports, module) &#123;</span><br><span class="line">    // 对外提供接口</span><br><span class="line">    module.exports = &#123;</span><br><span class="line">        name: &#x27;hangge&#x27;,</span><br><span class="line">        hello: function() &#123;</span><br><span class="line">          console.log(&#x27;Hello hangge.com&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs javascript">define(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"><span class="hljs-built_in">require</span>, <span class="hljs-built_in">exports</span>, <span class="hljs-built_in">module</span></span>) </span>&#123;
+ <span class="hljs-comment">// 对外提供接口</span>
+ <span class="hljs-built_in">module</span>.exports = &#123;
+     <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;hangge&#x27;</span>,
+     <span class="hljs-attr">hello</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+       <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Hello hangge.com&#x27;</span>);
+     &#125;
+ &#125;;
+&#125;);</code></pre>
 </li>
 <li><p>接着创建一个 html 页面，其内部加载并调用这个模块。</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot; src=&quot;sea.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">          //加载一个模块，在加载完成时，执行回调</span><br><span class="line">          seajs.use(&#x27;hangge&#x27;, function(a) &#123;</span><br><span class="line">            a.hello();</span><br><span class="line">          &#125;);</span><br><span class="line">        &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs xml"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;sea.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"></span>
+<span class="javascript">          <span class="hljs-comment">//加载一个模块，在加载完成时，执行回调</span></span>
+<span class="javascript">          seajs.use(<span class="hljs-string">&#x27;hangge&#x27;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">a</span>) </span>&#123;</span>
+<span class="javascript">            a.hello();</span>
+<span class="javascript">          &#125;);</span>
+<span class="javascript">        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
 
 <ol start="3">
 <li>控制台输出如下：<br><img src="/images/2017052216214198614%202.png"></li>

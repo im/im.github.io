@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/0973dffd-399c-48e9-8fcf-77ff3a6809e6-272x300.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/6E64DEED-65D3-42F9-8485-59C84C0FCD6C-300x124.jpg">
 <meta property="article:published_time" content="2021-03-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -248,7 +248,62 @@
 <p>A = R(3),I(‘c’)<br>B = R(3), I(‘d’)  </p>
 </blockquote>
 <p>一切准备就绪，我们可以开始看 OT 了，这里 OT 算法现在已经很成熟了，这里我以一个 github 上的 repo 为例： <a target="_blank" rel="noopener" href="https://github.com/Operational-Transformation/ot.js">ot.js</a><br>我们可以看看它的核心代码 (有删减，理解起来可能会比较复杂，感兴趣的可以深入思考一下)：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Transform takes two operations A and B that happened concurrently and</span></span><br><span class="line">  <span class="comment">// produces two operations A&#x27; and B&#x27; (in an array) such that</span></span><br><span class="line">  <span class="comment">// `apply(apply(S, A), B&#x27;) = apply(apply(S, B), A&#x27;)`. This function is the</span></span><br><span class="line">  <span class="comment">// heart of OT.</span></span><br><span class="line">  <span class="comment">// 上面这个公式就是OT的核心，它产生了A&#x27;,B&#x27;,同时保证执行结果一致，S就是我们开始的状态，可以把这个和菱形图对应起来</span></span><br><span class="line">  <span class="comment">// 整体执行流程有点像合并排序的过程。两个下标指针分别往前走</span></span><br><span class="line"> </span><br><span class="line">  TextOperation.transform = <span class="function"><span class="keyword">function</span> (<span class="params">operation1, operation2</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// operation1， operation2就是我们的A，B</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">var</span> operation1prime = <span class="keyword">new</span> TextOperation(); <span class="comment">// 就是A&#x27;</span></span><br><span class="line">    <span class="keyword">var</span> operation2prime = <span class="keyword">new</span> TextOperation(); <span class="comment">// 就是B&#x27;</span></span><br><span class="line">    <span class="keyword">var</span> ops1 = operation1.ops, ops2 = operation2.ops;</span><br><span class="line">    <span class="keyword">var</span> i1 = <span class="number">0</span>, i2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">var</span> op1 = ops1[i1++], op2 = ops2[i2++];</span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">      <span class="comment">// At every iteration of the loop, the imaginary cursor that both</span></span><br><span class="line">      <span class="comment">// operation1 and operation2 have that operates on the input string must</span></span><br><span class="line">      <span class="comment">// have the same position in the input string.</span></span><br><span class="line">      <span class="comment">// 其实这里就是说transform的核心是保证两者的下标一致，这样操作的才是同一个位置的数据</span></span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">      <span class="comment">// next two cases: one or both ops are insert ops</span></span><br><span class="line">      <span class="comment">// =&gt; insert the string in the corresponding prime operation, skip it in</span></span><br><span class="line">      <span class="comment">// the other one. If both op1 and op2 are insert ops, prefer op1.</span></span><br><span class="line">      <span class="comment">// 如果A是插入操作，A&#x27;一定也是插入，但是B&#x27;就不一样了，因为A是插入，不管你B是啥，你先等等，所以retain一下，保证下标一致</span></span><br><span class="line">      <span class="comment">// 这里实际上有三种情况，A是插入，B可能是R，I，D</span></span><br><span class="line">      <span class="keyword">if</span> (isInsert(op1)) &#123;</span><br><span class="line">        operation1prime.insert(op1);</span><br><span class="line">        operation2prime.retain(op1.length);</span><br><span class="line">        op1 = ops1[i1++];</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// 如果B也是插入，那B’就是插入，但是你的A&#x27;也得retain一下，保证下标一致</span></span><br><span class="line">      <span class="comment">// 这里可能有两者情况，A可能是R，D</span></span><br><span class="line">      <span class="comment">// 实例化思考一下，A [R(3),I(&#x27;a&#x27;)],B [I(&#x27;b&#x27;)],那对于A&#x27;来说就应该是[R(4),I(&#x27;a&#x27;)]</span></span><br><span class="line">      <span class="keyword">if</span> (isInsert(op2)) &#123;</span><br><span class="line">        operation1prime.retain(op2.length);</span><br><span class="line">        operation2prime.insert(op2);</span><br><span class="line">        op2 = ops2[i2++];</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">// ...</span></span><br><span class="line">      <span class="keyword">var</span> minl;</span><br><span class="line">      <span class="keyword">if</span> (isRetain(op1) &amp;&amp; isRetain(op2)) &#123;</span><br><span class="line">        <span class="comment">// R和R处理</span></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDelete(op1) &amp;&amp; isDelete(op2)) &#123;</span><br><span class="line">        <span class="comment">//D和D处理</span></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isDelete(op1) &amp;&amp; isRetain(op2)) &#123;</span><br><span class="line">       <span class="comment">// D和R处理</span></span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span> (isRetain(op1) &amp;&amp; isDelete(op2)) &#123;</span><br><span class="line">       <span class="comment">//R和D处理</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> [operation1prime, operation2prime];</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-comment">// Transform takes two operations A and B that happened concurrently and</span>
+  <span class="hljs-comment">// produces two operations A&#x27; and B&#x27; (in an array) such that</span>
+  <span class="hljs-comment">// `apply(apply(S, A), B&#x27;) = apply(apply(S, B), A&#x27;)`. This function is the</span>
+  <span class="hljs-comment">// heart of OT.</span>
+  <span class="hljs-comment">// 上面这个公式就是OT的核心，它产生了A&#x27;,B&#x27;,同时保证执行结果一致，S就是我们开始的状态，可以把这个和菱形图对应起来</span>
+  <span class="hljs-comment">// 整体执行流程有点像合并排序的过程。两个下标指针分别往前走</span>
+ 
+  TextOperation.transform = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">operation1, operation2</span>) </span>&#123;
+  <span class="hljs-comment">// operation1， operation2就是我们的A，B</span>
+ 
+    <span class="hljs-keyword">var</span> operation1prime = <span class="hljs-keyword">new</span> TextOperation(); <span class="hljs-comment">// 就是A&#x27;</span>
+    <span class="hljs-keyword">var</span> operation2prime = <span class="hljs-keyword">new</span> TextOperation(); <span class="hljs-comment">// 就是B&#x27;</span>
+    <span class="hljs-keyword">var</span> ops1 = operation1.ops, ops2 = operation2.ops;
+    <span class="hljs-keyword">var</span> i1 = <span class="hljs-number">0</span>, i2 = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">var</span> op1 = ops1[i1++], op2 = ops2[i2++];
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) &#123;
+      <span class="hljs-comment">// At every iteration of the loop, the imaginary cursor that both</span>
+      <span class="hljs-comment">// operation1 and operation2 have that operates on the input string must</span>
+      <span class="hljs-comment">// have the same position in the input string.</span>
+      <span class="hljs-comment">// 其实这里就是说transform的核心是保证两者的下标一致，这样操作的才是同一个位置的数据</span>
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-comment">// next two cases: one or both ops are insert ops</span>
+      <span class="hljs-comment">// =&gt; insert the string in the corresponding prime operation, skip it in</span>
+      <span class="hljs-comment">// the other one. If both op1 and op2 are insert ops, prefer op1.</span>
+      <span class="hljs-comment">// 如果A是插入操作，A&#x27;一定也是插入，但是B&#x27;就不一样了，因为A是插入，不管你B是啥，你先等等，所以retain一下，保证下标一致</span>
+      <span class="hljs-comment">// 这里实际上有三种情况，A是插入，B可能是R，I，D</span>
+      <span class="hljs-keyword">if</span> (isInsert(op1)) &#123;
+        operation1prime.insert(op1);
+        operation2prime.retain(op1.length);
+        op1 = ops1[i1++];
+        <span class="hljs-keyword">continue</span>;
+      &#125;
+      <span class="hljs-comment">// 如果B也是插入，那B’就是插入，但是你的A&#x27;也得retain一下，保证下标一致</span>
+      <span class="hljs-comment">// 这里可能有两者情况，A可能是R，D</span>
+      <span class="hljs-comment">// 实例化思考一下，A [R(3),I(&#x27;a&#x27;)],B [I(&#x27;b&#x27;)],那对于A&#x27;来说就应该是[R(4),I(&#x27;a&#x27;)]</span>
+      <span class="hljs-keyword">if</span> (isInsert(op2)) &#123;
+        operation1prime.retain(op2.length);
+        operation2prime.insert(op2);
+        op2 = ops2[i2++];
+        <span class="hljs-keyword">continue</span>;
+      &#125;
+      <span class="hljs-comment">// ...</span>
+      <span class="hljs-keyword">var</span> minl;
+      <span class="hljs-keyword">if</span> (isRetain(op1) &amp;&amp; isRetain(op2)) &#123;
+        <span class="hljs-comment">// R和R处理</span>
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isDelete(op1) &amp;&amp; isDelete(op2)) &#123;
+        <span class="hljs-comment">//D和D处理</span>
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isDelete(op1) &amp;&amp; isRetain(op2)) &#123;
+       <span class="hljs-comment">// D和R处理</span>
+      &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (isRetain(op1) &amp;&amp; isDelete(op2)) &#123;
+       <span class="hljs-comment">//R和D处理</span>
+      &#125;
+    &#125;
+    <span class="hljs-keyword">return</span> [operation1prime, operation2prime];
+  &#125;;
+</code></pre>
 
 <p>这里就是 OT 的 transform 实现，本质上就是把用户的原子操作数组拿到以后，然后做 transform 操作，这里我只选了一小段来大概解析下，具体的可以看注释，其实原本的注释已经很全了。 其实上面那段代码，因为我们的原子操作只有三种，根据排列组合，最多只会有 9 种情况，只是上面把很多情况合并了，你要是不理解，也可以拆开，帮助理解。</p>
 <p>其实上面的文件还有 compose，invert 等方法，但是其实 transform 才是我们理解的核心，其他方法大家感兴趣可以看看注释和下面贴的一些关于 OT 更详细介绍的文章。</p>

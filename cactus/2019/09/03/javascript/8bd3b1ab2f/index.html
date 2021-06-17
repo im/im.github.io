@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/41c5c82d485b469ca92a36aec5b73ac0~tplv-k3u1fbpfcp-watermark.image.png">
 <meta property="og:image" content="https://tangxiaomi.top/images/473fde71299f47fd81bc4d2e1cbd90bb~tplv-k3u1fbpfcp-watermark.image.png">
 <meta property="article:published_time" content="2019-09-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="closure">
@@ -200,10 +200,44 @@
 <p>作用域链具体是什么样呢？</p>
 <a id="more"></a>
 <h2 id="静态作用域链"><a href="#静态作用域链" class="headerlink" title="静态作用域链"></a>静态作用域链</h2><p>比如这样一段代码</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> guang = <span class="string">&#x27;guang&#x27;</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> ssh = <span class="string">&#x27;ssh&#x27;</span>;</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="function"><span class="keyword">function</span> <span class="title">func3</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> suzhe = <span class="string">&#x27;suzhe&#x27;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">const</span> guang = <span class="hljs-string">&#x27;guang&#x27;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func2</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">const</span> ssh = <span class="hljs-string">&#x27;ssh&#x27;</span>;
+    &#123;
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func3</span> (<span class="hljs-params"></span>) </span>&#123;
+        <span class="hljs-keyword">const</span> suzhe = <span class="hljs-string">&#x27;suzhe&#x27;</span>;
+      &#125;
+    &#125;
+  &#125;
+&#125;</code></pre>
 
 <p>其中，有 guang、ssh、suzhe 3个变量，有 func、func2、func3 3个函数，还有一个块，他们之间的作用域链可以用babel查看一下。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> parser = <span class="built_in">require</span>(<span class="string">&#x27;@babel/parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> traverse = <span class="built_in">require</span>(<span class="string">&#x27;@babel/traverse&#x27;</span>).default;</span><br><span class="line"><span class="keyword">const</span> code = <span class="string">`</span></span><br><span class="line"><span class="string">  function func() &#123;</span></span><br><span class="line"><span class="string">    const guang = &#x27;guang&#x27;;</span></span><br><span class="line"><span class="string">    function func2() &#123;</span></span><br><span class="line"><span class="string">      const ssh = &#x27;ssh&#x27;;</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        function func3 () &#123;</span></span><br><span class="line"><span class="string">          const suzhe = &#x27;suzhe&#x27;;</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    &#125;</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ast = parser.parse(code);</span><br><span class="line"></span><br><span class="line">traverse(ast, &#123;</span><br><span class="line">  FunctionDeclaration (path) &#123;</span><br><span class="line">    <span class="keyword">if</span> (path.get(<span class="string">&#x27;id.name&#x27;</span>).node === <span class="string">&#x27;func3&#x27;</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(path.scope.dump());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-keyword">const</span> parser = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@babel/parser&#x27;</span>);
+<span class="hljs-keyword">const</span> traverse = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;@babel/traverse&#x27;</span>).default;
+<span class="hljs-keyword">const</span> code = <span class="hljs-string">`</span>
+<span class="hljs-string">  function func() &#123;</span>
+<span class="hljs-string">    const guang = &#x27;guang&#x27;;</span>
+<span class="hljs-string">    function func2() &#123;</span>
+<span class="hljs-string">      const ssh = &#x27;ssh&#x27;;</span>
+<span class="hljs-string">      &#123;</span>
+<span class="hljs-string">        function func3 () &#123;</span>
+<span class="hljs-string">          const suzhe = &#x27;suzhe&#x27;;</span>
+<span class="hljs-string">        &#125;</span>
+<span class="hljs-string">      &#125;</span>
+<span class="hljs-string">    &#125;</span>
+<span class="hljs-string">  &#125;</span>
+<span class="hljs-string">`</span>;
+
+<span class="hljs-keyword">const</span> ast = parser.parse(code);
+
+traverse(ast, &#123;
+  FunctionDeclaration (path) &#123;
+    <span class="hljs-keyword">if</span> (path.get(<span class="hljs-string">&#x27;id.name&#x27;</span>).node === <span class="hljs-string">&#x27;func3&#x27;</span>) &#123;
+      <span class="hljs-built_in">console</span>.log(path.scope.dump());
+    &#125;
+  &#125;
+&#125;)</code></pre>
 
 <p>结果是<br><img src="/images/72f12fc7e7164cc0af23f3e16f03bb06~tplv-k3u1fbpfcp-watermark.image.png"></p>
 <p>用图可视化一下就是这样的<br><img src="/images/df0acc1d0b904b8194b87622ac66f097~tplv-k3u1fbpfcp-watermark.image.png"></p>
@@ -213,11 +247,29 @@
 <p>相对的，还有动态作用域链，也就是作用域的引用关系与嵌套关系无关，与执行顺序有关，会在执行的时候动态创建不同函数、块的作用域的引用关系。缺点就是不直观，没法静态分析。</p>
 <p>静态作用域链是可以做静态分析的，比如我们刚刚用 babel 分析的 scope 链就是。所以绝大多数编程语言都是作用域链设计都是选择静态的顺序。</p>
 <p>但是，JavaScript 除了静态作用域链外，还有一个特点就是函数可以作为返回值。比如</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> f2 = func();</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span> (<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(a);
+  &#125;
+&#125;
+<span class="hljs-keyword">const</span> f2 = func();</code></pre>
 
 <p>这就导致了一个问题，本来按照顺序创建调用一层层函数，按顺序创建和销毁作用域挺好的，但是如果内层函数返回了或者通过别的暴露出去了，那么外层函数销毁，内层函数却没有销毁，这时候怎么处理作用域，父作用域销不销毁？ （比如这里的 func 调用结束要不要销毁作用域）</p>
 <h2 id="不按顺序的函数调用与闭包"><a href="#不按顺序的函数调用与闭包" class="headerlink" title="不按顺序的函数调用与闭包"></a>不按顺序的函数调用与闭包</h2><p>比如把上面的代码做下改造，返回内部函数，然后在外面调用：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> guang = <span class="string">&#x27;guang&#x27;</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">func2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> ssh = <span class="string">&#x27;ssh&#x27;</span>;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">func3</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">const</span> suzhe = <span class="string">&#x27;suzhe&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> func3;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> func2;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> func2 = func();</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-keyword">const</span> guang = <span class="hljs-string">&#x27;guang&#x27;</span>;
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func2</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-keyword">const</span> ssh = <span class="hljs-string">&#x27;ssh&#x27;</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func3</span> (<span class="hljs-params"></span>) </span>&#123;
+      <span class="hljs-keyword">const</span> suzhe = <span class="hljs-string">&#x27;suzhe&#x27;</span>;
+    &#125;
+    <span class="hljs-keyword">return</span> func3;
+  &#125;
+  <span class="hljs-keyword">return</span> func2;
+&#125;
+
+<span class="hljs-keyword">const</span> func2 = func();</code></pre>
 
 <p>当调用 func2 的时候 func1 已经执行完了，这时候销不销毁 ？于是 JavaScript 就设计了闭包的机制。</p>
 <h3 id="闭包怎么设计？"><a href="#闭包怎么设计？" class="headerlink" title="闭包怎么设计？"></a>闭包怎么设计？</h3><p>先不看答案，考虑一下我们解决这个静态作用域链中的父作用域先于子作用域销毁怎么解决。</p>

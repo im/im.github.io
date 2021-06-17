@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/v2-a38ad24f9109e1a4cb7b49cc1b90cafe_1440w.jpg">
 <meta property="og:image" content="https://tangxiaomi.top/images/v2-a3ac02a230c49c9aa8c45af46eae2e1c_1440w.jpg">
 <meta property="article:published_time" content="2021-01-02T01:49:36.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -196,14 +196,38 @@
 <p><strong>微任务主要包含：Promise、MutaionObserver、process.nextTick(Node.js 环境)</strong></p>
 <p>setTimeout/Promise 等API便是任务源，而进入任务队列的是由他们指定的具体执行任务。来自不同任务源的任务会进入到不同的任务队列。其中 setTimeout 与 setInterval 是同源的。</p>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>掌握概念之后，我们来做一个例子强化一下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script start&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;setTimeout&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.resolve().then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;promise1&#x27;</span>);</span><br><span class="line">&#125;).then( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;promise2&#x27;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script end&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script start&#x27;</span>);
+
+<span class="hljs-built_in">setTimeout</span>(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;setTimeout&#x27;</span>);
+&#125;, <span class="hljs-number">0</span>);
+
+<span class="hljs-built_in">Promise</span>.resolve().then(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise1&#x27;</span>);
+&#125;).then( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise2&#x27;</span>);
+&#125;);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script end&#x27;</span>);</code></pre>
 
 <blockquote>
 <p>整体 script 作为第一个宏任务进入主线程，遇到 console.log，输出 script start<br>遇到 setTimeout，其回调函数被分发到宏任务 Event Queue 中<br>遇到 Promise，其 then函数被分到到微任务 Event Queue 中,记为 then1，之后又遇到了 then 函数，将其分到微任务 Event Queue 中，记为 then2<br>遇到 console.log，输出 script end  </p>
 </blockquote>
 <p><strong>至此，Event Queue 中存在三个任务：宏任务：setTimeout 微任务：then1、then2</strong></p>
 <p>执行微任务，首先执行then1，输出 promise1, 然后执行 then2，输出 promise2，这样就清空了所有微任务<br>执行 setTimeout 任务，输出 setTimeout 至此，输出的顺序是：script start, script end, promise1, promise2, setTimeout<br>再来一个题目，来做个练习：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script start&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">setTimeout</span>( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;timeout1&#x27;</span>);</span><br><span class="line">&#125;, <span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">**<span class="keyword">new</span>** <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;promise1&#x27;</span>);</span><br><span class="line">    resolve();</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> <span class="built_in">console</span>.log(<span class="string">&#x27;timeout2&#x27;</span>), <span class="number">10</span>);</span><br><span class="line">&#125;).then( <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;then1&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;script end&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script start&#x27;</span>);
+
+<span class="hljs-built_in">setTimeout</span>( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout1&#x27;</span>);
+&#125;, <span class="hljs-number">10</span>);
+
+**<span class="hljs-keyword">new</span>** <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> &#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;promise1&#x27;</span>);
+    resolve();
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;timeout2&#x27;</span>), <span class="hljs-number">10</span>);
+&#125;).then( <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>&#123;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;then1&#x27;</span>)
+&#125;)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;script end&#x27;</span>);</code></pre>
 
 <p>这个题目就稍微有点复杂了，我们再分析下：<br>首先，事件循环从宏任务 (macrotask) 队列开始，最初始，宏任务队列中，只有一个 scrip t(整体代码)任务；当遇到任务源 (task source) 时，则会先分发任务到对应的任务队列中去。所以，就和上面例子类似，首先遇到了console.log，输出 script start； 接着往下走，遇到 setTimeout 任务源，将其分发到任务队列中去，记为 timeout1； 接着遇到 promise，new promise 中的代码立即执行，输出 promise1, 然后执行 resolve ,遇到 setTimeout ,将其分发到任务队列中去，记为 timemout2, 将其 then 分发到微任务队列中去，记为 then1； 接着遇到 console.log 代码，直接输出 script end 接着检查微任务队列，发现有个 then1 微任务，执行，输出then1 再检查微任务队列，发现已经清空，则开始检查宏任务队列，执行 timeout1,输出 timeout1； 接着执行 timeout2，输出 timeout2 至此，所有的都队列都已清空，执行完毕。其输出的顺序依次是：script start, promise1, script end, then1, timeout1, timeout2</p>
 <p>用流程图看更清晰：<br><img src="/images/v2-a3ac02a230c49c9aa8c45af46eae2e1c_1440w.jpg"></p>

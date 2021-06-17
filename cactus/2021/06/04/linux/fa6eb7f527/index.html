@@ -14,7 +14,7 @@
 <meta property="og:description" content="Linux软连接和硬链接 Linux链接概念Linux链接分两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。默认情况下，ln命令产生硬链接。 【硬连接】硬连接指通过索引节点来进行连接。在Linux的文件系统中，保存在磁盘分区中的文件不管是什么类型都给它分配一个编号，称为索引节点号(Inode Index)。在Linux中，多个文件名指向同一索引节点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-04T03:39:40.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -167,7 +167,27 @@
 <h3 id="【软连接】"><a href="#【软连接】" class="headerlink" title="【软连接】"></a>【软连接】</h3><p>另外一种连接称之为符号连接（Symbolic Link），也叫软连接。软链接文件有类似于Windows的快捷方式。它实际上是一个特殊的文件。在符号连接中，文件实际上是一个文本文件，其中包含的有另一文件的位置信息。</p>
 <a id="more"></a>
 
-<h2 id="通过实验加深理解"><a href="#通过实验加深理解" class="headerlink" title="通过实验加深理解"></a>通过实验加深理解</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[oracle@Linux]$ touch f1          <span class="comment"># 创建一个测试文件f1</span></span><br><span class="line">[oracle@Linux]$ ln f1 f2          <span class="comment"># 创建f1的一个硬连接文件f2</span></span><br><span class="line">[oracle@Linux]$ ln -s f1 f3       <span class="comment"># 创建f1的一个符号连接文件f3</span></span><br><span class="line">[oracle@Linux]$ ls -li            <span class="comment"># -i参数显示文件的inode节点信息</span></span><br><span class="line">total 0</span><br><span class="line">9797648 -rw-r--r--  2 oracle oinstall 0 Apr 21 08:11 f1</span><br><span class="line">9797648 -rw-r--r--  2 oracle oinstall 0 Apr 21 08:11 f2</span><br><span class="line">9797649 lrwxrwxrwx  1 oracle oinstall 2 Apr 21 08:11 f3 -&gt; f1</span><br><span class="line">从上面的结果中可以看出，硬连接文件f2与原文件f1的inode节点相同，均为9797648，然而符号连接文件的inode节点不同。</span><br><span class="line">[oracle@Linux]$ <span class="built_in">echo</span> <span class="string">&quot;I am f1 file&quot;</span> &gt;&gt;f1</span><br><span class="line">[oracle@Linux]$ cat f1</span><br><span class="line">I am f1 file</span><br><span class="line">[oracle@Linux]$ cat f2</span><br><span class="line">I am f1 file</span><br><span class="line">[oracle@Linux]$ cat f3</span><br><span class="line">I am f1 file</span><br><span class="line">[oracle@Linux]$ rm -f f1</span><br><span class="line">[oracle@Linux]$ cat f2</span><br><span class="line">I am f1 file</span><br><span class="line">[oracle@Linux]$ cat f3</span><br><span class="line">cat: f3: No such file or directory</span><br></pre></td></tr></table></figure>
+<h2 id="通过实验加深理解"><a href="#通过实验加深理解" class="headerlink" title="通过实验加深理解"></a>通过实验加深理解</h2><pre><code class="hljs bash">[oracle@Linux]$ touch f1          <span class="hljs-comment"># 创建一个测试文件f1</span>
+[oracle@Linux]$ ln f1 f2          <span class="hljs-comment"># 创建f1的一个硬连接文件f2</span>
+[oracle@Linux]$ ln -s f1 f3       <span class="hljs-comment"># 创建f1的一个符号连接文件f3</span>
+[oracle@Linux]$ ls -li            <span class="hljs-comment"># -i参数显示文件的inode节点信息</span>
+total 0
+9797648 -rw-r--r--  2 oracle oinstall 0 Apr 21 08:11 f1
+9797648 -rw-r--r--  2 oracle oinstall 0 Apr 21 08:11 f2
+9797649 lrwxrwxrwx  1 oracle oinstall 2 Apr 21 08:11 f3 -&gt; f1
+从上面的结果中可以看出，硬连接文件f2与原文件f1的inode节点相同，均为9797648，然而符号连接文件的inode节点不同。
+[oracle@Linux]$ <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;I am f1 file&quot;</span> &gt;&gt;f1
+[oracle@Linux]$ cat f1
+I am f1 file
+[oracle@Linux]$ cat f2
+I am f1 file
+[oracle@Linux]$ cat f3
+I am f1 file
+[oracle@Linux]$ rm -f f1
+[oracle@Linux]$ cat f2
+I am f1 file
+[oracle@Linux]$ cat f3
+cat: f3: No such file or directory</code></pre>
 
 <p>通过上面的测试可以看出：当删除原始文件f1后，硬连接f2不受影响，但是符号连接f1文件无效</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>依此您可以做一些相关的测试，可以得到以下全部结论：</p>

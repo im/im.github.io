@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://tangxiaomi.top/images/_______________________640.jpeg">
 <meta property="og:image" content="https://tangxiaomi.top/images/________________________640.jpeg">
 <meta property="article:published_time" content="2021-03-03T00:00:00.000Z">
-<meta property="article:modified_time" content="2021-06-08T01:04:42.925Z">
+<meta property="article:modified_time" content="2021-06-17T11:25:09.047Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -335,11 +335,11 @@
 <h3 id="渲染进程中合成器线程接收事件"><a href="#渲染进程中合成器线程接收事件" class="headerlink" title="渲染进程中合成器线程接收事件"></a>渲染进程中合成器线程接收事件</h3><p>前面我们说到，合成器线程可以独立于主线程之外通过已光栅化的层创建组合帧，例如页面滚动，如果没有对页面滚动绑定相关的事件，组合器线程可以独立于主线程创建组合帧，如果页面绑定了页面滚动事件，合成器线程会等待主线程进行事件处理后才会创建组合帧。那么，合成器线程是如何判断出这个事件是否需要路由给主线程处理的呢？</p>
 <p>由于执行 JS 是主线程的工作，当页面合成时，合成器线程会标记页面中绑定有事件处理器的区域为 <code>非快速滚动区域</code> (non-fast scrollable region)，如果事件发生在这些存在标注的区域，合成器线程会把事件信息发送给主线程，等待主线程进行事件处理，如果事件不是发生在这些区域，合成器线程则会直接合成新的帧而不用等到主线程的响应。</p>
 <p><img src="/images/____________________640.jpeg"><br>而对于非快速滚动区域的标记，开发者需要注意全局事件的绑定，比如我们使用事件委托，将目标元素的事件交给根元素body进行处理，代码如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.addEventListener(&#x27;touchstart&#x27;, event =&gt; &#123;  if (event.target === area) &#123;    event.preventDefault()  &#125;&#125;)</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs reasonml">document.body.add<span class="hljs-constructor">EventListener(&#x27;<span class="hljs-params">touchstart</span>&#x27;, <span class="hljs-params">event</span> =&gt; &#123;  <span class="hljs-params">if</span> (<span class="hljs-params">event</span>.<span class="hljs-params">target</span> <span class="hljs-operator">==</span>= <span class="hljs-params">area</span>)</span> &#123;    event.prevent<span class="hljs-constructor">Default()</span>  &#125;&#125;)</code></pre>
 
 <p>在开发者角度看，这一段代码没什么问题，但是从浏览器角度看，这一段代码给body元素绑定了事件监听器，也就意味着整个页面都被编辑为一个非快速滚动区域，这会使得即使你的页面的某些区域没有绑定任何事件，每次用户触发事件时，合成器线程也需要和主线程通信并等待反馈，流畅的合成器独立处理合成帧的模式就失效了。</p>
 <p><img src="/images/_____________________640.jpeg"><br>其实这种情况也很好处理，只需要在事件监听时传递 <code>passtive</code> 参数为 true， <code>passtive</code> 会告诉浏览器你既要绑定事件，又要让组合器线程直接跳过主线程的事件处理直接合成创建组合帧。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">document.body.addEventListener(&#x27;touchstart&#x27;, event =&gt; &#123;    if (event.target === area) &#123;        event.preventDefault()    &#125; &#125;, &#123;passive: true&#125;);</span><br></pre></td></tr></table></figure>
+<pre><code class="hljs reasonml">document.body.add<span class="hljs-constructor">EventListener(&#x27;<span class="hljs-params">touchstart</span>&#x27;, <span class="hljs-params">event</span> =&gt; &#123;    <span class="hljs-params">if</span> (<span class="hljs-params">event</span>.<span class="hljs-params">target</span> <span class="hljs-operator">==</span>= <span class="hljs-params">area</span>)</span> &#123;        event.prevent<span class="hljs-constructor">Default()</span>    &#125; &#125;, &#123;passive: <span class="hljs-literal">true</span>&#125;);</code></pre>
 
 <h3 id="查找事件的目标对象（event-target）"><a href="#查找事件的目标对象（event-target）" class="headerlink" title="查找事件的目标对象（event target）"></a>查找事件的目标对象（event target）</h3><p>当合成器线程接收到事件信息，判定到事件发生不在非快速滚动区域后，合成器线程会向主线程发送这个时间信息，主线程获取到事件信息的第一件事就是通过命中测试（hit test）去找到事件的目标对象。具体的命中测试流程是遍历在绘制阶段生成的绘画记录（paint records）来找到包含了事件发生坐标上的元素对象。</p>
 <p><img src="/images/______________________640.jpeg"></p>
