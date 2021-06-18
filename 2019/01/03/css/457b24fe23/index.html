@@ -1,17 +1,215 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Hexo-theme-github</title>
-    <script type="module" crossorigin src="/static/index.2fcf8987.js"></script>
-  <link rel="modulepreload" href="/static/vendor.ea124321.js">
-  <link rel="stylesheet" href="/static/index.330d353b.css">
-<meta name="generator" content="Hexo 5.0.0"><link rel="alternate" href="/atom.xml" title="糖小米 · 笔记" type="application/atom+xml">
-</head>
-    <body>
-        <div id="app"></div>
-        
-    </body>
-</html>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title> Flex 布局教程：语法篇 - 糖小米 · 笔记</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="糖小米 · 笔记"><meta name="msapplication-TileImage" content="https://cdn.jsdelivr.net/gh/im/oss@master/logo/logo.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="糖小米 · 笔记"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用"><meta property="og:type" content="blog"><meta property="og:title" content=" Flex 布局教程：语法篇"><meta property="og:url" content="https://tangxiaomi.top/2019/01/03/css/457b24fe23/"><meta property="og:site_name" content="糖小米 · 笔记"><meta property="og:description" content="网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071001.gif"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071002.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071003.jpg"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071004.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071005.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071006.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071007.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071008.jpg"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071009.jpg"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071010.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071011.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071012.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071013.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071014.png"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071015.jpg"><meta property="og:image" content="https://tangxiaomi.top/images/bg2015071016.png"><meta property="article:published_time" content="2019-01-03T00:00:00.000Z"><meta property="article:modified_time" content="2021-06-18T06:52:36.161Z"><meta property="article:author" content="糖小米"><meta property="article:tag" content="css"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/images/bg2015071001.gif"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://tangxiaomi.top/2019/01/03/css/457b24fe23/"},"headline":"糖小米 · 笔记","image":["https://tangxiaomi.top/images/bg2015071001.gif","https://tangxiaomi.top/images/bg2015071002.png","https://tangxiaomi.top/images/bg2015071003.jpg","https://tangxiaomi.top/images/bg2015071004.png","https://tangxiaomi.top/images/bg2015071005.png","https://tangxiaomi.top/images/bg2015071006.png","https://tangxiaomi.top/images/bg2015071007.png","https://tangxiaomi.top/images/bg2015071008.jpg","https://tangxiaomi.top/images/bg2015071009.jpg","https://tangxiaomi.top/images/bg2015071010.png","https://tangxiaomi.top/images/bg2015071011.png","https://tangxiaomi.top/images/bg2015071012.png","https://tangxiaomi.top/images/bg2015071013.png","https://tangxiaomi.top/images/bg2015071014.png","https://tangxiaomi.top/images/bg2015071015.jpg","https://tangxiaomi.top/images/bg2015071016.png"],"datePublished":"2019-01-03T00:00:00.000Z","dateModified":"2021-06-18T06:52:36.161Z","author":{"@type":"Person","name":"糖小米"},"description":"网页布局（layout）是 CSS 的一个重点应用。 布局的传统解决方案，基于 盒状模型 ，依赖 display 属性 + position 属性 + float 属性。它对于那些特殊布局非常不方便，比如， 垂直居中 就不容易实现。 2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用"}</script><link rel="canonical" href="https://tangxiaomi.top/2019/01/03/css/457b24fe23/"><link rel="alternate" href="/./atom.xml" title="糖小米 · 笔记" type="application/atom+xml"><link rel="icon" href="https://cdn.jsdelivr.net/gh/im/oss@master/logo/logo.png"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/im/hexo-theme@icarus/source/fontawesome/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">糖小米 · 笔记</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/cactus">Theme</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Github" href="https://github.com/im"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="RSS" href="/./atom.xml"><i class="fas fa-rss"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2019-01-03T00:00:00.000Z" title="2019-01-03T00:00:00.000Z">2019-01-03</time>发表</span><span class="level-item"><time dateTime="2021-06-18T06:52:36.161Z" title="2021-06-18T06:52:36.161Z">2021-06-18</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/css/">css</a></span><span class="level-item">14 分钟读完 (大约2066个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"> Flex 布局教程：语法篇</h1><div class="content"><p>网页布局（layout）是 CSS 的一个重点应用。</p>
+<p><img src="/images/bg2015071001.gif"><br>布局的传统解决方案，基于 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/box_model">盒状模型</a> ，依赖 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">display</a> 属性 + <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">position</a> 属性 + <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">float</a> 属性。它对于那些特殊布局非常不方便，比如， <a target="_blank" rel="noopener" href="https://css-tricks.com/centering-css-complete-guide/">垂直居中</a> 就不容易实现。</p>
+<p><img src="/images/bg2015071002.png"><br>2009年，W3C 提出了一种新的方案—-Flex 布局，可以简便、完整、响应式地实现各种页面布局。目前，它已经得到了所有浏览器的支持，这意味着，现在就能很安全地使用这项功能。</p>
+<p><img src="/images/bg2015071003.jpg"><br>Flex 布局将成为未来布局的首选方案。本文介绍它的语法， <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html">下一篇文章</a> 给出常见布局的 Flex 写法。网友 <a target="_blank" rel="noopener" href="http://vgee.cn/">JailBreak</a> 为本文的所有示例制作了 <a target="_blank" rel="noopener" href="http://static.vgee.cn/static/index.html">Demo</a> ，也可以参考。</p>
+<p>以下内容主要参考了下面两篇文章： <a target="_blank" rel="noopener" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A Complete Guide to Flexbox</a> 和 <a target="_blank" rel="noopener" href="https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties">A Visual Guide to CSS3 Flexbox Properties</a> 。</p>
+<a id="more"></a>
+<h2 id="一、Flex-布局是什么？"><a href="#一、Flex-布局是什么？" class="headerlink" title="一、Flex 布局是什么？"></a>一、Flex 布局是什么？</h2><p>Flex 是 Flexible Box 的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性。</p>
+<p>任何一个容器都可以指定为 Flex 布局。</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+  <span class="hljs-attribute">display</span>: flex;
+&#125;</code></pre>
+
+<p>行内元素也可以使用 Flex 布局。</p>
+<pre><code class="hljs arduino">.box&#123;
+  display: <span class="hljs-keyword">inline</span>-flex;
+&#125;</code></pre>
+
+<p>Webkit 内核的浏览器，必须加上 <code>-webkit</code> 前缀。</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.box</span>&#123;
+  <span class="hljs-attribute">display</span>: -webkit-flex; <span class="hljs-comment">/* Safari */</span>
+  <span class="hljs-attribute">display</span>: flex;
+&#125;</code></pre>
+
+<p>注意，设为 Flex 布局以后，子元素的 <code>float</code>、<code>clear</code> 和 <code>vertical-align</code> 属性将失效。</p>
+<h2 id="二、基本概念"><a href="#二、基本概念" class="headerlink" title="二、基本概念"></a>二、基本概念</h2><p>采用 Flex 布局的元素，称为 Flex 容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为 Flex 项目（flex item），简称”项目”。</p>
+<p><img src="/images/bg2015071004.png"><br>容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做 <code>main start</code> ，结束位置叫做 <code>main end</code> ；交叉轴的开始位置叫做 <code>cross start</code> ，结束位置叫做 <code>cross end</code> 。</p>
+<p>项目默认沿主轴排列。单个项目占据的主轴空间叫做 <code>main size</code> ，占据的交叉轴空间叫做 <code>cross size</code> 。</p>
+<h2 id="三、容器的属性"><a href="#三、容器的属性" class="headerlink" title="三、容器的属性"></a>三、容器的属性</h2><p>以下6个属性设置在容器上。</p>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h3 id="3-1-flex-direction属性"><a href="#3-1-flex-direction属性" class="headerlink" title="3.1 flex-direction属性"></a>3.1 flex-direction属性</h3><p><code>flex-direction</code> 属性决定主轴的方向（即项目的排列方向）。</p>
+<pre><code class="hljs pgsql">.box &#123;
+  flex-direction: <span class="hljs-keyword">row</span> | <span class="hljs-keyword">row</span>-<span class="hljs-keyword">reverse</span> | <span class="hljs-keyword">column</span> | <span class="hljs-keyword">column</span>-<span class="hljs-keyword">reverse</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071005.png"><br>它可能有4个值。</p>
+<ul>
+<li><code>row</code> （默认值）：主轴为水平方向，起点在左端。</li>
+<li><code>row-reverse</code> ：主轴为水平方向，起点在右端。</li>
+<li><code>column</code> ：主轴为垂直方向，起点在上沿。</li>
+<li><code>column-reverse</code> ：主轴为垂直方向，起点在下沿。</li>
+</ul>
+<h3 id="3-2-flex-wrap属性"><a href="#3-2-flex-wrap属性" class="headerlink" title="3.2 flex-wrap属性"></a>3.2 flex-wrap属性</h3><p>默认情况下，项目都排在一条线（又称”轴线”）上。 <code>flex-wrap</code> 属性定义，如果一条轴线排不下，如何换行。</p>
+<p><img src="/images/bg2015071006.png"></p>
+<pre><code class="hljs lua">.box&#123;
+  flex-<span class="hljs-built_in">wrap</span>: nowrap | <span class="hljs-built_in">wrap</span> | <span class="hljs-built_in">wrap</span>-<span class="hljs-built_in">reverse</span>;
+&#125;</code></pre>
+
+<p>它可能取三个值。</p>
+<p>（1） <code>nowrap</code> （默认）：不换行。</p>
+<p><img src="/images/bg2015071007.png"><br>（2） <code>wrap</code> ：换行，第一行在上方。</p>
+<p><img src="/images/bg2015071008.jpg"><br>（3） <code>wrap-reverse</code> ：换行，第一行在下方。</p>
+<p><img src="/images/bg2015071009.jpg"></p>
+<h3 id="3-3-flex-flow"><a href="#3-3-flex-flow" class="headerlink" title="3.3 flex-flow"></a>3.3 flex-flow</h3><p><code>flex-flow</code> 属性是 <code>flex-direction</code> 属性和 <code>flex-wrap</code> 属性的简写形式，默认值为 <code>row nowrap</code> 。</p>
+<pre><code class="hljs dts">.<span class="hljs-class">box </span>&#123;
+  flex-flow: <span class="hljs-params">&lt;flex-direction&gt;</span> || <span class="hljs-params">&lt;flex-wrap&gt;</span>;
+&#125;</code></pre>
+
+<h3 id="3-4-justify-content属性"><a href="#3-4-justify-content属性" class="headerlink" title="3.4 justify-content属性"></a>3.4 justify-content属性</h3><p><code>justify-content</code> 属性定义了项目在主轴上的对齐方式。</p>
+<pre><code class="hljs applescript">.box &#123;
+  justify-content: flex-start | flex-<span class="hljs-keyword">end</span> | center | <span class="hljs-literal">space</span>-<span class="hljs-keyword">between</span> | <span class="hljs-literal">space</span>-<span class="hljs-keyword">around</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071010.png"><br>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右。</p>
+<ul>
+<li><code>flex-start</code> （默认值）：左对齐</li>
+<li><code>flex-end</code> ：右对齐</li>
+<li><code>center</code> ： 居中</li>
+<li><code>space-between</code> ：两端对齐，项目之间的间隔都相等。</li>
+<li><code>space-around</code> ：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。</li>
+</ul>
+<h3 id="3-5-align-items属性"><a href="#3-5-align-items属性" class="headerlink" title="3.5 align-items属性"></a>3.5 align-items属性</h3><p><code>align-items</code> 属性定义项目在交叉轴上如何对齐。</p>
+<pre><code class="hljs coq">.box &#123;
+  align-items: flex-start | <span class="hljs-type">flex</span>-<span class="hljs-keyword">end</span> | <span class="hljs-type">center</span> | <span class="hljs-type">baseline</span> | <span class="hljs-type">stretch</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071011.png"><br>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下。</p>
+<ul>
+<li><code>flex-start</code> ：交叉轴的起点对齐。</li>
+<li><code>flex-end</code> ：交叉轴的终点对齐。</li>
+<li><code>center</code> ：交叉轴的中点对齐。</li>
+<li><code>baseline</code>: 项目的第一行文字的基线对齐。</li>
+<li><code>stretch</code> （默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</li>
+</ul>
+<h3 id="3-6-align-content属性"><a href="#3-6-align-content属性" class="headerlink" title="3.6 align-content属性"></a>3.6 align-content属性</h3><p><code>align-content</code> 属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。</p>
+<pre><code class="hljs coq">.box &#123;
+  align-content: flex-start | <span class="hljs-type">flex</span>-<span class="hljs-keyword">end</span> | <span class="hljs-type">center</span> | <span class="hljs-type">space</span>-between | <span class="hljs-type">space</span>-around | <span class="hljs-type">stretch</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071012.png"><br>该属性可能取6个值。</p>
+<ul>
+<li><code>flex-start</code> ：与交叉轴的起点对齐。</li>
+<li><code>flex-end</code> ：与交叉轴的终点对齐。</li>
+<li><code>center</code> ：与交叉轴的中点对齐。</li>
+<li><code>space-between</code> ：与交叉轴两端对齐，轴线之间的间隔平均分布。</li>
+<li><code>space-around</code> ：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。</li>
+<li><code>stretch</code> （默认值）：轴线占满整个交叉轴。</li>
+</ul>
+<h2 id="四、项目的属性"><a href="#四、项目的属性" class="headerlink" title="四、项目的属性"></a>四、项目的属性</h2><p>以下6个属性设置在项目上。</p>
+<ul>
+<li><code>order</code></li>
+<li><code>flex-grow</code></li>
+<li><code>flex-shrink</code></li>
+<li><code>flex-basis</code></li>
+<li><code>flex</code></li>
+<li><code>align-self</code></li>
+</ul>
+<h3 id="4-1-order属性"><a href="#4-1-order属性" class="headerlink" title="4.1 order属性"></a>4.1 order属性</h3><p><code>order</code> 属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<pre><code class="hljs dts">.<span class="hljs-class">item </span>&#123;
+<span class="hljs-symbol">  order:</span> <span class="hljs-params">&lt;integer&gt;</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071013.png"></p>
+<h3 id="4-2-flex-grow属性"><a href="#4-2-flex-grow属性" class="headerlink" title="4.2 flex-grow属性"></a>4.2 flex-grow属性</h3><p><code>flex-grow</code> 属性定义项目的放大比例，默认为 <code>0</code> ，即如果存在剩余空间，也不放大。</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">flex-grow</span>: &lt;number&gt;; <span class="hljs-comment">/* default 0 */</span>
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071014.png"><br>如果所有项目的 <code>flex-grow</code> 属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的 <code>flex-grow</code> 属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</p>
+<h3 id="4-3-flex-shrink属性"><a href="#4-3-flex-shrink属性" class="headerlink" title="4.3 flex-shrink属性"></a>4.3 flex-shrink属性</h3><p><code>flex-shrink</code> 属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">flex-shrink</span>: &lt;number&gt;; <span class="hljs-comment">/* default 1 */</span>
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071015.jpg"><br>如果所有项目的 <code>flex-shrink</code> 属性都为1，当空间不足时，都将等比例缩小。如果一个项目的 <code>flex-shrink</code> 属性为0，其他项目都为1，则空间不足时，前者不缩小。</p>
+<p>负值对该属性无效。</p>
+<h3 id="4-4-flex-basis属性"><a href="#4-4-flex-basis属性" class="headerlink" title="4.4 flex-basis属性"></a>4.4 flex-basis属性</h3><p><code>flex-basis</code> 属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为 <code>auto</code> ，即项目的本来大小。</p>
+<pre><code class="hljs css"><span class="hljs-selector-class">.item</span> &#123;
+  <span class="hljs-attribute">flex-basis</span>: &lt;length&gt; | auto; <span class="hljs-comment">/* default auto */</span>
+&#125;</code></pre>
+
+<p>它可以设为跟 <code>width</code> 或 <code>height</code> 属性一样的值（比如350px），则项目将占据固定空间。</p>
+<h3 id="4-5-flex属性"><a href="#4-5-flex属性" class="headerlink" title="4.5 flex属性"></a>4.5 flex属性</h3><p><code>flex</code> 属性是 <code>flex-grow</code>, <code>flex-shrink</code> 和 <code>flex-basis</code> 的简写，默认值为 <code>0 1 auto</code> 。后两个属性可选。</p>
+<pre><code class="hljs sml">.item &#123;
+  flex: none | [ &lt;<span class="hljs-symbol">&#x27;flex</span>-grow&#x27;&gt; &lt;<span class="hljs-symbol">&#x27;flex</span>-shrink&#x27;&gt;? || &lt;<span class="hljs-symbol">&#x27;flex</span>-basis&#x27;&gt; ]
+&#125;</code></pre>
+
+<p>该属性有两个快捷值： <code>auto</code> ( <code>1 1 auto</code> ) 和 none ( <code>0 0 auto</code> )。</p>
+<p>建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值。</p>
+<h3 id="4-6-align-self属性"><a href="#4-6-align-self属性" class="headerlink" title="4.6 align-self属性"></a>4.6 align-self属性</h3><p><code>align-self</code> 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖 <code>align-items</code> 属性。默认值为 <code>auto</code> ，表示继承父元素的 <code>align-items</code> 属性，如果没有父元素，则等同于 <code>stretch</code> 。</p>
+<pre><code class="hljs coq">.item &#123;
+  align-self: <span class="hljs-built_in">auto</span> | <span class="hljs-type">flex</span>-start | <span class="hljs-type">flex</span>-<span class="hljs-keyword">end</span> | <span class="hljs-type">center</span> | <span class="hljs-type">baseline</span> | <span class="hljs-type">stretch</span>;
+&#125;</code></pre>
+
+<p><img src="/images/bg2015071016.png"><br>该属性可能取6个值，除了auto，其他都与align-items属性完全一致。</p>
+<p>（完）</p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a></p>
+</div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/css/">css</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2019/01/24/git/59a209dce6/"><i class="level-item fas fa-chevron-left"></i><span class="level-item"> git 添加 ssh key</span></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.6.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "a65f6d94cc836f87a245f7da65ac820f",
+            repo: "im.github.io",
+            owner: "im",
+            clientID: "b5b53b3c7256700567b5",
+            clientSecret: "c6d4a0611585e5584f30108dd75c50b9c28fcc6f",
+            admin: ["im"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            proxy: "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token",
+            
+            enableHotKey: true,
+            language: "zh-CN",
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#一、Flex-布局是什么？"><span class="level-left"><span class="level-item">1</span><span class="level-item">一、Flex 布局是什么？</span></span></a></li><li><a class="level is-mobile" href="#二、基本概念"><span class="level-left"><span class="level-item">2</span><span class="level-item">二、基本概念</span></span></a></li><li><a class="level is-mobile" href="#三、容器的属性"><span class="level-left"><span class="level-item">3</span><span class="level-item">三、容器的属性</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#3-1-flex-direction属性"><span class="level-left"><span class="level-item">3.1</span><span class="level-item">3.1 flex-direction属性</span></span></a></li><li><a class="level is-mobile" href="#3-2-flex-wrap属性"><span class="level-left"><span class="level-item">3.2</span><span class="level-item">3.2 flex-wrap属性</span></span></a></li><li><a class="level is-mobile" href="#3-3-flex-flow"><span class="level-left"><span class="level-item">3.3</span><span class="level-item">3.3 flex-flow</span></span></a></li><li><a class="level is-mobile" href="#3-4-justify-content属性"><span class="level-left"><span class="level-item">3.4</span><span class="level-item">3.4 justify-content属性</span></span></a></li><li><a class="level is-mobile" href="#3-5-align-items属性"><span class="level-left"><span class="level-item">3.5</span><span class="level-item">3.5 align-items属性</span></span></a></li><li><a class="level is-mobile" href="#3-6-align-content属性"><span class="level-left"><span class="level-item">3.6</span><span class="level-item">3.6 align-content属性</span></span></a></li></ul></li><li><a class="level is-mobile" href="#四、项目的属性"><span class="level-left"><span class="level-item">4</span><span class="level-item">四、项目的属性</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#4-1-order属性"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">4.1 order属性</span></span></a></li><li><a class="level is-mobile" href="#4-2-flex-grow属性"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">4.2 flex-grow属性</span></span></a></li><li><a class="level is-mobile" href="#4-3-flex-shrink属性"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">4.3 flex-shrink属性</span></span></a></li><li><a class="level is-mobile" href="#4-4-flex-basis属性"><span class="level-left"><span class="level-item">4.4</span><span class="level-item">4.4 flex-basis属性</span></span></a></li><li><a class="level is-mobile" href="#4-5-flex属性"><span class="level-left"><span class="level-item">4.5</span><span class="level-item">4.5 flex属性</span></span></a></li><li><a class="level is-mobile" href="#4-6-align-self属性"><span class="level-left"><span class="level-item">4.6</span><span class="level-item">4.6 align-self属性</span></span></a></li></ul></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-17T07:24:35.000Z">2021-06-17</time></p><p class="title"><a href="/2021/06/17/javascript/1543294b3a/"> 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用</a></p><p class="categories"><a href="/categories/javascript/">javascript</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-08T09:04:03.000Z">2021-06-08</time></p><p class="title"><a href="/2021/06/08/macos/579cc29de2/"> Mac怎么刷新DNS缓存</a></p><p class="categories"><a href="/categories/macos/">macos</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-08T09:04:03.000Z">2021-06-08</time></p><p class="title"><a href="/2021/06/08/vue/cdb7936afb/"> 从 Event Loop 角度解读 Vue NextTick 源码</a></p><p class="categories"><a href="/categories/vue/">vue</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-07T02:47:41.000Z">2021-06-07</time></p><p class="title"><a href="/2021/06/07/interview/0bab1e5161/"> 如何实现浏览器内多个标签页之间的通信？</a></p><p class="categories"><a href="/categories/Interview/">Interview</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-06-07T02:31:02.000Z">2021-06-07</time></p><p class="title"><a href="/2021/06/07/interview/de0df6d619/"> HTML5的文件离线储存怎么使用，工作原理是什么？</a></p><p class="categories"><a href="/categories/interview/">interview</a></p></div></article></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">糖小米 · 笔记</a><p class="is-size-7"><span>&copy; 2021 糖小米</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/im/im.github.io"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" async></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
