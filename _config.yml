@@ -99,7 +99,7 @@ ignore:
 Plugins:
   hexo-generator-feed
 ## Themes: https://hexo.io/themes/
-theme: github
+theme: icarus
 # theme: cactus
 
 rss: /atom.xml
