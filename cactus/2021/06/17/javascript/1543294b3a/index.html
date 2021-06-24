@@ -14,7 +14,7 @@
 <meta property="og:description" content="前言各种引用对象都继承或最终继承于 Object ，使用着Object的原型，所以它们不管何时都有 toString() 和 valueOf() 方法，只不过有些类型的原型重写了这两个方法，比如 Function 实例的原型就重写了 toString() 方法，按照原型链的规则，如果方法和属性在原型链的各原型中有重名，则优先使用最近的方法和属性。  先看看常用的引用类型重写了这两个方法的情况  F">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-06-17T07:24:35.000Z">
-<meta property="article:modified_time" content="2021-06-18T06:52:36.161Z">
+<meta property="article:modified_time" content="2021-06-24T01:47:53.076Z">
 <meta property="article:author" content="糖小米">
 <meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
@@ -101,7 +101,14 @@
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&name= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&name= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用&description=&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;各种引用对象都继承或最终继承于 Object ，使用着Object的原型，所以它们不管何时都有 toString() 和 valueOf() 方法，只不过有些类型的原型重写了这两个方法，比如 Function 实例的原型就重写了 toString() 方法，按照原型链的规则，如果方法和属性在原型链的各原型中有重名，则优先使用最近的方法和属性。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;先看看常用的引用类型重写了这两个方法的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Function 重写了 toString()&lt;/li&gt;
+&lt;li&gt;Date 重写了 toString() 也重写了 valueOf()&lt;/li&gt;
+&lt;li&gt;Array 重写了 toString()&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&t= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
@@ -163,8 +170,10 @@
 <li>Function 重写了 toString()</li>
 <li>Date 重写了 toString() 也重写了 valueOf()</li>
 <li>Array 重写了 toString()</li>
-<li><h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2>对于不同的引用对象，使用的toString()也不一定相同<br>我们来看看其对三个最常见的引用对象的处理。</li>
 </ul>
+<a id="more"></a>
+
+<h2 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h2><p>对于不同的引用对象，使用的toString()也不一定相同<br>我们来看看其对三个最常见的引用对象的处理。</p>
 <h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><p>很简单，就是function本身的样子</p>
 <pre><code class="hljs js"><span class="hljs-keyword">let</span> fn = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>&#123;&#125;
 <span class="hljs-built_in">console</span>.log(fn == <span class="hljs-string">&#x27;function () &#123;&#125;&#x27;</span>) <span class="hljs-comment">//true</span>
@@ -320,7 +329,14 @@ alert(obj)<span class="hljs-comment">//用一次toString</span>
   <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&title= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&name= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&name= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用&description=&lt;h2 id=&#34;前言&#34;&gt;&lt;a href=&#34;#前言&#34; class=&#34;headerlink&#34; title=&#34;前言&#34;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;各种引用对象都继承或最终继承于 Object ，使用着Object的原型，所以它们不管何时都有 toString() 和 valueOf() 方法，只不过有些类型的原型重写了这两个方法，比如 Function 实例的原型就重写了 toString() 方法，按照原型链的规则，如果方法和属性在原型链的各原型中有重名，则优先使用最近的方法和属性。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;先看看常用的引用类型重写了这两个方法的情况&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Function 重写了 toString()&lt;/li&gt;
+&lt;li&gt;Date 重写了 toString() 也重写了 valueOf()&lt;/li&gt;
+&lt;li&gt;Array 重写了 toString()&lt;/li&gt;
+&lt;/ul&gt;"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
   <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://tangxiaomi.top/2021/06/17/javascript/1543294b3a/&t= 详解valueOf() 与toString()是做什么的以及其在各种情况下的应用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
