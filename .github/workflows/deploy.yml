@@ -20,6 +20,7 @@ jobs:
 
             - name: 3. install hexo..
               run: |
+                  git submodule update --remote
                   npm install hexo-cli -g
                   npm install
 
