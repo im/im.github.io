@@ -10,15 +10,15 @@
 <meta name="description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
 🚀 初始化  git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。  📝 添加与提交  git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。  🌿 分支和合并  git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。  🔀 推送与拉取  git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。  🔎 查看日志  git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。  ❌ 撤销与修改  git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。  🎨 其他命令  git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。  ">
 <meta name="author" content="糖小米">
-<link rel="canonical" href="https://im.github.io/posts/git/guide/">
+<link rel="canonical" href="https://tangxiaomi.top/posts/git/guide/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.052963c5109185a9534379670e314d22010700b27f7c4f9efffeda7d011ce67d.css" integrity="sha256-BSljxRCRhalTQ3lnDjFNIgEHALJ/fE&#43;e//7afQEc5n0=" rel="preload stylesheet" as="style">
 <script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
     onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://im.github.io/avatar.svg">
-<link rel="icon" type="image/png" sizes="16x16" href="https://im.github.io/avatar.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="https://im.github.io/avatar.svg">
-<link rel="apple-touch-icon" href="https://im.github.io/apple-touch-icon.png">
-<link rel="mask-icon" href="https://im.github.io/safari-pinned-tab.svg">
+<link rel="icon" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tangxiaomi.top/avatar.svg">
+<link rel="apple-touch-icon" href="https://tangxiaomi.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tangxiaomi.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
 <noscript>
@@ -61,7 +61,7 @@
 <meta property="og:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
 🚀 初始化  git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。  📝 添加与提交  git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。  🌿 分支和合并  git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。  🔀 推送与拉取  git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。  🔎 查看日志  git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。  ❌ 撤销与修改  git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。  🎨 其他命令  git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://im.github.io/posts/git/guide/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://tangxiaomi.top/posts/git/guide/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-05-23T00:00:00+00:00" />
 <meta property="article:modified_time" content="2023-05-23T00:00:00+00:00" />
 
@@ -80,13 +80,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Posts",
-      "item": "https://im.github.io/posts/"
+      "item": "https://tangxiaomi.top/posts/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "Git 命令手册 📖",
-      "item": "https://im.github.io/posts/git/guide/"
+      "item": "https://tangxiaomi.top/posts/git/guide/"
     }
   ]
 }
@@ -112,14 +112,14 @@
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://im.github.io/posts/git/guide/"
+    "@id": "https://tangxiaomi.top/posts/git/guide/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Notes",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://im.github.io/avatar.svg"
+      "url": "https://tangxiaomi.top/avatar.svg"
     }
   }
 }
@@ -141,7 +141,7 @@
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://im.github.io/" accesskey="h" title="Notes (Alt + H)">Notes</a>
+            <a href="https://tangxiaomi.top/" accesskey="h" title="Notes (Alt + H)">Notes</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -167,12 +167,12 @@
         </div>
         <ul id="menu">
             <li>
-                <a href="https://im.github.io/categories" title="Categories 🗂️">
+                <a href="https://tangxiaomi.top/categories" title="Categories 🗂️">
                     <span>Categories 🗂️</span>
                 </a>
             </li>
             <li>
-                <a href="https://im.github.io/search" title="Search 🔍">
+                <a href="https://tangxiaomi.top/search" title="Search 🔍">
                     <span>Search 🔍</span>
                 </a>
             </li>
@@ -261,7 +261,7 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://im.github.io/tags/git/">git</a></li>
+      <li><a href="https://tangxiaomi.top/tags/git/">git</a></li>
     </ul>
 
   </footer>
