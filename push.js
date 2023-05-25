@@ -18,4 +18,4 @@ shell.exec('git add .')
 
 shell.exec(`git commit -m "commit at ${formatDate(new Date())}"`)
 
-shell.exec(`git push origin master`)
+shell.exec(`git push origin main`)
