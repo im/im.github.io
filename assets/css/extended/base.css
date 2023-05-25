@@ -1,0 +1,25 @@
+.post-title {
+    font-size: 30px;
+}
+.post-content h2 {
+    font-size: 24px;
+}
+
+/* @font-face {
+    font-family: 'ZCOOLKuaiLe';
+    src: url('/notes/fonts/ZCOOLKuaiLe-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'ZCOOLQingKeHuangYou';
+    src: url('/notes/fonts/ZCOOLQingKeHuangYou-Regular.ttf') format('truetype');
+} */
+
+/* @font-face {
+    font-family: 'Roboto';
+    src: url('/notes/fonts/Roboto-Regular.ttf') format('truetype');
+} */
+
+/* * {
+    font-family: 'Roboto' !important;
+} */

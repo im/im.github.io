@@ -1,0 +1,177 @@
+baseURL: "https://tangxiaomi.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+title: Notes
+paginate: 5
+theme: PaperMod
+languageCode: "cn"
+defaultContentLanguage: "cn"
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+# googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    cn:
+        # languageName: "zh"
+        # languagedirection: rtl
+        # weight: 1
+        # title: '糖小米'
+        # imageUrl: "/avatar.svg"
+        # imageTitle: '糖小米'
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+            #    - name: 归档
+            #      url: archives
+                - name: Categories 🗂️
+                  url: categories
+                - name: Search 🔍
+                  url: search
+
+outputs:
+    home:
+        - HTML
+        # - RSS
+        - JSON
+
+params:
+    hideFooter: true
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "https://tangxiaomi.top/"
+    # author: Theme PaperMod
+    author: ["糖小米"] # multiple authors
+    DateFormat: "January 2, 2006"
+
+    defaultTheme: auto
+    # disableThemeToggle: true
+    ShowShareButtons: false
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    UseHugoToc: true
+    tocopen: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: false
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: false
+    ShowToc: false
+    # comments: false
+    # images: ["papermod-cover.png"]
+
+    profileMode:
+        enabled: true
+        # title: ' '
+        # title: '糖小米 🚀 '
+        title: '糖小米'
+        imageUrl: "/avatar.svg"
+        imageTitle: '糖小米'
+        imageWidth: 200
+        imageHeight: 200
+        buttons:
+            - name: Archive 📁
+              url: archives
+            - name: Tags 🏷️
+              url: tags 
+            # - name: Search 🔍
+            #   url: search
+
+    homeInfoParams:
+        Title: "糖小米"
+        languagedirection: rtl
+        Content: >
+            Welcome to demo of hugo's theme PaperMod.
+
+            - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
+
+            - Do give a 🌟 on Github !
+
+            - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/im/"
+        # - name: Rss
+        #   url: "index.xml"
+
+    # editPost:
+    #     URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+    #     Text: "Suggest Changes" # edit text
+    #     appendFilePath: true # to append file path to Edit link
+
+    # label:
+    #     text: "Home"
+    #     icon: icon.png
+    #     iconHeight: 35
+
+    # analytics:
+    #     google:
+    #         SiteVerificationTag: "XYZabc"
+
+    assets:
+        disableHLJS: false
+        favicon: "/avatar.svg"
+        favicon16x16: "/avatar.svg"
+        favicon32x32: "/avatar.svg"
+        # apple_touch_icon: "<link / abs url>"
+        # safari_pinned_tab: "<link / abs url>"
+
+    # cover:
+    #     hidden: true # hide everywhere but not in structured data
+    #     hiddenInList: true # hide on list pages and home
+    #     hiddenInSingle: true # hide on single page
+
+    # fuseOpts:
+    #     isCaseSensitive: false
+    #     shouldSort: true
+    #     location: 0
+    #     distance: 1000
+    #     threshold: 0.4
+    #     minMatchCharLength: 0
+    #     keys: ["title", "permalink", "summary", "content"]
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
+        # anchorLineNos: true
+        # codeFences: true
+        # guessSyntax: true
+        lineNos: true
+        # style: monokai
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
