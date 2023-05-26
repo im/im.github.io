@@ -56,7 +56,7 @@ jobs:
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }} \
-      - name: Build with Hugo
+      - name: 打印
         run: |
           ls
       - name: Deploy to GitHub Pages
