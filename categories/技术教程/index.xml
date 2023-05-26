@@ -19,10 +19,10 @@
     
     <item>
       <title>如何在 Vite 中拦截开发服务器并使用 express</title>
-      <link>https://tangxiaomi.top/vite/express/</link>
+      <link>https://tangxiaomi.top/posts/vite/express/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/vite/express/</guid>
+      <guid>https://tangxiaomi.top/posts/vite/express/</guid>
       <description>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
 在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
 配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件

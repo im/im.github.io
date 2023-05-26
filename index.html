@@ -121,6 +121,11 @@
         </div>
         <ul id="menu">
             <li>
+                <a href="https://tangxiaomi.top/archives" title="Archive 📁">
+                    <span>Archive 📁</span>
+                </a>
+            </li>
+            <li>
                 <a href="https://tangxiaomi.top/categories" title="Categories 🗂️">
                     <span>Categories 🗂️</span>
                 </a>
@@ -172,6 +177,22 @@
   </div>
   <footer class="entry-footer"><span title='2023-05-23 00:00:00 +0000 UTC'>May 23, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to git 命令手册 📖" href="https://tangxiaomi.top/posts/git/guide/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>如何在 Vite 中拦截开发服务器并使用 express
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
+在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
+配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
+我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  import express from &#39;express&#39; import cors from &#39;cors&#39; import bodyParser from &#39;body-parser&#39; import cookieParser from &#39;cookie-parser&#39; export default function myPlugin () { return { name: &#39;my-plugin&#39;, configureServer (server) { const app = express() app....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-23 00:00:00 +0000 UTC'>May 23, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to 如何在 Vite 中拦截开发服务器并使用 express" href="https://tangxiaomi.top/posts/vite/express/"></a>
 </article>
     </main>
     
