@@ -17,12 +17,13 @@
 
 @font-face {
     font-family: 'Arial';
-    src: url('/fonts/ConsolaMono-Bold.ttf') format('truetype'); 
+    src: url('/fonts/ConsolaMono-Book.ttf') format('truetype'); 
+}
+
+* {
+    font-family: 'Arial' !important;
 }
  
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    * {
-        font-family: 'Arial' !important;
-    }
-}
+/* .highlight *, .logo *, #menu * {
+    font-family: 'Arial' !important;
+} */
