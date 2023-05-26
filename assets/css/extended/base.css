@@ -15,7 +15,7 @@
     src: url('/notes/fonts/ZCOOLQingKeHuangYou-Regular.ttf') format('truetype');
 } */
 
-@font-face {
+/* @font-face {
     font-family: 'Arial';
     src: url('/fonts/ConsolaMono-Bold.ttf') format('truetype'); 
 }
@@ -25,4 +25,4 @@
     * {
         font-family: 'Arial' !important;
     }
-}
+} */
