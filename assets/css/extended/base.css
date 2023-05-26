@@ -17,8 +17,9 @@
 
 @font-face {
     font-family: 'Arial';
-    src: url('/monaco.ttf') format('truetype'); 
+    src: url('/fonts/ConsolaMono-Bold.ttf') format('truetype'); 
 }
+
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     * {
