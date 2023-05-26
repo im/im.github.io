@@ -51,12 +51,15 @@ jobs:
         run: git submodule update --init --recursive
       - name: Update theme to Latest commit
         run: git submodule update --remote --merge
+      - name: 打印1
+        run: |
+          ls
       - name: Build with Hugo
         run: |
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }} \
-      - name: 打印
+      - name: 打印2
         run: |
           ls
       - name: Deploy to GitHub Pages
