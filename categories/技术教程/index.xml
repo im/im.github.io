@@ -17,5 +17,18 @@
 🚀 初始化  git init : 初始化一个 Git 仓库。 git clone &amp;lt;URL&amp;gt; : 克隆一个远程 Git 仓库。  📝 添加与提交  git add &amp;lt;file&amp;gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。  🌿 分支和合并  git branch : 列出当前仓库的所有分支。 git branch &amp;lt;branch&amp;gt; : 创建一个新分支。 git checkout &amp;lt;branch&amp;gt; : 切换到一个分支。 git checkout -b &amp;lt;branch&amp;gt; : 创建一个新的分支并立即切换到该分支。 git merge &amp;lt;branch&amp;gt; : 合并指定分支到当前分支。 git merge --no-ff &amp;lt;branch&amp;gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。  🔀 推送与拉取  git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &amp;lt;remote&amp;gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &amp;lt;remote&amp;gt; --delete &amp;lt;branch&amp;gt; : 从远程仓库删除指定分支。  🔎 查看日志  git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &amp;lt;file&amp;gt; : 显示指定文件的每一行是由谁添加的。  ❌ 撤销与修改  git checkout &amp;lt;file&amp;gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &amp;lt;file&amp;gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &amp;lt;commit&amp;gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。  🎨 其他命令  git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &amp;lt;tagname&amp;gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &amp;lt;tagname&amp;gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &amp;lt;commit&amp;gt; : 显示指定提交的信息。  </description>
     </item>
     
+    <item>
+      <title>如何在 Vite 中拦截开发服务器并使用 express</title>
+      <link>https://tangxiaomi.top/vite/express/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/vite/express/</guid>
+      <description>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
+在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
+配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
+我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.</description>
+    </item>
+    
   </channel>
 </rss>
