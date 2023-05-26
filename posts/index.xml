@@ -6,7 +6,26 @@
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Tue, 23 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>js高阶函数</title>
+      <link>https://tangxiaomi.top/posts/js/higher-order-function/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/js/higher-order-function/</guid>
+      <description>JavaScript的高阶函数是一个非常强大的特性，它允许我们编写更加灵活和可重用的代码。在本文中，我们将探讨高阶函数的概念、它们如何实现以及一些示例。
+什么是高阶函数 高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。
+高阶函数的实现 下面是一个使用普通函数实现高阶函数的例子：
+function map(arr, fn) { const mappedArr = []; for (let i=0; i&amp;lt;arr.length; i++) { const val = fn(arr[i], i, arr); mappedArr.push(val); } return mappedArr; } 这个函数实现了一个非常常见的高阶函数——map()。它接受一个数组和一个函数作为参数，并返回一个新数组，这个新数组的元素是将原数组的每个元素传递给函数之后得到的新值。
+使用箭头函数，我们可以更加简洁地实现同样的功能：
+const map = (arr, fn) =&amp;gt; arr.map(fn); 这个例子中，我们用箭头函数实现了一个新的map()函数。它使用了原生的Array.map()方法实现了同样的功能，代码更加简洁和优雅。
+高阶函数的示例 现在我们来看一些常见的高阶函数例子，以及它们如何用于实现通用的行为。
+forEach() forEach()是一个很常见的高阶函数，它用于遍历数组。我们可以使用它将一个函数应用于数组的每个元素：
+const numbers = [1, 2, 3, 4, 5]; numbers.forEach(num =&amp;gt; console.log(num)); 这将会打印数组中的每个数字。
+filter() filter()是另一个常见的高阶函数，它用于过滤数组。我们可以使用它筛选出我们想要的元素：
+const people = [ {name: &amp;#39;John&amp;#39;, age: 25}, {name: &amp;#39;Jane&amp;#39;, age: 30}, {name: &amp;#39;Bob&amp;#39;, age: 20} ]; const adults = people.</description>
+    </item>
+    
     <item>
       <title>git 命令手册 📖</title>
       <link>https://tangxiaomi.top/posts/git/guide/</link>
@@ -27,7 +46,7 @@
 在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
 配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
 我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.</description>
+import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.use(cors({ credentials: true, origin: true })) app.</description>
     </item>
     
   </channel>

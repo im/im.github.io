@@ -17,7 +17,7 @@
 在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
 配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
 我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30  import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.</description>
+import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.use(cors({ credentials: true, origin: true })) app.</description>
     </item>
     
   </channel>
