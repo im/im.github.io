@@ -16,12 +16,19 @@
 } */
 
 @font-face {
-    font-family: 'Arial';
-    src: url('/fonts/ConsolaMono-Book.ttf') format('truetype'); 
+    font-family: 'CustomFont';
+    /* src: url('/fonts/ConsolaMono-Bold.ttf') format('truetype')  */
+    /* src: url('/fonts/Roboto-Regular.ttf') format('truetype') */ 
+    /* src: url('/fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype') */
+    /* src: url('/fonts/ZCOOLKuaiLe-Regular.ttf') format('truetype') */
+    /* src: url('/fonts/monaco.ttf') format('truetype') */
+    /* src: url('/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype') */
+    /* src: url('/fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype') */
+    src: url('/fonts/Hack-Regular.ttf') format('truetype')
 }
 
 * {
-    font-family: 'Arial' !important;
+    font-family: 'CustomFont' !important;
 }
  
 /* .highlight *, .logo *, #menu * {
