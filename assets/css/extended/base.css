@@ -15,11 +15,13 @@
     src: url('/notes/fonts/ZCOOLQingKeHuangYou-Regular.ttf') format('truetype');
 } */
 
-/* @font-face {
-    font-family: 'Roboto';
-    src: url('/notes/fonts/Roboto-Regular.ttf') format('truetype');
-} */
+@font-face {
+    font-family: 'Arial';
+    src: url('/notes/monaco.ttf') format('truetype'); 
+}
 
-/* * {
-    font-family: 'Roboto' !important;
-} */
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    * {
+        font-family: 'Arial' !important;
+    }
+}
