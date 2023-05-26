@@ -17,7 +17,6 @@ pygmentsUseClasses: true
 minify:
     disableXML: true
     # minifyOutput: true
-
 languages:
     cn:
         # languageName: "zh"
@@ -32,8 +31,8 @@ languages:
           series: series
         menu:
             main:
-            #    - name: 归档
-            #      url: archives
+                - name: Archive 📁
+                  url: archives
                 - name: Categories 🗂️
                   url: categories
                 - name: Search 🔍
@@ -95,7 +94,7 @@ params:
             - 自幼嗜好编程，屡试不爽，遂终生醉心其中。
 
             - 吾喜以代码为笔，以浏览器为纸，畅游于互联网之潮流之中。
-            
+
         # - 吾名糖小米🌟，毅然踏入前端开发之途。
 
         # - 曾饱读诗书，精通布局和样式。
