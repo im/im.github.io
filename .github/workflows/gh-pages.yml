@@ -56,6 +56,8 @@ jobs:
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }} \
+      - name: Build with Hugo
+        run: |
           ls
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
