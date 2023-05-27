@@ -6,7 +6,28 @@
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序开发入门教程</title>
+      <link>https://tangxiaomi.top/posts/mini-program/getting-started/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/mini-program/getting-started/</guid>
+      <description>🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
+🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
+2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
+3. 创建小程序 打开微信开发者工具，点击&amp;quot;新建小程序&amp;quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。
+🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：
+myproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。
+pages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。
+2. Hello World 打开index.wxml，在其中输入以下代码：
+&amp;lt;!--index.wxml--&amp;gt; &amp;lt;text&amp;gt;{{message}}&amp;lt;/text&amp;gt; 打开index.js，在其中输入以下代码：
+//index.js Page({ data: { message: &amp;#34;Hello World&amp;#34; } }) 应用这些变更后，点击微信开发者工具的&amp;quot;预览&amp;quot;按钮，可以在微信中查看效果。
+3. 组件介绍 在示例代码中，我们使用了&amp;lt;text&amp;gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
+下面简单介绍几个常用组件：
+ &amp;lt;view&amp;gt;：与HTML中的&amp;lt;div&amp;gt;类似，用于嵌套其它组件，可以设置样式或事件。 &amp;lt;text&amp;gt;：用于显示文本，可以设置颜色、字体大小等。 &amp;lt;button&amp;gt;：用于创建按钮，可以设置事件。 &amp;lt;image&amp;gt;：用于显示图片，可以设置 src 属性。  4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&amp;lt;text&amp;gt;组件的内容中。</description>
+    </item>
+    
     <item>
       <title>js高阶函数</title>
       <link>https://tangxiaomi.top/posts/js/higher-order-function/</link>
