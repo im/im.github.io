@@ -25,12 +25,18 @@
     /* src: url('/fonts/Inconsolata-VariableFont_wdth,wght.ttf') format('truetype') */
     /* src: url('/fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype') */
     src: url('/fonts/Hack-Regular.ttf') format('truetype')
+    /* src: url('/fonts/FiraCode-Regular.ttf') format('truetype') */
 }
 
 * {
     font-family: 'CustomFont' !important;
 }
- 
+
+.post-content a {
+    color: #409EFF!important;
+    margin: 0 3px
+}
+  
 /* .highlight *, .logo *, #menu * {
     font-family: 'Arial' !important;
 } */
