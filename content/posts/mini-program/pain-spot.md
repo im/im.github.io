@@ -1,7 +1,7 @@
 ---
 title: 微信小程序能够解决的痛点
 date: "2023-05-27"
-draft: true
+draft: false
 categories:
   - 微信小程序
 --- 

@@ -1,7 +1,7 @@
 ---
 title: 原生应用 vs 快应用
 date: "2023-05-27"
-draft: true
+draft: false
 categories:
   - 微信小程序
 --- 
