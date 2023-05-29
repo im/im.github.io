@@ -6,7 +6,71 @@
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sat, 27 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>微信小程序 VS 快应用 🚀</title>
+      <link>https://tangxiaomi.top/posts/mini-program/vs-quick/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/mini-program/vs-quick/</guid>
+      <description>微信小程序和快应用都是便捷、轻量、即用即走的应用，但它们还存在一些差异。让我们来一起看看它们之间的比较吧！👀
+微信小程序 💬  良好的用户体验: 微信小程序可在微信里直接运行，用户无需下载即可体验应用，非常方便。同时，小程序的启动速度非常快，加载也非常快速，可以带给用户良好的使用体验。 丰富的开发资源: 微信小程序开发者可以使用微信提供的大量开发资源，包括 API、工具和教程等。这些资源对于一些小程序初学者来说是非常友好的。 广泛的普及率: 微信小程序作为中国最大的社交平台之一，其普及率非常广泛，用户非常多，可以让开发者的小程序得到更广的流量和访问量。  快应用 🚀  流畅的用户体验: 快应用不依赖于系统操作，可以直接与底层交互，因此它们的性能很出色，快应用启动速度同样非常快，有着非常流畅的用户体验。 强大的功能: 快应用可以使用手机上的一些资源，如 GPS、相机或键盘等，并且还可以与其他快应用进行交互。这让它们的功能非常丰富，可以满足不同用户的需求。 广泛的适用范围: 相比微信小程序，快应用的适用范围更广，不仅限于某一个应用程序。用户可以通过不同的入口进入快应用，包括搜索、扫描二维码或桌面等。     项目 微信小程序 快应用     用户体验 💬 🚀   开发资源 💬 🚀   普及率 💬 ❌   功能 ❌ 💬   适用范围 ❌ 💬    综上所述，微信小程序和快应用都有各自的优点和限制，无法直接说哪个更好。开发者需要仔细考虑自己的需求以及目标用户群体，才能决定选择哪一种应用程序。🤔</description>
+    </item>
+    
+    <item>
+      <title>git 将远程分支拉到本地</title>
+      <link>https://tangxiaomi.top/posts/git/remote-branch/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/git/remote-branch/</guid>
+      <description>可以使用以下命令将远程分支拉到本地：
+ 首先，使用 git remote 命令查看已经添加的远程仓库：  git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）：  git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支：  git checkout local_branch 组合命令  git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</description>
+    </item>
+    
+    <item>
+      <title>vscode 配置介绍</title>
+      <link>https://tangxiaomi.top/posts/vscode/setting/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/vscode/setting/</guid>
+      <description>vscode 所有配置对照表 { // 在保存时自动格式化代码 &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议 &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议 &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能 &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;) &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画 &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;) &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值 &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示 &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化 &amp;#34;editor.disableMonospaceOptimizations&amp;#34;: false, // 启用拖放支持 &amp;#34;editor.dragAndDrop&amp;#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &amp;#34;editor.emptySelectionClipboard&amp;#34;: true, // 额外的编辑器类名 &amp;#34;editor.</description>
+    </item>
+    
+    <item>
+      <title>用VSCode配置ESLint自动保存校验</title>
+      <link>https://tangxiaomi.top/posts/vscode/eslint/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/vscode/eslint/</guid>
+      <description>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
+本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
+步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
+第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
+npm install eslint --save-dev 或
+yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
+{ &amp;quot;extends&amp;quot;: &amp;quot;eslint:recommended&amp;quot;, &amp;quot;rules&amp;quot;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
+第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
+{ &amp;quot;editor.codeActionsOnSave&amp;quot;: { &amp;quot;source.fixAll.eslint&amp;quot;: true }, &amp;quot;editor.formatOnSave&amp;quot;: false, &amp;quot;eslint.alwaysShowStatus&amp;quot;: true, &amp;quot;eslint.validate&amp;quot;: [ &amp;quot;javascript&amp;quot;, &amp;quot;javascriptreact&amp;quot;, { &amp;quot;language&amp;quot;: &amp;quot;vue&amp;quot;, &amp;quot;autoFix&amp;quot;: true }, { &amp;quot;language&amp;quot;: &amp;quot;html&amp;quot;, &amp;quot;autoFix&amp;quot;: true } ] } 这里通过&amp;quot;editor.codeActionsOnSave&amp;quot;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
+同时将&amp;quot;editor.formatOnSave&amp;quot;设置为false，表示不对存储时代码格式进行调整。
+最后配置&amp;quot;eslint.validate&amp;quot;即可，这里我们对&amp;quot;javascript&amp;quot;和&amp;quot;javascriptreact&amp;quot;进行校验和自动修复，同时对Vue和HTML代码添加支持。
+总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</description>
+    </item>
+    
+    <item>
+      <title>原生应用 vs 快应用</title>
+      <link>https://tangxiaomi.top/posts/mini-program/native-quick/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/mini-program/native-quick/</guid>
+      <description>在当今移动应用市场，有两种主要的应用类型：原生应用和快应用。这两种应用之间存在一些显著的区别。让我们来看看原生应用和快应用在各方面的对比。
+开发难度 🔧 原生应用需要开发人员掌握多种编程语言和工具，并具有丰富的开发经验和技能。相反，快应用使用了简单的HTML、CSS和JavaScript技术，所以对于新手和小型开发团队来说，它是一个更容易上手的选择。但是，要开发高质量的快应用并不容易。
+部署速度 ⏱️ 原生应用需要通过应用商店进行下载和安装，这需要用户等待和网络连接。而快应用是预安装在设备上的，无需用户下载和安装。这使得快应用在启动速度和用户体验方面更胜一筹。
+功能和性能 💻 原生应用可以访问设备的所有功能和资源，并可以为用户提供更流畅的操作和更佳的性能。相比之下，快应用受到设备限制，例如有时快应用的界面和功能会受到限制，因此可能不像原生应用具有更高的性能。
+云服务 ☁️ 原生应用可以利用云服务来完善应用，例如储存和同步数据等。在快应用中，由于受到设备限制，对于涉及到大量数据的应用，需要通过第三方后端服务进行处理。
+应用分发 🌐 在应用分发方面，原生应用可以通过多个应用商店和市场进行分发。而快应用是通过设备厂商的应用商店进行分发，因此要想快速推广和覆盖更多用户，开发团队需要和设备厂商合作。
+综上所述，原生应用和快应用在多个方面都具有不同的优势。关键是，在选择应用类型时，需要考虑到应用的目标、用户体验和开发成本。</description>
+    </item>
+    
     <item>
       <title>微信小程序开发入门教程</title>
       <link>https://tangxiaomi.top/posts/mini-program/getting-started/</link>
@@ -26,6 +90,21 @@ pages目录下是小程序的页面文件，每个页面文件都由4个文件�
 3. 组件介绍 在示例代码中，我们使用了&amp;lt;text&amp;gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
 下面简单介绍几个常用组件：
  &amp;lt;view&amp;gt;：与HTML中的&amp;lt;div&amp;gt;类似，用于嵌套其它组件，可以设置样式或事件。 &amp;lt;text&amp;gt;：用于显示文本，可以设置颜色、字体大小等。 &amp;lt;button&amp;gt;：用于创建按钮，可以设置事件。 &amp;lt;image&amp;gt;：用于显示图片，可以设置 src 属性。  4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&amp;lt;text&amp;gt;组件的内容中。</description>
+    </item>
+    
+    <item>
+      <title>微信小程序能够解决的痛点</title>
+      <link>https://tangxiaomi.top/posts/mini-program/pain-spot/</link>
+      <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/mini-program/pain-spot/</guid>
+      <description>微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。
+手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。
+应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。
+应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。
+占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。
+用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。
+综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。</description>
     </item>
     
     <item>

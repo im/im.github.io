@@ -2,13 +2,40 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tangxiaomi.top/categories/</loc>
+    <loc>https://tangxiaomi.top/posts/mini-program/vs-quick/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/categories/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/tags/git/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/git/remote-branch/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/</loc>
-    <lastmod>2023-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/tags/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/tags/vscode/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/vscode/setting/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/vscode/eslint/</loc>
+    <lastmod>2023-05-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/mini-program/native-quick/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/</loc>
@@ -17,7 +44,7 @@
     <loc>https://tangxiaomi.top/posts/mini-program/getting-started/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
+    <loc>https://tangxiaomi.top/posts/mini-program/pain-spot/</loc>
     <lastmod>2023-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/tags/javascript/</loc>
@@ -26,13 +53,7 @@
     <loc>https://tangxiaomi.top/posts/js/higher-order-function/</loc>
     <lastmod>2023-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://tangxiaomi.top/tags/</loc>
-    <lastmod>2023-05-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://tangxiaomi.top/tags/express/</loc>
-    <lastmod>2023-05-23T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tangxiaomi.top/tags/git/</loc>
     <lastmod>2023-05-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/git/guide/</loc>

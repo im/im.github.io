@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>微信小程序能够解决的痛点 | Notes</title>
+<meta name="keywords" content="">
+<meta name="description" content="微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。
+手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。
+应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。
+应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。
+占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。
+用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。
+综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。">
+<meta name="author" content="糖小米">
+<link rel="canonical" href="https://tangxiaomi.top/posts/mini-program/pain-spot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0c4f62d9fb59159a3354ca796628b6539261a7fc570135fa50629ec618b1eaa0.css" integrity="sha256-DE9i2ftZFZozVMp5Zii2U5Jhp/xXATX6UGKexhix6qA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tangxiaomi.top/avatar.svg">
+<link rel="apple-touch-icon" href="https://tangxiaomi.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tangxiaomi.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="微信小程序能够解决的痛点" />
+<meta property="og:description" content="微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。
+手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。
+应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。
+应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。
+占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。
+用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。
+综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tangxiaomi.top/posts/mini-program/pain-spot/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="微信小程序能够解决的痛点"/>
+<meta name="twitter:description" content="微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。
+手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。
+应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。
+应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。
+占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。
+用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。
+综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://tangxiaomi.top/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "微信小程序能够解决的痛点",
+      "item": "https://tangxiaomi.top/posts/mini-program/pain-spot/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "微信小程序能够解决的痛点",
+  "name": "微信小程序能够解决的痛点",
+  "description": "微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。\n手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。\n应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。\n应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。\n占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。\n用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。\n综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。",
+  "keywords": [
+    
+  ],
+  "articleBody": "微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。\n手机内存不足 随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。\n应用安装繁琐 下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。\n应用更新不及时 应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。\n占用流量和空间 应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。\n用户体验不佳 应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。\n综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。\n",
+  "wordCount" : "12",
+  "inLanguage": "cn",
+  "datePublished": "2023-05-27T00:00:00Z",
+  "dateModified": "2023-05-27T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "糖小米"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tangxiaomi.top/posts/mini-program/pain-spot/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tangxiaomi.top/avatar.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tangxiaomi.top/" accesskey="h" title="Notes (Alt + H)">Notes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tangxiaomi.top/archives" title="Archive 📁">
+                    <span>Archive 📁</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tangxiaomi.top/categories" title="Categories 🗂️">
+                    <span>Categories 🗂️</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tangxiaomi.top/search" title="Search 🔍">
+                    <span>Search 🔍</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      微信小程序能够解决的痛点<sup><span class="entry-isdraft">&nbsp;&nbsp;[draft]</span></sup>
+    </h1>
+    <div class="post-meta"><span title='2023-05-27 00:00:00 +0000 UTC'>May 27, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米
+
+</div>
+  </header> 
+  <div class="post-content"><p>微信小程序是微信推出的一种轻量级应用，它可以在微信内部直接使用，不需要用户下载安装，省去了用户安装、更新、卸载等繁琐操作，具有便捷✨、快速⚡、安全🔐等优势。以下是微信小程序能够解决的痛点。</p>
+<h2 id="手机内存不足">手机内存不足<a hidden class="anchor" aria-hidden="true" href="#手机内存不足">#</a></h2>
+<p>随着手机操作系统和应用的升级，手机内存容量相对较小的用户常常遇到手机内存不足的问题，在下载应用时往往需要删除其他应用或照片。微信小程序不需要下载安装，直接在微信内部运行，不占用手机内存，避免了删除应用的烦恼😩。</p>
+<h2 id="应用安装繁琐">应用安装繁琐<a hidden class="anchor" aria-hidden="true" href="#应用安装繁琐">#</a></h2>
+<p>下载应用需要前往应用商店搜索、下载、安装等繁琐步骤，耗费用户时间，而且安装应用有一定的安全风险😨。微信小程序可以直接在微信内搜索到需要的小程序，点击即可进入使用，省去了下载安装的繁琐操作。</p>
+<h2 id="应用更新不及时">应用更新不及时<a hidden class="anchor" aria-hidden="true" href="#应用更新不及时">#</a></h2>
+<p>应用商店更新应用需要用户手动更新或打开应用时自动更新，部分用户习惯关闭了自动更新，导致应用不能及时更新☹️。而微信小程序直接在微信内部更新，及时更新应用，用户无需关心更新问题。</p>
+<h2 id="占用流量和空间">占用流量和空间<a hidden class="anchor" aria-hidden="true" href="#占用流量和空间">#</a></h2>
+<p>应用下载、更新等操作需要占用用户的流量和手机存储空间，而微信小程序不需要下载安装，直接在微信内部运行，不占用手机存储空间，且小程序文件通常较小，也不会占用大量用户流量🌎。</p>
+<h2 id="用户体验不佳">用户体验不佳<a hidden class="anchor" aria-hidden="true" href="#用户体验不佳">#</a></h2>
+<p>应用商店下载的应用体积较大，启动时间较长，对于运行速度比较慢的手机使用体验十分不友好。而微信小程序开发者可以优化小程序性能、启动速度等问题，提升用户体验👍。</p>
+<p>综上所述，微信小程序具有便捷✨、快速⚡、安全🔐、节省流量和存储空间、降低用户下载和更新应用难度等优势，可以有效解决用户手机内存不足😩、应用安装繁琐、应用更新不及时☹️、占用流量和空间🌎、用户体验不佳的痛点。微信小程序是一种优秀的应用形式，值得开发者和用户的关注和支持。</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://tangxiaomi.top/posts/mini-program/getting-started/">
+    <span class="title">« </span>
+    <br>
+    <span>微信小程序开发入门教程</span>
+  </a>
+  <a class="next" href="https://tangxiaomi.top/posts/js/higher-order-function/">
+    <span class="title"> »</span>
+    <br>
+    <span>js高阶函数</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
