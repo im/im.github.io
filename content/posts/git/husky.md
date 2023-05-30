@@ -58,4 +58,4 @@ npm install husky --save-dev
 
 您可以使用 Husky 的其他功能来执行其他任务，例如在 commit 或 push 之前自动发布代码，或在代码风格测试失败时发送电子邮件等。
 
-更多详细的配置信息请查看 Husky 的官方文档：https://github.com/typicode/husky
+更多详细的配置信息请查看 Husky 的官方文档: [https://github.com/typicode/husky](https://github.com/typicode/husky)
