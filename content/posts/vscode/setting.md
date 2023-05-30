@@ -1,13 +1,10 @@
 ---
-title: vscode 配置介绍
+title: vscode 所有配置对照表
 date: "2023-05-29"
 tags: ['vscode']
 categories:
   - 技术教程
 ---
-
-
-### vscode 所有配置对照表
 
 ```json
 {
