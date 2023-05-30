@@ -168,6 +168,21 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>husky
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>安装 Husky  使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 “husky” 配置：
+&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 “scripts” 属性：
+&#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>git 将远程分支拉到本地
     </h2>
   </header>
@@ -236,28 +251,6 @@ pages目录下是小程序的页面文件，每个页面文件都由4个文件�
   </div>
   <footer class="entry-footer"><span title='2023-05-27 00:00:00 +0000 UTC'>May 27, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to 微信小程序开发入门教程" href="https://tangxiaomi.top/posts/mini-program/getting-started/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>js高阶函数
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>JavaScript的高阶函数是一个非常强大的特性，它允许我们编写更加灵活和可重用的代码。在本文中，我们将探讨高阶函数的概念、它们如何实现以及一些示例。
-什么是高阶函数 高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。
-高阶函数的实现 下面是一个使用普通函数实现高阶函数的例子：
-function map(arr, fn) { const mappedArr = []; for (let i=0; i&lt;arr.length; i&#43;&#43;) { const val = fn(arr[i], i, arr); mappedArr.push(val); } return mappedArr; } 这个函数实现了一个非常常见的高阶函数——map()。它接受一个数组和一个函数作为参数，并返回一个新数组，这个新数组的元素是将原数组的每个元素传递给函数之后得到的新值。
-使用箭头函数，我们可以更加简洁地实现同样的功能：
-const map = (arr, fn) =&gt; arr.map(fn); 这个例子中，我们用箭头函数实现了一个新的map()函数。它使用了原生的Array.map()方法实现了同样的功能，代码更加简洁和优雅。
-高阶函数的示例 现在我们来看一些常见的高阶函数例子，以及它们如何用于实现通用的行为。
-forEach() forEach()是一个很常见的高阶函数，它用于遍历数组。我们可以使用它将一个函数应用于数组的每个元素：
-const numbers = [1, 2, 3, 4, 5]; numbers.forEach(num =&gt; console.log(num)); 这将会打印数组中的每个数字。
-filter() filter()是另一个常见的高阶函数，它用于过滤数组。我们可以使用它筛选出我们想要的元素：
-const people = [ {name: &#39;John&#39;, age: 25}, {name: &#39;Jane&#39;, age: 30}, {name: &#39;Bob&#39;, age: 20} ]; const adults = people....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-26 00:00:00 +0000 UTC'>May 26, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to js高阶函数" href="https://tangxiaomi.top/posts/js/higher-order-function/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

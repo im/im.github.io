@@ -6,7 +6,19 @@
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>husky</title>
+      <link>https://tangxiaomi.top/posts/git/husky/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/git/husky/</guid>
+      <description>安装 Husky  使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 &amp;ldquo;husky&amp;rdquo; 配置：
+&amp;#34;husky&amp;#34;: { &amp;#34;hooks&amp;#34;: { &amp;#34;pre-commit&amp;#34;: &amp;#34;npm run lint&amp;#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &amp;#34;pre-push&amp;#34;: &amp;#34;npm run test&amp;#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 &amp;ldquo;scripts&amp;rdquo; 属性：
+&amp;#34;scripts&amp;#34;: { &amp;#34;lint&amp;#34;: &amp;#34;eslint .&amp;#34; } 这里的 &amp;ldquo;lint&amp;rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。</description>
+    </item>
+    
     <item>
       <title>git 将远程分支拉到本地</title>
       <link>https://tangxiaomi.top/posts/git/remote-branch/</link>

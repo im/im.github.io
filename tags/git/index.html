@@ -133,6 +133,21 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>husky
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>安装 Husky  使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 “husky” 配置：
+&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 “scripts” 属性：
+&#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>git 将远程分支拉到本地
     </h2>
   </header>
