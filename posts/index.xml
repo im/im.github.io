@@ -18,12 +18,12 @@
     </item>
     
     <item>
-      <title>vscode 配置介绍</title>
+      <title>vscode 所有配置对照表</title>
       <link>https://tangxiaomi.top/posts/vscode/setting/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://tangxiaomi.top/posts/vscode/setting/</guid>
-      <description>vscode 所有配置对照表 { // 在保存时自动格式化代码 &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议 &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议 &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能 &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;) &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画 &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;) &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值 &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示 &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化 &amp;#34;editor.disableMonospaceOptimizations&amp;#34;: false, // 启用拖放支持 &amp;#34;editor.dragAndDrop&amp;#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &amp;#34;editor.emptySelectionClipboard&amp;#34;: true, // 额外的编辑器类名 &amp;#34;editor.</description>
+      <description>{ // 在保存时自动格式化代码 &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议 &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议 &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能 &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;) &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画 &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;) &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值 &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示 &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化 &amp;#34;editor.disableMonospaceOptimizations&amp;#34;: false, // 启用拖放支持 &amp;#34;editor.dragAndDrop&amp;#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &amp;#34;editor.emptySelectionClipboard&amp;#34;: true, // 额外的编辑器类名 &amp;#34;editor.</description>
     </item>
     
     <item>
