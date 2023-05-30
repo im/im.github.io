@@ -54,6 +54,7 @@ jobs:
       - name: Build with Hugo
         run: |
           hugo \
+            --buildDrafts false \
             --baseURL ${{ steps.pages.outputs.base_url }} \
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
