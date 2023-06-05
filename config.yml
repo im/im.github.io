@@ -31,11 +31,11 @@ languages:
           series: series
         menu:
             main:
-                - name: Archive
-                  url: archives
-                - name: Tags
-                  url: tags
-                  weight: 1
+                # - name: Archive
+                #   url: archives
+                # - name: Tags
+                #   url: tags
+                #   weight: 1
                 - name: Categories
                   url: categories
                 - name: Search
@@ -72,18 +72,18 @@ params:
     # images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: false
+        enabled: true
         # title: ' '
         # title: '糖小米 🚀 '
         title: '糖小米'
-        imageUrl: "/avatar.svg"
+        imageUrl: "/avatar2.JPG"
         imageTitle: '糖小米'
         imageWidth: 200
         imageHeight: 200
         buttons:
-            - name: Archive 📁
+            - name: Archive
               url: archives
-            - name: Tags 🏷️
+            - name: Tags
               url: tags 
             # - name: Search 🔍
             #   url: search
