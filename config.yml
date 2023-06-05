@@ -31,11 +31,14 @@ languages:
           series: series
         menu:
             main:
-                - name: Archive 📁
+                - name: Archive
                   url: archives
-                - name: Categories 🗂️
+                - name: Tags
+                  url: tags
+                  weight: 1
+                - name: Categories
                   url: categories
-                - name: Search 🔍
+                - name: Search
                   url: search
 
 outputs:
