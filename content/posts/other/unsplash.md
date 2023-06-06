@@ -1,7 +1,7 @@
 ---
 title: Unsplash 图片链接
 date: "2023-06-01"
-tags: ["unsplash"]
+tags: ["images"]
 ---
 
 ### 随机图片链接
@@ -11,7 +11,7 @@ tags: ["unsplash"]
 ```
 https://source.unsplash.com/random/640x480
 ```
-![](https://source.unsplash.com/random/640x480)
+![](https://source.unsplash.com/random/640x480?landscape,mountain)
 
 如果需要过滤主题，只需在链接末尾加上标签即可，例如以下链接将会返回一个范围包括 `mountain` 和 `landscape` 的随机图片：
 
