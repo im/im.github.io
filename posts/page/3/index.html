@@ -143,82 +143,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>HSTS 强制 https
+    <h2>如何在 Vite 中拦截开发服务器并使用 express
     </h2>
   </header>
   <div class="entry-content">
-    <p>🔒 HSTS - HTTP Strict Transport Security HSTS (HTTP Strict Transport Security) 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。
-🛡️ HSTS 的工作原理 HSTS 通过在 HTTPS 响应头中添加 Strict-Transport-Security 参数来实现。当用户第一次访问一个网站时，服务器返回的响应头中包含了 Strict-Transport-Security 参数，浏览器会记住该网站的 HSTS 头，之后再次访问该网站时，浏览器就会自动强制使用 HTTPS 进行连接，而不再允许使用 HTTP 协议进行访问。
-🔑 HSTS 的作用 使用 HSTS 可以提供以下的安全保障：
- 防止中间人攻击：通过强制使用 HTTPS，HSTS 可以防止攻击者在用户和服务器之间插入恶意的中间人攻击，在传输过程中窃取用户的敏感信息。 安全可靠：HSTS 可以确保通过 HTTPS 连接的安全性和效率，从而更好地保护用户的隐私和安全。 提高搜索引擎排名：使用 HTTPS 进行加密的网站可以获得更高的搜索引擎排名，并提高用户的信任度和转化率。 提高网站性能：使用 HTTPS 加密通信可以降低网络拥塞和提高网站的性能。  ⚙️ 如何设置 HSTS 要在网站中启用 HSTS，您需要在 HTTPS 响应头中添加一个 HSTS headers。您可以在 Web 服务器或应用程序中实现此功能，以下是一些具体步骤：
-Apache 服务器 在 Apache 中，您可以通过编辑您的网站的 ....</p>
+    <p>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
+在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
+配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
+我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
+import express from &#39;express&#39; import cors from &#39;cors&#39; import bodyParser from &#39;body-parser&#39; import cookieParser from &#39;cookie-parser&#39; export default function myPlugin () { return { name: &#39;my-plugin&#39;, configureServer (server) { const app = express() app.use(cors({ credentials: true, origin: true })) app....</p>
   </div>
-  <footer class="entry-footer"><span title='2023-06-07 00:00:00 +0000 UTC'>June 7, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to HSTS 强制 https" href="https://tangxiaomi.top/posts/http/hsts/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Picsum 图片链接
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>https://picsum.photos/
-输入图片大小 Picsum默认的图片大小为1080*720。如果你要生成其他尺寸的图片，只需在网址后面添加图片尺寸即可。比如：
- https://picsum.photos/200/300 https://picsum.photos/300/300 https://picsum.photos/500/500  添加图片样式  https://picsum.photos/200/300/?grayscale：生成灰度图片。  https://picsum.photos/200/300/?blur=2：使图片模糊，数字值越高表示图片越模糊。 https://picsum.photos/200/300/?random：生成随机的背景色。 https://picsum.photos/200/300/?blur=2&amp;grayscale：图片模糊且灰度化。 https://picsum.photos/200/300/?gravity=center：将图片放置在中心位置。 https://picsum.photos/id/237/200/300.jpg：生成具有特定id的图片，比如237。 https://picsum.photos/200/300?cache-control：让浏览器通过Cache-Control头缓存响应。  </p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-06 00:00:00 +0000 UTC'>June 6, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to Picsum 图片链接" href="https://tangxiaomi.top/posts/other/picsum/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Unsplash 图片链接
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>随机图片链接 如果你需要一张随机的图片来让内容更加生动、有趣，只需要在 Unsplash 的基础图片链接后面加上“/random/”即可。例如以下链接将返回一个宽度为 640 像素、高度为 480 像素的随机图片：
-https://source.unsplash.com/random/640x480 如果需要过滤主题，只需在链接末尾加上标签即可，例如以下链接将会返回一个范围包括 mountain 和 landscape 的随机图片：
-https://source.unsplash.com/random/640x480?landscape,mountain 固定图片链接 如果你需要一张特定的图片，只需使用 Unsplash 图片的 ID，拼接图片链接即可。例如以下链接将会返回 ID 为 “hgytITrCiec” 的 Unsplash 图片，并且将图片宽度设置为 640 像素，高度设置为 480 像素：
-https://source.unsplash.com/hgytITrCiec/640x480 在 Markdown 中使用 Unsplash 图片链接 在 Markdown 编辑器中，你可以使用以下语法插入 Unsplash 图片链接：
-![图片描述](图片链接) 例如，在你的文章中插入一张宽度为 640 像素、高度为 480 像素的随机图片，可以使用以下代码：
-![随机图片](https://source.unsplash.com/random/640x480) 如果你想要插入一张特定的图片，可以使用 ID 和固定图片链接：
-![特定图片](https://source.unsplash.com/hgytITrCiec/640x480) 以上就是如何使用 Unsplash 图片链接的简单介绍。希望这篇文章对你有帮助！</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-01 00:00:00 +0000 UTC'>June 1, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to Unsplash 图片链接" href="https://tangxiaomi.top/posts/other/unsplash/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>husky
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>安装 Husky  使用 npm 进行安装：
-npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 “husky” 配置：
-&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 “scripts” 属性：
-&#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>git 将远程分支拉到本地
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>可以使用以下命令将远程分支拉到本地：
- 首先，使用 git remote 命令查看已经添加的远程仓库：  git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）：  git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支：  git checkout local_branch 组合命令  git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to git 将远程分支拉到本地" href="https://tangxiaomi.top/posts/git/remote-branch/"></a>
+  <footer class="entry-footer"><span title='2023-05-23 00:00:00 +0000 UTC'>May 23, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to 如何在 Vite 中拦截开发服务器并使用 express" href="https://tangxiaomi.top/posts/vite/express/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
-    <a class="next" href="https://tangxiaomi.top/posts/page/2/">&nbsp;&nbsp;»
+    <a class="prev" href="https://tangxiaomi.top/posts/page/2/">
+      «&nbsp;&nbsp;
     </a>
   </nav>
 </footer>
