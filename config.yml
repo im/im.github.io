@@ -73,8 +73,6 @@ params:
 
     profileMode:
         enabled: true
-        # title: ' '
-        # title: '糖小米 🚀 '
         title: '糖小米'
         imageUrl: "/avatar2.JPG"
         imageTitle: '糖小米'
@@ -98,79 +96,15 @@ params:
 
             - 吾喜以代码为笔，以浏览器为纸，畅游于互联网之潮流之中。
 
-        # - 吾名糖小米🌟，毅然踏入前端开发之途。
-
-        # - 曾饱读诗书，精通布局和样式。
-
-        # - 前端像神秘的仙女，我为之倾心。
-
-        # - 求索与改良，是我日常精进的方向，将来必大展身手，妙趣横生！
-
-        # - 吾乃糖小米也 🌟，毅然踏入前端开发之途。
-
-        # - 阅读经史子集已有数载，才得机缘投身于此。
-
-        # - 仰视大能而居，日夕不倦，手不释卷，终于饱览万象、举一反三。
-
-        # - 敢问他人，何以求学？
-
-        # - 倡言取经，本人却斗胆大书特书：取 **font-size**！取 **color** ！
-
-        # - 从此专注于布局、样式。
-
-        # - 并喜谐言咏叹：前端如同仙家仙女，唯美而又神秘。
-
-        # - 见招拆招、砥砺前行。待日后能娓娓道来，必将妙趣横生，懿我人生！
-
-        # Welcome to demo of hugo's theme PaperMod.
-
-        # - **PaperMod** is a simple but fast and responsive theme with useful feature-set that enhances UX.
-
-        # - Do give a 🌟 on Github !
-
-        # - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
-
     socialIcons:
         - name: github
           url: "https://github.com/im/"
-        # - name: Rss
-        #   url: "index.xml"
-
-    # editPost:
-    #     URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
-    #     Text: "Suggest Changes" # edit text
-    #     appendFilePath: true # to append file path to Edit link
-
-    # label:
-    #     text: "Home"
-    #     icon: icon.png
-    #     iconHeight: 35
-
-    # analytics:
-    #     google:
-    #         SiteVerificationTag: "XYZabc"
 
     assets:
         disableHLJS: false
         favicon: "/avatar.svg"
         favicon16x16: "/avatar.svg"
         favicon32x32: "/avatar.svg"
-        # apple_touch_icon: "<link / abs url>"
-        # safari_pinned_tab: "<link / abs url>"
-
-    # cover:
-    #     hidden: true # hide everywhere but not in structured data
-    #     hiddenInList: true # hide on list pages and home
-    #     hiddenInSingle: true # hide on single page
-
-    # fuseOpts:
-    #     isCaseSensitive: false
-    #     shouldSort: true
-    #     location: 0
-    #     distance: 1000
-    #     threshold: 0.4
-    #     minMatchCharLength: 0
-    #     keys: ["title", "permalink", "summary", "content"]
 
 markup:
     goldmark:
