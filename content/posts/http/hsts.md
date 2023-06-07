@@ -4,7 +4,6 @@ date: "2023-06-07"
 tags: ["http"]
 ---
 
-# 🔒 HSTS - HTTP Strict Transport Security
 
 `HSTS (HTTP Strict Transport Security)` 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。
 
