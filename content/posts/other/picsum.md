@@ -4,9 +4,9 @@ date: "2023-06-06"
 tags: ["images"]
 ---
 
-## 访问Picsum官网
 
-首先，访问Picsum官网（https://picsum.photos/）。
+
+[https://picsum.photos/](https://picsum.photos/)
 
 ## 输入图片大小
 
