@@ -2,17 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tangxiaomi.top/tags/images/</loc>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://tangxiaomi.top/</loc>
-    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/other/picsum/</loc>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/</loc>
-    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/tags/</loc>
-    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tangxiaomi.top/tags/unsplash/</loc>
-    <lastmod>2023-06-01T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/other/unsplash/</loc>
     <lastmod>2023-06-01T00:00:00+00:00</lastmod>

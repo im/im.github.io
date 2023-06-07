@@ -143,6 +143,20 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Picsum 图片链接
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>访问Picsum官网 首先，访问Picsum官网（https://picsum.photos/）。
+输入图片大小 Picsum默认的图片大小为1080*720。如果你要生成其他尺寸的图片，只需在网址后面添加图片尺寸即可。比如：
+ https://picsum.photos/200/300 https://picsum.photos/300/300 https://picsum.photos/500/500  添加图片样式  https://picsum.photos/200/300/?grayscale：生成灰度图片。  https://picsum.photos/200/300/?blur=2：使图片模糊，数字值越高表示图片越模糊。 https://picsum.photos/200/300/?random：生成随机的背景色。 https://picsum.photos/200/300/?blur=2&amp;grayscale：图片模糊且灰度化。 https://picsum.photos/200/300/?gravity=center：将图片放置在中心位置。 https://picsum.photos/id/237/200/300.jpg：生成具有特定id的图片，比如237。 https://picsum.photos/200/300?cache-control：让浏览器通过Cache-Control头缓存响应。  </p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-06 00:00:00 +0000 UTC'>June 6, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to Picsum 图片链接" href="https://tangxiaomi.top/posts/other/picsum/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Unsplash 图片链接
     </h2>
   </header>
@@ -197,29 +211,6 @@ npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加
   </div>
   <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to vscode 所有配置对照表" href="https://tangxiaomi.top/posts/vscode/setting/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>用VSCode配置ESLint自动保存校验
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
-本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
-步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
-第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
-npm install eslint --save-dev 或
-yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
-{ &#34;extends&#34;: &#34;eslint:recommended&#34;, &#34;rules&#34;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
-第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
-{ &#34;editor.codeActionsOnSave&#34;: { &#34;source.fixAll.eslint&#34;: true }, &#34;editor.formatOnSave&#34;: false, &#34;eslint.alwaysShowStatus&#34;: true, &#34;eslint.validate&#34;: [ &#34;javascript&#34;, &#34;javascriptreact&#34;, { &#34;language&#34;: &#34;vue&#34;, &#34;autoFix&#34;: true }, { &#34;language&#34;: &#34;html&#34;, &#34;autoFix&#34;: true } ] } 这里通过&#34;editor.codeActionsOnSave&#34;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
-同时将&#34;editor.formatOnSave&#34;设置为false，表示不对存储时代码格式进行调整。
-最后配置&#34;eslint.validate&#34;即可，这里我们对&#34;javascript&#34;和&#34;javascriptreact&#34;进行校验和自动修复，同时对Vue和HTML代码添加支持。
-总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to 用VSCode配置ESLint自动保存校验" href="https://tangxiaomi.top/posts/vscode/eslint/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
