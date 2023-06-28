@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 07 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>typescript</title>
+      <link>https://tangxiaomi.top/tags/typescript/</link>
+      <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>http</title>
       <link>https://tangxiaomi.top/tags/http/</link>
@@ -58,15 +67,6 @@
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
       <guid>https://tangxiaomi.top/tags/express/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>typescript</title>
-      <link>https://tangxiaomi.top/tags/typescript/</link>
-      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tangxiaomi.top/tags/typescript/</guid>
       <description></description>
     </item>
     

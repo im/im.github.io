@@ -6,7 +6,25 @@
     <description>Recent content in typescript on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Tue, 23 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TypeScript泛型</title>
+      <link>https://tangxiaomi.top/posts/typescript/generic/</link>
+      <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/typescript/generic/</guid>
+      <description>什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
+function identity&amp;lt;T&amp;gt;(arg: T): T { return arg; } let result = identity&amp;lt;string&amp;gt;(&amp;#34;Hello, TypeScript! 🚀&amp;#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&amp;lt;T&amp;gt;语法来指定泛型类型，并在函数体中使用该类型。
+在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
+常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。
+泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：
+class Container&amp;lt;T&amp;gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container&amp;lt;number&amp;gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。
+常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。
+泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：
+interface Lengthwise { length: number; } function loggingIdentity&amp;lt;T extends Lengthwise&amp;gt;(arg: T): T { console.</description>
+    </item>
+    
     <item>
       <title>如何在 Vite 中拦截开发服务器并使用 express</title>
       <link>https://tangxiaomi.top/posts/vite/express/</link>
