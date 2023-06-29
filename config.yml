@@ -1,5 +1,5 @@
 baseURL: "https://tangxiaomi.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: Notes
+title: notes
 paginate: 5
 theme: PaperMod
 languageCode: "cn"
@@ -36,9 +36,9 @@ languages:
                 # - name: Tags
                 #   url: tags
                 #   weight: 1
-                - name: Categories
+                - name: categories
                   url: categories
-                - name: Search
+                - name: search
                   url: search
 
 outputs:
@@ -73,15 +73,15 @@ params:
 
     profileMode:
         enabled: true
-        title: '糖小米'
+        title: ' '
         imageUrl: "/avatar2.JPG"
         imageTitle: '糖小米'
         imageWidth: 200
         imageHeight: 200
         buttons:
-            - name: Archive
+            - name: archive
               url: archives
-            - name: Tags
+            - name: tags
               url: tags 
             # - name: Search 🔍
             #   url: search
