@@ -143,6 +143,25 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>Vue 3中的ref解构与响应式问题解析 🔄
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
+ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
+import { ref } from &#39;vue&#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
+然而，当我们尝试对ref解构进行操作时，可能会遇到一些问题。
+ref解构的响应式问题 🚫 当我们对ref解构进行操作时，Vue 3无法正确地跟踪和更新数据的变化。下面是一个例子：
+import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count; console.log(value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(value); // 输出：0（未更新） 在上面的例子中，我们通过解构将count的值赋给value变量。然而，当我们修改count的值时，value并没有更新。
+这是因为解构操作会将count.value的值复制给value，而不是创建一个引用。因此，value不再是一个响应式的数据对象，它无法与count保持同步。
+为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to Vue 3中的ref解构与响应式问题解析 🔄" href="https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>TypeScript泛型
     </h2>
   </header>
@@ -208,21 +227,6 @@ https://source.unsplash.com/hgytITrCiec/640x480 在 Markdown 中使用 Unsplash 
   </div>
   <footer class="entry-footer"><span title='2023-06-01 00:00:00 +0000 UTC'>June 1, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to Unsplash 图片链接" href="https://tangxiaomi.top/posts/other/unsplash/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>husky
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>安装 Husky  使用 npm 进行安装：
-npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 “husky” 配置：
-&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 “scripts” 属性：
-&#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

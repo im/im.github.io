@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>技术教程 | Notes</title>
+<title>vue3 | Notes</title>
 <meta name="keywords" content="">
 <meta name="description" content="https://tangxiaomi.top/">
 <meta name="author" content="糖小米">
-<link rel="canonical" href="https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/">
+<link rel="canonical" href="https://tangxiaomi.top/tags/vue3/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.0c4f62d9fb59159a3354ca796628b6539261a7fc570135fa50629ec618b1eaa0.css" integrity="sha256-DE9i2ftZFZozVMp5Zii2U5Jhp/xXATX6UGKexhix6qA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://tangxiaomi.top/avatar.svg">
 <link rel="icon" type="image/png" sizes="16x16" href="https://tangxiaomi.top/avatar.svg">
@@ -18,7 +18,7 @@
 <link rel="mask-icon" href="https://tangxiaomi.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/index.xml">
+<link rel="alternate" type="application/rss+xml" href="https://tangxiaomi.top/tags/vue3/index.xml">
 <noscript>
     <style>
         #theme-toggle,
@@ -55,13 +55,13 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="技术教程" />
+</noscript><meta property="og:title" content="vue3" />
 <meta property="og:description" content="https://tangxiaomi.top/" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/" />
+<meta property="og:url" content="https://tangxiaomi.top/tags/vue3/" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="技术教程"/>
+<meta name="twitter:title" content="vue3"/>
 <meta name="twitter:description" content="https://tangxiaomi.top/"/>
 
 </head>
@@ -122,7 +122,7 @@
 <main class="main"> 
 <header class="page-header">
   <h1>
-    技术教程
+    vue3
   </h1>
 </header>
 
@@ -144,73 +144,6 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
   <footer class="entry-footer"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to Vue 3中的ref解构与响应式问题解析 🔄" href="https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>TypeScript泛型
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
-泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
-function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
-在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
-常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。
-泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：
-class Container&lt;T&gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container&lt;number&gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。
-常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。
-泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：
-interface Lengthwise { length: number; } function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T { console....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-28 00:00:00 +0000 UTC'>June 28, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to TypeScript泛型" href="https://tangxiaomi.top/posts/typescript/generic/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>husky
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>安装 Husky  使用 npm 进行安装：
-npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 “husky” 配置：
-&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 “scripts” 属性：
-&#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。...</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>git 将远程分支拉到本地
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>可以使用以下命令将远程分支拉到本地：
- 首先，使用 git remote 命令查看已经添加的远程仓库：  git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）：  git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支：  git checkout local_branch 组合命令  git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to git 将远程分支拉到本地" href="https://tangxiaomi.top/posts/git/remote-branch/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>vscode 所有配置对照表
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>{ // 在保存时自动格式化代码 &#34;editor.formatOnSave&#34;: true, // 在按下“Commit”字符(如&#34;.&#34;或&#34;;&#34;)时接受建议 &#34;editor.acceptSuggestionOnCommitCharacter&#34;: true, // 在按下“Enter”时接受建议 &#34;editor.acceptSuggestionOnEnter&#34;: &#34;on&#34;, // 自动启用辅助功能 &#34;editor.accessibilitySupport&#34;: &#34;auto&#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &#34;editor.colorDecorators&#34;: true, // 光标闪烁类型(&#34;blink&#34;、&#34;smooth&#34; 或 &#34;phase&#34;) &#34;editor.cursorBlinking&#34;: &#34;blink&#34;, // 开启平滑光标动画 &#34;editor.cursorSmoothCaretAnimation&#34;: false, // 光标样式(&#34;block&#34;, &#34;line&#34; 或 &#34;underline&#34;) &#34;editor.cursorStyle&#34;: &#34;line&#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &#34;editor.cursorSurroundingLines&#34;: 3, // 光标宽度，0 表示使用默认值 &#34;editor.cursorWidth&#34;: 0, // 禁用字形图层提示 &#34;editor.disableLayerHinting&#34;: true, // 禁用等宽字体的优化 &#34;editor.disableMonospaceOptimizations&#34;: false, // 启用拖放支持 &#34;editor.dragAndDrop&#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &#34;editor.emptySelectionClipboard&#34;: true, // 额外的编辑器类名 &#34;editor....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to vscode 所有配置对照表" href="https://tangxiaomi.top/posts/vscode/setting/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="next" href="https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/page/2/">&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
     </main>
     
 <a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
