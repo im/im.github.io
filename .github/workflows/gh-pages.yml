@@ -62,7 +62,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
             folder: ./public
-            ssh-key: ${{ secrets.PAGES_TOKEN10 }}
+            token: ${{ secrets.PAGES_TOKEN10 }}
             # ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN10 }}
             # BRANCH: gh-pages
             # FOLDER: ./public
