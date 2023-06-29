@@ -56,13 +56,13 @@ jobs:
           hugo \
             --baseURL ${{ steps.pages.outputs.base_url }} \
       - name: Deploy to GitHub Pages
-        # uses: JamesIves/github-pages-deploy-action@3.7.1
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        # uses: peaceiris/actions-gh-pages@v3
         with:
-            deploy_key: ${{ secrets.PAGES_TOKEN }}
-            publish_dir: ./public  # 构建后的输出目录
-            skip-approval: true  # 跳过部署批准步骤
-            # ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
-            # BRANCH: gh-pages
-            # FOLDER: ./public
-            # skip-approval: true
+            # deploy_key: ${{ secrets.PAGES_TOKEN }}
+            # publish_dir: ./public  # 构建后的输出目录
+            # skip-approval: true  # 跳过部署批准步骤
+            ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
+            BRANCH: gh-pages
+            FOLDER: ./public
+            skip-approval: true
