@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>javascript on Notes</title>
+    <title>javascript on notes</title>
     <link>https://tangxiaomi.top/tags/javascript/</link>
-    <description>Recent content in javascript on Notes</description>
+    <description>Recent content in javascript on notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <lastBuildDate>Fri, 26 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/javascript/index.xml" rel="self" type="application/rss+xml" />

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>Vue 3中的ref解构与响应式问题解析 🔄 | Notes</title>
+<title>Vue3中的ref解构与响应式问题解析 🔄 | notes</title>
 <meta name="keywords" content="vue3, vue">
 <meta name="description" content="介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
 ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
@@ -63,7 +63,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
         }
 
     </style>
-</noscript><meta property="og:title" content="Vue 3中的ref解构与响应式问题解析 🔄" />
+</noscript><meta property="og:title" content="Vue3中的ref解构与响应式问题解析 🔄" />
 <meta property="og:description" content="介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
 ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
 import { ref } from &#39;vue&#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
@@ -78,7 +78,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
 <meta property="article:modified_time" content="2023-06-29T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Vue 3中的ref解构与响应式问题解析 🔄"/>
+<meta name="twitter:title" content="Vue3中的ref解构与响应式问题解析 🔄"/>
 <meta name="twitter:description" content="介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
 ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
 import { ref } from &#39;vue&#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
@@ -103,7 +103,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "Vue 3中的ref解构与响应式问题解析 🔄",
+      "name": "Vue3中的ref解构与响应式问题解析 🔄",
       "item": "https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"
     }
   ]
@@ -113,8 +113,8 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "Vue 3中的ref解构与响应式问题解析 🔄",
-  "name": "Vue 3中的ref解构与响应式问题解析 🔄",
+  "headline": "Vue3中的ref解构与响应式问题解析 🔄",
+  "name": "Vue3中的ref解构与响应式问题解析 🔄",
   "description": "介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。\nref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：\nimport { ref } from \u0026#39;vue\u0026#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value++; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。\n然而，当我们尝试对ref解构进行操作时，可能会遇到一些问题。\nref解构的响应式问题 🚫 当我们对ref解构进行操作时，Vue 3无法正确地跟踪和更新数据的变化。下面是一个例子：\nimport { ref } from \u0026#39;vue\u0026#39;; const count = ref(0); const { value } = count; console.log(value); // 输出：0  count.value++; // 修改数据  console.log(value); // 输出：0（未更新） 在上面的例子中，我们通过解构将count的值赋给value变量。然而，当我们修改count的值时，value并没有更新。\n这是因为解构操作会将count.value的值复制给value，而不是创建一个引用。因此，value不再是一个响应式的数据对象，它无法与count保持同步。\n为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。",
   "keywords": [
     "vue3", "vue"
@@ -134,7 +134,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Notes",
+    "name": "notes",
     "logo": {
       "@type": "ImageObject",
       "url": "https://tangxiaomi.top/avatar.svg"
@@ -159,7 +159,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://tangxiaomi.top/" accesskey="h" title="Notes (Alt + H)">Notes</a>
+            <a href="https://tangxiaomi.top/" accesskey="h" title="notes (Alt + H)">notes</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -185,13 +185,13 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
         </div>
         <ul id="menu">
             <li>
-                <a href="https://tangxiaomi.top/categories" title="Categories">
-                    <span>Categories</span>
+                <a href="https://tangxiaomi.top/categories" title="categories">
+                    <span>categories</span>
                 </a>
             </li>
             <li>
-                <a href="https://tangxiaomi.top/search" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
+                <a href="https://tangxiaomi.top/search" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
                 </a>
             </li>
         </ul>
@@ -203,7 +203,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
   <header class="post-header">
     
     <h1 class="post-title">
-      Vue 3中的ref解构与响应式问题解析 🔄
+      Vue3中的ref解构与响应式问题解析 🔄
     </h1>
     <div class="post-meta"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米
 

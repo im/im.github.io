@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>vue on Notes</title>
+    <title>vue on notes</title>
     <link>https://tangxiaomi.top/tags/vue/</link>
-    <description>Recent content in vue on Notes</description>
+    <description>Recent content in vue on notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Vue 3中的ref解构与响应式问题解析 🔄</title>
+      <title>Vue3中的ref解构与响应式问题解析 🔄</title>
       <link>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
       
