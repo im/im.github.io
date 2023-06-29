@@ -63,6 +63,3 @@ jobs:
         with:
             folder: ./public
             token: ${{ secrets.PAGES_TOKEN10 }}
-            # ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN10 }}
-            # BRANCH: gh-pages
-            # FOLDER: ./public
