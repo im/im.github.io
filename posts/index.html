@@ -166,7 +166,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
     </h2>
   </header>
   <div class="entry-content">
-    <p>什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+    <p>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
 在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。

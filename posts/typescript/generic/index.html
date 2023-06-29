@@ -7,7 +7,7 @@
 <meta name="robots" content="index, follow">
 <title>TypeScript泛型 | notes</title>
 <meta name="keywords" content="typescript">
-<meta name="description" content="什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+<meta name="description" content="什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
 在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
@@ -66,7 +66,7 @@ interface Lengthwise { length: number; } function loggingIdentity&lt;T extends L
 
     </style>
 </noscript><meta property="og:title" content="TypeScript泛型" />
-<meta property="og:description" content="什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+<meta property="og:description" content="什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
 在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
@@ -83,7 +83,7 @@ interface Lengthwise { length: number; } function loggingIdentity&lt;T extends L
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TypeScript泛型"/>
-<meta name="twitter:description" content="什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+<meta name="twitter:description" content="什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
 在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
@@ -121,12 +121,12 @@ interface Lengthwise { length: number; } function loggingIdentity&lt;T extends L
   "@type": "BlogPosting",
   "headline": "TypeScript泛型",
   "name": "TypeScript泛型",
-  "description": "什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。\n泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：\nfunction identity\u0026lt;T\u0026gt;(arg: T): T { return arg; } let result = identity\u0026lt;string\u0026gt;(\u0026#34;Hello, TypeScript! 🚀\u0026#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用\u0026lt;T\u0026gt;语法来指定泛型类型，并在函数体中使用该类型。\n在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。\n常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。\n泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：\nclass Container\u0026lt;T\u0026gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container\u0026lt;number\u0026gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。\n常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。\n泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：\ninterface Lengthwise { length: number; } function loggingIdentity\u0026lt;T extends Lengthwise\u0026gt;(arg: T): T { console.",
+  "description": "什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。\n泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：\nfunction identity\u0026lt;T\u0026gt;(arg: T): T { return arg; } let result = identity\u0026lt;string\u0026gt;(\u0026#34;Hello, TypeScript! 🚀\u0026#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用\u0026lt;T\u0026gt;语法来指定泛型类型，并在函数体中使用该类型。\n在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。\n常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。\n泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：\nclass Container\u0026lt;T\u0026gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container\u0026lt;number\u0026gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。\n常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。\n泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：\ninterface Lengthwise { length: number; } function loggingIdentity\u0026lt;T extends Lengthwise\u0026gt;(arg: T): T { console.",
   "keywords": [
     "typescript"
   ],
-  "articleBody": "什么是泛型？ 🤔 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。\n泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：\nfunction identityT(arg: T): T { return arg; } let result = identitystring(\"Hello, TypeScript! 🚀\"); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用语法来指定泛型类型，并在函数体中使用该类型。\n在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。\n常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。\n泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：\nclass ContainerT { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Containernumber(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。\n常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。\n泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：\ninterface Lengthwise { length: number; } function loggingIdentityT extends Lengthwise(arg: T): T { console.log(\"Length of arg: \" + arg.length); return arg; } let result = loggingIdentity(\"Hello 👋\"); console.log(result); // 输出：Hello 👋 在上面的例子中，我们定义了一个Lengthwise接口，它包含一个length属性。然后我们定义了一个loggingIdentity函数，它接受一个泛型参数T，并使用extends关键字对泛型进行约束，要求T必须实现Lengthwise接口。这样我们就可以在函数体中访问arg的length属性。\n常见场景： 泛型约束常用于对泛型类型进行更精确的类型限制，以确保传入的参数具有特定的属性或方法。\n泛型与工具类型的结合 🛠️ TypeScript提供了一些内置的工具类型（Utility Types），可以与泛型一起使用，以进一步增强泛型的能力。\n常见工具类型：\n Partial：将类型T的所有属性设为可选。 Readonly：将类型T的所有属性设为只读。 Pick：从类型T中选择指定的属性K。 Omit：从类型T中排除指定的属性K。 Record：创建一个具有指定类型T的属性K的对象。 Exclude：从类型T中排除可以赋值给类型U的类型。 Extract：从类型T中提取可以赋值给类型U的类型。 NonNullable：从类型T中排除null和undefined。  这些工具类型可以与泛型一起使用，以便更灵活地处理类型。\n常见场景： 泛型与工具类型的结合常用于处理复杂的类型转换、属性选择和排除等操作。\n",
-  "wordCount" : "121",
+  "articleBody": "什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。\n泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：\nfunction identityT(arg: T): T { return arg; } let result = identitystring(\"Hello, TypeScript! 🚀\"); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用语法来指定泛型类型，并在函数体中使用该类型。\n在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。\n常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。\n泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：\nclass ContainerT { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Containernumber(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。\n常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。\n泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：\ninterface Lengthwise { length: number; } function loggingIdentityT extends Lengthwise(arg: T): T { console.log(\"Length of arg: \" + arg.length); return arg; } let result = loggingIdentity(\"Hello 👋\"); console.log(result); // 输出：Hello 👋 在上面的例子中，我们定义了一个Lengthwise接口，它包含一个length属性。然后我们定义了一个loggingIdentity函数，它接受一个泛型参数T，并使用extends关键字对泛型进行约束，要求T必须实现Lengthwise接口。这样我们就可以在函数体中访问arg的length属性。\n常见场景： 泛型约束常用于对泛型类型进行更精确的类型限制，以确保传入的参数具有特定的属性或方法。\n泛型与工具类型的结合 🛠️ TypeScript提供了一些内置的工具类型（Utility Types），可以与泛型一起使用，以进一步增强泛型的能力。\n常见工具类型：\n Partial：将类型T的所有属性设为可选。 Readonly：将类型T的所有属性设为只读。 Pick：从类型T中选择指定的属性K。 Omit：从类型T中排除指定的属性K。 Record：创建一个具有指定类型T的属性K的对象。 Exclude：从类型T中排除可以赋值给类型U的类型。 Extract：从类型T中提取可以赋值给类型U的类型。 NonNullable：从类型T中排除null和undefined。  这些工具类型可以与泛型一起使用，以便更灵活地处理类型。\n常见场景： 泛型与工具类型的结合常用于处理复杂的类型转换、属性选择和排除等操作。\n",
+  "wordCount" : "120",
   "inLanguage": "cn",
   "datePublished": "2023-06-28T00:00:00Z",
   "dateModified": "2023-06-28T00:00:00Z",
@@ -215,7 +215,7 @@ interface Lengthwise { length: number; } function loggingIdentity&lt;T extends L
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="什么是泛型-">什么是泛型？ 🤔<a hidden class="anchor" aria-hidden="true" href="#什么是泛型-">#</a></h2>
+  <div class="post-content"><h2 id="什么是泛型">什么是泛型？<a hidden class="anchor" aria-hidden="true" href="#什么是泛型">#</a></h2>
 <p>泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。</p>
 <h2 id="泛型函数-">泛型函数 📝<a hidden class="anchor" aria-hidden="true" href="#泛型函数-">#</a></h2>
 <p>在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：</p>
