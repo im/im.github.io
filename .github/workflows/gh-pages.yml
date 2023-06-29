@@ -20,6 +20,9 @@ on:
 concurrency:
   group: "pages"
   cancel-in-progress: true
+  
+permissions:
+  contents: write
 
 # Default to bash
 defaults:
@@ -56,8 +59,10 @@ jobs:
           hugo \
             --baseURL ${{ steps.pages.outputs.base_url }} \
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action
+        uses: JamesIves/github-pages-deploy-action@4
         with:
-            ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN10 }}
-            BRANCH: gh-pages
-            FOLDER: ./public
+            folder: ./public
+            ssh-key: ${{ secrets.PAGES_TOKEN10 }}
+            # ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN10 }}
+            # BRANCH: gh-pages
+            # FOLDER: ./public
