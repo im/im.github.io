@@ -62,7 +62,7 @@ jobs:
             # deploy_key: ${{ secrets.PAGES_TOKEN }}
             # publish_dir: ./public  # 构建后的输出目录
             # skip-approval: true  # 跳过部署批准步骤
-            ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN }}
+            ACCESS_TOKEN: ${{ secrets.PAGES_TOKEN10 }}
             BRANCH: gh-pages
             FOLDER: ./public
             skip-approval: true
