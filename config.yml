@@ -82,9 +82,7 @@ params:
             - name: archive
               url: archives
             - name: tags
-              url: tags 
-            # - name: Search 🔍
-            #   url: search
+              url: tags
 
     homeInfoParams:
         Title: "糖小米"
