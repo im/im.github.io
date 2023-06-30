@@ -128,7 +128,7 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2>Vue3中的ref解构与响应式问题解析 🔄
+    <h2>Vue3中的ref解构与响应式问题
     </h2>
   </header>
   <div class="entry-content">
@@ -142,7 +142,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
 为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。...</p>
   </div>
   <footer class="entry-footer"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to Vue3中的ref解构与响应式问题解析 🔄" href="https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"></a>
+  <a class="entry-link" aria-label="post link to Vue3中的ref解构与响应式问题" href="https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"></a>
 </article>
     </main>
     
