@@ -143,6 +143,53 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>用VSCode配置ESLint自动保存校验
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
+本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
+步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
+第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
+npm install eslint --save-dev 或
+yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
+{ &#34;extends&#34;: &#34;eslint:recommended&#34;, &#34;rules&#34;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
+第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
+{ &#34;editor.codeActionsOnSave&#34;: { &#34;source.fixAll.eslint&#34;: true }, &#34;editor.formatOnSave&#34;: false, &#34;eslint.alwaysShowStatus&#34;: true, &#34;eslint.validate&#34;: [ &#34;javascript&#34;, &#34;javascriptreact&#34;, { &#34;language&#34;: &#34;vue&#34;, &#34;autoFix&#34;: true }, { &#34;language&#34;: &#34;html&#34;, &#34;autoFix&#34;: true } ] } 这里通过&#34;editor.codeActionsOnSave&#34;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
+同时将&#34;editor.formatOnSave&#34;设置为false，表示不对存储时代码格式进行调整。
+最后配置&#34;eslint.validate&#34;即可，这里我们对&#34;javascript&#34;和&#34;javascriptreact&#34;进行校验和自动修复，同时对Vue和HTML代码添加支持。
+总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to 用VSCode配置ESLint自动保存校验" href="https://tangxiaomi.top/posts/vscode/eslint/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>微信小程序开发入门教程
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
+🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
+2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
+3. 创建小程序 打开微信开发者工具，点击&#34;新建小程序&#34;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。
+🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：
+myproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。
+pages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。
+2. Hello World 打开index.wxml，在其中输入以下代码：
+&lt;!--index.wxml--&gt; &lt;text&gt;{{message}}&lt;/text&gt; 打开index.js，在其中输入以下代码：
+//index.js Page({ data: { message: &#34;Hello World&#34; } }) 应用这些变更后，点击微信开发者工具的&#34;预览&#34;按钮，可以在微信中查看效果。
+3. 组件介绍 在示例代码中，我们使用了&lt;text&gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
+下面简单介绍几个常用组件：
+ &lt;view&gt;：与HTML中的&lt;div&gt;类似，用于嵌套其它组件，可以设置样式或事件。 &lt;text&gt;：用于显示文本，可以设置颜色、字体大小等。 &lt;button&gt;：用于创建按钮，可以设置事件。 &lt;image&gt;：用于显示图片，可以设置 src 属性。  4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&lt;text&gt;组件的内容中。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-05-27 00:00:00 +0000 UTC'>May 27, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to 微信小程序开发入门教程" href="https://tangxiaomi.top/posts/mini-program/getting-started/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>js高阶函数
     </h2>
   </header>

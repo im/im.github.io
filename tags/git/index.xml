@@ -6,7 +6,28 @@
     <description>Recent content in git on notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git submodule</title>
+      <link>https://tangxiaomi.top/posts/git/submodule/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/git/submodule/</guid>
+      <description>添加 git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。
+.gitmodules [submodule &amp;#34;themes/icarus&amp;#34;] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 git submodule update 删除 submodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。
+下载的工程带有 submodule git submodule update --init --recursive 查看 sumodule 状态 git submodule foreach git status 不能更新 git submodule update --remote </description>
+    </item>
+    
+    <item>
+      <title>git 添加 ssh key</title>
+      <link>https://tangxiaomi.top/posts/git/ssh-key/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/git/ssh-key/</guid>
+      <description>创建 SSH Key ssh-keygen -t rsa -C &amp;#34;tangxiaomiemail@gmail.com&amp;#34; cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
+全局配置 git config --global user.name &amp;#34;tangxiaomi&amp;#34; git config --global user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 非全局配置 删除 --global git config user.name &amp;#34;tangxiaomi&amp;#34; git config user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 查看配置 git config --global user.name git config --global user.email 取消全局配置 git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.</description>
+    </item>
+    
     <item>
       <title>husky</title>
       <link>https://tangxiaomi.top/posts/git/husky/</link>

@@ -3,16 +3,28 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tangxiaomi.top/categories/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/tags/git/</loc>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/git/submodule/</loc>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/posts/git/ssh-key/</loc>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/tags/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-06-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/tags/vue/</loc>
     <lastmod>2023-06-29T00:00:00+00:00</lastmod>
@@ -21,9 +33,6 @@
     <lastmod>2023-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</loc>
-    <lastmod>2023-06-29T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tangxiaomi.top/categories/%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B/</loc>
     <lastmod>2023-06-29T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/tags/typescript/</loc>
@@ -46,9 +55,6 @@
   </url><url>
     <loc>https://tangxiaomi.top/posts/other/unsplash/</loc>
     <lastmod>2023-06-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tangxiaomi.top/tags/git/</loc>
-    <lastmod>2023-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://tangxiaomi.top/posts/git/husky/</loc>
     <lastmod>2023-05-30T00:00:00+00:00</lastmod>

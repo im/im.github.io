@@ -6,7 +6,16 @@
     <description>Recent content in Tags on notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git</title>
+      <link>https://tangxiaomi.top/tags/git/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/tags/git/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>vue</title>
       <link>https://tangxiaomi.top/tags/vue/</link>
@@ -49,15 +58,6 @@
       <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
       
       <guid>https://tangxiaomi.top/tags/images/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>git</title>
-      <link>https://tangxiaomi.top/tags/git/</link>
-      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://tangxiaomi.top/tags/git/</guid>
       <description></description>
     </item>
     
