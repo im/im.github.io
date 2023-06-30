@@ -2,7 +2,7 @@
 title:  git 将远程分支拉到本地
 date: "2023-05-29"
 categories:
-  - 技术教程
+  - 技术笔记
 tags: ["git"]
 ---
 
