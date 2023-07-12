@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>interview on notes</title>
+    <link>https://tangxiaomi.top/categories/interview/</link>
+    <description>Recent content in interview on notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Tue, 11 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/categories/interview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>面试题合集</title>
+      <link>https://tangxiaomi.top/posts/interview/interview-list/</link>
+      <pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://tangxiaomi.top/posts/interview/interview-list/</guid>
+      <description>HTML + CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用?</description>
+    </item>
+    
+  </channel>
+</rss>

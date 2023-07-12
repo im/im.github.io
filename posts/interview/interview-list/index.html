@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>面试题合集 | notes</title>
+<meta name="keywords" content="">
+<meta name="description" content="HTML &#43; CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用?">
+<meta name="author" content="糖小米">
+<link rel="canonical" href="https://tangxiaomi.top/posts/interview/interview-list/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.0c4f62d9fb59159a3354ca796628b6539261a7fc570135fa50629ec618b1eaa0.css" integrity="sha256-DE9i2ftZFZozVMp5Zii2U5Jhp/xXATX6UGKexhix6qA=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tangxiaomi.top/avatar.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tangxiaomi.top/avatar.svg">
+<link rel="apple-touch-icon" href="https://tangxiaomi.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tangxiaomi.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="面试题合集" />
+<meta property="og:description" content="HTML &#43; CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tangxiaomi.top/posts/interview/interview-list/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-07-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-07-11T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="面试题合集"/>
+<meta name="twitter:description" content="HTML &#43; CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用?"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://tangxiaomi.top/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "面试题合集",
+      "item": "https://tangxiaomi.top/posts/interview/interview-list/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "面试题合集",
+  "name": "面试题合集",
+  "description": "HTML + CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用?",
+  "keywords": [
+    
+  ],
+  "articleBody": "HTML + CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​ iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​ Google Chrome 如何支持大小小于 12px 的文字？​ 描述一下 css 盒子模型​ HTML5 的特性有哪些？​ CSS3 的特性有哪些？​ 如何实现水平居中？​ 如何实现垂直居中？​ 如何实现双圣杯布局？​ CSS 中选择器的优先级？​ CSS 权重如何计算？​ HTML5 input 元素 type 属性有哪些？​ CSS 中哪些属性可继承，哪些不可以​ CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​ 如何画一条 0.5px 的线​ 隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​ position 的值有哪些，分别有什么特点？​ 什么是浮动，浮动会引起什么问题，有何解决方案？​ line-height 和 height 的区别​ 设置一个元素的背景颜色，背景颜色会填充哪些区域？​ inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​ 什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​ box-sizing 的作用，如何使用？​ 如何实现清除浮动​ css 动画如何实现​ 如何实现在某个容器中居中的？​ 如何改变一个 DOM 元素的字体颜色？​ 相对布局和绝对布局，position:relative 和 obsolute。​ 什么是弹性盒子 flex 布局？​ 什么是 rem 布局？​ less 和 scss 有什么区别？​ ::before 和::after 中双冒号和单冒号的区别？​ CSS3 新增伪类，以及伪元素？​ 响应式布局实现方案？​ link 标签和 import 标签的区别？​ transition 和 animation 的区别？​ 说一下块元素、行元素、置换元素​ 多行元素的文本省略号如何实现？​ Doctype 作用? 严格模式与混杂模式如何区分？它们有何意义?\nJavascript​ javascript 的数据类型有哪些？​ javascript 有哪些引用类型？​ 如何判断 javascript 的数据类型？​ 怎么判断两个对象相等？如何判断空对象？​ 0.1 + 0.2 为什么不等于 0.3 ？（解释原理）​ 强制类型转换、隐式类型转换分别是什么，列举场景说明。​ 创建函数的几种方式？ ​ javascript 创建对象的几种方式？ ​ 列举宿主对象、内置对象、原生对象并说明其定义。​ === 和 ==的区别？​ null，undefined 的区别​ 什么情况下会返回 undefined 值？​ 如何区分数组和对象？​ 多维数组如何降维？​ 怎么获取当前日期（年-月-日 时:分:秒）？​ 什么是类数组（伪数组），如何将其转化为真实的数组？​ 如何遍历对象的属性？​ 如何给一个按钮绑定两个 onclick 事件？​ 变量提升是什么？与函数提升的区别？​ 什么是作用域链？如何延长？​ 如何实现数组的随机排序？​ dom 节点的 Attribute 和 Property 有何区别？​ dom 结构操作怎样添加、移除、移动、复制、创建和查找节点？​ 什么是事件冒泡，它是如何工作的？如何阻止事件冒泡？​ 什么是事件捕获，它是如何工作的？​ 如何让事件先冒泡后捕获？​ JavaScript 动画和 CSS3 动画有什么区别？ ​ dom 的事件模型​ 事件三要素是什么？​ 获取元素位置？​ 如何绑定事件，如何解除事件？​ 对事件委托的理解​ setTimeout 和 setInterval 的区别及用法是什么？​ 用 setTimeout 来实现 setInterval​ document.write 和 innerHTML 的区别？​ 元素拖动如何实现，原理是怎样？​ 什么是重绘(repaint)？什么是回流(reflow)？如何最小化重绘和回流？​ 延迟加载的方式有哪些？​ 垃圾回收机制有哪些？具体怎么如何执行？​ 什么是内存泄漏 ？​ 数组遍历的方法有哪些，分别有什么特点，性能如何 ？​ ES5 和 ES6 的区别，ES6 新增了什么？​ ES6 的继承和 ES5 的继承有什么区别？​ var、let、const 之间的区别？暂时性死区如何理解？​ Class、extends 是什么，有什么作用？​ 什么是 JS 闭包​ 说一下类的创建和继承，列举一下你所知道的继承方式​ 如何解决异步回调地狱​ 说一下图片的懒加载和预加载​ mouseover 和 mouseenter 的区别​ new 操作符做了哪些事情​ 改变函数内部 this 指针的指向函数（bind，apply，call 的区别），内在分别是如何实现的？​ JS 的各种位置，比如 clientHeight, scrollHeight, offsetHeight ,以及 scrollTop, offsetTop, clientTop 的区别？​ 异步加载 JS 的方法​ Ajax 解决浏览器缓存问题​ 节流和防抖​ eval 是做什么的​ 对象深拷贝的简单实现​ 实现 JS 中所有对象的深度克隆（包装对象，Date 对象，正则对象）​ 实现一个 once 函数，传入函数参数只执行一次​ 将原生的 ajax 封装成 promise​ JS 监听对象属性的改变​ 如何实现一个私有变量，用 get 可以访问，不能直接访问​ 怎么控制一次加载一张图片，加载完后再加载下一张​ 如何实现 sleep 的效果（es5 或者 es6）​ Function.proto(getPrototypeOf)是什么？​ 箭头函数中 this 指向​ 数组常用方法有哪些​ 数组去重有哪些方法？​ 如何去除字符串首尾空格​ 说说你所知道的 JS 语言特性？​ 如何判断一个数组？​ JS 的全排列​ 谈谈你所理解的跨域，为什么会有这个问题？如何解决？​ null == undefined 输出什么？null === undefined 呢？​ 什么是按需加载​ 简单介绍一下 symbol​ 介绍一下 promise，及其底层如何实现​ JS 原型链，原型链的顶端是什么？Object 的原型是什么？Object 的原型的原型是什么？​ promise+Generator+Async 的使用​ JS 中 string 的 startwith 和 indexof 两种方法的区别​ JS 字符串转数字的方法​ 平时是怎么调试 JS 的​ 怎么获得对象上的属性​ async 和 await 具体该怎么用？​ 知道哪些 ES6，ES7 的语法 ​ promise 和 await/async 的关系​ JS 加载过程阻塞，解决方法。​ JS 对象类型，基本对象类型以及引用对象类型的区别​ 轮播的实现原理？假如一个页面上有两个轮播，你会怎么实现？\n",
+  "wordCount" : "344",
+  "inLanguage": "cn",
+  "datePublished": "2023-07-11T00:00:00Z",
+  "dateModified": "2023-07-11T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "糖小米"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tangxiaomi.top/posts/interview/interview-list/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tangxiaomi.top/avatar.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tangxiaomi.top/" accesskey="h" title="notes (Alt + H)">notes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tangxiaomi.top/categories" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tangxiaomi.top/search" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      面试题合集
+    </h1>
+    <div class="post-meta"><span title='2023-07-11 00:00:00 +0000 UTC'>July 11, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米
+
+</div>
+  </header> 
+  <div class="post-content"><h1 id="html--css">HTML + CSS​<a hidden class="anchor" aria-hidden="true" href="#html--css">#</a></h1>
+<p>什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？
+CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​
+三栏布局有什么实现方式？​
+css calc 属性作用是什么？主要用于解决什么问题？ ​
+有一个固定长宽div，怎么实现在屏幕上垂直水平居中​
+描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​
+iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​
+Google Chrome 如何支持大小小于 12px 的文字？​
+描述一下 css 盒子模型​
+HTML5 的特性有哪些？​
+CSS3 的特性有哪些？​
+如何实现水平居中？​
+如何实现垂直居中？​
+如何实现双圣杯布局？​
+CSS 中选择器的优先级？​
+CSS 权重如何计算？​
+HTML5 input 元素 type 属性有哪些？​
+CSS 中哪些属性可继承，哪些不可以​
+CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​
+如何画一条 0.5px 的线​
+隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​
+position 的值有哪些，分别有什么特点？​
+什么是浮动，浮动会引起什么问题，有何解决方案？​
+line-height 和 height 的区别​
+设置一个元素的背景颜色，背景颜色会填充哪些区域？​
+inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​
+什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​
+box-sizing 的作用，如何使用？​
+如何实现清除浮动​
+css 动画如何实现​
+如何实现在某个容器中居中的？​
+如何改变一个 DOM 元素的字体颜色？​
+相对布局和绝对布局，position:relative 和 obsolute。​
+什么是弹性盒子 flex 布局？​
+什么是 rem 布局？​
+less 和 scss 有什么区别？​
+::before 和::after 中双冒号和单冒号的区别？​
+CSS3 新增伪类，以及伪元素？​
+响应式布局实现方案？​
+link 标签和 import 标签的区别？​
+transition 和 animation 的区别？​
+说一下块元素、行元素、置换元素​
+多行元素的文本省略号如何实现？​
+Doctype 作用? 严格模式与混杂模式如何区分？它们有何意义?</p>
+<h1 id="javascript">Javascript​<a hidden class="anchor" aria-hidden="true" href="#javascript">#</a></h1>
+<p>javascript 的数据类型有哪些？​
+javascript 有哪些引用类型？​
+如何判断 javascript 的数据类型？​
+怎么判断两个对象相等？如何判断空对象？​
+0.1 + 0.2 为什么不等于 0.3 ？（解释原理）​
+强制类型转换、隐式类型转换分别是什么，列举场景说明。​
+创建函数的几种方式？ ​
+javascript 创建对象的几种方式？ ​
+列举宿主对象、内置对象、原生对象并说明其定义。​
+=== 和 ==的区别？​
+null，undefined 的区别​
+什么情况下会返回 undefined 值？​
+如何区分数组和对象？​
+多维数组如何降维？​
+怎么获取当前日期（年-月-日 时:分:秒）？​
+什么是类数组（伪数组），如何将其转化为真实的数组？​
+如何遍历对象的属性？​
+如何给一个按钮绑定两个 onclick 事件？​
+变量提升是什么？与函数提升的区别？​
+什么是作用域链？如何延长？​
+如何实现数组的随机排序？​
+dom 节点的 Attribute 和 Property 有何区别？​
+dom 结构操作怎样添加、移除、移动、复制、创建和查找节点？​
+什么是事件冒泡，它是如何工作的？如何阻止事件冒泡？​
+什么是事件捕获，它是如何工作的？​
+如何让事件先冒泡后捕获？​
+JavaScript 动画和 CSS3 动画有什么区别？ ​
+dom 的事件模型​
+事件三要素是什么？​
+获取元素位置？​
+如何绑定事件，如何解除事件？​
+对事件委托的理解​
+setTimeout 和 setInterval 的区别及用法是什么？​
+用 setTimeout 来实现 setInterval​
+document.write 和 innerHTML 的区别？​
+元素拖动如何实现，原理是怎样？​
+什么是重绘(repaint)？什么是回流(reflow)？如何最小化重绘和回流？​
+延迟加载的方式有哪些？​
+垃圾回收机制有哪些？具体怎么如何执行？​
+什么是内存泄漏 ？​
+数组遍历的方法有哪些，分别有什么特点，性能如何 ？​
+ES5 和 ES6 的区别，ES6 新增了什么？​
+ES6 的继承和 ES5 的继承有什么区别？​
+var、let、const 之间的区别？暂时性死区如何理解？​
+Class、extends 是什么，有什么作用？​
+什么是 JS 闭包​
+说一下类的创建和继承，列举一下你所知道的继承方式​
+如何解决异步回调地狱​
+说一下图片的懒加载和预加载​
+mouseover 和 mouseenter 的区别​
+new 操作符做了哪些事情​
+改变函数内部 this 指针的指向函数（bind，apply，call 的区别），内在分别是如何实现的？​
+JS 的各种位置，比如 clientHeight, scrollHeight, offsetHeight ,以及 scrollTop, offsetTop, clientTop 的区别？​
+异步加载 JS 的方法​
+Ajax 解决浏览器缓存问题​
+节流和防抖​
+eval 是做什么的​
+对象深拷贝的简单实现​
+实现 JS 中所有对象的深度克隆（包装对象，Date 对象，正则对象）​
+实现一个 once 函数，传入函数参数只执行一次​
+将原生的 ajax 封装成 promise​
+JS 监听对象属性的改变​
+如何实现一个私有变量，用 get 可以访问，不能直接访问​
+怎么控制一次加载一张图片，加载完后再加载下一张​
+如何实现 sleep 的效果（es5 或者 es6）​
+Function.<em>proto</em>(getPrototypeOf)是什么？​
+箭头函数中 this 指向​
+数组常用方法有哪些​
+数组去重有哪些方法？​
+如何去除字符串首尾空格​
+说说你所知道的 JS 语言特性？​
+如何判断一个数组？​
+JS 的全排列​
+谈谈你所理解的跨域，为什么会有这个问题？如何解决？​
+null == undefined 输出什么？null === undefined 呢？​
+什么是按需加载​
+简单介绍一下 symbol​
+介绍一下 promise，及其底层如何实现​
+JS 原型链，原型链的顶端是什么？Object 的原型是什么？Object 的原型的原型是什么？​
+promise+Generator+Async 的使用​
+JS 中 string 的 startwith 和 indexof 两种方法的区别​
+JS 字符串转数字的方法​
+平时是怎么调试 JS 的​
+怎么获得对象上的属性​
+async 和 await 具体该怎么用？​
+知道哪些 ES6，ES7 的语法 ​
+promise 和 await/async 的关系​
+JS 加载过程阻塞，解决方法。​
+JS 对象类型，基本对象类型以及引用对象类型的区别​
+轮播的实现原理？假如一个页面上有两个轮播，你会怎么实现？</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="next" href="https://tangxiaomi.top/posts/other/url-scheme/">
+    <span class="title"> »</span>
+    <br>
+    <span>URL Scheme（URL协议）</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
