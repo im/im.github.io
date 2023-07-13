@@ -1,6 +1,7 @@
 ---
 title: 面试题合集
 date: "2023-07-11"
+draft: true
 categories:
   - interview
 ---
