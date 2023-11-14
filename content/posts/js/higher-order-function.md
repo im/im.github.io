@@ -2,7 +2,7 @@
 title: js高阶函数
 date: "2023-05-26"
 categories:
-  - 技术笔记
+  - 笔记
 tags: ["javascript"]
 ---
 

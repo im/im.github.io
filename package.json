@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "hugo serve",
-    "watch": "node monitor.js",
+    "watch": "node watch.js",
     "push": "node push.js"
   },
   "keywords": [],

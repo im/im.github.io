@@ -2,7 +2,7 @@
 title: husky
 date: "2023-05-30"
 categories:
-  - 技术笔记
+  - 笔记
 tags: ["git"]
 ---
 

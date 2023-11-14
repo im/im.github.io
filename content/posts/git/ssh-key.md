@@ -4,7 +4,7 @@ date: "2023-06-30"
 tags:
   - git 
 categories:
-  - 技术笔记
+  - 笔记
 ---
 
 ##  创建 SSH Key

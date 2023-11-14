@@ -3,7 +3,7 @@ title: 用VSCode配置ESLint自动保存校验
 date: "2023-05-29"
 tags: ['vscode']
 categories:
-  - 技术笔记
+  - 笔记
 ---
 
 ## 简介

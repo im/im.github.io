@@ -2,7 +2,7 @@
 title: URL Scheme（URL协议）
 date: "2023-07-04"
 categories:
-  - 技术笔记
+  - 笔记
 tags: ["javascript"]
 ---
 

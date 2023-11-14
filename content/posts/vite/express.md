@@ -3,7 +3,7 @@ title: 如何在 Vite 中拦截开发服务器并使用 express
 date: "2023-05-23"
 tags: ["vite", "typescript", "express"]
 categories:
-  - 技术笔记
+  - 笔记
 ---
 
 

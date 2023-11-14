@@ -3,7 +3,7 @@ title: TypeScript泛型
 date: "2023-06-28"
 tags: [ "typescript"]
 categories:
-  - 技术笔记
+  - 笔记
 ---
 
 
