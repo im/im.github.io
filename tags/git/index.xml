@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>git on notes</title>
+    <title>git on Notes</title>
     <link>https://tangxiaomi.top/tags/git/</link>
-    <description>Recent content in git on notes</description>
+    <description>Recent content in git on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -36,7 +36,7 @@
       <guid>https://tangxiaomi.top/posts/git/husky/</guid>
       <description>安装 Husky  使用 npm 进行安装：
 npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 &amp;ldquo;husky&amp;rdquo; 配置：
-&amp;#34;husky&amp;#34;: { &amp;#34;hooks&amp;#34;: { &amp;#34;pre-commit&amp;#34;: &amp;#34;npm run lint&amp;#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &amp;#34;pre-push&amp;#34;: &amp;#34;npm run test&amp;#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子  在 package.json 文件中添加 &amp;ldquo;scripts&amp;rdquo; 属性：
+&amp;#34;husky&amp;#34;: { &amp;#34;hooks&amp;#34;: { &amp;#34;pre-commit&amp;#34;: &amp;#34;npm run lint&amp;#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令  &amp;#34;pre-push&amp;#34;: &amp;#34;npm run test&amp;#34; // 在执行 git push 命令时，会执行 npm run test 命令  } } 配置 pre-commit 钩子  在 package.json 文件中添加 &amp;ldquo;scripts&amp;rdquo; 属性：
 &amp;#34;scripts&amp;#34;: { &amp;#34;lint&amp;#34;: &amp;#34;eslint .&amp;#34; } 这里的 &amp;ldquo;lint&amp;rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。</description>
     </item>
     
