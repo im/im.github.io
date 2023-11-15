@@ -153,6 +153,27 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>TypeScript泛型
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
+function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
+在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
+常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。
+泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：
+class Container&lt;T&gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container&lt;number&gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。
+常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。
+泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：
+interface Lengthwise { length: number; } function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T { console....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-28 00:00:00 +0000 UTC'>June 28, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to TypeScript泛型" href="https://tangxiaomi.top/posts/typescript/generic/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>HSTS 强制 https
     </h2>
   </header>
@@ -212,19 +233,6 @@ npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加
   </div>
   <footer class="entry-footer"><span title='2023-05-30 00:00:00 +0000 UTC'>May 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to husky" href="https://tangxiaomi.top/posts/git/husky/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>git 将远程分支拉到本地
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>可以使用以下命令将远程分支拉到本地：
- 首先，使用 git remote 命令查看已经添加的远程仓库：  git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）：  git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支：  git checkout local_branch 组合命令  git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to git 将远程分支拉到本地" href="https://tangxiaomi.top/posts/git/remote-branch/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
