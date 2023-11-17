@@ -52,7 +52,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "https://tangxiaomi.top/"
     # author: Theme PaperMod
-    author: ["糖小米"] # multiple authors
+    author: ["名侦探嗑糖"] # multiple authors
     DateFormat: "January 2, 2006"
 
     defaultTheme: auto
@@ -102,9 +102,9 @@ params:
 
     assets:
         disableHLJS: false
-        favicon: "/avatar.svg"
-        favicon16x16: "/avatar.svg"
-        favicon32x32: "/avatar.svg"
+        favicon: "/avatar3.svg"
+        favicon16x16: "/avatar3.svg"
+        favicon32x32: "/avatar3.svg"
 
 markup:
     goldmark:
