@@ -138,6 +138,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>css view-transition
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>什么是 CSS View-Transition？ CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。
+如何使用 CSS View-Transition？ 使用 CSS View-Transition 非常简单。我们只需要为目标元素添加一些必要的 CSS 属性即可。
+ 首先，为目标元素添加 transition 属性，指定过渡的属性和持续时间。例如：  .element { transition: width 0.3s ease-in-out; } 在上面的例子中，我们指定了 width 属性在 0.3 秒内进行过渡，并且使用了 ease-in-out 缓动函数。
+接下来，我们可以通过添加一些触发事件来激活过渡效果。例如，我们可以使用鼠标悬停事件来触发过渡效果：  .element:hover { width: 200px; } 在上面的例子中，当鼠标悬停在 .element 元素上时，它的宽度将过渡到 200 像素。
+CSS View-Transition 的常用属性 除了 transition 属性外，CSS View-Transition 还提供了其他一些常用属性，用于进一步控制过渡效果。
+ transition-property：指定过渡的属性。可以使用多个属性，用逗号分隔。 transition-duration：指定过渡的持续时间。 transition-timing-function：指定过渡的缓动函数。 transition-delay：指定过渡的延迟时间。  使用场景示例 1. 图片展示过渡 &lt;div class=&#34;image-container&#34;&gt; &lt;img src=&#34;image1....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-11-17 00:00:00 +0000 UTC'>November 17, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
+  <a class="entry-link" aria-label="post link to css view-transition" href="https://tangxiaomi.top/posts/css/view-transition/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>navigator.registerProtocolHandler
     </h2>
   </header>
@@ -205,27 +222,6 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
   </div>
   <footer class="entry-footer"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
   <a class="entry-link" aria-label="post link to Vue3中的ref解构与响应式问题" href="https://tangxiaomi.top/posts/vue/vue3-responsive-lose/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>TypeScript泛型
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
-泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
-function identity&lt;T&gt;(arg: T): T { return arg; } let result = identity&lt;string&gt;(&#34;Hello, TypeScript! 🚀&#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&lt;T&gt;语法来指定泛型类型，并在函数体中使用该类型。
-在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
-常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。
-泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：
-class Container&lt;T&gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container&lt;number&gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。
-常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。
-泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：
-interface Lengthwise { length: number; } function loggingIdentity&lt;T extends Lengthwise&gt;(arg: T): T { console....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-28 00:00:00 +0000 UTC'>June 28, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米</footer>
-  <a class="entry-link" aria-label="post link to TypeScript泛型" href="https://tangxiaomi.top/posts/typescript/generic/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
