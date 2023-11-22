@@ -1,4 +1,4 @@
-baseURL: "https://tangxiaomi.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://cotan.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 title: Notes
 paginate: 5
 theme: PaperMod
@@ -50,7 +50,7 @@ outputs:
 params:
     hideFooter: true
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "https://tangxiaomi.top/"
+    description: "https://cotan.top/"
     # author: Theme PaperMod
     author: ["名侦探嗑糖"] # multiple authors
     DateFormat: "January 2, 2006"
