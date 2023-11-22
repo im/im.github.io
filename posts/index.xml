@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on Notes</title>
-    <link>https://tangxiaomi.top/posts/</link>
+    <link>https://cotan.top/posts/</link>
     <description>Recent content in Posts on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>css view-transition</title>
-      <link>https://tangxiaomi.top/posts/css/view-transition/</link>
+      <link>https://cotan.top/posts/css/view-transition/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/css/view-transition/</guid>
+      <guid>https://cotan.top/posts/css/view-transition/</guid>
       <description>什么是 CSS View-Transition？ CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。
 如何使用 CSS View-Transition？ 使用 CSS View-Transition 非常简单。我们只需要为目标元素添加一些必要的 CSS 属性即可。
  首先，为目标元素添加 transition 属性，指定过渡的属性和持续时间。例如：  .element { transition: width 0.3s ease-in-out; } 在上面的例子中，我们指定了 width 属性在 0.3 秒内进行过渡，并且使用了 ease-in-out 缓动函数。
@@ -23,10 +23,10 @@ CSS View-Transition 的常用属性 除了 transition 属性外，CSS View-Trans
     
     <item>
       <title>navigator.registerProtocolHandler</title>
-      <link>https://tangxiaomi.top/posts/other/navigator-registerprotocolhandler/</link>
+      <link>https://cotan.top/posts/other/navigator-registerprotocolhandler/</link>
       <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/navigator-registerprotocolhandler/</guid>
+      <guid>https://cotan.top/posts/other/navigator-registerprotocolhandler/</guid>
       <description>navigator.registerProtocolHandler 是一个 Web API，用于注册自定义协议处理程序。通过使用这个 API，您可以告诉浏览器如何处理特定的自定义协议，例如打开特定的应用程序或执行特定的操作。这对于创建与操作系统或其他应用程序集成的 Web 应用程序非常有用。
 如何使用 navigator.registerProtocolHandler 🛠️ 使用 navigator.registerProtocolHandler 需要以下步骤：
   确定自定义协议：首先，您需要确定您要注册的自定义协议。这个协议应该是唯一的，并且与其他现有的协议不冲突。例如，您可以选择 myapp 作为您的自定义协议。
@@ -42,10 +42,10 @@ navigator.registerProtocolHandler(&amp;#39;myapp&amp;#39;, &amp;#39;https://exam
     
     <item>
       <title>URL Scheme（URL协议）</title>
-      <link>https://tangxiaomi.top/posts/other/url-scheme/</link>
+      <link>https://cotan.top/posts/other/url-scheme/</link>
       <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/url-scheme/</guid>
+      <guid>https://cotan.top/posts/other/url-scheme/</guid>
       <description>在移动应用程序中，URL Scheme是一种用于在应用程序之间进行通信的机制。它允许一个应用程序通过特定的URL来打开另一个应用程序，并在打开后执行一些特定的操作。
 URL Scheme的结构 一个URL Scheme是一个以特定格式构建的URL。它通常由两部分组成：Scheme和Path。
  Scheme：Scheme是URL的开头部分，用于指定要打开的应用程序。它以字母开头，后面跟随着字母、数字和一些特殊字符，例如myapp://。 Path：Path是Scheme之后的部分，用于指定在目标应用程序中要执行的具体操作。它可以是一个命令、参数或其他标识符，例如open?item=123。  URL Scheme的用途 URL Scheme可以用于多种用途，包括但不限于以下几个方面：
@@ -56,10 +56,10 @@ myapp://open?item=123 这个URL使用了名为myapp的Scheme，并传递了一�
     
     <item>
       <title>git submodule</title>
-      <link>https://tangxiaomi.top/posts/git/submodule/</link>
+      <link>https://cotan.top/posts/git/submodule/</link>
       <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/git/submodule/</guid>
+      <guid>https://cotan.top/posts/git/submodule/</guid>
       <description>添加 git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。
 .gitmodules [submodule &amp;#34;themes/icarus&amp;#34;] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 git submodule update 删除 submodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。
 下载的工程带有 submodule git submodule update --init --recursive 查看 sumodule 状态 git submodule foreach git status 不能更新 git submodule update --remote </description>
@@ -67,20 +67,20 @@ myapp://open?item=123 这个URL使用了名为myapp的Scheme，并传递了一�
     
     <item>
       <title>git 添加 ssh key</title>
-      <link>https://tangxiaomi.top/posts/git/ssh-key/</link>
+      <link>https://cotan.top/posts/git/ssh-key/</link>
       <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/git/ssh-key/</guid>
+      <guid>https://cotan.top/posts/git/ssh-key/</guid>
       <description>创建 SSH Key ssh-keygen -t rsa -C &amp;#34;tangxiaomiemail@gmail.com&amp;#34; cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
 全局配置 git config --global user.name &amp;#34;tangxiaomi&amp;#34; git config --global user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 非全局配置 删除 --global git config user.name &amp;#34;tangxiaomi&amp;#34; git config user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 查看配置 git config --global user.name git config --global user.email 取消全局配置 git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.</description>
     </item>
     
     <item>
       <title>Vue3中的ref解构与响应式问题</title>
-      <link>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</link>
+      <link>https://cotan.top/posts/vue/vue3-responsive-lose/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</guid>
+      <guid>https://cotan.top/posts/vue/vue3-responsive-lose/</guid>
       <description>介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
 ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
 import { ref } from &amp;#39;vue&amp;#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value++; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
@@ -93,10 +93,10 @@ import { ref } from &amp;#39;vue&amp;#39;; const count = ref(0); const { value }
     
     <item>
       <title>TypeScript泛型</title>
-      <link>https://tangxiaomi.top/posts/typescript/generic/</link>
+      <link>https://cotan.top/posts/typescript/generic/</link>
       <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/typescript/generic/</guid>
+      <guid>https://cotan.top/posts/typescript/generic/</guid>
       <description>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&amp;lt;T&amp;gt;(arg: T): T { return arg; } let result = identity&amp;lt;string&amp;gt;(&amp;#34;Hello, TypeScript! 🚀&amp;#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&amp;lt;T&amp;gt;语法来指定泛型类型，并在函数体中使用该类型。
@@ -111,10 +111,10 @@ interface Lengthwise { length: number; } function loggingIdentity&amp;lt;T exten
     
     <item>
       <title>HSTS 强制 https</title>
-      <link>https://tangxiaomi.top/posts/http/hsts/</link>
+      <link>https://cotan.top/posts/http/hsts/</link>
       <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/http/hsts/</guid>
+      <guid>https://cotan.top/posts/http/hsts/</guid>
       <description>HSTS (HTTP Strict Transport Security) 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。
 🛡️ HSTS 的工作原理 HSTS 通过在 HTTPS 响应头中添加 Strict-Transport-Security 参数来实现。当用户第一次访问一个网站时，服务器返回的响应头中包含了 Strict-Transport-Security 参数，浏览器会记住该网站的 HSTS 头，之后再次访问该网站时，浏览器就会自动强制使用 HTTPS 进行连接，而不再允许使用 HTTP 协议进行访问。
 🔑 HSTS 的作用 使用 HSTS 可以提供以下的安全保障：
@@ -124,10 +124,10 @@ Apache 服务器 在 Apache 中，您可以通过编辑您的网站的 .htaccess
     
     <item>
       <title>Picsum 图片链接</title>
-      <link>https://tangxiaomi.top/posts/other/picsum/</link>
+      <link>https://cotan.top/posts/other/picsum/</link>
       <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/picsum/</guid>
+      <guid>https://cotan.top/posts/other/picsum/</guid>
       <description>https://picsum.photos/
 输入图片大小 Picsum默认的图片大小为1080*720。如果你要生成其他尺寸的图片，只需在网址后面添加图片尺寸即可。比如：
  https://picsum.photos/200/300 https://picsum.photos/300/300 https://picsum.photos/500/500  添加图片样式  https://picsum.photos/200/300/?grayscale：生成灰度图片。  https://picsum.photos/200/300/?blur=2：使图片模糊，数字值越高表示图片越模糊。 https://picsum.photos/200/300/?random：生成随机的背景色。 https://picsum.photos/200/300/?blur=2&amp;amp;grayscale：图片模糊且灰度化。 https://picsum.photos/200/300/?gravity=center：将图片放置在中心位置。 https://picsum.photos/id/237/200/300.jpg：生成具有特定id的图片，比如237。 https://picsum.photos/200/300?cache-control：让浏览器通过Cache-Control头缓存响应。  </description>
@@ -135,10 +135,10 @@ Apache 服务器 在 Apache 中，您可以通过编辑您的网站的 .htaccess
     
     <item>
       <title>Unsplash 图片链接</title>
-      <link>https://tangxiaomi.top/posts/other/unsplash/</link>
+      <link>https://cotan.top/posts/other/unsplash/</link>
       <pubDate>Thu, 01 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/unsplash/</guid>
+      <guid>https://cotan.top/posts/other/unsplash/</guid>
       <description>随机图片链接 如果你需要一张随机的图片来让内容更加生动、有趣，只需要在 Unsplash 的基础图片链接后面加上“/random/”即可。例如以下链接将返回一个宽度为 640 像素、高度为 480 像素的随机图片：
 https://source.unsplash.com/random/640x480 如果需要过滤主题，只需在链接末尾加上标签即可，例如以下链接将会返回一个范围包括 mountain 和 landscape 的随机图片：
 https://source.unsplash.com/random/640x480?landscape,mountain 固定图片链接 如果你需要一张特定的图片，只需使用 Unsplash 图片的 ID，拼接图片链接即可。例如以下链接将会返回 ID 为 &amp;ldquo;hgytITrCiec&amp;rdquo; 的 Unsplash 图片，并且将图片宽度设置为 640 像素，高度设置为 480 像素：
@@ -150,10 +150,10 @@ https://source.unsplash.com/hgytITrCiec/640x480 在 Markdown 中使用 Unsplash 
     
     <item>
       <title>husky</title>
-      <link>https://tangxiaomi.top/posts/git/husky/</link>
+      <link>https://cotan.top/posts/git/husky/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/git/husky/</guid>
+      <guid>https://cotan.top/posts/git/husky/</guid>
       <description>安装 Husky  使用 npm 进行安装：
 npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加 &amp;ldquo;husky&amp;rdquo; 配置：
 &amp;#34;husky&amp;#34;: { &amp;#34;hooks&amp;#34;: { &amp;#34;pre-commit&amp;#34;: &amp;#34;npm run lint&amp;#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令  &amp;#34;pre-push&amp;#34;: &amp;#34;npm run test&amp;#34; // 在执行 git push 命令时，会执行 npm run test 命令  } } 配置 pre-commit 钩子  在 package.json 文件中添加 &amp;ldquo;scripts&amp;rdquo; 属性：
@@ -162,29 +162,29 @@ npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加
     
     <item>
       <title>git 将远程分支拉到本地</title>
-      <link>https://tangxiaomi.top/posts/git/remote-branch/</link>
+      <link>https://cotan.top/posts/git/remote-branch/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/git/remote-branch/</guid>
+      <guid>https://cotan.top/posts/git/remote-branch/</guid>
       <description>可以使用以下命令将远程分支拉到本地：
  首先，使用 git remote 命令查看已经添加的远程仓库：  git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）：  git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支：  git checkout local_branch 组合命令  git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</description>
     </item>
     
     <item>
       <title>vscode 所有配置对照表</title>
-      <link>https://tangxiaomi.top/posts/vscode/setting/</link>
+      <link>https://cotan.top/posts/vscode/setting/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vscode/setting/</guid>
+      <guid>https://cotan.top/posts/vscode/setting/</guid>
       <description>{ // 在保存时自动格式化代码  &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议  &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议  &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能  &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等  &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;)  &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画  &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;)  &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines)  &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值  &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示  &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化  &amp;#34;editor.</description>
     </item>
     
     <item>
       <title>用VSCode配置ESLint自动保存校验</title>
-      <link>https://tangxiaomi.top/posts/vscode/eslint/</link>
+      <link>https://cotan.top/posts/vscode/eslint/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vscode/eslint/</guid>
+      <guid>https://cotan.top/posts/vscode/eslint/</guid>
       <description>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
 本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
 步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
@@ -201,10 +201,10 @@ yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.es
     
     <item>
       <title>微信小程序开发入门教程</title>
-      <link>https://tangxiaomi.top/posts/mini-program/getting-started/</link>
+      <link>https://cotan.top/posts/mini-program/getting-started/</link>
       <pubDate>Sat, 27 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/mini-program/getting-started/</guid>
+      <guid>https://cotan.top/posts/mini-program/getting-started/</guid>
       <description>🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
 🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
 2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
@@ -222,10 +222,10 @@ pages目录下是小程序的页面文件，每个页面文件都由4个文件�
     
     <item>
       <title>js高阶函数</title>
-      <link>https://tangxiaomi.top/posts/js/higher-order-function/</link>
+      <link>https://cotan.top/posts/js/higher-order-function/</link>
       <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/js/higher-order-function/</guid>
+      <guid>https://cotan.top/posts/js/higher-order-function/</guid>
       <description>JavaScript的高阶函数是一个非常强大的特性，它允许我们编写更加灵活和可重用的代码。在本文中，我们将探讨高阶函数的概念、它们如何实现以及一些示例。
 什么是高阶函数 高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。
 高阶函数的实现 下面是一个使用普通函数实现高阶函数的例子：
@@ -241,20 +241,20 @@ const people = [ {name: &amp;#39;John&amp;#39;, age: 25}, {name: &amp;#39;Jane&a
     
     <item>
       <title>git 命令手册 📖</title>
-      <link>https://tangxiaomi.top/posts/git/guide/</link>
+      <link>https://cotan.top/posts/git/guide/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/git/guide/</guid>
+      <guid>https://cotan.top/posts/git/guide/</guid>
       <description>这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
 🚀 初始化  git init : 初始化一个 Git 仓库。 git clone &amp;lt;URL&amp;gt; : 克隆一个远程 Git 仓库。  📝 添加与提交  git add &amp;lt;file&amp;gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。  🌿 分支和合并  git branch : 列出当前仓库的所有分支。 git branch &amp;lt;branch&amp;gt; : 创建一个新分支。 git checkout &amp;lt;branch&amp;gt; : 切换到一个分支。 git checkout -b &amp;lt;branch&amp;gt; : 创建一个新的分支并立即切换到该分支。 git merge &amp;lt;branch&amp;gt; : 合并指定分支到当前分支。 git merge --no-ff &amp;lt;branch&amp;gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。  🔀 推送与拉取  git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &amp;lt;remote&amp;gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &amp;lt;remote&amp;gt; --delete &amp;lt;branch&amp;gt; : 从远程仓库删除指定分支。  🔎 查看日志  git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &amp;lt;file&amp;gt; : 显示指定文件的每一行是由谁添加的。  ❌ 撤销与修改  git checkout &amp;lt;file&amp;gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &amp;lt;file&amp;gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &amp;lt;commit&amp;gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。  🎨 其他命令  git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &amp;lt;tagname&amp;gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &amp;lt;tagname&amp;gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &amp;lt;commit&amp;gt; : 显示指定提交的信息。  </description>
     </item>
     
     <item>
       <title>如何在 Vite 中拦截开发服务器并使用 express</title>
-      <link>https://tangxiaomi.top/posts/vite/express/</link>
+      <link>https://cotan.top/posts/vite/express/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vite/express/</guid>
+      <guid>https://cotan.top/posts/vite/express/</guid>
       <description>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
 在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
 配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件

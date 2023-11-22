@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>typescript on Notes</title>
-    <link>https://tangxiaomi.top/tags/typescript/</link>
+    <link>https://cotan.top/tags/typescript/</link>
     <description>Recent content in typescript on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Wed, 28 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 28 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TypeScript泛型</title>
-      <link>https://tangxiaomi.top/posts/typescript/generic/</link>
+      <link>https://cotan.top/posts/typescript/generic/</link>
       <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/typescript/generic/</guid>
+      <guid>https://cotan.top/posts/typescript/generic/</guid>
       <description>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
 泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
 function identity&amp;lt;T&amp;gt;(arg: T): T { return arg; } let result = identity&amp;lt;string&amp;gt;(&amp;#34;Hello, TypeScript! 🚀&amp;#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&amp;lt;T&amp;gt;语法来指定泛型类型，并在函数体中使用该类型。
@@ -27,10 +27,10 @@ interface Lengthwise { length: number; } function loggingIdentity&amp;lt;T exten
     
     <item>
       <title>如何在 Vite 中拦截开发服务器并使用 express</title>
-      <link>https://tangxiaomi.top/posts/vite/express/</link>
+      <link>https://cotan.top/posts/vite/express/</link>
       <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vite/express/</guid>
+      <guid>https://cotan.top/posts/vite/express/</guid>
       <description>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
 在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
 配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件

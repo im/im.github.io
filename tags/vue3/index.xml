@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vue3 on Notes</title>
-    <link>https://tangxiaomi.top/tags/vue3/</link>
+    <link>https://cotan.top/tags/vue3/</link>
     <description>Recent content in vue3 on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/vue3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Vue3中的ref解构与响应式问题</title>
-      <link>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</link>
+      <link>https://cotan.top/posts/vue/vue3-responsive-lose/</link>
       <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vue/vue3-responsive-lose/</guid>
+      <guid>https://cotan.top/posts/vue/vue3-responsive-lose/</guid>
       <description>介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
 ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
 import { ref } from &amp;#39;vue&amp;#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value++; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。

@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>vscode on Notes</title>
-    <link>https://tangxiaomi.top/tags/vscode/</link>
+    <link>https://cotan.top/tags/vscode/</link>
     <description>Recent content in vscode on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vscode 所有配置对照表</title>
-      <link>https://tangxiaomi.top/posts/vscode/setting/</link>
+      <link>https://cotan.top/posts/vscode/setting/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vscode/setting/</guid>
+      <guid>https://cotan.top/posts/vscode/setting/</guid>
       <description>{ // 在保存时自动格式化代码  &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议  &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议  &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能  &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等  &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;)  &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画  &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;)  &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines)  &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值  &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示  &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化  &amp;#34;editor.</description>
     </item>
     
     <item>
       <title>用VSCode配置ESLint自动保存校验</title>
-      <link>https://tangxiaomi.top/posts/vscode/eslint/</link>
+      <link>https://cotan.top/posts/vscode/eslint/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/vscode/eslint/</guid>
+      <guid>https://cotan.top/posts/vscode/eslint/</guid>
       <description>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
 本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
 步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。

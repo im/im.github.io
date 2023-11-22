@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>javascript on Notes</title>
-    <link>https://tangxiaomi.top/tags/javascript/</link>
+    <link>https://cotan.top/tags/javascript/</link>
     <description>Recent content in javascript on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>navigator.registerProtocolHandler</title>
-      <link>https://tangxiaomi.top/posts/other/navigator-registerprotocolhandler/</link>
+      <link>https://cotan.top/posts/other/navigator-registerprotocolhandler/</link>
       <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/navigator-registerprotocolhandler/</guid>
+      <guid>https://cotan.top/posts/other/navigator-registerprotocolhandler/</guid>
       <description>navigator.registerProtocolHandler 是一个 Web API，用于注册自定义协议处理程序。通过使用这个 API，您可以告诉浏览器如何处理特定的自定义协议，例如打开特定的应用程序或执行特定的操作。这对于创建与操作系统或其他应用程序集成的 Web 应用程序非常有用。
 如何使用 navigator.registerProtocolHandler 🛠️ 使用 navigator.registerProtocolHandler 需要以下步骤：
   确定自定义协议：首先，您需要确定您要注册的自定义协议。这个协议应该是唯一的，并且与其他现有的协议不冲突。例如，您可以选择 myapp 作为您的自定义协议。
@@ -28,10 +28,10 @@ navigator.registerProtocolHandler(&amp;#39;myapp&amp;#39;, &amp;#39;https://exam
     
     <item>
       <title>URL Scheme（URL协议）</title>
-      <link>https://tangxiaomi.top/posts/other/url-scheme/</link>
+      <link>https://cotan.top/posts/other/url-scheme/</link>
       <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/other/url-scheme/</guid>
+      <guid>https://cotan.top/posts/other/url-scheme/</guid>
       <description>在移动应用程序中，URL Scheme是一种用于在应用程序之间进行通信的机制。它允许一个应用程序通过特定的URL来打开另一个应用程序，并在打开后执行一些特定的操作。
 URL Scheme的结构 一个URL Scheme是一个以特定格式构建的URL。它通常由两部分组成：Scheme和Path。
  Scheme：Scheme是URL的开头部分，用于指定要打开的应用程序。它以字母开头，后面跟随着字母、数字和一些特殊字符，例如myapp://。 Path：Path是Scheme之后的部分，用于指定在目标应用程序中要执行的具体操作。它可以是一个命令、参数或其他标识符，例如open?item=123。  URL Scheme的用途 URL Scheme可以用于多种用途，包括但不限于以下几个方面：
@@ -42,10 +42,10 @@ myapp://open?item=123 这个URL使用了名为myapp的Scheme，并传递了一�
     
     <item>
       <title>js高阶函数</title>
-      <link>https://tangxiaomi.top/posts/js/higher-order-function/</link>
+      <link>https://cotan.top/posts/js/higher-order-function/</link>
       <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/js/higher-order-function/</guid>
+      <guid>https://cotan.top/posts/js/higher-order-function/</guid>
       <description>JavaScript的高阶函数是一个非常强大的特性，它允许我们编写更加灵活和可重用的代码。在本文中，我们将探讨高阶函数的概念、它们如何实现以及一些示例。
 什么是高阶函数 高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。
 高阶函数的实现 下面是一个使用普通函数实现高阶函数的例子：

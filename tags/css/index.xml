@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>css on Notes</title>
-    <link>https://tangxiaomi.top/tags/css/</link>
+    <link>https://cotan.top/tags/css/</link>
     <description>Recent content in css on Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
-    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://tangxiaomi.top/tags/css/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>css view-transition</title>
-      <link>https://tangxiaomi.top/posts/css/view-transition/</link>
+      <link>https://cotan.top/posts/css/view-transition/</link>
       <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://tangxiaomi.top/posts/css/view-transition/</guid>
+      <guid>https://cotan.top/posts/css/view-transition/</guid>
       <description>什么是 CSS View-Transition？ CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。
 如何使用 CSS View-Transition？ 使用 CSS View-Transition 非常简单。我们只需要为目标元素添加一些必要的 CSS 属性即可。
  首先，为目标元素添加 transition 属性，指定过渡的属性和持续时间。例如：  .element { transition: width 0.3s ease-in-out; } 在上面的例子中，我们指定了 width 属性在 0.3 秒内进行过渡，并且使用了 ease-in-out 缓动函数。
