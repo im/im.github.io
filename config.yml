@@ -85,10 +85,10 @@ params:
         #       url: tags
 
     homeInfoParams:
-        Title: "名侦探 · 嗑糖"
+        Title: "名侦探 嗑糖"
         languagedirection: rtl
         Content: >
-            - Detective · Cotan
+            - Detective Cotan
         # Content: >
         #     - 吾名糖小米🌟，当世一枚 **前端开发** 也。
 
