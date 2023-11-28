@@ -9,10 +9,10 @@
     <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTML5 &lt;dialog&gt;</title>
-      <link>https://cotan.top/posts/html/view-transition/</link>
+      <link>https://cotan.top/posts/html/html5-dialog/</link>
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://cotan.top/posts/html/view-transition/</guid>
+      <guid>https://cotan.top/posts/html/html5-dialog/</guid>
       <description>HTML5 中引入了 &amp;lt;dialog&amp;gt; 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。本文将介绍如何使用 &amp;lt;dialog&amp;gt; 元素以及其实现原理，并提供一些注意事项。
 使用 &amp;lt;dialog&amp;gt; 元素 首先，我们需要创建一个 &amp;lt;dialog&amp;gt; 元素，并添加对话框的内容和控制按钮。以下是一个示例：
 &amp;lt;dialog id=&amp;#34;myDialog&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;对话框标题&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;对话框内容&amp;lt;/p&amp;gt; &amp;lt;button id=&amp;#34;closeDialog&amp;#34;&amp;gt;关闭&amp;lt;/button&amp;gt; &amp;lt;/dialog&amp;gt; 要打开对话框，我们可以使用 JavaScript 的 showModal() 方法：
