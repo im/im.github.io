@@ -138,6 +138,25 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2>Vue3中的ref解构与响应式问题
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
+ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
+import { ref } from &#39;vue&#39;; const count = ref(0); console.log(count.value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
+然而，当我们尝试对ref解构进行操作时，可能会遇到一些问题。
+ref解构的响应式问题 🚫 当我们对ref解构进行操作时，Vue 3无法正确地跟踪和更新数据的变化。下面是一个例子：
+import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count; console.log(value); // 输出：0  count.value&#43;&#43;; // 修改数据  console.log(value); // 输出：0（未更新） 在上面的例子中，我们通过解构将count的值赋给value变量。然而，当我们修改count的值时，value并没有更新。
+这是因为解构操作会将count.value的值复制给value，而不是创建一个引用。因此，value不再是一个响应式的数据对象，它无法与count保持同步。
+为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
+  <a class="entry-link" aria-label="post link to Vue3中的ref解构与响应式问题" href="https://cotan.top/posts/vue/vue3-responsive-lose/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2>TypeScript泛型
     </h2>
   </header>
@@ -195,29 +214,6 @@ npm install husky --save-dev 配置 Git 钩子  在 package.json 文件中添加
   </div>
   <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;名侦探嗑糖</footer>
   <a class="entry-link" aria-label="post link to vscode 所有配置对照表" href="https://cotan.top/posts/vscode/setting/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2>用VSCode配置ESLint自动保存校验
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
-本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
-步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
-第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
-npm install eslint --save-dev 或
-yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
-{ &#34;extends&#34;: &#34;eslint:recommended&#34;, &#34;rules&#34;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
-第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
-{ &#34;editor.codeActionsOnSave&#34;: { &#34;source.fixAll.eslint&#34;: true }, &#34;editor.formatOnSave&#34;: false, &#34;eslint.alwaysShowStatus&#34;: true, &#34;eslint.validate&#34;: [ &#34;javascript&#34;, &#34;javascriptreact&#34;, { &#34;language&#34;: &#34;vue&#34;, &#34;autoFix&#34;: true }, { &#34;language&#34;: &#34;html&#34;, &#34;autoFix&#34;: true } ] } 这里通过&#34;editor.codeActionsOnSave&#34;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
-同时将&#34;editor.formatOnSave&#34;设置为false，表示不对存储时代码格式进行调整。
-最后配置&#34;eslint.validate&#34;即可，这里我们对&#34;javascript&#34;和&#34;javascriptreact&#34;进行校验和自动修复，同时对Vue和HTML代码添加支持。
-总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
-  <a class="entry-link" aria-label="post link to 用VSCode配置ESLint自动保存校验" href="https://cotan.top/posts/vscode/eslint/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

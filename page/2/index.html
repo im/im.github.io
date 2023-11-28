@@ -147,6 +147,19 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>git 添加 ssh key
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>创建 SSH Key ssh-keygen -t rsa -C &#34;tangxiaomiemail@gmail.com&#34; cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
+全局配置 git config --global user.name &#34;tangxiaomi&#34; git config --global user.email &#34;tangxiaomiemail@gmail.com&#34; 非全局配置 删除 --global git config user.name &#34;tangxiaomi&#34; git config user.email &#34;tangxiaomiemail@gmail.com&#34; 查看配置 git config --global user.name git config --global user.email 取消全局配置 git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user....</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-06-30 00:00:00 +0000 UTC'>June 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
+  <a class="entry-link" aria-label="post link to git 添加 ssh key" href="https://cotan.top/posts/git/ssh-key/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>Vue3中的ref解构与响应式问题
     </h2>
   </header>
@@ -213,24 +226,6 @@ Apache 服务器 在 Apache 中，您可以通过编辑您的网站的 .htaccess
   </div>
   <footer class="entry-footer"><span title='2023-06-06 00:00:00 +0000 UTC'>June 6, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
   <a class="entry-link" aria-label="post link to Picsum 图片链接" href="https://cotan.top/posts/other/picsum/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>Unsplash 图片链接
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>随机图片链接 如果你需要一张随机的图片来让内容更加生动、有趣，只需要在 Unsplash 的基础图片链接后面加上“/random/”即可。例如以下链接将返回一个宽度为 640 像素、高度为 480 像素的随机图片：
-https://source.unsplash.com/random/640x480 如果需要过滤主题，只需在链接末尾加上标签即可，例如以下链接将会返回一个范围包括 mountain 和 landscape 的随机图片：
-https://source.unsplash.com/random/640x480?landscape,mountain 固定图片链接 如果你需要一张特定的图片，只需使用 Unsplash 图片的 ID，拼接图片链接即可。例如以下链接将会返回 ID 为 “hgytITrCiec” 的 Unsplash 图片，并且将图片宽度设置为 640 像素，高度设置为 480 像素：
-https://source.unsplash.com/hgytITrCiec/640x480 在 Markdown 中使用 Unsplash 图片链接 在 Markdown 编辑器中，你可以使用以下语法插入 Unsplash 图片链接：
-![图片描述](图片链接) 例如，在你的文章中插入一张宽度为 640 像素、高度为 480 像素的随机图片，可以使用以下代码：
-![随机图片](https://source.unsplash.com/random/640x480) 如果你想要插入一张特定的图片，可以使用 ID 和固定图片链接：
-![特定图片](https://source.unsplash.com/hgytITrCiec/640x480) 以上就是如何使用 Unsplash 图片链接的简单介绍。希望这篇文章对你有帮助！</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-01 00:00:00 +0000 UTC'>June 1, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
-  <a class="entry-link" aria-label="post link to Unsplash 图片链接" href="https://cotan.top/posts/other/unsplash/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

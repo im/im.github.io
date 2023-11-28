@@ -171,6 +171,24 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2>HTML5 &lt;dialog&gt;
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>HTML5 中引入了 &lt;dialog&gt; 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。本文将介绍如何使用 &lt;dialog&gt; 元素以及其实现原理，并提供一些注意事项。
+使用 &lt;dialog&gt; 元素 首先，我们需要创建一个 &lt;dialog&gt; 元素，并添加对话框的内容和控制按钮。以下是一个示例：
+&lt;dialog id=&#34;myDialog&#34;&gt; &lt;h2&gt;对话框标题&lt;/h2&gt; &lt;p&gt;对话框内容&lt;/p&gt; &lt;button id=&#34;closeDialog&#34;&gt;关闭&lt;/button&gt; &lt;/dialog&gt; 要打开对话框，我们可以使用 JavaScript 的 showModal() 方法：
+const dialog = document.getElementById(&#39;myDialog&#39;); dialog.showModal(); 要关闭对话框，我们可以使用 close() 方法：
+const dialog = document.getElementById(&#39;myDialog&#39;); dialog.close(); 可以通过监听 close 事件来执行对话框关闭时的操作：
+const dialog = document.getElementById(&#39;myDialog&#39;); dialog.addEventListener(&#39;close&#39;, () =&gt; { // 对话框关闭时执行的操作 }); 类似地，可以监听 show 事件来执行对话框打开时的操作：
+const dialog = document.getElementById(&#39;myDialog&#39;); dialog.addEventListener(&#39;show&#39;, () =&gt; { // 对话框打开时执行的操作 }); 如果想在对话框中添加更多交互元素，可以像使用普通 HTML 元素一样在 &lt;dialog&gt; 内部添加其他元素。...</p>
+  </div>
+  <footer class="entry-footer"><span title='2023-11-28 00:00:00 +0000 UTC'>November 28, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
+  <a class="entry-link" aria-label="post link to HTML5 " href="https://cotan.top/posts/html/view-transition/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2>css view-transition
     </h2>
   </header>
@@ -237,19 +255,6 @@ myapp://open?item=123 这个URL使用了名为myapp的Scheme，并传递了一�
   </div>
   <footer class="entry-footer"><span title='2023-06-30 00:00:00 +0000 UTC'>June 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
   <a class="entry-link" aria-label="post link to git submodule" href="https://cotan.top/posts/git/submodule/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2>git 添加 ssh key
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>创建 SSH Key ssh-keygen -t rsa -C &#34;tangxiaomiemail@gmail.com&#34; cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
-全局配置 git config --global user.name &#34;tangxiaomi&#34; git config --global user.email &#34;tangxiaomiemail@gmail.com&#34; 非全局配置 删除 --global git config user.name &#34;tangxiaomi&#34; git config user.email &#34;tangxiaomiemail@gmail.com&#34; 查看配置 git config --global user.name git config --global user.email 取消全局配置 git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-06-30 00:00:00 +0000 UTC'>June 30, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;名侦探嗑糖</footer>
-  <a class="entry-link" aria-label="post link to git 添加 ssh key" href="https://cotan.top/posts/git/ssh-key/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
