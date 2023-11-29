@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Notes</title>
+    <title>Posts on Cotan</title>
     <link>https://cotan.top/posts/</link>
-    <description>Recent content in Posts on Notes</description>
+    <description>Recent content in Posts on Cotan</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>cn</language>
     <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -13,13 +13,14 @@
       <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
       
       <guid>https://cotan.top/posts/html/html5-dialog/</guid>
-      <description>HTML5 中引入了 &amp;lt;dialog&amp;gt; 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。本文将介绍如何使用 &amp;lt;dialog&amp;gt; 元素以及其实现原理，并提供一些注意事项。
+      <description>HTML5 中引入了 &amp;lt;dialog&amp;gt; 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。
 使用 &amp;lt;dialog&amp;gt; 元素 首先，我们需要创建一个 &amp;lt;dialog&amp;gt; 元素，并添加对话框的内容和控制按钮。以下是一个示例：
 &amp;lt;dialog id=&amp;#34;myDialog&amp;#34;&amp;gt; &amp;lt;h2&amp;gt;对话框标题&amp;lt;/h2&amp;gt; &amp;lt;p&amp;gt;对话框内容&amp;lt;/p&amp;gt; &amp;lt;button id=&amp;#34;closeDialog&amp;#34;&amp;gt;关闭&amp;lt;/button&amp;gt; &amp;lt;/dialog&amp;gt; 要打开对话框，我们可以使用 JavaScript 的 showModal() 方法：
 const dialog = document.getElementById(&amp;#39;myDialog&amp;#39;); dialog.showModal(); 要关闭对话框，我们可以使用 close() 方法：
 const dialog = document.getElementById(&amp;#39;myDialog&amp;#39;); dialog.close(); 可以通过监听 close 事件来执行对话框关闭时的操作：
 const dialog = document.getElementById(&amp;#39;myDialog&amp;#39;); dialog.addEventListener(&amp;#39;close&amp;#39;, () =&amp;gt; { // 对话框关闭时执行的操作 }); 类似地，可以监听 show 事件来执行对话框打开时的操作：
-const dialog = document.getElementById(&amp;#39;myDialog&amp;#39;); dialog.addEventListener(&amp;#39;show&amp;#39;, () =&amp;gt; { // 对话框打开时执行的操作 }); 如果想在对话框中添加更多交互元素，可以像使用普通 HTML 元素一样在 &amp;lt;dialog&amp;gt; 内部添加其他元素。</description>
+const dialog = document.getElementById(&amp;#39;myDialog&amp;#39;); dialog.addEventListener(&amp;#39;show&amp;#39;, () =&amp;gt; { // 对话框打开时执行的操作 }); 如果想在对话框中添加更多交互元素，可以像使用普通 HTML 元素一样在 &amp;lt;dialog&amp;gt; 内部添加其他元素。
+实现原理 &amp;lt;dialog&amp;gt; 元素的实现原理与浏览器有关。在一些现代浏览器中，对话框会以模态方式显示，阻止用户与页面的其他部分进行交互。对话框元素本身是一个浮动元素，可以通过 CSS 进行样式调整。</description>
     </item>
     
     <item>
