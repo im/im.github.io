@@ -1,5 +1,5 @@
 baseURL: "https://cotan.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: Notes
+title: Cotan
 paginate: 5
 theme: PaperMod
 languageCode: "cn"
@@ -52,7 +52,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "https://cotan.top/"
     # author: Theme PaperMod
-    author: ["名侦探嗑糖"] # multiple authors
+    author: ["Cotan"] # multiple authors
     DateFormat: "January 2, 2006"
 
     defaultTheme: auto
@@ -84,11 +84,11 @@ params:
         #     - name: Tags
         #       url: tags
 
-    homeInfoParams:
-        Title: "名侦探 嗑糖"
-        languagedirection: rtl
-        Content: >
-            - Detective Cotan
+    # homeInfoParams:
+    #     Title: "名侦探 嗑糖"
+    #     languagedirection: rtl
+    #     Content: >
+    #         - Detective Cotan
         # Content: >
         #     - 吾名糖小米🌟，当世一枚 **前端开发** 也。
 
@@ -118,26 +118,26 @@ markup:
         # lineNos: true
         # style: monokai
 
-privacy:
-    vimeo:
-        disabled: false
-        simple: true
+# privacy:
+#     vimeo:
+#         disabled: false
+#         simple: true
 
-    twitter:
-        disabled: false
-        enableDNT: true
-        simple: true
+#     twitter:
+#         disabled: false
+#         enableDNT: true
+#         simple: true
 
-    instagram:
-        disabled: false
-        simple: true
+#     instagram:
+#         disabled: false
+#         simple: true
 
-    youtube:
-        disabled: false
-        privacyEnhanced: true
+#     youtube:
+#         disabled: false
+#         privacyEnhanced: true
 
-services:
-    instagram:
-        disableInlineCSS: true
-    twitter:
-        disableInlineCSS: true
+# services:
+#     instagram:
+#         disableInlineCSS: true
+#     twitter:
+#         disableInlineCSS: true
