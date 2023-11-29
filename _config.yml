@@ -99,8 +99,22 @@ ignore:
 theme: hexo-theme-cactus
 theme_config:
   colorscheme: white
-
-# Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: ''
+  nav:
+    home: /
+    # about: /about/
+    tag: /tags/
+    category: /categories/
+    articles: /archives/
+    search: /search/
+  tags_overview: false
+  posts_overview:
+    show_all_posts: false
+    post_count: 10
+    sort_updated: false
+  social_links:
+    -
+      icon: github
+      link: http://github.com/im
+    -
+      icon: mail
+      link: mailto:detectivecotan@gmail.com
