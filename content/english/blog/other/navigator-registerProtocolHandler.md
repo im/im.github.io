@@ -5,7 +5,7 @@ categories:
   - Note 
 author: "Cotan"
 image: "/images/image-placeholder.png"
-tags: ["javascript"]
+tags: ["Javascript"]
 ---
 
 

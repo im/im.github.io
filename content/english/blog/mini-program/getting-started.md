@@ -1,7 +1,8 @@
 ---
 title: 微信小程序开发入门教程
 date: "2023-05-27"
-categories: ['WeChat']
+categories: ['Note']
+tags: ['WeChat']
 --- 
 
 ## 🚀 前言

@@ -2,8 +2,8 @@
 title: 原生应用 vs 快应用
 date: "2023-05-27"
 draft: true
-categories:
-  - WeChat
+categories: ['Note']
+tags: ['WeChat']
 --- 
 
 在当今移动应用市场，有两种主要的应用类型：原生应用和快应用。这两种应用之间存在一些显著的区别。让我们来看看原生应用和快应用在各方面的对比。
