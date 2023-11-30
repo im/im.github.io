@@ -6,6 +6,7 @@ categories:
 author: "Cotan"
 image: "/images/image-placeholder.png"
 tags: ["git"]
+draft: true
 ---
 
 可以使用以下命令将远程分支拉到本地：

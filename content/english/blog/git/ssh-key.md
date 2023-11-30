@@ -7,6 +7,7 @@ categories:
   - Note 
 author: "Cotan"
 image: "/images/image-placeholder.png"
+draft: true
 ---
 
 ##  创建 SSH Key

@@ -6,6 +6,7 @@ categories:
 author: "Cotan"
 image: "/images/image-placeholder.png"
 tags: ["javascript"]
+draft: true
 ---
 
 在移动应用程序中，URL Scheme是一种用于在应用程序之间进行通信的机制。它允许一个应用程序通过特定的URL来打开另一个应用程序，并在打开后执行一些特定的操作。

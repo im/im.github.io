@@ -6,6 +6,7 @@ categories:
 author: "Cotan"
 image: "/images/image-placeholder.png"
 tags: ["html"]
+draft: true
 ---
 
 

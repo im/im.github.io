@@ -4,6 +4,7 @@ date: "2023-05-27"
 draft: true
 categories: ['Note']
 tags: ['WeChat']
+draft: true
 --- 
 
 微信小程序和快应用都是便捷、轻量、即用即走的应用，但它们还存在一些差异。让我们来一起看看它们之间的比较吧！👀
