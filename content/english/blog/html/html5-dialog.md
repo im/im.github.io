@@ -1,12 +1,10 @@
 ---
 title: HTML5 <dialog>
 date: "2023-11-28"
-categories:
-  - Note 
 author: "Cotan"
-image: "/images/image-placeholder.png"
-tags: ["html"]
-draft: true
+categories: ["HTML"]
+tags: ["HTML5"] 
+summary: "HTML5 中引入了 `<dialog>` 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。"
 ---
 
 

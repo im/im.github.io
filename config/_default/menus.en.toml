@@ -22,6 +22,11 @@ name = "Tags"
 url = "tags/"
 weight = 4
 
+[[main]]
+name = "Authors"
+url = "authors/"
+weight = 5
+
 
 # [[main]]
 # name = "Elements"

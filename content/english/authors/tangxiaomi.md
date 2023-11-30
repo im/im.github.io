@@ -1,7 +1,7 @@
 ---
-title: Cotan
+title: 糖小米
 email: detectivecotan@gmail.com
-image: "/images/head4.jpg"
+image: "/images/head1.jpg"
 description: this is meta description
 social:
   - name: github

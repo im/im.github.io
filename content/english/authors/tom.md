@@ -1,7 +1,7 @@
 ---
-title: Cotan
+title: Tom
 email: detectivecotan@gmail.com
-image: "/images/head4.jpg"
+image: "/images/head2.jpg"
 description: this is meta description
 social:
   - name: github
