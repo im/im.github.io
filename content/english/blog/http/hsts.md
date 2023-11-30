@@ -2,8 +2,7 @@
 title: hsts 强制 https
 date: "2023-06-07"
 categories: ["网络安全", "Web 开发"] 
-tags: ["HSTS", "HTTPS", "安全策略", "中间人攻击", "HTTP", "Strict-Transport-Security", "浏览器安全", "SSL证书"] 
-image: "https://dummyimage.com/1000x500/ccc/000&text=hsts"
+tags: ["HSTS", "HTTPS", "安全策略", "HTTP", "Strict-Transport-Security", "浏览器安全", "SSL证书"] 
 author: "Cotan"
 ---
 
