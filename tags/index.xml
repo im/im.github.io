@@ -1,1 +1,119 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Cotan</title><link>/tags/</link><description>Recent content in Tags on Cotan</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 28 Nov 2023 00:00:00 -0500</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>HTML5</title><link>/tags/html5/</link><pubDate>Tue, 28 Nov 2023 00:00:00 -0500</pubDate><guid>/tags/html5/</guid><description/></item><item><title>Browser Security</title><link>/tags/browser-security/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/browser-security/</guid><description/></item><item><title>HSTS</title><link>/tags/hsts/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/hsts/</guid><description/></item><item><title>HTTP</title><link>/tags/http/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/http/</guid><description/></item><item><title>HTTPS</title><link>/tags/https/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/https/</guid><description/></item><item><title>Security Policy</title><link>/tags/security-policy/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/security-policy/</guid><description/></item><item><title>SSL Certificate</title><link>/tags/ssl-certificate/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/ssl-certificate/</guid><description/></item><item><title>Strict-Transport-Security</title><link>/tags/strict-transport-security/</link><pubDate>Wed, 07 Jun 2023 00:00:00 -0400</pubDate><guid>/tags/strict-transport-security/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Cotan</title>
+    <link>https://cotan.top/tags/</link>
+    <description>Recent content in Tags on Cotan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Tue, 28 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>html</title>
+      <link>https://cotan.top/tags/html/</link>
+      <pubDate>Tue, 28 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/html/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://cotan.top/tags/css/</link>
+      <pubDate>Fri, 17 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>javascript</title>
+      <link>https://cotan.top/tags/javascript/</link>
+      <pubDate>Sun, 05 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://cotan.top/tags/git/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue</title>
+      <link>https://cotan.top/tags/vue/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/vue/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vue3</title>
+      <link>https://cotan.top/tags/vue3/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/vue3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>typescript</title>
+      <link>https://cotan.top/tags/typescript/</link>
+      <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/typescript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>http</title>
+      <link>https://cotan.top/tags/http/</link>
+      <pubDate>Wed, 07 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>images</title>
+      <link>https://cotan.top/tags/images/</link>
+      <pubDate>Tue, 06 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/images/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vscode</title>
+      <link>https://cotan.top/tags/vscode/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/vscode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>express</title>
+      <link>https://cotan.top/tags/express/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/express/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>vite</title>
+      <link>https://cotan.top/tags/vite/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/tags/vite/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
