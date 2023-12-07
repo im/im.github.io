@@ -14,6 +14,10 @@
 
     
 
+    
+        
+    
+
 <html lang="en"><head>
     <meta charset="utf-8" />
     <title>husky | Cotan Notes</title>
@@ -31,22 +35,28 @@
 <link rel="icon" type="image/png" sizes="16x16" href="https://cotan.top/favicon.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://cotan.top/site.webmanifest">
 <meta property="og:title" content="husky" />
-<meta property="og:description" content="安装 Husky 使用 npm 进行安装：
-npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 &ldquo;husky&rdquo; 配置：
-&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 &ldquo;scripts&rdquo; 属性：
+<meta property="og:description" content="安装 Husky
+使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子
+在 package.json 文件中添加 &ldquo;husky&rdquo; 配置：
+&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子
+在 package.json 文件中添加 &ldquo;scripts&rdquo; 属性：
 &#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 &ldquo;lint&rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。
-配置 pre-push 钩子 在 package." />
+配置 pre-push 钩子" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cotan.top/docs/git/husky/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_11103510680920004410.png"/><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2023-05-30T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-12-07T11:20:33+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+
+<meta property="article:modified_time" content="2023-12-07T14:16:38+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_11103510680920004410.png"/>
 <meta name="twitter:title" content="husky"/>
-<meta name="twitter:description" content="安装 Husky 使用 npm 进行安装：
-npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 &ldquo;husky&rdquo; 配置：
-&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 &ldquo;scripts&rdquo; 属性：
+<meta name="twitter:description" content="安装 Husky
+使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子
+在 package.json 文件中添加 &ldquo;husky&rdquo; 配置：
+&#34;husky&#34;: { &#34;hooks&#34;: { &#34;pre-commit&#34;: &#34;npm run lint&#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &#34;pre-push&#34;: &#34;npm run test&#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子
+在 package.json 文件中添加 &ldquo;scripts&rdquo; 属性：
 &#34;scripts&#34;: { &#34;lint&#34;: &#34;eslint .&#34; } 这里的 &ldquo;lint&rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。
-配置 pre-push 钩子 在 package."/>
+配置 pre-push 钩子"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -220,24 +230,42 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                     
                 
                     
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://cotan.top/docs/css/">
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
                                 <i class="material-icons me-2">Psychiatry</i>
-                                
                                 CSS
-                            </a>
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/css/view-transition/">view-transition</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
                         </li>
                     
                 
                     
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://cotan.top/docs/html/">
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
                                 <i class="material-icons me-2">Deceased</i>
-                                
                                 HTML
-                            </a>
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/html/html5-dialog/">HTML5 &lt;dialog&gt;</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
                         </li>
                     
                 
@@ -246,20 +274,10 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                         <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">Nutrition</i>
-                                Git
+                                GIT
                             </button>
                             <div class="sidebar-submenu d-block">
                                 <ul>
-                                    
-                                        
-                                        
-                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/submodule/">git submodule</a></li>
-                                        
-                                    
-                                        
-                                        
-                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/ssh-key/">git 添加 ssh key</a></li>
-                                        
                                     
                                         
                                         
@@ -268,12 +286,22 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/remote-branch/">git 将远程分支拉到本地</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/ssh-key/">ssh key</a></li>
                                         
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">git 命令手册 📖</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/submodule/">submodule</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">命令手册</a></li>
+                                        
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/remote-branch/">将远程分支拉到本地</a></li>
                                         
                                     
                                 </ul>
@@ -450,10 +478,21 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                 
                     
                     <li class="list-inline-item mb-0">
-                        <a href=" https://github.com/ " alt="github" rel="noopener noreferrer" target="_blank">
+                        <a href="https://github.com/im" alt="github" rel="noopener noreferrer" target="_blank">
                             <div class="btn btn-icon btn-default border-0">
                                 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                
+                            </div>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="list-inline-item mb-0">
+                        <a href="https://chat.cotan.top/" alt="gpt" rel="noopener noreferrer" target="_blank">
+                            <div class="btn btn-icon btn-default border-0">
+                                
+                                    <svg t="1701929453366" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7281" width="32" height="32"><path d="M825.088 90.432H209.28a137.216 137.216 0 0 0-136.832 136.832v398.464c0 75.456 61.504 136.832 136.832 136.832h78.656l58.176 150.656c6.848 13.632 17.152 20.48 30.784 20.48 13.632 0 27.328-6.848 30.784-20.48l58.176-150.656h352.256c75.328 0 136.96-61.376 136.96-136.832V227.2c6.784-75.2-54.72-136.768-129.984-136.768z m68.352 535.232a68.48 68.48 0 0 1-68.352 68.416H448.704c-13.632 0-27.328 6.976-30.72 20.48l-37.696 92.48-37.568-92.416c-6.848-13.504-17.088-20.48-30.784-20.48H209.28a68.544 68.544 0 0 1-68.416-68.416V227.2c0-37.568 30.848-68.416 68.416-68.416h615.808c37.568 0 68.352 30.848 68.352 68.416v398.464z" fill="#3c4257" p-id="7282"></path><path d="M309.312 432m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#3c4257" p-id="7283"></path><path d="M510.656 432m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#3c4257" p-id="7284"></path><path d="M713.344 432m-48 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0Z" fill="#3c4257" p-id="7285"></path></svg>
                                 
                             </div>
                         </a>
@@ -530,7 +569,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                     <a itemprop="item" href="/docs/git/">
-                        <span itemprop="name">Git</span>
+                        <span itemprop="name">GIT</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
@@ -574,9 +613,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <ol>
-<li>安装 Husky</li>
-</ol>
+        <p><strong>安装 Husky</strong></p>
 <p>使用 npm 进行安装：</p>
 
 
@@ -597,9 +634,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
   <code>npm install husky --save-dev</code>
   </pre>
   </div>
-<ol start="2">
-<li>配置 Git 钩子</li>
-</ol>
+<p><strong>配置 Git 钩子</strong></p>
 <p>在 package.json 文件中添加 &ldquo;husky&rdquo; 配置：</p>
 
 
@@ -625,9 +660,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
 }</code>
   </pre>
   </div>
-<ol start="3">
-<li>配置 pre-commit 钩子</li>
-</ol>
+<p><strong>配置 pre-commit 钩子</strong></p>
 <p>在 package.json 文件中添加 &ldquo;scripts&rdquo; 属性：</p>
 
 
@@ -651,9 +684,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
   </pre>
   </div>
 <p>这里的 &ldquo;lint&rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。</p>
-<ol start="4">
-<li>配置 pre-push 钩子</li>
-</ol>
+<p><strong>配置 pre-push 钩子</strong></p>
 <p>在 package.json 文件中添加另一个 &ldquo;scripts&rdquo; 属性：</p>
 
 
@@ -677,12 +708,10 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
   </pre>
   </div>
 <p>这里的 &ldquo;test&rdquo; 命令使用 Jest 对整个项目进行测试。</p>
-<ol start="5">
-<li>完成</li>
-</ol>
-<p>现在，当您在项目中运行 git commit 或 git push 命令时，Husky 将自动执行 lint 和 test 命令。如果命令返回任何错误，Husky 将阻止您的提交或推送。</p>
-<p>您可以使用 Husky 的其他功能来执行其他任务，例如在 commit 或 push 之前自动发布代码，或在代码风格测试失败时发送电子邮件等。</p>
-<p>更多详细的配置信息请查看 Husky 的官方文档: <a href="https://github.com/typicode/husky" rel="external" target="_blank">https://github.com/typicode/husky<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
+<p><strong>完成</strong></p>
+<p>现在，当您在项目中运行 git commit 或 git push 命令时，Husky 将自动执行 lint 和 test 命令。如果命令返回任何错误，Husky 将阻止您的提交或推送。
+您可以使用 Husky 的其他功能来执行其他任务，例如在 commit 或 push 之前自动发布代码，或在代码风格测试失败时发送电子邮件等。</p>
+<p>Husky 的官方文档: <a href="https://github.com/typicode/husky" rel="external" target="_blank">https://github.com/typicode/husky<svg width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M14 5c-.552 0-1-.448-1-1s.448-1 1-1h6c.552 0 1 .448 1 1v6c0 .552-.448 1-1 1s-1-.448-1-1v-3.586l-7.293 7.293c-.391.39-1.024.39-1.414 0-.391-.391-.391-1.024 0-1.414l7.293-7.293h-3.586zm-9 2c-.552 0-1 .448-1 1v11c0 .552.448 1 1 1h11c.552 0 1-.448 1-1v-4.563c0-.552.448-1 1-1s1 .448 1 1v4.563c0 1.657-1.343 3-3 3h-11c-1.657 0-3-1.343-3-3v-11c0-1.657 1.343-3 3-3h4.563c.552 0 1 .448 1 1s-.448 1-1 1h-4.563z"/></svg></a></p>
 
     </div>
 
@@ -702,7 +731,7 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/colinwilson/lotusdocs.dev/blob/release/content/docs/git/husky.md" alt="husky" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/im/im.github.io/blob/main/notes/content/docs/git/husky.md" alt="husky" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -720,9 +749,9 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-12-07T11:20:33&#43;0800"
-            title="07 Dec 2023, 11:20 &#43;0800">
-            07 Dec 2023, 11:20 &#43;0800
+            data-authdate="2023-12-07T14:16:38&#43;0800"
+            title="07 Dec 2023, 14:16 &#43;0800">
+            07 Dec 2023, 14:16 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -738,21 +767,21 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/git/ssh-key/">
+		<a href="/docs/html/html5-dialog/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> git 添加 ssh key</p>
-					<p class="card-text ms-2"></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> HTML5 &lt;dialog&gt;</p>
+					<p class="card-text ms-2">HTML5 中引入了 `&lt;dialog&gt;` 元素，它提供了一 …</p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/git/remote-branch/">
+		<a class="ms-auto" href="/docs/git/ssh-key/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">git 将远程分支拉到本地 <i class="material-icons align-middle">navigate_next</i></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">ssh key <i class="material-icons align-middle">navigate_next</i></p>
 					<p class="card-text me-2"></p>
 					
 				</div>
@@ -990,6 +1019,20 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1035,19 +1078,19 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
     index.add(
             {
                 id:  4 ,
-                href: "\/docs\/git\/submodule\/",
-                title: "git submodule",
-                description: "添加 link git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules link [submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 link git submodule update 删除 linksubmodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule link git submodule update --init --recursive 查看 sumodule 状态 link git submodule foreach git status 不能更新 link git submodule update --remote ",
-                content: "添加 link git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules link [submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 link git submodule update 删除 linksubmodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule link git submodule update --init --recursive 查看 sumodule 状态 link git submodule foreach git status 不能更新 link git submodule update --remote "
+                href: "\/docs\/git\/",
+                title: "GIT",
+                description: "",
+                content: ""
             }
         );
     index.add(
             {
                 id:  5 ,
-                href: "\/docs\/git\/ssh-key\/",
-                title: "git 添加 ssh key",
-                description: "创建 SSH Key link ssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置 link git config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置 删除 --global link git config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置 link git config --global user.name git config --global user.email 取消全局配置 link git config --global --unset user.name git config --global --unset user.",
-                content: "创建 SSH Key link ssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置 link git config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置 删除 --global link git config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置 link git config --global user.name git config --global user.email 取消全局配置 link git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.email #(查看)全局配置邮箱是否已经移除 "
+                href: "\/docs\/html\/html5-dialog\/",
+                title: "HTML5 \u003cdialog\u003e",
+                description: "HTML5 中引入了 `\u003cdialog\u003e` 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。",
+                content: "使用 元素 link首先，我们需要创建一个 元素，并添加对话框的内容和控制按钮。以下是一个示例：\n对话框标题 对话框内容\n关闭 要打开对话框，我们可以使用 JavaScript 的 showModal() 方法：\nconst dialog = document.getElementById('myDialog'); dialog.showModal(); 要关闭对话框，我们可以使用 close() 方法：\nconst dialog = document.getElementById('myDialog'); dialog.close(); 可以通过监听 close 事件来执行对话框关闭时的操作：\nconst dialog = document.getElementById('myDialog'); dialog.addEventListener('close', () =\u003e { // 对话框关闭时执行的操作 }); 类似地，可以监听 show 事件来执行对话框打开时的操作：\nconst dialog = document.getElementById('myDialog'); dialog.addEventListener('show', () =\u003e { // 对话框打开时执行的操作 }); 如果想在对话框中添加更多交互元素，可以像使用普通 HTML 元素一样在 内部添加其他元素。\n实现原理 link 元素的实现原理与浏览器有关。在一些现代浏览器中，对话框会以模态方式显示，阻止用户与页面的其他部分进行交互。对话框元素本身是一个浮动元素，可以通过 CSS 进行样式调整。\n在一些不支持 元素的浏览器中，可以使用 JavaScript 库或框架来模拟对话框的行为。这些库通常会创建一个覆盖整个页面的元素，并在其上显示对话框内容，以模拟对话框的效果。\n注意事项 link 元素在不同浏览器中的支持程度可能有所差异，部分浏览器可能不支持或需要使用前缀。在使用时，建议先检查浏览器的兼容性。 对话框应该包含明确的标题和内容，以便用户理解对话框的用途和内容。 对话框应该提供关闭按钮或其他关闭方式，以便用户可以随时关闭对话框。 对话框的样式可以通过 CSS 进行自定义，以适应特定的设计需求。 使用对话框时应注意用户体验，避免滥用对话框，确保对话框的使用具有明确的目的和价值。 "
             }
         );
     index.add(
@@ -1055,35 +1098,53 @@ npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 
                 id:  6 ,
                 href: "\/docs\/git\/husky\/",
                 title: "husky",
-                description: "安装 Husky 使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子 在 package.",
-                content: " 安装 Husky 使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子 在 package.json 文件中添加另一个 “scripts” 属性：\n\"scripts\": { \"test\": \"jest\" } 这里的 “test” 命令使用 Jest 对整个项目进行测试。\n完成 现在，当您在项目中运行 git commit 或 git push 命令时，Husky 将自动执行 lint 和 test 命令。如果命令返回任何错误，Husky 将阻止您的提交或推送。\n您可以使用 Husky 的其他功能来执行其他任务，例如在 commit 或 push 之前自动发布代码，或在代码风格测试失败时发送电子邮件等。\n更多详细的配置信息请查看 Husky 的官方文档: https://github.com/typicode/husky\n"
+                description: "安装 Husky\n使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子\n在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子\n在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子",
+                content: "安装 Husky\n使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子\n在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子\n在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子\n在 package.json 文件中添加另一个 “scripts” 属性：\n\"scripts\": { \"test\": \"jest\" } 这里的 “test” 命令使用 Jest 对整个项目进行测试。\n完成\n现在，当您在项目中运行 git commit 或 git push 命令时，Husky 将自动执行 lint 和 test 命令。如果命令返回任何错误，Husky 将阻止您的提交或推送。 您可以使用 Husky 的其他功能来执行其他任务，例如在 commit 或 push 之前自动发布代码，或在代码风格测试失败时发送电子邮件等。\nHusky 的官方文档: https://github.com/typicode/husky\n"
             }
         );
     index.add(
             {
                 id:  7 ,
-                href: "\/docs\/git\/remote-branch\/",
-                title: "git 将远程分支拉到本地",
-                description: "可以使用以下命令将远程分支拉到本地：\n首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。",
-                content: "可以使用以下命令将远程分支拉到本地：\n首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。\n"
+                href: "\/docs\/git\/ssh-key\/",
+                title: "ssh key",
+                description: "创建 SSH Key\nssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置\ngit config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置\ngit config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置\ngit config --global user.name git config --global user.email 取消全局配置\ngit config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.",
+                content: "创建 SSH Key\nssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置\ngit config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置\ngit config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置\ngit config --global user.name git config --global user.email 取消全局配置\ngit config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.email #(查看)全局配置邮箱是否已经移除 "
             }
         );
     index.add(
             {
                 id:  8 ,
-                href: "\/docs\/git\/guide\/",
-                title: "git 命令手册 📖",
-                description: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。 🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 ",
-                content: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。\n🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 "
+                href: "\/docs\/git\/submodule\/",
+                title: "submodule",
+                description: "添加\ngit submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules\n[submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新\ngit submodule update 删除 submodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule\ngit submodule update --init --recursive 查看 sumodule 状态\ngit submodule foreach git status 不能更新\ngit submodule update --remote ",
+                content: "添加\ngit submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules\n[submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新\ngit submodule update 删除 submodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule\ngit submodule update --init --recursive 查看 sumodule 状态\ngit submodule foreach git status 不能更新\ngit submodule update --remote "
             }
         );
     index.add(
             {
                 id:  9 ,
-                href: "\/docs\/git\/",
-                title: "Git",
-                description: "",
-                content: ""
+                href: "\/docs\/css\/view-transition\/",
+                title: "view-transition",
+                description: "CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。",
+                content: "如何使用 CSS View-Transition？\n使用 CSS View-Transition 非常简单。我们只需要为目标元素添加一些必要的 CSS 属性即可。\n首先，为目标元素添加 transition 属性，指定过渡的属性和持续时间。例如：\n.element { transition: width 0.3s ease-in-out; } 在上面的例子中，我们指定了 width 属性在 0.3 秒内进行过渡，并且使用了 ease-in-out 缓动函数。\n接下来，我们可以通过添加一些触发事件来激活过渡效果。例如，我们可以使用鼠标悬停事件来触发过渡效果：\n.element:hover { width: 200px; } 在上面的例子中，当鼠标悬停在 .element 元素上时，它的宽度将过渡到 200 像素。\nCSS View-Transition 的常用属性\n除了 transition 属性外，CSS View-Transition 还提供了其他一些常用属性，用于进一步控制过渡效果。\ntransition-property：指定过渡的属性。可以使用多个属性，用逗号分隔。 transition-duration：指定过渡的持续时间。 transition-timing-function：指定过渡的缓动函数。 transition-delay：指定过渡的延迟时间。 使用场景示例\n图片展示过渡 .image-container { display: flex; } .image { transition: transform 0.3s ease-in-out; } .image:hover { transform: scale(1.2); } 在上面的例子中，当鼠标悬停在图片上时，图片将以 1.2 倍的比例进行放大，创建出平滑的过渡效果。\n菜单项过渡 Home About Services Contact .menu-item { transition: background-color 0.3s ease-in-out; } .menu-item:hover { background-color: #f2f2f2; } 在上面的例子中，当鼠标悬停在菜单项上时，背景颜色将以平滑的过渡效果变为灰色。\n总结\nCSS View-Transition 是一种非常强大的前端开发工具，可以帮助我们创建各种各样的动态效果。通过简单地添加一些 CSS 属性，我们就可以实现平滑的过渡效果，提升用户体验。\n"
+            }
+        );
+    index.add(
+            {
+                id:  10 ,
+                href: "\/docs\/git\/guide\/",
+                title: "命令手册",
+                description: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。 初始化 git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 添加与提交 git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 分支和合并 git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 推送与拉取",
+                content: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。\n初始化\ngit init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 添加与提交\ngit add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 分支和合并\ngit branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 推送与拉取\ngit pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 查看日志\ngit log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 撤销与修改\ngit checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 其他命令\ngit status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 "
+            }
+        );
+    index.add(
+            {
+                id:  11 ,
+                href: "\/docs\/git\/remote-branch\/",
+                title: "将远程分支拉到本地",
+                description: "首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。",
+                content: " 首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。\n"
             }
         );
     search.addEventListener('input', show_results, true);

@@ -20,8 +20,9 @@
 
 <html lang="en"><head>
     <meta charset="utf-8" />
-    <title>命令手册 | Cotan Notes</title>
+    <title>view-transition | Cotan Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
     <meta name="email" content="support@aigis.uk" />
@@ -34,23 +35,15 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://cotan.top/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://cotan.top/favicon.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://cotan.top/site.webmanifest">
-<meta property="og:title" content="命令手册" />
-<meta property="og:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
-初始化
-git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 添加与提交
-git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 分支和合并
-git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 推送与拉取" />
+<meta property="og:title" content="view-transition" />
+<meta property="og:description" content="CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cotan.top/docs/git/guide/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15996710971855858621.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://cotan.top/docs/css/view-transition/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4443739877947788447.png"/><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2023-12-07T14:16:38+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_15996710971855858621.png"/>
-<meta name="twitter:title" content="命令手册"/>
-<meta name="twitter:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
-初始化
-git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 添加与提交
-git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 分支和合并
-git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 推送与拉取"/>
+<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4443739877947788447.png"/>
+<meta name="twitter:title" content="view-transition"/>
+<meta name="twitter:description" content="CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。"/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -225,17 +218,17 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
                 
                     
                     
-                        <li class="sidebar-dropdown  ">
+                        <li class="sidebar-dropdown  current active">
                             <button class="btn">
                                 <i class="material-icons me-2">Psychiatry</i>
                                 CSS
                             </button>
-                            <div class="sidebar-submenu ">
+                            <div class="sidebar-submenu d-block">
                                 <ul>
                                     
                                         
                                         
-                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/css/view-transition/">view-transition</a></li>
+                                            <li class="current "><a class="sidebar-nested-link" href="https://cotan.top/docs/css/view-transition/">view-transition</a></li>
                                         
                                     
                                 </ul>
@@ -265,12 +258,12 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">Nutrition</i>
                                 GIT
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
@@ -290,7 +283,7 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">命令手册</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">命令手册</a></li>
                                         
                                     
                                         
@@ -562,15 +555,15 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
             
             
                 <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/git/">
-                        <span itemprop="name">GIT</span>
+                    <a itemprop="item" href="/docs/css/">
+                        <span itemprop="name">CSS</span>
                     </a>
                     <meta itemprop="position" content='2' />
                 </li>
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">命令手册</span>
+                <span itemprop="name">view-transition</span>
                 <meta itemprop="position" content='3' />
             </li>
         
@@ -596,81 +589,184 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
                                                 <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    命令手册
+                                                    view-transition
                                                     
                                                 </h1>
                                             </div>
                                             
-                                                <p class="lead mb-3"></p>
+                                                <p class="lead mb-3">CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。</p>
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
     
     <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <p>这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。</p>
-<p><strong>初始化</strong></p>
+        <p><strong>如何使用 CSS View-Transition？</strong></p>
+<p>使用 CSS View-Transition 非常简单。我们只需要为目标元素添加一些必要的 CSS 属性即可。</p>
+<p>首先，为目标元素添加 <code>transition</code> 属性，指定过渡的属性和持续时间。例如：</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="168d273" class="language-css ">
+  <code>.element {
+  transition: width 0.3s ease-in-out;
+}</code>
+  </pre>
+  </div>
+<p>在上面的例子中，我们指定了 <code>width</code> 属性在 0.3 秒内进行过渡，并且使用了 <code>ease-in-out</code> 缓动函数。</p>
+<p>接下来，我们可以通过添加一些触发事件来激活过渡效果。例如，我们可以使用鼠标悬停事件来触发过渡效果：</p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="88e1aed" class="language-css ">
+  <code>.element:hover {
+  width: 200px;
+}</code>
+  </pre>
+  </div>
+<p>在上面的例子中，当鼠标悬停在 <code>.element</code> 元素上时，它的宽度将过渡到 200 像素。</p>
+<p><strong>CSS View-Transition 的常用属性</strong></p>
+<p>除了 <code>transition</code> 属性外，CSS View-Transition 还提供了其他一些常用属性，用于进一步控制过渡效果。</p>
 <ul>
-<li><code>git init</code> : 初始化一个 Git 仓库。</li>
-<li><code>git clone &lt;URL&gt;</code> : 克隆一个远程 Git 仓库。</li>
+<li><code>transition-property</code>：指定过渡的属性。可以使用多个属性，用逗号分隔。</li>
+<li><code>transition-duration</code>：指定过渡的持续时间。</li>
+<li><code>transition-timing-function</code>：指定过渡的缓动函数。</li>
+<li><code>transition-delay</code>：指定过渡的延迟时间。</li>
 </ul>
-<p><strong>添加与提交</strong></p>
+<p><strong>使用场景示例</strong></p>
 <ul>
-<li><code>git add &lt;file&gt;</code> : 将文件添加到暂存区。</li>
-<li><code>git add .</code> : 将所有修改添加到暂存区。</li>
-<li><code>git commit -m &quot;&lt;message&gt;&quot;</code> : 提交变更并附上提交信息。</li>
-<li><code>git commit -a</code> : 跳过暂存区，直接提交所有变更。</li>
+<li>图片展示过渡</li>
 </ul>
-<p><strong>分支和合并</strong></p>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="e31c19f" class="language-html ">
+  <code>&lt;div class=&#34;image-container&#34;&gt;
+  &lt;img src=&#34;image1.jpg&#34; alt=&#34;Image 1&#34; class=&#34;image&#34;&gt;
+  &lt;img src=&#34;image2.jpg&#34; alt=&#34;Image 2&#34; class=&#34;image&#34;&gt;
+&lt;/div&gt;</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="b969ef6" class="language-css ">
+  <code>.image-container {
+  display: flex;
+}
+
+.image {
+  transition: transform 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(1.2);
+}</code>
+  </pre>
+  </div>
+<p>在上面的例子中，当鼠标悬停在图片上时，图片将以 1.2 倍的比例进行放大，创建出平滑的过渡效果。</p>
 <ul>
-<li><code>git branch</code> : 列出当前仓库的所有分支。</li>
-<li><code>git branch &lt;branch&gt;</code> : 创建一个新分支。</li>
-<li><code>git checkout &lt;branch&gt;</code> : 切换到一个分支。</li>
-<li><code>git checkout -b &lt;branch&gt;</code> : 创建一个新的分支并立即切换到该分支。</li>
-<li><code>git merge &lt;branch&gt;</code> : 合并指定分支到当前分支。</li>
-<li><code>git merge --no-ff &lt;branch&gt;</code> : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。</li>
+<li>菜单项过渡</li>
 </ul>
-<p><strong>推送与拉取</strong></p>
-<ul>
-<li><code>git pull</code> : 从远程仓库拉取代码。</li>
-<li><code>git push</code> : 将本地分支的更改推送到远程仓库。</li>
-<li><code>git push -u &lt;remote&gt; &lt;branch&gt;</code> : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。</li>
-<li><code>git fetch &lt;remote&gt;</code> : 从远程仓库拉取变更，但不自动合并它们。</li>
-<li><code>git fetch --all</code> : 从远程仓库拉取所有分支的变更，但不自动合并它们。</li>
-<li><code>git push &lt;remote&gt; --delete &lt;branch&gt;</code> : 从远程仓库删除指定分支。</li>
-</ul>
-<p><strong>查看日志</strong></p>
-<ul>
-<li><code>git log</code> : 查看提交日志。</li>
-<li><code>git log --oneline</code> : 查看简洁的提交日志。</li>
-<li><code>git log --graph --oneline</code> : 查看提交日志并显示分支合并图。</li>
-<li><code>git blame &lt;file&gt;</code> : 显示指定文件的每一行是由谁添加的。</li>
-</ul>
-<p><strong>撤销与修改</strong></p>
-<ul>
-<li><code>git checkout &lt;file&gt;</code> : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。</li>
-<li><code>git reset HEAD &lt;file&gt;</code> : 取消已暂存文件。</li>
-<li><code>git reset HEAD~</code> : 返回上一个commit版本，并将文件修改保留在工作目录。</li>
-<li><code>git reset &lt;commit&gt;</code> : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。</li>
-<li><code>git reset --hard</code> : 取消所有本地修改，并恢复到最近的提交状态。</li>
-<li><code>git clean -f</code> : 删除未被跟踪的文件。</li>
-</ul>
-<p><strong>其他命令</strong></p>
-<ul>
-<li><code>git status</code> : 显示工作目录下已提交和未提交的修改。</li>
-<li><code>git diff</code> : 显示工作目录和本地仓库之间的差异。</li>
-<li><code>git stash</code> : 将工作目录中的未提交修改保存到一个栈中。</li>
-<li><code>git stash apply</code> : 恢复最新的stash，并将内容应用于工作区。</li>
-<li><code>git stash list</code> : 显示所有的stash记录。</li>
-<li><code>git stash pop</code> : 删除最新的stash，并将其应用于工作区。</li>
-<li><code>git stash drop</code> : 删除最新的stash。</li>
-<li><code>git remote add &lt;name&gt; &lt;url&gt;</code> : 将一个新远程仓库添加到当前 Git 仓库中。</li>
-<li><code>git remote -v</code> : 显示当前仓库的所有远程仓库及其 URL。</li>
-<li><code>git tag</code> : 列出已经存在的标签。</li>
-<li><code>git tag &lt;tagname&gt;</code> : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。</li>
-<li><code>git push origin &lt;tagname&gt;</code> : 将指定标签推送到远程仓库。</li>
-<li><code>git push origin --tags</code> : 将所有标签推送到远程仓库。</li>
-<li><code>git show &lt;commit&gt;</code> : 显示指定提交的信息。</li>
-</ul>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="00a277c" class="language-html ">
+  <code>&lt;ul class=&#34;menu&#34;&gt;
+  &lt;li class=&#34;menu-item&#34;&gt;Home&lt;/li&gt;
+  &lt;li class=&#34;menu-item&#34;&gt;About&lt;/li&gt;
+  &lt;li class=&#34;menu-item&#34;&gt;Services&lt;/li&gt;
+  &lt;li class=&#34;menu-item&#34;&gt;Contact&lt;/li&gt;
+&lt;/ul&gt;</code>
+  </pre>
+  </div>
+
+
+
+  
+  
+  
+
+  
+  
+  
+  
+
+  
+
+  <div class="prism-codeblock ">
+  <pre id="ed69520" class="language-css ">
+  <code>.menu-item {
+  transition: background-color 0.3s ease-in-out;
+}
+
+.menu-item:hover {
+  background-color: #f2f2f2;
+}</code>
+  </pre>
+  </div>
+<p>在上面的例子中，当鼠标悬停在菜单项上时，背景颜色将以平滑的过渡效果变为灰色。</p>
+<p><strong>总结</strong></p>
+<p>CSS View-Transition 是一种非常强大的前端开发工具，可以帮助我们创建各种各样的动态效果。通过简单地添加一些 CSS 属性，我们就可以实现平滑的过渡效果，提升用户体验。</p>
 
     </div>
 
@@ -690,7 +786,7 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/im/im.github.io/blob/main/notes/content/docs/git/guide.md" alt="命令手册" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/im/im.github.io/blob/main/notes/content/docs/css/view-transition.md" alt="view-transition" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -726,21 +822,21 @@ git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : �
 
 	<div class="row flex-xl-nowrap ">
 	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/css/view-transition/">
+		<a href="/docs/git/submodule/">
 			<div class="card h-100 my-1">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> view-transition</p>
-					<p class="card-text ms-2">CSS View-Transition 是一种用于创建平滑过 …</p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> submodule</p>
+					<p class="card-text ms-2"></p>
 					
 				</div>
 			</div>
 		</a>
         </div>
 	<div class="col-sm-6 pt-2 doc-prev">
-		<a class="ms-auto" href="/docs/git/remote-branch/">
+		<a class="ms-auto" href="/docs/git/guide/">
 			<div class="card h-100 my-1 text-end">
 				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0">将远程分支拉到本地 <i class="material-icons align-middle">navigate_next</i></p>
+                    <p class="card-title fs-5 fw-semibold lh-base mb-0">命令手册 <i class="material-icons align-middle">navigate_next</i></p>
 					<p class="card-text me-2"></p>
 					
 				</div>
