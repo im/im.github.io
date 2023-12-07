@@ -1,10 +1,119 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>Cotan Notes</title>
     <link>https://cotan.top/</link>
-    <description>Recent content on </description>
+    <description>Recent content on Cotan Notes</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://cotan.top/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Sep 2023 05:12:51 +0100</lastBuildDate><atom:link href="https://cotan.top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Démarrage rapide</title>
+      <link>https://cotan.top/fr/docs/quickstart/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/fr/docs/quickstart/</guid>
+      <description>Créer un nouveau contenu Navigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:
+hugo new docs/example-page.md This will create a markdown file named example-page.md with the following default front matter:
++++ title = &amp;#34;Example Page&amp;#34; description = &amp;#34;&amp;#34; icon = &amp;#34;article&amp;#34; date = &amp;#34;2023-05-22T00:27:57+01:00&amp;#34; lastmod = &amp;#34;2023-05-22T00:27:57+01:00&amp;#34; draft = false toc = true weight = 999 +++ Modify the options to suit your needs.</description>
+    </item>
+    
+    <item>
+      <title>Quickstart</title>
+      <link>https://cotan.top/docs/quickstart/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/docs/quickstart/</guid>
+      <description>Requirements link git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo linkInstall the Hugo CLI, using the specific instructions for your operating system below:
+Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
+    </item>
+    
+    <item>
+      <title>Quickstart</title>
+      <link>https://cotan.top/notes/quickstart/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/notes/quickstart/</guid>
+      <description>Requirements git Go ≥ v1.19 Hugo ≥ v0.100.0 (Extended Version) Install Hugo Install the Hugo CLI, using the specific instructions for your operating system below:
+Linux Homebrew (macOS) Windows (Chocolatey) Windows (Scoop) Your Linux distro’s package manager may include Hugo. If this is the case, install it directly using your distro’s package manager – for instance, in Ubuntu, run the following command. This will install the extended edition of Hugo:</description>
+    </item>
+    
+    <item>
+      <title>Schnellstart</title>
+      <link>https://cotan.top/de/docs/quickstart/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/de/docs/quickstart/</guid>
+      <description>Neue Inhalte erstellen Navigate to the root of your Hugo project and use the hugo new command to create a file in the content/docs directory:
+hugo new docs/example-page.md This will create a markdown file named example-page.md with the following default front matter:
++++ title = &amp;#34;Example Page&amp;#34; description = &amp;#34;&amp;#34; icon = &amp;#34;article&amp;#34; date = &amp;#34;2023-05-22T00:27:57+01:00&amp;#34; lastmod = &amp;#34;2023-05-22T00:27:57+01:00&amp;#34; draft = false toc = true weight = 999 +++ Modify the options to suit your needs.</description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://cotan.top/docs/example-content/code/</link>
+      <pubDate>Mon, 22 May 2023 00:44:31 +0100</pubDate>
+      
+      <guid>https://cotan.top/docs/example-content/code/</guid>
+      <description> warning The front matter description value for this page has been intentionally left empty in order to demonstrate FlexSearch&amp;rsquo;s suggested results fallback behaviour. Code Block Examples linkCode block language examples
+Go link package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } HTML link &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;My First Heading&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;My first paragraph.&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Markdown link # H1 heading **Some bold text** *Italic text example* </description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://cotan.top/fr/docs/example-content/code/</link>
+      <pubDate>Mon, 22 May 2023 00:44:31 +0100</pubDate>
+      
+      <guid>https://cotan.top/fr/docs/example-content/code/</guid>
+      <description>Code Block Examples Code block language examples
+Go package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } HTML &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;My First Heading&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;My first paragraph.&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Markdown # H1 heading **Some bold text** *Italic text example* </description>
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>https://cotan.top/notes/example-content/code/</link>
+      <pubDate>Mon, 22 May 2023 00:44:31 +0100</pubDate>
+      
+      <guid>https://cotan.top/notes/example-content/code/</guid>
+      <description> warning The front matter description value for this page has been intentionally left empty in order to demonstrate FlexSearch&amp;rsquo;s suggested results fallback behaviour. Code Block Examples Code block language examples
+Go package main import &amp;#34;fmt&amp;#34; func main() { fmt.Println(&amp;#34;hello world&amp;#34;) } HTML &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;body&amp;gt; &amp;lt;h1&amp;gt;My First Heading&amp;lt;/h1&amp;gt; &amp;lt;p&amp;gt;My first paragraph.&amp;lt;/p&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; Markdown # H1 heading **Some bold text** *Italic text example* </description>
+    </item>
+    
+    <item>
+      <title>Mermaid</title>
+      <link>https://cotan.top/docs/example-content/mermaid/</link>
+      <pubDate>Fri, 08 Sep 2023 05:12:51 +0100</pubDate>
+      
+      <guid>https://cotan.top/docs/example-content/mermaid/</guid>
+      <description>Flowchart linkflowchart LR A[Hard] --&amp;gt;|Text| B(Round) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result 1] C --&amp;gt;|Two| E[Result 2] Sequence diagram linksequenceDiagram Alice-&amp;gt;&amp;gt;John: Hello John, how are you? loop Healthcheck John-&amp;gt;&amp;gt;John: Fight against hypochondria end Note right of John: Rational thoughts! John--&amp;gt;&amp;gt;Alice: Great! John-&amp;gt;&amp;gt;Bob: How about you? Bob--&amp;gt;&amp;gt;John: Jolly good! Gnatt Chart linkgantt section Section Completed :done, des1, 2014-01-06,2014-01-08 Active :active, des2, 2014-01-07, 3d Parallel 1 : des3, after des1, 1d Parallel 2 : des4, after des1, 1d Parallel 3 : des5, after des3, 1d Parallel 4 : des6, after des4, 1d Class diagram linkclassDiagram Class01 &amp;lt;|-- AveryLongClass : Cool &amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01 Class09 --&amp;gt; C2 : Where am i?</description>
+    </item>
+    
+    <item>
+      <title>Mermaid</title>
+      <link>https://cotan.top/notes/example-content/mermaid/</link>
+      <pubDate>Fri, 08 Sep 2023 05:12:51 +0100</pubDate>
+      
+      <guid>https://cotan.top/notes/example-content/mermaid/</guid>
+      <description>Flowchart flowchart LR A[Hard] --&amp;gt;|Text| B(Round) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result 1] C --&amp;gt;|Two| E[Result 2] Sequence diagram sequenceDiagram Alice-&amp;gt;&amp;gt;John: Hello John, how are you? loop Healthcheck John-&amp;gt;&amp;gt;John: Fight against hypochondria end Note right of John: Rational thoughts! John--&amp;gt;&amp;gt;Alice: Great! John-&amp;gt;&amp;gt;Bob: How about you? Bob--&amp;gt;&amp;gt;John: Jolly good! Gnatt Chart gantt section Section Completed :done, des1, 2014-01-06,2014-01-08 Active :active, des2, 2014-01-07, 3d Parallel 1 : des3, after des1, 1d Parallel 2 : des4, after des1, 1d Parallel 3 : des5, after des3, 1d Parallel 4 : des6, after des4, 1d Class diagram classDiagram Class01 &amp;lt;|-- AveryLongClass : Cool &amp;lt;&amp;lt;interface&amp;gt;&amp;gt; Class01 Class09 --&amp;gt; C2 : Where am i?</description>
+    </item>
+    
+    <item>
+      <title>Example Doc</title>
+      <link>https://cotan.top/docs/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/docs/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example Doc</title>
+      <link>https://cotan.top/notes/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</link>
+      <pubDate>Wed, 03 May 2023 22:37:22 +0100</pubDate>
+      
+      <guid>https://cotan.top/notes/section-folder/section-subfolder/second-section-subfolder/third-section-subfolder/example-doc/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
