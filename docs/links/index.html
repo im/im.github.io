@@ -39,7 +39,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cotan.top/docs/links/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7837552936839141452.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-12-07T14:33:19+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-12-07T14:51:20+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7837552936839141452.png"/>
 <meta name="twitter:title" content="LINKS"/>
 <meta name="twitter:description" content=" lotusdocs patterns 设计模式教学 google icons "/>
@@ -248,6 +248,26 @@
                                         
                                         
                                             <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/html/html5-dialog/">HTML5 &lt;dialog&gt;</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                    
+                
+                    
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
+                                <i class="material-icons me-2">lunch_dining</i>
+                                VUE
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/vue/vue-router-go-back/">Vue Router 中的 `back` 和 `go` 方法的使用</a></li>
                                         
                                     
                                 </ul>
@@ -644,9 +664,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-12-07T14:33:19&#43;0800"
-            title="07 Dec 2023, 14:33 &#43;0800">
-            07 Dec 2023, 14:33 &#43;0800
+            data-authdate="2023-12-07T14:51:20&#43;0800"
+            title="07 Dec 2023, 14:51 &#43;0800">
+            07 Dec 2023, 14:51 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -935,6 +955,20 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -971,6 +1005,15 @@
     index.add(
             {
                 id:  3 ,
+                href: "\/docs\/vue\/",
+                title: "VUE",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  4 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",
@@ -979,7 +1022,7 @@
         );
     index.add(
             {
-                id:  4 ,
+                id:  5 ,
                 href: "\/docs\/git\/",
                 title: "GIT",
                 description: "",
@@ -988,7 +1031,7 @@
         );
     index.add(
             {
-                id:  5 ,
+                id:  6 ,
                 href: "\/docs\/html\/html5-dialog\/",
                 title: "HTML5 \u003cdialog\u003e",
                 description: "HTML5 中引入了 `\u003cdialog\u003e` 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。",
@@ -997,7 +1040,7 @@
         );
     index.add(
             {
-                id:  6 ,
+                id:  7 ,
                 href: "\/docs\/git\/husky\/",
                 title: "husky",
                 description: "安装 Husky\n使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子\n在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子\n在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子",
@@ -1006,7 +1049,7 @@
         );
     index.add(
             {
-                id:  7 ,
+                id:  8 ,
                 href: "\/docs\/links\/",
                 title: "LINKS",
                 description: " lotusdocs patterns 设计模式教学 google icons ",
@@ -1015,7 +1058,7 @@
         );
     index.add(
             {
-                id:  8 ,
+                id:  9 ,
                 href: "\/docs\/git\/ssh-key\/",
                 title: "ssh key",
                 description: "创建 SSH Key\nssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置\ngit config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置\ngit config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置\ngit config --global user.name git config --global user.email 取消全局配置\ngit config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.",
@@ -1024,7 +1067,7 @@
         );
     index.add(
             {
-                id:  9 ,
+                id:  10 ,
                 href: "\/docs\/git\/submodule\/",
                 title: "submodule",
                 description: "添加\ngit submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules\n[submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新\ngit submodule update 删除 submodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule\ngit submodule update --init --recursive 查看 sumodule 状态\ngit submodule foreach git status 不能更新\ngit submodule update --remote ",
@@ -1033,7 +1076,7 @@
         );
     index.add(
             {
-                id:  10 ,
+                id:  11 ,
                 href: "\/docs\/css\/view-transition\/",
                 title: "view-transition",
                 description: "CSS View-Transition 是一种用于创建平滑过渡效果的 CSS 属性。它可以让元素在视图之间进行过渡，从而实现动画效果。通过使用 CSS View-Transition，我们可以在前端开发中创建各种各样的动态效果，提升用户体验。",
@@ -1042,7 +1085,16 @@
         );
     index.add(
             {
-                id:  11 ,
+                id:  12 ,
+                href: "\/docs\/vue\/vue-router-go-back\/",
+                title: "Vue Router 中的 `back` 和 `go` 方法的使用",
+                description: "在 Vue Router 中，我们经常需要控制浏览器的历史记录以实现路由导航。为了方便操作，Vue Router 提供了 `back` 方法和 `go` 方法。本教程将介绍如何使用这两个方法，并提供相应的代码示例。",
+                content: "使用 back 方法\nback 方法用于导航到上一个历史记录。它相当于用户点击浏览器的后退按钮。下面是使用 back 方法的示例代码：\n// 在 Vue 组件中使用 back 方法 methods: { goBack() { this.$router.back(); } } 在上述代码中，我们定义了一个名为 goBack 的方法。当用户调用该方法时，this.$router.back() 会被执行，从而导航到上一个历史记录。这将触发相应的路由导航守卫，以确保导航的顺利进行。\n使用 go 方法\ngo 方法用于在历史记录中进行相对导航。它接受一个整数参数，表示要前进或后退的步数。下面是使用 go 方法的示例代码：\n// 在 Vue 组件中使用 go 方法 methods: { goForward() { this.$router.go(1); }, goBackward() { this.$router.go(-1); } } 在上述代码中，我们定义了两个方法：goForward 和 goBackward。goForward 方法调用 this.$router.go(1)，向前导航一步；而 goBackward 方法调用 this.$router.go(-1)，后退一步。通过修改参数，你可以在历史记录中进行任意步数的导航。\n需要注意的是，back 方法和 go 方法只能用于导航到已经访问过的路由，而不能用于导航到新的路由。如果需要在 Vue 组件中进行路由导航到新的路由，可以使用 组件或编程式导航的方式来实现。\n方法的内部实现\n下面是 go 方法和 back 方法的简单实现代码：\n// go 方法的实现 go(step) { const history = this.history; const current = history.current; const currentIndex = history.index; const targetIndex = currentIndex + step; const targetRoute = history.stack[targetIndex]; if (targetRoute) { // 更新当前路由和索引 history.index = targetIndex; history.current = targetRoute; // 触发路由导航 this.transitionTo(targetRoute, () =\u003e { // 导航完成后的回调 // 可以在这里执行额外的操作 }); } } // Vue Router 的 back 方法实现 back() { const history = this.history; const current = history.current; const currentIndex = history.index; const targetIndex = currentIndex - 1; const targetRoute = history.stack[targetIndex]; if (targetRoute) { // 更新当前路由和索引 history.index = targetIndex; history.current = targetRoute; // 触发路由导航 this.transitionTo(targetRoute, () =\u003e { // 导航完成后的回调 // 可以在这里执行额外的操作 }); } } info go 方法使用 window.history.go() 方法来执行相对导航。它接受一个整数参数 step，表示要前进或后退的步数。正数表示前进，负数表示后退。 info back 方法使用 window.history.back() 方法来导航到上一个历史记录。 "
+            }
+        );
+    index.add(
+            {
+                id:  13 ,
                 href: "\/docs\/git\/guide\/",
                 title: "命令手册",
                 description: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。 初始化 git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 添加与提交 git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 分支和合并 git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 推送与拉取",
@@ -1051,7 +1103,7 @@
         );
     index.add(
             {
-                id:  12 ,
+                id:  14 ,
                 href: "\/docs\/git\/remote-branch\/",
                 title: "将远程分支拉到本地",
                 description: "首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。",
