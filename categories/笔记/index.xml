@@ -1,23 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Cotan Notes</title>
-    <link>https://cotan.top/</link>
-    <description>Recent content on Cotan Notes</description>
+    <title>笔记 on Cotan Notes</title>
+    <link>https://cotan.top/categories/%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 笔记 on Cotan Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>git submodule</title>
-      <link>https://cotan.top/docs/git/submodule/</link>
-      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://cotan.top/docs/git/submodule/</guid>
-      <description>添加 link git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。
-.gitmodules link [submodule &amp;#34;themes/icarus&amp;#34;] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 link git submodule update 删除 linksubmodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。
-下载的工程带有 submodule link git submodule update --init --recursive 查看 sumodule 状态 link git submodule foreach git status 不能更新 link git submodule update --remote </description>
-    </item>
-    
+    <lastBuildDate>Fri, 30 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://cotan.top/categories/%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git 添加 ssh key</title>
       <link>https://cotan.top/docs/git/ssh-key/</link>
