@@ -20,7 +20,7 @@
 
 <html lang="en"><head>
     <meta charset="utf-8" />
-    <title>Vue Router 中的 `back` 和 `go` 方法的使用 | Cotan Notes</title>
+    <title>Vue Router 中的 back 和 go 方法的使用 | Cotan Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="在 Vue Router 中，我们经常需要控制浏览器的历史记录以实现路由导航。为了方便操作，Vue Router 提供了 `back` 方法和 `go` 方法。本教程将介绍如何使用这两个方法，并提供相应的代码示例。">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
@@ -35,14 +35,14 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://cotan.top/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://cotan.top/favicon.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://cotan.top/site.webmanifest">
-<meta property="og:title" content="Vue Router 中的 `back` 和 `go` 方法的使用" />
+<meta property="og:title" content="Vue Router 中的 back 和 go 方法的使用" />
 <meta property="og:description" content="在 Vue Router 中，我们经常需要控制浏览器的历史记录以实现路由导航。为了方便操作，Vue Router 提供了 `back` 方法和 `go` 方法。本教程将介绍如何使用这两个方法，并提供相应的代码示例。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://cotan.top/docs/vue/vue-router-go-back/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9815211643536920765.png"/><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://cotan.top/docs/vue/vue-router-go-back/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_11995263505039949582.png"/><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-12-07T14:51:20+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_9815211643536920765.png"/>
-<meta name="twitter:title" content="Vue Router 中的 `back` 和 `go` 方法的使用"/>
+<meta property="article:modified_time" content="2023-12-07T16:06:24+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_11995263505039949582.png"/>
+<meta name="twitter:title" content="Vue Router 中的 back 和 go 方法的使用"/>
 <meta name="twitter:description" content="在 Vue Router 中，我们经常需要控制浏览器的历史记录以实现路由导航。为了方便操作，Vue Router 提供了 `back` 方法和 `go` 方法。本教程将介绍如何使用这两个方法，并提供相应的代码示例。"/>
 
     
@@ -206,13 +206,22 @@
                 
                 
                     
-                        
-                        <li class="">
-                            <a class="sidebar-root-link" href="https://cotan.top/docs/javascript/">
+                    
+                        <li class="sidebar-dropdown  ">
+                            <button class="btn">
                                 <i class="material-icons me-2">Helicopter</i>
-                                
                                 JAVASCRIPT
-                            </a>
+                            </button>
+                            <div class="sidebar-submenu ">
+                                <ul>
+                                    
+                                        
+                                        
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/javascript/higher-order-function/">高阶函数</a></li>
+                                        
+                                    
+                                </ul>
+                            </div>
                         </li>
                     
                 
@@ -268,7 +277,7 @@
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://cotan.top/docs/vue/vue-router-go-back/">Vue Router 中的 `back` 和 `go` 方法的使用</a></li>
+                                            <li class="current "><a class="sidebar-nested-link" href="https://cotan.top/docs/vue/vue-router-go-back/">Vue Router 中的 back 和 go 方法的使用</a></li>
                                         
                                     
                                 </ul>
@@ -594,7 +603,7 @@
             
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">Vue Router 中的 `back` 和 `go` 方法的使用</span>
+                <span itemprop="name">Vue Router 中的 back 和 go 方法的使用</span>
                 <meta itemprop="position" content='3' />
             </li>
         
@@ -620,7 +629,7 @@
                                                 <i class="material-icons title-icon me-2">article</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    Vue Router 中的 `back` 和 `go` 方法的使用
+                                                    Vue Router 中的 back 和 go 方法的使用
                                                     
                                                 </h1>
                                             </div>
@@ -675,15 +684,15 @@ methods: {
   
 
   <div class="prism-codeblock ">
-  <pre id="ad6669c" class="language-javascript ">
+  <pre id="b2ac930" class="language-javascript ">
   <code>// 在 Vue 组件中使用 go 方法
 methods: {
-  goForward() {
-    this.$router.go(1);
-  },
-  goBackward() {
-    this.$router.go(-1);
-  }
+    goForward() {
+        this.$router.go(1);
+    },
+    goBackward() {
+        this.$router.go(-1);
+    }
 }</code>
   </pre>
   </div>
@@ -706,49 +715,49 @@ methods: {
   
 
   <div class="prism-codeblock ">
-  <pre id="76a891b" class="language-javascript ">
+  <pre id="069d5c7" class="language-javascript ">
   <code>// go 方法的实现
 go(step) {
-  const history = this.history;
-  const current = history.current;
-  const currentIndex = history.index;
+    const history = this.history;
+    const current = history.current;
+    const currentIndex = history.index;
 
-  const targetIndex = currentIndex &#43; step;
-  const targetRoute = history.stack[targetIndex];
+    const targetIndex = currentIndex &#43; step;
+    const targetRoute = history.stack[targetIndex];
 
-  if (targetRoute) {
-    // 更新当前路由和索引
-    history.index = targetIndex;
-    history.current = targetRoute;
+    if (targetRoute) {
+        // 更新当前路由和索引
+        history.index = targetIndex;
+        history.current = targetRoute;
 
-    // 触发路由导航
-    this.transitionTo(targetRoute, () =&gt; {
-      // 导航完成后的回调
-      // 可以在这里执行额外的操作
-    });
-  }
+        // 触发路由导航
+        this.transitionTo(targetRoute, () =&gt; {
+        // 导航完成后的回调
+        // 可以在这里执行额外的操作
+        });
+    }
 }
 
 // Vue Router 的 back 方法实现
 back() {
-  const history = this.history;
-  const current = history.current;
-  const currentIndex = history.index;
+    const history = this.history;
+    const current = history.current;
+    const currentIndex = history.index;
 
-  const targetIndex = currentIndex - 1;
-  const targetRoute = history.stack[targetIndex];
+    const targetIndex = currentIndex - 1;
+    const targetRoute = history.stack[targetIndex];
 
-  if (targetRoute) {
-    // 更新当前路由和索引
-    history.index = targetIndex;
-    history.current = targetRoute;
+    if (targetRoute) {
+        // 更新当前路由和索引
+        history.index = targetIndex;
+        history.current = targetRoute;
 
-    // 触发路由导航
-    this.transitionTo(targetRoute, () =&gt; {
-      // 导航完成后的回调
-      // 可以在这里执行额外的操作
-    });
-  }
+        // 触发路由导航
+        this.transitionTo(targetRoute, () =&gt; {
+        // 导航完成后的回调
+        // 可以在这里执行额外的操作
+        });
+    }
 }</code>
   </pre>
   </div>
@@ -791,7 +800,7 @@ back() {
 
 <div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
     <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/im/im.github.io/blob/main/notes/content/docs/vue/vue-router-go-back.md" alt="Vue Router 中的 `back` 和 `go` 方法的使用" rel="noopener noreferrer" target="_blank">
+        <a href="https://github.com/im/im.github.io/blob/main/notes/content/docs/vue/vue-router-go-back.md" alt="Vue Router 中的 back 和 go 方法的使用" rel="noopener noreferrer" target="_blank">
             
             <span class="me-1 align-text-bottom">
                 
@@ -809,9 +818,9 @@ back() {
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-12-07T14:51:20&#43;0800"
-            title="07 Dec 2023, 14:51 &#43;0800">
-            07 Dec 2023, 14:51 &#43;0800
+            data-authdate="2023-12-07T16:06:24&#43;0800"
+            title="07 Dec 2023, 16:06 &#43;0800">
+            07 Dec 2023, 16:06 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -1114,6 +1123,13 @@ back() {
     
     
     
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -1232,7 +1248,7 @@ back() {
             {
                 id:  12 ,
                 href: "\/docs\/vue\/vue-router-go-back\/",
-                title: "Vue Router 中的 `back` 和 `go` 方法的使用",
+                title: "Vue Router 中的 back 和 go 方法的使用",
                 description: "在 Vue Router 中，我们经常需要控制浏览器的历史记录以实现路由导航。为了方便操作，Vue Router 提供了 `back` 方法和 `go` 方法。本教程将介绍如何使用这两个方法，并提供相应的代码示例。",
                 content: "使用 back 方法\nback 方法用于导航到上一个历史记录。它相当于用户点击浏览器的后退按钮。下面是使用 back 方法的示例代码：\n// 在 Vue 组件中使用 back 方法 methods: { goBack() { this.$router.back(); } } 在上述代码中，我们定义了一个名为 goBack 的方法。当用户调用该方法时，this.$router.back() 会被执行，从而导航到上一个历史记录。这将触发相应的路由导航守卫，以确保导航的顺利进行。\n使用 go 方法\ngo 方法用于在历史记录中进行相对导航。它接受一个整数参数，表示要前进或后退的步数。下面是使用 go 方法的示例代码：\n// 在 Vue 组件中使用 go 方法 methods: { goForward() { this.$router.go(1); }, goBackward() { this.$router.go(-1); } } 在上述代码中，我们定义了两个方法：goForward 和 goBackward。goForward 方法调用 this.$router.go(1)，向前导航一步；而 goBackward 方法调用 this.$router.go(-1)，后退一步。通过修改参数，你可以在历史记录中进行任意步数的导航。\n需要注意的是，back 方法和 go 方法只能用于导航到已经访问过的路由，而不能用于导航到新的路由。如果需要在 Vue 组件中进行路由导航到新的路由，可以使用 组件或编程式导航的方式来实现。\n方法的内部实现\n下面是 go 方法和 back 方法的简单实现代码：\n// go 方法的实现 go(step) { const history = this.history; const current = history.current; const currentIndex = history.index; const targetIndex = currentIndex + step; const targetRoute = history.stack[targetIndex]; if (targetRoute) { // 更新当前路由和索引 history.index = targetIndex; history.current = targetRoute; // 触发路由导航 this.transitionTo(targetRoute, () =\u003e { // 导航完成后的回调 // 可以在这里执行额外的操作 }); } } // Vue Router 的 back 方法实现 back() { const history = this.history; const current = history.current; const currentIndex = history.index; const targetIndex = currentIndex - 1; const targetRoute = history.stack[targetIndex]; if (targetRoute) { // 更新当前路由和索引 history.index = targetIndex; history.current = targetRoute; // 触发路由导航 this.transitionTo(targetRoute, () =\u003e { // 导航完成后的回调 // 可以在这里执行额外的操作 }); } } info go 方法使用 window.history.go() 方法来执行相对导航。它接受一个整数参数 step，表示要前进或后退的步数。正数表示前进，负数表示后退。 info back 方法使用 window.history.back() 方法来导航到上一个历史记录。 "
             }
@@ -1253,6 +1269,15 @@ back() {
                 title: "将远程分支拉到本地",
                 description: "首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。",
                 content: " 首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。\n"
+            }
+        );
+    index.add(
+            {
+                id:  15 ,
+                href: "\/docs\/javascript\/higher-order-function\/",
+                title: "高阶函数",
+                description: "高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。",
+                content: "高阶函数的实现\n下面是一个使用普通函数实现高阶函数的例子：\nfunction map(arr, fn) { const mappedArr = []; for (let i=0; i"
             }
         );
     search.addEventListener('input', show_results, true);

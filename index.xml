@@ -98,7 +98,7 @@ transition-property：指定过渡的属性。可以使用多个属性，用逗�
     </item>
     
     <item>
-      <title>Vue Router 中的 `back` 和 `go` 方法的使用</title>
+      <title>Vue Router 中的 back 和 go 方法的使用</title>
       <link>https://cotan.top/docs/vue/vue-router-go-back/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -134,6 +134,25 @@ git branch : 列出当前仓库的所有分支。 git branch &amp;lt;branch&amp;
       
       <guid>https://cotan.top/docs/git/remote-branch/</guid>
       <description>首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</description>
+    </item>
+    
+    <item>
+      <title>高阶函数</title>
+      <link>https://cotan.top/docs/javascript/higher-order-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/docs/javascript/higher-order-function/</guid>
+      <description>高阶函数的实现
+下面是一个使用普通函数实现高阶函数的例子：
+function map(arr, fn) { const mappedArr = []; for (let i=0; i&amp;lt;arr.length; i&amp;#43;&amp;#43;) { const val = fn(arr[i], i, arr); mappedArr.push(val); } return mappedArr; } 这个函数实现了一个非常常见的高阶函数——map()。它接受一个数组和一个函数作为参数，并返回一个新数组，这个新数组的元素是将原数组的每个元素传递给函数之后得到的新值。
+使用箭头函数，我们可以更加简洁地实现同样的功能：
+const map = (arr, fn) =&amp;gt; arr.map(fn); 这个例子中，我们用箭头函数实现了一个新的map()函数。它使用了原生的Array.map()方法实现了同样的功能，代码更加简洁和优雅。
+高阶函数的示例
+现在我们来看一些常见的高阶函数例子，以及它们如何用于实现通用的行为。
+forEach() forEach()是一个很常见的高阶函数，它用于遍历数组。我们可以使用它将一个函数应用于数组的每个元素：
+const numbers = [1, 2, 3, 4, 5]; numbers.forEach(num =&amp;gt; console.log(num)); 这将会打印数组中的每个数字。
+filter() filter()是另一个常见的高阶函数，它用于过滤数组。我们可以使用它筛选出我们想要的元素：
+const people = [ {name: &amp;#39;John&amp;#39;, age: 25}, {name: &amp;#39;Jane&amp;#39;, age: 30}, {name: &amp;#39;Bob&amp;#39;, age: 20} ]; const adults = people.</description>
     </item>
     
   </channel>
