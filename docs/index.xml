@@ -6,5 +6,14 @@
     <description>Recent content in Docs on Cotan Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="https://cotan.top/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LINKS</title>
+      <link>https://cotan.top/docs/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://cotan.top/docs/links/</guid>
+      <description> lotusdocs patterns 设计模式教学 google icons </description>
+    </item>
+    
   </channel>
 </rss>
