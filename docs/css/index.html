@@ -16,7 +16,7 @@
 
 <html lang="en"><head>
     <meta charset="utf-8" />
-    <title>git 命令手册 📖 | Cotan Notes</title>
+    <title>CSS | Cotan Notes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="Documentation, Hugo, Hugo Theme, Bootstrap" />
     <meta name="author" content="Colin Wilson - Lotus Labs" />
@@ -30,17 +30,13 @@
 <link rel="icon" type="image/png" sizes="32x32" href="https://cotan.top/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://cotan.top/favicon.png">
 <link rel="manifest" crossorigin="use-credentials" href="https://cotan.top/site.webmanifest">
-<meta property="og:title" content="git 命令手册 📖" />
-<meta property="og:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
-🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。 " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://cotan.top/docs/git/guide/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_13968964546770032609.png"/><meta property="article:section" content="docs" />
-<meta property="article:published_time" content="2023-05-23T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-12-07T11:20:33+08:00" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_13968964546770032609.png"/>
-<meta name="twitter:title" content="git 命令手册 📖"/>
-<meta name="twitter:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
-🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。 "/>
+<meta property="og:title" content="CSS" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://cotan.top/docs/css/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4136549883733787923.png"/><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_4136549883733787923.png"/>
+<meta name="twitter:title" content="CSS"/>
+<meta name="twitter:description" content=""/>
 
     
     <script>(()=>{var t=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches,e=localStorage.getItem("theme");t&&e===null&&(localStorage.setItem("theme","dark"),document.documentElement.setAttribute("data-dark-mode","")),t&&e==="dark"&&document.documentElement.setAttribute("data-dark-mode",""),e==="dark"&&document.documentElement.setAttribute("data-dark-mode","")})()</script>
@@ -215,7 +211,7 @@
                 
                     
                         
-                        <li class="">
+                        <li class="current">
                             <a class="sidebar-root-link" href="https://cotan.top/docs/css/">
                                 <i class="material-icons me-2">Psychiatry</i>
                                 
@@ -237,12 +233,12 @@
                 
                     
                     
-                        <li class="sidebar-dropdown  current active">
+                        <li class="sidebar-dropdown  ">
                             <button class="btn">
                                 <i class="material-icons me-2">Nutrition</i>
                                 Git
                             </button>
-                            <div class="sidebar-submenu d-block">
+                            <div class="sidebar-submenu ">
                                 <ul>
                                     
                                         
@@ -267,7 +263,7 @@
                                     
                                         
                                         
-                                            <li class="current "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">git 命令手册 📖</a></li>
+                                            <li class=" "><a class="sidebar-nested-link" href="https://cotan.top/docs/git/guide/">git 命令手册 📖</a></li>
                                         
                                     
                                 </ul>
@@ -521,18 +517,10 @@
                     <meta itemprop="position" content='1' />
                 </li>
             
-            
-                <li class="breadcrumb-item text-capitalize" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                    <a itemprop="item" href="/docs/git/">
-                        <span itemprop="name">Git</span>
-                    </a>
-                    <meta itemprop="position" content='2' />
-                </li>
-            
         
             <li class="breadcrumb-item text-capitalize active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                <span itemprop="name">git 命令手册 📖</span>
-                <meta itemprop="position" content='3' />
+                <span itemprop="name">CSS</span>
+                <meta itemprop="position" content='2' />
             </li>
         
     </ul>
@@ -540,52 +528,24 @@
                                     
                                     <div class="row flex-xl-nowrap">
                                         
-                                        <div class="docs-toc col-xl-3    d-xl-block"><toc>
+                                        <div class="docs-toc col-xl-3 visually-hidden visually-hidden  d-xl-block"><toc>
     <div class="fw-bold text-uppercase mb-2">On this page</div>
-    <nav id="toc">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#-初始化">🚀 初始化</a></li>
-        <li><a href="#-添加与提交">📝 添加与提交</a></li>
-        <li><a href="#-分支和合并">🌿 分支和合并</a></li>
-        <li><a href="#-推送与拉取">🔀 推送与拉取</a></li>
-        <li><a href="#-查看日志">🔎 查看日志</a></li>
-        <li><a href="#-撤销与修改">❌ 撤销与修改</a></li>
-        <li><a href="#-其他命令">🎨 其他命令</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
+    <nav id="toc"></nav>
     </toc></div>
                                         
                                         
-                                        <div class="docs-toc-mobile    d-print-none d-xl-none">
+                                        <div class="docs-toc-mobile visually-hidden visually-hidden  d-print-none d-xl-none">
                                             <button id="toc-dropdown-btn" class="btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0" aria-expanded="false">
                                                 Table of Contents
                                             </button>
-<nav id="toc-mobile">
-  <ul class="dropdown-menu">
-    <li>
-      <ul>
-        <li><a href="#-初始化">🚀 初始化</a></li>
-        <li><a href="#-添加与提交">📝 添加与提交</a></li>
-        <li><a href="#-分支和合并">🌿 分支和合并</a></li>
-        <li><a href="#-推送与拉取">🔀 推送与拉取</a></li>
-        <li><a href="#-查看日志">🔎 查看日志</a></li>
-        <li><a href="#-撤销与修改">❌ 撤销与修改</a></li>
-        <li><a href="#-其他命令">🎨 其他命令</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-                                        <div class="docs-content col-12 col-xl-9 mt-0">
+<nav id="toc-mobile"></nav></div>
+                                        <div class="docs-content col-12  mt-0">
                                             <div class="mb-0 d-flex">
                                                 
-                                                <i class="material-icons title-icon me-2">article</i>
+                                                <i class="material-icons title-icon me-2">Psychiatry</i>
                                                 
                                                 <h1 class="content-title mb-0">
-                                                    git 命令手册 📖
+                                                    CSS
                                                     
                                                 </h1>
                                             </div>
@@ -594,131 +554,13 @@
                                             
                                             <div id="content" class="main-content" data-bs-spy="scroll" data-bs-root-margin="0px 0px -65%" data-bs-target="#toc-mobile">
                                                 
-    
-    <div data-prismjs-copy="" data-prismjs-copy-success="" data-prismjs-copy-error="">
-        <p>这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。</p>
-<h2 id="-初始化">🚀 初始化 <a href="#-%e5%88%9d%e5%a7%8b%e5%8c%96" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git init</code> : 初始化一个 Git 仓库。</li>
-<li><code>git clone &lt;URL&gt;</code> : 克隆一个远程 Git 仓库。</li>
-</ul>
-<h2 id="-添加与提交">📝 添加与提交 <a href="#-%e6%b7%bb%e5%8a%a0%e4%b8%8e%e6%8f%90%e4%ba%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git add &lt;file&gt;</code> : 将文件添加到暂存区。</li>
-<li><code>git add .</code> : 将所有修改添加到暂存区。</li>
-<li><code>git commit -m &quot;&lt;message&gt;&quot;</code> : 提交变更并附上提交信息。</li>
-<li><code>git commit -a</code> : 跳过暂存区，直接提交所有变更。</li>
-</ul>
-<h2 id="-分支和合并">🌿 分支和合并 <a href="#-%e5%88%86%e6%94%af%e5%92%8c%e5%90%88%e5%b9%b6" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git branch</code> : 列出当前仓库的所有分支。</li>
-<li><code>git branch &lt;branch&gt;</code> : 创建一个新分支。</li>
-<li><code>git checkout &lt;branch&gt;</code> : 切换到一个分支。</li>
-<li><code>git checkout -b &lt;branch&gt;</code> : 创建一个新的分支并立即切换到该分支。</li>
-<li><code>git merge &lt;branch&gt;</code> : 合并指定分支到当前分支。</li>
-<li><code>git merge --no-ff &lt;branch&gt;</code> : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。</li>
-</ul>
-<h2 id="-推送与拉取">🔀 推送与拉取 <a href="#-%e6%8e%a8%e9%80%81%e4%b8%8e%e6%8b%89%e5%8f%96" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git pull</code> : 从远程仓库拉取代码。</li>
-<li><code>git push</code> : 将本地分支的更改推送到远程仓库。</li>
-<li><code>git push -u &lt;remote&gt; &lt;branch&gt;</code> : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。</li>
-<li><code>git fetch &lt;remote&gt;</code> : 从远程仓库拉取变更，但不自动合并它们。</li>
-<li><code>git fetch --all</code> : 从远程仓库拉取所有分支的变更，但不自动合并它们。</li>
-<li><code>git push &lt;remote&gt; --delete &lt;branch&gt;</code> : 从远程仓库删除指定分支。</li>
-</ul>
-<h2 id="-查看日志">🔎 查看日志 <a href="#-%e6%9f%a5%e7%9c%8b%e6%97%a5%e5%bf%97" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git log</code> : 查看提交日志。</li>
-<li><code>git log --oneline</code> : 查看简洁的提交日志。</li>
-<li><code>git log --graph --oneline</code> : 查看提交日志并显示分支合并图。</li>
-<li><code>git blame &lt;file&gt;</code> : 显示指定文件的每一行是由谁添加的。</li>
-</ul>
-<h2 id="-撤销与修改">❌ 撤销与修改 <a href="#-%e6%92%a4%e9%94%80%e4%b8%8e%e4%bf%ae%e6%94%b9" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git checkout &lt;file&gt;</code> : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。</li>
-<li><code>git reset HEAD &lt;file&gt;</code> : 取消已暂存文件。</li>
-<li><code>git reset HEAD~</code> : 返回上一个commit版本，并将文件修改保留在工作目录。</li>
-<li><code>git reset &lt;commit&gt;</code> : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。</li>
-<li><code>git reset --hard</code> : 取消所有本地修改，并恢复到最近的提交状态。</li>
-<li><code>git clean -f</code> : 删除未被跟踪的文件。</li>
-</ul>
-<h2 id="-其他命令">🎨 其他命令 <a href="#-%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4" class="anchor" aria-hidden="true"><i class="material-icons align-middle">link</i></a></h2><ul>
-<li><code>git status</code> : 显示工作目录下已提交和未提交的修改。</li>
-<li><code>git diff</code> : 显示工作目录和本地仓库之间的差异。</li>
-<li><code>git stash</code> : 将工作目录中的未提交修改保存到一个栈中。</li>
-<li><code>git stash apply</code> : 恢复最新的stash，并将内容应用于工作区。</li>
-<li><code>git stash list</code> : 显示所有的stash记录。</li>
-<li><code>git stash pop</code> : 删除最新的stash，并将其应用于工作区。</li>
-<li><code>git stash drop</code> : 删除最新的stash。</li>
-<li><code>git remote add &lt;name&gt; &lt;url&gt;</code> : 将一个新远程仓库添加到当前 Git 仓库中。</li>
-<li><code>git remote -v</code> : 显示当前仓库的所有远程仓库及其 URL。</li>
-<li><code>git tag</code> : 列出已经存在的标签。</li>
-<li><code>git tag &lt;tagname&gt;</code> : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。</li>
-<li><code>git push origin &lt;tagname&gt;</code> : 将指定标签推送到远程仓库。</li>
-<li><code>git push origin --tags</code> : 将所有标签推送到远程仓库。</li>
-<li><code>git show &lt;commit&gt;</code> : 显示指定提交的信息。</li>
-</ul>
-
+    <div class="row flex-xl-wrap">
+        
     </div>
 
-    
-
-
-
-
-
-    
-    
-
-
-
-
-
-
-<div class="gitinfo d-flex flex-wrap justify-content-between align-items-center opacity-85 pt-3">
-    <div id="edit-this-page" class="mt-1">
-        <a href="https://github.com/colinwilson/lotusdocs.dev/blob/release/content/docs/git/guide.md" alt="git 命令手册 📖" rel="noopener noreferrer" target="_blank">
-            
-            <span class="me-1 align-text-bottom">
-                
-                    <svg width="20px" height="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-  <path d="M16 0.396c-8.839 0-16 7.167-16 16 0 7.073 4.584 13.068 10.937 15.183 0.803 0.151 1.093-0.344 1.093-0.772 0-0.38-0.009-1.385-0.015-2.719-4.453 0.964-5.391-2.151-5.391-2.151-0.729-1.844-1.781-2.339-1.781-2.339-1.448-0.989 0.115-0.968 0.115-0.968 1.604 0.109 2.448 1.645 2.448 1.645 1.427 2.448 3.744 1.74 4.661 1.328 0.14-1.031 0.557-1.74 1.011-2.135-3.552-0.401-7.287-1.776-7.287-7.907 0-1.751 0.62-3.177 1.645-4.297-0.177-0.401-0.719-2.031 0.141-4.235 0 0 1.339-0.427 4.4 1.641 1.281-0.355 2.641-0.532 4-0.541 1.36 0.009 2.719 0.187 4 0.541 3.043-2.068 4.381-1.641 4.381-1.641 0.859 2.204 0.317 3.833 0.161 4.235 1.015 1.12 1.635 2.547 1.635 4.297 0 6.145-3.74 7.5-7.296 7.891 0.556 0.479 1.077 1.464 1.077 2.959 0 2.14-0.020 3.864-0.020 4.385 0 0.416 0.28 0.916 1.104 0.755 6.4-2.093 10.979-8.093 10.979-15.156 0-8.833-7.161-16-16-16z"/>
-</svg>
-
-                
-            </span>
-            Edit this page
-            
-        </a>
-    </div>
-    
-    <div id="last-modified" class="mt-1">
-        <p class="mb-0 fw-semibold">Last updated <span
-            id="relativetime"
-            data-authdate="2023-12-07T11:20:33&#43;0800"
-            title="07 Dec 2023, 11:20 &#43;0800">
-            07 Dec 2023, 11:20 &#43;0800
-        </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
-        </p>
-    </div>
-    
-</div>
-
-    
-
-    
                                             </div>
                                             <div><hr class="doc-hr">
 <div id="doc-nav" class="d-print-none">
-
-	<div class="row flex-xl-nowrap ">
-	<div class="col-sm-6 pt-2 doc-next">
-		<a href="/docs/git/remote-branch/">
-			<div class="card h-100 my-1">
-				<div class="card-body py-2">
-                    <p class="card-title fs-5 fw-semibold lh-base mb-0"><i class="material-icons align-middle">navigate_before</i> git 将远程分支拉到本地</p>
-					<p class="card-text ms-2"></p>
-					
-				</div>
-			</div>
-		</a>
-        </div>
-	</div>
 </div></div>
                                         </div>
                                     </div>

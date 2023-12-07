@@ -36,7 +36,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://cotan.top/docs/git/remote-branch/" /><meta property="og:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7176854765885579184.png"/><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2023-05-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-12-07T11:03:59+08:00" /><meta name="twitter:card" content="summary_large_image"/>
+<meta property="article:modified_time" content="2023-12-07T11:20:33+08:00" /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://cotan.top/opengraph/card-base-2_hu06b1a92291a380a0d2e0ec03dab66b2f_17642_filter_7176854765885579184.png"/>
 <meta name="twitter:title" content="git 将远程分支拉到本地"/>
 <meta name="twitter:description" content="可以使用以下命令将远程分支拉到本地：
@@ -203,10 +203,43 @@
                 
                 
                     
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://cotan.top/docs/javascript/">
+                                <i class="material-icons me-2">Helicopter</i>
+                                
+                                JAVASCRIPT
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://cotan.top/docs/css/">
+                                <i class="material-icons me-2">Psychiatry</i>
+                                
+                                CSS
+                            </a>
+                        </li>
+                    
+                
+                    
+                        
+                        <li class="">
+                            <a class="sidebar-root-link" href="https://cotan.top/docs/html/">
+                                <i class="material-icons me-2">Deceased</i>
+                                
+                                HTML
+                            </a>
+                        </li>
+                    
+                
+                    
                     
                         <li class="sidebar-dropdown  current active">
                             <button class="btn">
-                                <i class="material-icons me-2">folder</i>
+                                <i class="material-icons me-2">Nutrition</i>
                                 Git
                             </button>
                             <div class="sidebar-submenu d-block">
@@ -662,9 +695,9 @@
     <div id="last-modified" class="mt-1">
         <p class="mb-0 fw-semibold">Last updated <span
             id="relativetime"
-            data-authdate="2023-12-07T11:03:59&#43;0800"
-            title="07 Dec 2023, 11:03 &#43;0800">
-            07 Dec 2023, 11:03 &#43;0800
+            data-authdate="2023-12-07T11:20:33&#43;0800"
+            title="07 Dec 2023, 11:20 &#43;0800">
+            07 Dec 2023, 11:20 &#43;0800
         </span>. <span class="material-icons size-20 align-text-bottom opacity-75">history</span>
         </p>
     </div>
@@ -911,6 +944,27 @@
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     
@@ -920,8 +974,8 @@
     index.add(
             {
                 id:  0 ,
-                href: "\/docs\/git\/",
-                title: "Git",
+                href: "\/docs\/javascript\/",
+                title: "JAVASCRIPT",
                 description: "",
                 content: ""
             }
@@ -929,6 +983,24 @@
     index.add(
             {
                 id:  1 ,
+                href: "\/docs\/css\/",
+                title: "CSS",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  2 ,
+                href: "\/docs\/html\/",
+                title: "HTML",
+                description: "",
+                content: ""
+            }
+        );
+    index.add(
+            {
+                id:  3 ,
                 href: "\/docs\/",
                 title: "Docs",
                 description: "",
@@ -937,7 +1009,7 @@
         );
     index.add(
             {
-                id:  2 ,
+                id:  4 ,
                 href: "\/docs\/git\/submodule\/",
                 title: "git submodule",
                 description: "添加 link git submodule add -b [指定分支] [仓库地址] [路径] example: git submodule add -b icarus https://github.com/im/hexo-theme.git themes/icarus 命令执行完成，会在当前工程根路径下生成一个名为 .gitmodules 的文件，其中记录了子模块的信息。\n.gitmodules link [submodule \"themes/icarus\"] path = themes/icarus url = https://github.com/im/hexo-theme.git branch = icarus 更新 link git submodule update 删除 linksubmodule 的删除稍微麻烦点：首先，要在 .gitmodules 文件中删除相应配置信息。然后，执行 git rm –cached 命令将子模块所在的文件从 git 中删除。\n下载的工程带有 submodule link git submodule update --init --recursive 查看 sumodule 状态 link git submodule foreach git status 不能更新 link git submodule update --remote ",
@@ -946,7 +1018,7 @@
         );
     index.add(
             {
-                id:  3 ,
+                id:  5 ,
                 href: "\/docs\/git\/ssh-key\/",
                 title: "git 添加 ssh key",
                 description: "创建 SSH Key link ssh-keygen -t rsa -C \"tangxiaomiemail@gmail.com\" cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.\n全局配置 link git config --global user.name \"tangxiaomi\" git config --global user.email \"tangxiaomiemail@gmail.com\" 非全局配置 删除 --global link git config user.name \"tangxiaomi\" git config user.email \"tangxiaomiemail@gmail.com\" 查看配置 link git config --global user.name git config --global user.email 取消全局配置 link git config --global --unset user.name git config --global --unset user.",
@@ -955,7 +1027,7 @@
         );
     index.add(
             {
-                id:  4 ,
+                id:  6 ,
                 href: "\/docs\/git\/husky\/",
                 title: "husky",
                 description: "安装 Husky 使用 npm 进行安装：\nnpm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 “husky” 配置：\n\"husky\": { \"hooks\": { \"pre-commit\": \"npm run lint\", // 在执行 git commit 命令时，会执行 npm run lint 命令 \"pre-push\": \"npm run test\" // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 “scripts” 属性：\n\"scripts\": { \"lint\": \"eslint .\" } 这里的 “lint” 命令使用 ESlint 对整个项目进行代码风格检查。\n配置 pre-push 钩子 在 package.",
@@ -964,7 +1036,7 @@
         );
     index.add(
             {
-                id:  5 ,
+                id:  7 ,
                 href: "\/docs\/git\/remote-branch\/",
                 title: "git 将远程分支拉到本地",
                 description: "可以使用以下命令将远程分支拉到本地：\n首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。",
@@ -973,11 +1045,20 @@
         );
     index.add(
             {
-                id:  6 ,
+                id:  8 ,
                 href: "\/docs\/git\/guide\/",
                 title: "git 命令手册 📖",
                 description: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。 🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 ",
                 content: "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。\n🚀 初始化 link git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 📝 添加与提交 link git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 link git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 link git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 🔎 查看日志 link git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 link git checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 link git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 "
+            }
+        );
+    index.add(
+            {
+                id:  9 ,
+                href: "\/docs\/git\/",
+                title: "Git",
+                description: "",
+                content: ""
             }
         );
     search.addEventListener('input', show_results, true);
