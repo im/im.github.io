@@ -16,7 +16,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
 这是因为解构操作会将count.value的值复制给value，而不是创建一个引用。因此，value不再是一个响应式的数据对象，它无法与count保持同步。
 为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。
 解决方案 🛠️ 要解决ref解构的响应式问题，我们可以使用Vue 3提供的toRef函数。toRef函数可以将一个响应式对象的属性转换为一个单独的响应式引用。">
-<meta name="author" content="糖小米">
+<meta name="author" content="橙一橙🍊">
 <link rel="canonical" href="https://cyc.cool/posts/vue/vue3-responsive-lose/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.48f08253a7c069e52e8b166ba8bb1019749eea476e13bb453cb009882636454c.css" integrity="sha256-SPCCU6fAaeUuixZrqLsQGXSe6kduE7tFPLAJiCY2RUw=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://cyc.cool/avatar.svg">
@@ -127,7 +127,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
   "dateModified": "2023-06-29T00:00:00Z",
   "author":[{
     "@type": "Person",
-    "name": "糖小米"
+    "name": "橙一橙🍊"
   }],
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -206,7 +206,7 @@ import { ref } from &#39;vue&#39;; const count = ref(0); const { value } = count
     <h1 class="post-title entry-hint-parent">
       Vue3中的ref解构与响应式问题
     </h1>
-    <div class="post-meta"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米
+    <div class="post-meta"><span title='2023-06-29 00:00:00 +0000 UTC'>June 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;橙一橙🍊
 
 </div>
   </header> 
