@@ -1,4 +1,4 @@
-baseURL: "https://tangxiaomi.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+baseURL: "https://cyc.cool/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
 title: notes
 paginate: 5
 theme: PaperMod
@@ -22,9 +22,9 @@ languages:
         # languageName: "zh"
         # languagedirection: rtl
         # weight: 1
-        # title: '糖小米'
+        # title: '橙一橙🍊'
         # imageUrl: "/avatar.svg"
-        # imageTitle: '糖小米'
+        # imageTitle: '橙一橙🍊'
         taxonomies:
           category: categories
           tag: tags
@@ -50,9 +50,9 @@ outputs:
 params:
     hideFooter: true
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "https://tangxiaomi.top/"
+    description: "https://cyc.cool/"
     # author: Theme PaperMod
-    author: ["糖小米"] # multiple authors
+    author: ["橙一橙🍊"] # multiple authors
     DateFormat: "January 2, 2006"
 
     defaultTheme: auto
@@ -75,7 +75,7 @@ params:
         enabled: true
         title: ' '
         imageUrl: "/avatar2.JPG"
-        imageTitle: '糖小米'
+        imageTitle: '橙一橙🍊'
         imageWidth: 200
         imageHeight: 200
         buttons:
@@ -85,10 +85,10 @@ params:
               url: tags
 
     homeInfoParams:
-        Title: "糖小米"
+        Title: "橙一橙🍊"
         languagedirection: rtl
         Content: >
-            - 吾名糖小米🌟，当世一枚 **前端开发** 也。
+            - 吾名橙一橙🍊🌟，当世一枚 **前端开发** 也。
 
             - 自幼嗜好编程，屡试不爽，遂终生醉心其中。
 
