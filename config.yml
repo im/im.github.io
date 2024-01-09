@@ -1,5 +1,5 @@
 baseURL: "https://cyc.cool/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: notes
+title: 🍊
 paginate: 5
 theme: PaperMod
 languageCode: "cn"
@@ -22,9 +22,9 @@ languages:
         # languageName: "zh"
         # languagedirection: rtl
         # weight: 1
-        # title: '橙一橙🍊'
+        # title: '🍊'
         # imageUrl: "/avatar.svg"
-        # imageTitle: '橙一橙🍊'
+        # imageTitle: '🍊'
         taxonomies:
           category: categories
           tag: tags
@@ -52,7 +52,7 @@ params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
     description: "https://cyc.cool/"
     # author: Theme PaperMod
-    author: ["橙一橙🍊"] # multiple authors
+    author: ["🍊"] # multiple authors
     DateFormat: "January 2, 2006"
 
     defaultTheme: auto
@@ -72,10 +72,10 @@ params:
     # images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: true
+        enabled: false
         title: ' '
         imageUrl: "/avatar2.JPG"
-        imageTitle: '橙一橙🍊'
+        imageTitle: '🍊'
         imageWidth: 200
         imageHeight: 200
         buttons:
@@ -85,14 +85,14 @@ params:
               url: tags
 
     homeInfoParams:
-        Title: "橙一橙🍊"
+        # Title: "🍊"
         languagedirection: rtl
-        Content: >
-            - 吾名橙一橙🍊🌟，当世一枚 **前端开发** 也。
+        # Content: >
+        #     - 吾名🍊🌟，当世一枚 **前端开发** 也。
 
-            - 自幼嗜好编程，屡试不爽，遂终生醉心其中。
+        #     - 自幼嗜好编程，屡试不爽，遂终生醉心其中。
 
-            - 吾喜以代码为笔，以浏览器为纸，畅游于互联网之潮流之中。
+        #     - 吾喜以代码为笔，以浏览器为纸，畅游于互联网之潮流之中。
 
     socialIcons:
         - name: github
