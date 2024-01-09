@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术笔记 on notes</title>
+    <link>https://cyc.cool/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+    <description>Recent content in 技术笔记 on notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Tue, 04 Jul 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://cyc.cool/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>URL Scheme（URL协议）</title>
+      <link>https://cyc.cool/posts/other/url-scheme/</link>
+      <pubDate>Tue, 04 Jul 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/other/url-scheme/</guid>
+      <description>在移动应用程序中，URL Scheme是一种用于在应用程序之间进行通信的机制。它允许一个应用程序通过特定的URL来打开另一个应用程序，并在打开后执行一些特定的操作。
+URL Scheme的结构 一个URL Scheme是一个以特定格式构建的URL。它通常由两部分组成：Scheme和Path。
+Scheme：Scheme是URL的开头部分，用于指定要打开的应用程序。它以字母开头，后面跟随着字母、数字和一些特殊字符，例如myapp://。 Path：Path是Scheme之后的部分，用于指定在目标应用程序中要执行的具体操作。它可以是一个命令、参数或其他标识符，例如open?item=123。 URL Scheme的用途 URL Scheme可以用于多种用途，包括但不限于以下几个方面：
+打开应用程序：通过URL Scheme，可以从一个应用程序打开另一个应用程序。例如，可以通过点击一个URL链接或在其他应用程序中点击一个按钮来打开目标应用程序。 传递参数：URL Scheme可以传递一些参数给目标应用程序，以便应用程序知道要执行的操作或显示的内容。例如，可以通过URL Scheme传递一个商品ID，以便在目标应用程序中显示该商品的详细信息。 执行特定操作：URL Scheme还可以用于执行一些特定的操作，例如发送电子邮件、拨打电话、分享内容等。通过在URL中指定特定的命令，目标应用程序可以根据命令执行相应的操作。 如何使用URL Scheme 要在应用程序中使用URL Scheme，通常需要完成以下几个步骤：
+注册URL Scheme：目标应用程序需要在其配置文件或代码中注册自己的URL Scheme。这样，其他应用程序才能通过URL打开它。 构建URL：在发送URL请求时，需要构建一个合法的URL，包括Scheme和Path等必要的信息。 处理URL请求：目标应用程序需要处理接收到的URL请求，并根据URL中的信息执行相应的操作。 示例 以下是一个示例URL Scheme的URL：
+myapp://open?item=123 这个URL使用了名为myapp的Scheme，并传递了一个名为item的参数，值为123。目标应用程序可以解析这个URL，执行打开操作，并显示ID为123的商品详细信息。</description>
+    </item>
+    <item>
+      <title>git 添加 ssh key</title>
+      <link>https://cyc.cool/posts/git/ssh-key/</link>
+      <pubDate>Fri, 30 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/git/ssh-key/</guid>
+      <description>创建 SSH Key ssh-keygen -t rsa -C &amp;#34;tangxiaomiemail@gmail.com&amp;#34; cd ~/.ssh cat id_rsa.pub 如果一切顺利的话，可以在用户主目录里找到 .ssh 目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是 SSH Key 的秘钥对，id_rsa 是私钥，不能泄露出去，id_rsa.pub 是公钥，可以放心地告诉任何人.
+全局配置 git config --global user.name &amp;#34;tangxiaomi&amp;#34; git config --global user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 非全局配置 删除 --global git config user.name &amp;#34;tangxiaomi&amp;#34; git config user.email &amp;#34;tangxiaomiemail@gmail.com&amp;#34; 查看配置 git config --global user.name git config --global user.email 取消全局配置 git config --global --unset user.name git config --global --unset user.email git config --global user.name #(查看)全局配置账户是否已经移除 git config --global user.</description>
+    </item>
+    <item>
+      <title>Vue3中的ref解构与响应式问题</title>
+      <link>https://cyc.cool/posts/vue/vue3-responsive-lose/</link>
+      <pubDate>Thu, 29 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/vue/vue3-responsive-lose/</guid>
+      <description>介绍 📝 Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。
+ref解构的使用 🧩 在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个简单的例子：
+import { ref } from &amp;#39;vue&amp;#39;; const count = ref(0); console.log(count.value); // 输出：0 count.value++; // 修改数据 console.log(count.value); // 输出：1 在上面的例子中，我们使用ref函数创建了一个名为count的响应式数据对象。通过访问count.value属性，我们可以获取和修改数据的值。
+然而，当我们尝试对ref解构进行操作时，可能会遇到一些问题。
+ref解构的响应式问题 🚫 当我们对ref解构进行操作时，Vue 3无法正确地跟踪和更新数据的变化。下面是一个例子：
+import { ref } from &amp;#39;vue&amp;#39;; const count = ref(0); const { value } = count; console.log(value); // 输出：0 count.value++; // 修改数据 console.log(value); // 输出：0（未更新） 在上面的例子中，我们通过解构将count的值赋给value变量。然而，当我们修改count的值时，value并没有更新。
+这是因为解构操作会将count.value的值复制给value，而不是创建一个引用。因此，value不再是一个响应式的数据对象，它无法与count保持同步。
+为什么会丢失响应式？ 🤔 当我们对ref解构进行操作时，原因是解构操作会将响应式对象的引用丢失。Vue 3的响应式系统是基于Proxy实现的，它会拦截对响应式对象的访问和修改。然而，当我们对解构后的变量进行操作时，Vue 3无法捕获到这些操作，因此无法正确地跟踪和更新数据的变化。
+解决方案 🛠️ 要解决ref解构的响应式问题，我们可以使用Vue 3提供的toRef函数。toRef函数可以将一个响应式对象的属性转换为一个单独的响应式引用。</description>
+    </item>
+    <item>
+      <title>TypeScript泛型</title>
+      <link>https://cyc.cool/posts/typescript/generic/</link>
+      <pubDate>Wed, 28 Jun 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/typescript/generic/</guid>
+      <description>什么是泛型？ 泛型是一种在编程语言中用于创建可重用代码的工具。它允许我们在定义函数、类或接口时延迟指定具体类型，而是在使用时动态地传入类型参数。
+泛型函数 📝 在TypeScript中，我们可以使用泛型来创建可接受不同类型参数的函数。下面是一个简单的例子：
+function identity&amp;lt;T&amp;gt;(arg: T): T { return arg; } let result = identity&amp;lt;string&amp;gt;(&amp;#34;Hello, TypeScript! 🚀&amp;#34;); console.log(result); // 输出：Hello, TypeScript! 🚀 在上面的例子中，我们定义了一个identity函数，它接受一个参数arg并返回该参数。使用&amp;lt;T&amp;gt;语法来指定泛型类型，并在函数体中使用该类型。
+在调用函数时，我们可以明确指定泛型类型，也可以让TypeScript根据传入的参数自动推断出类型。
+常见场景： 泛型函数常用于处理各种类型的输入，并返回相同类型的输出。例如，数组的map和filter方法就是使用泛型函数来实现的。
+泛型类 🏢 除了函数，我们还可以创建泛型类。泛型类允许我们在类的定义中使用泛型类型。下面是一个示例：
+class Container&amp;lt;T&amp;gt; { private value: T; constructor(value: T) { this.value = value; } getValue(): T { return this.value; } } let container = new Container&amp;lt;number&amp;gt;(42); console.log(container.getValue()); // 输出：42 在上面的例子中，我们定义了一个Container类，它接受一个泛型类型参数T，并在构造函数中接受一个参数value。通过泛型类型，我们可以在类中使用该类型，并在实例化时传入具体类型。
+常见场景： 泛型类常用于创建可重用的数据结构，例如栈、队列等。通过使用泛型类，我们可以在编写通用的数据结构时，不限制特定的数据类型。
+泛型约束 🚧 有时候，我们希望对泛型进行一些限制，以确保只能传入特定类型。这时可以使用泛型约束。下面是一个示例：
+interface Lengthwise { length: number; } function loggingIdentity&amp;lt;T extends Lengthwise&amp;gt;(arg: T): T { console.</description>
+    </item>
+    <item>
+      <title>husky</title>
+      <link>https://cyc.cool/posts/git/husky/</link>
+      <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/git/husky/</guid>
+      <description>安装 Husky 使用 npm 进行安装：
+npm install husky --save-dev 配置 Git 钩子 在 package.json 文件中添加 &amp;ldquo;husky&amp;rdquo; 配置：
+&amp;#34;husky&amp;#34;: { &amp;#34;hooks&amp;#34;: { &amp;#34;pre-commit&amp;#34;: &amp;#34;npm run lint&amp;#34;, // 在执行 git commit 命令时，会执行 npm run lint 命令 &amp;#34;pre-push&amp;#34;: &amp;#34;npm run test&amp;#34; // 在执行 git push 命令时，会执行 npm run test 命令 } } 配置 pre-commit 钩子 在 package.json 文件中添加 &amp;ldquo;scripts&amp;rdquo; 属性：
+&amp;#34;scripts&amp;#34;: { &amp;#34;lint&amp;#34;: &amp;#34;eslint .&amp;#34; } 这里的 &amp;ldquo;lint&amp;rdquo; 命令使用 ESlint 对整个项目进行代码风格检查。
+配置 pre-push 钩子 在 package.</description>
+    </item>
+    <item>
+      <title>git 将远程分支拉到本地</title>
+      <link>https://cyc.cool/posts/git/remote-branch/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/git/remote-branch/</guid>
+      <description>可以使用以下命令将远程分支拉到本地：
+首先，使用 git remote 命令查看已经添加的远程仓库： git remote 然后，使用 git fetch 命令将远程分支拉取到本地仓库（不会进行合并）： git fetch origin remote_branch 最后，使用 git checkout 命令将远程分支切换到本地分支： git checkout local_branch 组合命令 git fetch origin remote_branch:local_branch 其中，remote_branch 为远程分支名称，origin 为远程仓库名称，local_branch 为本地分支名称，可以根据实际情况进行替换。</description>
+    </item>
+    <item>
+      <title>vscode 所有配置对照表</title>
+      <link>https://cyc.cool/posts/vscode/setting/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/vscode/setting/</guid>
+      <description>{ // 在保存时自动格式化代码 &amp;#34;editor.formatOnSave&amp;#34;: true, // 在按下“Commit”字符(如&amp;#34;.&amp;#34;或&amp;#34;;&amp;#34;)时接受建议 &amp;#34;editor.acceptSuggestionOnCommitCharacter&amp;#34;: true, // 在按下“Enter”时接受建议 &amp;#34;editor.acceptSuggestionOnEnter&amp;#34;: &amp;#34;on&amp;#34;, // 自动启用辅助功能 &amp;#34;editor.accessibilitySupport&amp;#34;: &amp;#34;auto&amp;#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &amp;#34;editor.colorDecorators&amp;#34;: true, // 光标闪烁类型(&amp;#34;blink&amp;#34;、&amp;#34;smooth&amp;#34; 或 &amp;#34;phase&amp;#34;) &amp;#34;editor.cursorBlinking&amp;#34;: &amp;#34;blink&amp;#34;, // 开启平滑光标动画 &amp;#34;editor.cursorSmoothCaretAnimation&amp;#34;: false, // 光标样式(&amp;#34;block&amp;#34;, &amp;#34;line&amp;#34; 或 &amp;#34;underline&amp;#34;) &amp;#34;editor.cursorStyle&amp;#34;: &amp;#34;line&amp;#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &amp;#34;editor.cursorSurroundingLines&amp;#34;: 3, // 光标宽度，0 表示使用默认值 &amp;#34;editor.cursorWidth&amp;#34;: 0, // 禁用字形图层提示 &amp;#34;editor.disableLayerHinting&amp;#34;: true, // 禁用等宽字体的优化 &amp;#34;editor.disableMonospaceOptimizations&amp;#34;: false, // 启用拖放支持 &amp;#34;editor.dragAndDrop&amp;#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &amp;#34;editor.emptySelectionClipboard&amp;#34;: true, // 额外的编辑器类名 &amp;#34;editor.</description>
+    </item>
+    <item>
+      <title>用VSCode配置ESLint自动保存校验</title>
+      <link>https://cyc.cool/posts/vscode/eslint/</link>
+      <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/vscode/eslint/</guid>
+      <description>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
+本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
+步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
+第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
+npm install eslint --save-dev 或
+yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
+{ &amp;#34;extends&amp;#34;: &amp;#34;eslint:recommended&amp;#34;, &amp;#34;rules&amp;#34;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
+第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
+{ &amp;#34;editor.codeActionsOnSave&amp;#34;: { &amp;#34;source.fixAll.eslint&amp;#34;: true }, &amp;#34;editor.formatOnSave&amp;#34;: false, &amp;#34;eslint.alwaysShowStatus&amp;#34;: true, &amp;#34;eslint.validate&amp;#34;: [ &amp;#34;javascript&amp;#34;, &amp;#34;javascriptreact&amp;#34;, { &amp;#34;language&amp;#34;: &amp;#34;vue&amp;#34;, &amp;#34;autoFix&amp;#34;: true }, { &amp;#34;language&amp;#34;: &amp;#34;html&amp;#34;, &amp;#34;autoFix&amp;#34;: true } ] } 这里通过&amp;quot;editor.codeActionsOnSave&amp;quot;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
+同时将&amp;quot;editor.formatOnSave&amp;quot;设置为false，表示不对存储时代码格式进行调整。
+最后配置&amp;quot;eslint.validate&amp;quot;即可，这里我们对&amp;quot;javascript&amp;quot;和&amp;quot;javascriptreact&amp;quot;进行校验和自动修复，同时对Vue和HTML代码添加支持。
+总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</description>
+    </item>
+    <item>
+      <title>js高阶函数</title>
+      <link>https://cyc.cool/posts/js/higher-order-function/</link>
+      <pubDate>Fri, 26 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/js/higher-order-function/</guid>
+      <description>JavaScript的高阶函数是一个非常强大的特性，它允许我们编写更加灵活和可重用的代码。在本文中，我们将探讨高阶函数的概念、它们如何实现以及一些示例。
+什么是高阶函数 高阶函数是指接受一个或多个函数作为参数，并可以返回函数作为结果的函数。这种函数可以用来将其他函数“包装起来”或者实现某种通用的行为。ES6的箭头函数使得编写高阶函数变得更加简单和方便。
+高阶函数的实现 下面是一个使用普通函数实现高阶函数的例子：
+function map(arr, fn) { const mappedArr = []; for (let i=0; i&amp;lt;arr.length; i++) { const val = fn(arr[i], i, arr); mappedArr.push(val); } return mappedArr; } 这个函数实现了一个非常常见的高阶函数——map()。它接受一个数组和一个函数作为参数，并返回一个新数组，这个新数组的元素是将原数组的每个元素传递给函数之后得到的新值。
+使用箭头函数，我们可以更加简洁地实现同样的功能：
+const map = (arr, fn) =&amp;gt; arr.map(fn); 这个例子中，我们用箭头函数实现了一个新的map()函数。它使用了原生的Array.map()方法实现了同样的功能，代码更加简洁和优雅。
+高阶函数的示例 现在我们来看一些常见的高阶函数例子，以及它们如何用于实现通用的行为。
+forEach() forEach()是一个很常见的高阶函数，它用于遍历数组。我们可以使用它将一个函数应用于数组的每个元素：
+const numbers = [1, 2, 3, 4, 5]; numbers.forEach(num =&amp;gt; console.log(num)); 这将会打印数组中的每个数字。
+filter() filter()是另一个常见的高阶函数，它用于过滤数组。我们可以使用它筛选出我们想要的元素：
+const people = [ {name: &amp;#39;John&amp;#39;, age: 25}, {name: &amp;#39;Jane&amp;#39;, age: 30}, {name: &amp;#39;Bob&amp;#39;, age: 20} ]; const adults = people.</description>
+    </item>
+    <item>
+      <title>git 命令手册 📖</title>
+      <link>https://cyc.cool/posts/git/guide/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/git/guide/</guid>
+      <description>这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
+🚀 初始化 git init : 初始化一个 Git 仓库。 git clone &amp;lt;URL&amp;gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 git add &amp;lt;file&amp;gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &amp;quot;&amp;lt;message&amp;gt;&amp;quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch &amp;lt;branch&amp;gt; : 创建一个新分支。 git checkout &amp;lt;branch&amp;gt; : 切换到一个分支。 git checkout -b &amp;lt;branch&amp;gt; : 创建一个新的分支并立即切换到该分支。 git merge &amp;lt;branch&amp;gt; : 合并指定分支到当前分支。 git merge --no-ff &amp;lt;branch&amp;gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &amp;lt;remote&amp;gt; &amp;lt;branch&amp;gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &amp;lt;remote&amp;gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &amp;lt;remote&amp;gt; --delete &amp;lt;branch&amp;gt; : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &amp;lt;file&amp;gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout &amp;lt;file&amp;gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &amp;lt;file&amp;gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &amp;lt;commit&amp;gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &amp;lt;name&amp;gt; &amp;lt;url&amp;gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &amp;lt;tagname&amp;gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &amp;lt;tagname&amp;gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &amp;lt;commit&amp;gt; : 显示指定提交的信息。 </description>
+    </item>
+    <item>
+      <title>如何在 Vite 中拦截开发服务器并使用 express</title>
+      <link>https://cyc.cool/posts/vite/express/</link>
+      <pubDate>Tue, 23 May 2023 00:00:00 +0000</pubDate>
+      <guid>https://cyc.cool/posts/vite/express/</guid>
+      <description>Vite 是一个快速、轻量级、易于使用的前端工具。它为开发者提供了一种现代的构建方式，可以快速地构建出高效且易于维护的 Web 应用程序。
+在 Vite 版本 4.2 及以上的版本中，我们可以使用 configureServer 方法来拦截 Vite 开发服务器，并将其替换为 express HTTP 服务器。这样，我们就可以使用更加灵活的 HTTP 服务器组合，并且可以方便地实现登录、鉴权等功能。
+配置 Vite 插件 为了使用自定义的 express 应用程序，我们需要编写一个 Vite 插件
+我们可以通过 myPlugin 函数来创建一个新插件。这个插件暴露了一个 configureServer 方法，我们可以在这个方法中创建并配置一个 express 应用程序。
+import express from &amp;#39;express&amp;#39; import cors from &amp;#39;cors&amp;#39; import bodyParser from &amp;#39;body-parser&amp;#39; import cookieParser from &amp;#39;cookie-parser&amp;#39; export default function myPlugin () { return { name: &amp;#39;my-plugin&amp;#39;, configureServer (server) { const app = express() app.use(cors({ credentials: true, origin: true })) app.</description>
+    </item>
+  </channel>
+</rss>

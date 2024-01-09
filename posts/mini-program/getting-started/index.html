@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>微信小程序开发入门教程 | notes</title>
+<meta name="keywords" content="">
+<meta name="description" content="🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
+🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
+2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
+3. 创建小程序 打开微信开发者工具，点击&quot;新建小程序&quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。
+🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：
+myproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。
+pages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。
+2. Hello World 打开index.wxml，在其中输入以下代码：
+&lt;!--index.wxml--&gt; &lt;text&gt;{{message}}&lt;/text&gt; 打开index.js，在其中输入以下代码：
+//index.js Page({ data: { message: &#34;Hello World&#34; } }) 应用这些变更后，点击微信开发者工具的&quot;预览&quot;按钮，可以在微信中查看效果。
+3. 组件介绍 在示例代码中，我们使用了&lt;text&gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
+下面简单介绍几个常用组件：
+&lt;view&gt;：与HTML中的&lt;div&gt;类似，用于嵌套其它组件，可以设置样式或事件。 &lt;text&gt;：用于显示文本，可以设置颜色、字体大小等。 &lt;button&gt;：用于创建按钮，可以设置事件。 &lt;image&gt;：用于显示图片，可以设置 src 属性。 4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&lt;text&gt;组件的内容中。">
+<meta name="author" content="糖小米">
+<link rel="canonical" href="https://cyc.cool/posts/mini-program/getting-started/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.48f08253a7c069e52e8b166ba8bb1019749eea476e13bb453cb009882636454c.css" integrity="sha256-SPCCU6fAaeUuixZrqLsQGXSe6kduE7tFPLAJiCY2RUw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://cyc.cool/avatar.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cyc.cool/avatar.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cyc.cool/avatar.svg">
+<link rel="apple-touch-icon" href="https://cyc.cool/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cyc.cool/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="微信小程序开发入门教程" />
+<meta property="og:description" content="🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
+🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
+2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
+3. 创建小程序 打开微信开发者工具，点击&quot;新建小程序&quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。
+🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：
+myproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。
+pages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。
+2. Hello World 打开index.wxml，在其中输入以下代码：
+&lt;!--index.wxml--&gt; &lt;text&gt;{{message}}&lt;/text&gt; 打开index.js，在其中输入以下代码：
+//index.js Page({ data: { message: &#34;Hello World&#34; } }) 应用这些变更后，点击微信开发者工具的&quot;预览&quot;按钮，可以在微信中查看效果。
+3. 组件介绍 在示例代码中，我们使用了&lt;text&gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
+下面简单介绍几个常用组件：
+&lt;view&gt;：与HTML中的&lt;div&gt;类似，用于嵌套其它组件，可以设置样式或事件。 &lt;text&gt;：用于显示文本，可以设置颜色、字体大小等。 &lt;button&gt;：用于创建按钮，可以设置事件。 &lt;image&gt;：用于显示图片，可以设置 src 属性。 4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&lt;text&gt;组件的内容中。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyc.cool/posts/mini-program/getting-started/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-27T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="微信小程序开发入门教程"/>
+<meta name="twitter:description" content="🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。
+🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。
+2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。
+3. 创建小程序 打开微信开发者工具，点击&quot;新建小程序&quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。
+🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：
+myproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。
+pages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。
+2. Hello World 打开index.wxml，在其中输入以下代码：
+&lt;!--index.wxml--&gt; &lt;text&gt;{{message}}&lt;/text&gt; 打开index.js，在其中输入以下代码：
+//index.js Page({ data: { message: &#34;Hello World&#34; } }) 应用这些变更后，点击微信开发者工具的&quot;预览&quot;按钮，可以在微信中查看效果。
+3. 组件介绍 在示例代码中，我们使用了&lt;text&gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。
+下面简单介绍几个常用组件：
+&lt;view&gt;：与HTML中的&lt;div&gt;类似，用于嵌套其它组件，可以设置样式或事件。 &lt;text&gt;：用于显示文本，可以设置颜色、字体大小等。 &lt;button&gt;：用于创建按钮，可以设置事件。 &lt;image&gt;：用于显示图片，可以设置 src 属性。 4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到&lt;text&gt;组件的内容中。"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cyc.cool/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "微信小程序开发入门教程",
+      "item": "https://cyc.cool/posts/mini-program/getting-started/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "微信小程序开发入门教程",
+  "name": "微信小程序开发入门教程",
+  "description": "🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。\n🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。\n2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。\n3. 创建小程序 打开微信开发者工具，点击\u0026quot;新建小程序\u0026quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。\n🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：\nmyproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。\npages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。\n2. Hello World 打开index.wxml，在其中输入以下代码：\n\u0026lt;!--index.wxml--\u0026gt; \u0026lt;text\u0026gt;{{message}}\u0026lt;/text\u0026gt; 打开index.js，在其中输入以下代码：\n//index.js Page({ data: { message: \u0026#34;Hello World\u0026#34; } }) 应用这些变更后，点击微信开发者工具的\u0026quot;预览\u0026quot;按钮，可以在微信中查看效果。\n3. 组件介绍 在示例代码中，我们使用了\u0026lt;text\u0026gt;标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。\n下面简单介绍几个常用组件：\n\u0026lt;view\u0026gt;：与HTML中的\u0026lt;div\u0026gt;类似，用于嵌套其它组件，可以设置样式或事件。 \u0026lt;text\u0026gt;：用于显示文本，可以设置颜色、字体大小等。 \u0026lt;button\u0026gt;：用于创建按钮，可以设置事件。 \u0026lt;image\u0026gt;：用于显示图片，可以设置 src 属性。 4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到\u0026lt;text\u0026gt;组件的内容中。",
+  "keywords": [
+    
+  ],
+  "articleBody": "🚀 前言 微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。\n🔧 准备工作 1. 安装微信开发者工具 微信小程序开发需要使用微信官方提供的开发者工具，点击这里下载适用于您的操作系统的开发者工具。\n2. 注册微信小程序账号 点击这里，注册一个微信小程序账号。\n3. 创建小程序 打开微信开发者工具，点击\"新建小程序\"按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。\n🚀 开发第一个小程序 1. 目录结构 创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：\nmyproject ├── app.js ├── app.json ├── app.wxss └── pages └── index ├── index.js ├── index.json ├── index.wxml └── index.wxss 其中，app.js是小程序的脚本文件，app.json是小程序的配置文件，app.wxss是小程序的全局样式表。\npages目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（.js）、配置文件（.json）、模板文件（.wxml）和样式表文件（.wxss）。\n2. Hello World 打开index.wxml，在其中输入以下代码：\n\u003ctext\u003e{{message}}\u003c/text\u003e 打开index.js，在其中输入以下代码：\n//index.js Page({ data: { message: \"Hello World\" } }) 应用这些变更后，点击微信开发者工具的\"预览\"按钮，可以在微信中查看效果。\n3. 组件介绍 在示例代码中，我们使用了标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。\n下面简单介绍几个常用组件：\n：与HTML中的类似，用于嵌套其它组件，可以设置样式或事件。 ：用于显示文本，可以设置颜色、字体大小等。 ：用于创建按钮，可以设置事件。 ：用于显示图片，可以设置 src 属性。 4. 数据绑定 在示例代码中，我们使用了{{message}}语法，将message变量的值绑定到组件的内容中。\n数据绑定是小程序中非常常用的功能。除了上述这种插值绑定，还可以在属性中使用绑定语法：\n\u003cview class=\"{{className}}\"\u003e\u003c/view\u003e //index.js Page({ data: { className: \"red\" } }) 这样的代码将给组件的class属性动态赋值，从而实现样式切换等功能。\n5. 事件处理 小程序中的事件处理与普通的Web开发类似，也可以使用事件冒泡、事件委托等技术。\n下面是一个示例代码：\n\u003cbutton bindtap=\"onClick\"\u003e点击我\u003c/button\u003e //index.js Page({ onClick: function(event) { console.log(\"按钮被点击了\") } }) 这段代码实现了一个简单的按钮点击事件，点击按钮后将在控制台输出信息。\n6. 网络请求 小程序具有完善的网络功能，可以使用wx.request()API发送HTTP请求，并处理返回的结果。\n下面是一个简单的示例代码：\n//index.js Page({ onLoad: function(options) { wx.request({ url: \"https://api.github.com/users/octocat\", success: function(res) { console.log(res.data) }, fail: function() { console.log(\"请求失败\") } }) } }) 这段代码实现了一个简单的网络请求，使用GitHub API获取了用户octocat的信息，并在控制台输出了返回结果。\n如需深入学习相关内容，可以参考微信小程序官方文档：https://developers.weixin.qq.com/miniprogram/dev/index.html 。\n",
+  "wordCount" : "128",
+  "inLanguage": "cn",
+  "datePublished": "2023-05-27T00:00:00Z",
+  "dateModified": "2023-05-27T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "糖小米"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyc.cool/posts/mini-program/getting-started/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyc.cool/avatar.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cyc.cool/" accesskey="h" title="notes (Alt + H)">notes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://cyc.cool/categories" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cyc.cool/search" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      微信小程序开发入门教程
+    </h1>
+    <div class="post-meta"><span title='2023-05-27 00:00:00 +0000 UTC'>May 27, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;糖小米
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="-前言">🚀 前言<a hidden class="anchor" aria-hidden="true" href="#-前言">#</a></h2>
+<p>微信小程序是一种全新的应用模式，它可以在微信中直接运行，用户无需下载安装即可使用，具有开发简单、轻量级、低成本等优点，非常适合创业公司、个人开发者等快速开发原型或小型商业应用。</p>
+<h2 id="-准备工作">🔧 准备工作<a hidden class="anchor" aria-hidden="true" href="#-准备工作">#</a></h2>
+<h3 id="1-安装微信开发者工具">1. 安装微信开发者工具<a hidden class="anchor" aria-hidden="true" href="#1-安装微信开发者工具">#</a></h3>
+<p>微信小程序开发需要使用微信官方提供的开发者工具，点击<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html">这里</a>下载适用于您的操作系统的开发者工具。</p>
+<h3 id="2-注册微信小程序账号">2. 注册微信小程序账号<a hidden class="anchor" aria-hidden="true" href="#2-注册微信小程序账号">#</a></h3>
+<p>点击<a href="https://mp.weixin.qq.com/cgi-bin/registermidpage?action=index&amp;lang=zh_CN">这里</a>，注册一个微信小程序账号。</p>
+<h3 id="3-创建小程序">3. 创建小程序<a hidden class="anchor" aria-hidden="true" href="#3-创建小程序">#</a></h3>
+<p>打开微信开发者工具，点击&quot;新建小程序&quot;按钮，按照提示填写小程序基本信息，即可创建一个最简单的小程序。</p>
+<h2 id="-开发第一个小程序">🚀 开发第一个小程序<a hidden class="anchor" aria-hidden="true" href="#-开发第一个小程序">#</a></h2>
+<h3 id="1-目录结构">1. 目录结构<a hidden class="anchor" aria-hidden="true" href="#1-目录结构">#</a></h3>
+<p>创建小程序后，微信开发者工具会自动生成一些模板文件，目录结构如下：</p>
+<pre tabindex="0"><code>myproject
+├── app.js
+├── app.json
+├── app.wxss
+└── pages
+    └── index
+        ├── index.js
+        ├── index.json
+        ├── index.wxml
+        └── index.wxss
+</code></pre><p>其中，<code>app.js</code>是小程序的脚本文件，<code>app.json</code>是小程序的配置文件，<code>app.wxss</code>是小程序的全局样式表。</p>
+<p><code>pages</code>目录下是小程序的页面文件，每个页面文件都由4个文件组成：脚本文件（<code>.js</code>）、配置文件（<code>.json</code>）、模板文件（<code>.wxml</code>）和样式表文件（<code>.wxss</code>）。</p>
+<h3 id="2-hello-world">2. Hello World<a hidden class="anchor" aria-hidden="true" href="#2-hello-world">#</a></h3>
+<p>打开<code>index.wxml</code>，在其中输入以下代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--index.wxml--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span>{{message}}<span class="p">&lt;/</span><span class="nt">text</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>打开<code>index.js</code>，在其中输入以下代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//index.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Page</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">message</span><span class="o">:</span> <span class="s2">&#34;Hello World&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>应用这些变更后，点击微信开发者工具的&quot;预览&quot;按钮，可以在微信中查看效果。</p>
+<h3 id="3-组件介绍">3. 组件介绍<a hidden class="anchor" aria-hidden="true" href="#3-组件介绍">#</a></h3>
+<p>在示例代码中，我们使用了<code>&lt;text&gt;</code>标签，这是一种小程序内置的组件。在小程序中，所有显示内容都是由组件构成的，组件可以嵌套使用，从而构成丰富的页面布局。</p>
+<p>下面简单介绍几个常用组件：</p>
+<ul>
+<li><code>&lt;view&gt;</code>：与HTML中的<code>&lt;div&gt;</code>类似，用于嵌套其它组件，可以设置样式或事件。</li>
+<li><code>&lt;text&gt;</code>：用于显示文本，可以设置颜色、字体大小等。</li>
+<li><code>&lt;button&gt;</code>：用于创建按钮，可以设置事件。</li>
+<li><code>&lt;image&gt;</code>：用于显示图片，可以设置 src 属性。</li>
+</ul>
+<h3 id="4-数据绑定">4. 数据绑定<a hidden class="anchor" aria-hidden="true" href="#4-数据绑定">#</a></h3>
+<p>在示例代码中，我们使用了<code>{{message}}</code>语法，将<code>message</code>变量的值绑定到<code>&lt;text&gt;</code>组件的内容中。</p>
+<p>数据绑定是小程序中非常常用的功能。除了上述这种插值绑定，还可以在属性中使用绑定语法：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--index.wxml--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">view</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;{{className}}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">view</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//index.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Page</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">data</span><span class="o">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">className</span><span class="o">:</span> <span class="s2">&#34;red&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>这样的代码将给<code>&lt;view&gt;</code>组件的<code>class</code>属性动态赋值，从而实现样式切换等功能。</p>
+<h3 id="5-事件处理">5. 事件处理<a hidden class="anchor" aria-hidden="true" href="#5-事件处理">#</a></h3>
+<p>小程序中的事件处理与普通的Web开发类似，也可以使用事件冒泡、事件委托等技术。</p>
+<p>下面是一个示例代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="c">&lt;!--index.wxml--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">button</span> <span class="na">bindtap</span><span class="o">=</span><span class="s">&#34;onClick&#34;</span><span class="p">&gt;</span>点击我<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//index.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Page</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">onClick</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;按钮被点击了&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>这段代码实现了一个简单的按钮点击事件，点击按钮后将在控制台输出信息。</p>
+<h3 id="6-网络请求">6. 网络请求<a hidden class="anchor" aria-hidden="true" href="#6-网络请求">#</a></h3>
+<p>小程序具有完善的网络功能，可以使用<code>wx.request()</code>API发送HTTP请求，并处理返回的结果。</p>
+<p>下面是一个简单的示例代码：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="c1">//index.js
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">Page</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">onLoad</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">wx</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">url</span><span class="o">:</span> <span class="s2">&#34;https://api.github.com/users/octocat&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">success</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">fail</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;请求失败&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span></code></pre></div><p>这段代码实现了一个简单的网络请求，使用GitHub API获取了用户<code>octocat</code>的信息，并在控制台输出了返回结果。</p>
+<blockquote>
+<p>如需深入学习相关内容，可以参考微信小程序官方文档：<a href="https://developers.weixin.qq.com/miniprogram/dev/index.html">https://developers.weixin.qq.com/miniprogram/dev/index.html</a> 。</p>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://cyc.cool/posts/vscode/eslint/">
+    <span class="title">« </span>
+    <br>
+    <span>用VSCode配置ESLint自动保存校验</span>
+  </a>
+  <a class="next" href="https://cyc.cool/posts/js/higher-order-function/">
+    <span class="title"> »</span>
+    <br>
+    <span>js高阶函数</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

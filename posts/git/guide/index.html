@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="cn" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>git 命令手册 📖 | notes</title>
+<meta name="keywords" content="git">
+<meta name="description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
+🚀 初始化 git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。 ">
+<meta name="author" content="糖小米">
+<link rel="canonical" href="https://cyc.cool/posts/git/guide/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.48f08253a7c069e52e8b166ba8bb1019749eea476e13bb453cb009882636454c.css" integrity="sha256-SPCCU6fAaeUuixZrqLsQGXSe6kduE7tFPLAJiCY2RUw=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://cyc.cool/avatar.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="https://cyc.cool/avatar.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="https://cyc.cool/avatar.svg">
+<link rel="apple-touch-icon" href="https://cyc.cool/apple-touch-icon.png">
+<link rel="mask-icon" href="https://cyc.cool/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="git 命令手册 📖" />
+<meta property="og:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
+🚀 初始化 git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://cyc.cool/posts/git/guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-05-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-05-23T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="git 命令手册 📖"/>
+<meta name="twitter:description" content="这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。
+🚀 初始化 git init : 初始化一个 Git 仓库。 git clone &lt;URL&gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 git add &lt;file&gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m &quot;&lt;message&gt;&quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch &lt;branch&gt; : 创建一个新分支。 git checkout &lt;branch&gt; : 切换到一个分支。 git checkout -b &lt;branch&gt; : 创建一个新的分支并立即切换到该分支。 git merge &lt;branch&gt; : 合并指定分支到当前分支。 git merge --no-ff &lt;branch&gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u &lt;remote&gt; &lt;branch&gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch &lt;remote&gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push &lt;remote&gt; --delete &lt;branch&gt; : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame &lt;file&gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout &lt;file&gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD &lt;file&gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset &lt;commit&gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add &lt;name&gt; &lt;url&gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag &lt;tagname&gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin &lt;tagname&gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show &lt;commit&gt; : 显示指定提交的信息。 "/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://cyc.cool/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "git 命令手册 📖",
+      "item": "https://cyc.cool/posts/git/guide/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "git 命令手册 📖",
+  "name": "git 命令手册 📖",
+  "description": "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。\n🚀 初始化 git init : 初始化一个 Git 仓库。 git clone \u0026lt;URL\u0026gt; : 克隆一个远程 Git 仓库。 📝 添加与提交 git add \u0026lt;file\u0026gt; : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \u0026quot;\u0026lt;message\u0026gt;\u0026quot; : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch \u0026lt;branch\u0026gt; : 创建一个新分支。 git checkout \u0026lt;branch\u0026gt; : 切换到一个分支。 git checkout -b \u0026lt;branch\u0026gt; : 创建一个新的分支并立即切换到该分支。 git merge \u0026lt;branch\u0026gt; : 合并指定分支到当前分支。 git merge --no-ff \u0026lt;branch\u0026gt; : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u \u0026lt;remote\u0026gt; \u0026lt;branch\u0026gt; : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch \u0026lt;remote\u0026gt; : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push \u0026lt;remote\u0026gt; --delete \u0026lt;branch\u0026gt; : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame \u0026lt;file\u0026gt; : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout \u0026lt;file\u0026gt; : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD \u0026lt;file\u0026gt; : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset \u0026lt;commit\u0026gt; : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add \u0026lt;name\u0026gt; \u0026lt;url\u0026gt; : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag \u0026lt;tagname\u0026gt; : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin \u0026lt;tagname\u0026gt; : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show \u0026lt;commit\u0026gt; : 显示指定提交的信息。 ",
+  "keywords": [
+    "git"
+  ],
+  "articleBody": "这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。\n🚀 初始化 git init : 初始化一个 Git 仓库。 git clone : 克隆一个远程 Git 仓库。 📝 添加与提交 git add : 将文件添加到暂存区。 git add . : 将所有修改添加到暂存区。 git commit -m \"\" : 提交变更并附上提交信息。 git commit -a : 跳过暂存区，直接提交所有变更。 🌿 分支和合并 git branch : 列出当前仓库的所有分支。 git branch : 创建一个新分支。 git checkout : 切换到一个分支。 git checkout -b : 创建一个新的分支并立即切换到该分支。 git merge : 合并指定分支到当前分支。 git merge --no-ff : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。 🔀 推送与拉取 git pull : 从远程仓库拉取代码。 git push : 将本地分支的更改推送到远程仓库。 git push -u : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。 git fetch : 从远程仓库拉取变更，但不自动合并它们。 git fetch --all : 从远程仓库拉取所有分支的变更，但不自动合并它们。 git push --delete : 从远程仓库删除指定分支。 🔎 查看日志 git log : 查看提交日志。 git log --oneline : 查看简洁的提交日志。 git log --graph --oneline : 查看提交日志并显示分支合并图。 git blame : 显示指定文件的每一行是由谁添加的。 ❌ 撤销与修改 git checkout : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。 git reset HEAD : 取消已暂存文件。 git reset HEAD~ : 返回上一个commit版本，并将文件修改保留在工作目录。 git reset : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。 git reset --hard : 取消所有本地修改，并恢复到最近的提交状态。 git clean -f : 删除未被跟踪的文件。 🎨 其他命令 git status : 显示工作目录下已提交和未提交的修改。 git diff : 显示工作目录和本地仓库之间的差异。 git stash : 将工作目录中的未提交修改保存到一个栈中。 git stash apply : 恢复最新的stash，并将内容应用于工作区。 git stash list : 显示所有的stash记录。 git stash pop : 删除最新的stash，并将其应用于工作区。 git stash drop : 删除最新的stash。 git remote add : 将一个新远程仓库添加到当前 Git 仓库中。 git remote -v : 显示当前仓库的所有远程仓库及其 URL。 git tag : 列出已经存在的标签。 git tag : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。 git push origin : 将指定标签推送到远程仓库。 git push origin --tags : 将所有标签推送到远程仓库。 git show : 显示指定提交的信息。 ",
+  "wordCount" : "244",
+  "inLanguage": "cn",
+  "datePublished": "2023-05-23T00:00:00Z",
+  "dateModified": "2023-05-23T00:00:00Z",
+  "author":[{
+    "@type": "Person",
+    "name": "糖小米"
+  }],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://cyc.cool/posts/git/guide/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "notes",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://cyc.cool/avatar.svg"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://cyc.cool/" accesskey="h" title="notes (Alt + H)">notes</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://cyc.cool/categories" title="categories">
+                    <span>categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://cyc.cool/search" title="search (Alt &#43; /)" accesskey=/>
+                    <span>search</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      git 命令手册 📖
+    </h1>
+    <div class="post-meta"><span title='2023-05-23 00:00:00 +0000 UTC'>May 23, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;糖小米
+
+</div>
+  </header> 
+  <div class="post-content"><p>这是一份 Git 命令的快速查找手册，包含了 Git 的常用命令和基本用法。快速找到你需要的命令和用法，让你的 Git 使用更加轻松自如。</p>
+<h2 id="-初始化">🚀 初始化<a hidden class="anchor" aria-hidden="true" href="#-初始化">#</a></h2>
+<ul>
+<li><code>git init</code> : 初始化一个 Git 仓库。</li>
+<li><code>git clone &lt;URL&gt;</code> : 克隆一个远程 Git 仓库。</li>
+</ul>
+<h2 id="-添加与提交">📝 添加与提交<a hidden class="anchor" aria-hidden="true" href="#-添加与提交">#</a></h2>
+<ul>
+<li><code>git add &lt;file&gt;</code> : 将文件添加到暂存区。</li>
+<li><code>git add .</code> : 将所有修改添加到暂存区。</li>
+<li><code>git commit -m &quot;&lt;message&gt;&quot;</code> : 提交变更并附上提交信息。</li>
+<li><code>git commit -a</code> : 跳过暂存区，直接提交所有变更。</li>
+</ul>
+<h2 id="-分支和合并">🌿 分支和合并<a hidden class="anchor" aria-hidden="true" href="#-分支和合并">#</a></h2>
+<ul>
+<li><code>git branch</code> : 列出当前仓库的所有分支。</li>
+<li><code>git branch &lt;branch&gt;</code> : 创建一个新分支。</li>
+<li><code>git checkout &lt;branch&gt;</code> : 切换到一个分支。</li>
+<li><code>git checkout -b &lt;branch&gt;</code> : 创建一个新的分支并立即切换到该分支。</li>
+<li><code>git merge &lt;branch&gt;</code> : 合并指定分支到当前分支。</li>
+<li><code>git merge --no-ff &lt;branch&gt;</code> : 强制 Git 创建一个新的合并提交，即使当前分支可以通过快进合并到指定分支。</li>
+</ul>
+<h2 id="-推送与拉取">🔀 推送与拉取<a hidden class="anchor" aria-hidden="true" href="#-推送与拉取">#</a></h2>
+<ul>
+<li><code>git pull</code> : 从远程仓库拉取代码。</li>
+<li><code>git push</code> : 将本地分支的更改推送到远程仓库。</li>
+<li><code>git push -u &lt;remote&gt; &lt;branch&gt;</code> : 第一次推送分支时，使用此命令将本地分支推送到远程仓库。</li>
+<li><code>git fetch &lt;remote&gt;</code> : 从远程仓库拉取变更，但不自动合并它们。</li>
+<li><code>git fetch --all</code> : 从远程仓库拉取所有分支的变更，但不自动合并它们。</li>
+<li><code>git push &lt;remote&gt; --delete &lt;branch&gt;</code> : 从远程仓库删除指定分支。</li>
+</ul>
+<h2 id="-查看日志">🔎 查看日志<a hidden class="anchor" aria-hidden="true" href="#-查看日志">#</a></h2>
+<ul>
+<li><code>git log</code> : 查看提交日志。</li>
+<li><code>git log --oneline</code> : 查看简洁的提交日志。</li>
+<li><code>git log --graph --oneline</code> : 查看提交日志并显示分支合并图。</li>
+<li><code>git blame &lt;file&gt;</code> : 显示指定文件的每一行是由谁添加的。</li>
+</ul>
+<h2 id="-撤销与修改">❌ 撤销与修改<a hidden class="anchor" aria-hidden="true" href="#-撤销与修改">#</a></h2>
+<ul>
+<li><code>git checkout &lt;file&gt;</code> : 用仓库中的文件替换工作目录中的文件，从而撤消最近的修订。</li>
+<li><code>git reset HEAD &lt;file&gt;</code> : 取消已暂存文件。</li>
+<li><code>git reset HEAD~</code> : 返回上一个commit版本，并将文件修改保留在工作目录。</li>
+<li><code>git reset &lt;commit&gt;</code> : 恢复指定提交的状态，同时将工作区和暂存区的修改移回到工作区。</li>
+<li><code>git reset --hard</code> : 取消所有本地修改，并恢复到最近的提交状态。</li>
+<li><code>git clean -f</code> : 删除未被跟踪的文件。</li>
+</ul>
+<h2 id="-其他命令">🎨 其他命令<a hidden class="anchor" aria-hidden="true" href="#-其他命令">#</a></h2>
+<ul>
+<li><code>git status</code> : 显示工作目录下已提交和未提交的修改。</li>
+<li><code>git diff</code> : 显示工作目录和本地仓库之间的差异。</li>
+<li><code>git stash</code> : 将工作目录中的未提交修改保存到一个栈中。</li>
+<li><code>git stash apply</code> : 恢复最新的stash，并将内容应用于工作区。</li>
+<li><code>git stash list</code> : 显示所有的stash记录。</li>
+<li><code>git stash pop</code> : 删除最新的stash，并将其应用于工作区。</li>
+<li><code>git stash drop</code> : 删除最新的stash。</li>
+<li><code>git remote add &lt;name&gt; &lt;url&gt;</code> : 将一个新远程仓库添加到当前 Git 仓库中。</li>
+<li><code>git remote -v</code> : 显示当前仓库的所有远程仓库及其 URL。</li>
+<li><code>git tag</code> : 列出已经存在的标签。</li>
+<li><code>git tag &lt;tagname&gt;</code> : 新建一个标签，默认为HEAD，用于后续推送到远程仓库。</li>
+<li><code>git push origin &lt;tagname&gt;</code> : 将指定标签推送到远程仓库。</li>
+<li><code>git push origin --tags</code> : 将所有标签推送到远程仓库。</li>
+<li><code>git show &lt;commit&gt;</code> : 显示指定提交的信息。</li>
+</ul>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://cyc.cool/tags/git/">git</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://cyc.cool/posts/js/higher-order-function/">
+    <span class="title">« </span>
+    <br>
+    <span>js高阶函数</span>
+  </a>
+  <a class="next" href="https://cyc.cool/posts/vite/express/">
+    <span class="title"> »</span>
+    <br>
+    <span>如何在 Vite 中拦截开发服务器并使用 express</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
