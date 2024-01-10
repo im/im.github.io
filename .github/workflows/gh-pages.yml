@@ -41,7 +41,7 @@ jobs:
         run: npm install pnpm -g
       - name: install hexo..
         run: |
-          npm install hexo-cli -g
+          npm install hexo-cli@7.0.0 -g
           pnpm install
       - name: hexo generate...
         run: |
