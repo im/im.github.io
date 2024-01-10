@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="在当今移动应用市场，有两种主要的应用类型：原生应用和快应用。这两种应用之间存在一些显著的区别。让我们来看看原生应用和快应用在各方面的对比。 开发难度 🔧原生应用需要开发人员掌握多种编程语言和工具，并具有丰富的开发经验和技能。相反，快应用使用了简单的HTML、CSS和JavaScript技术，所以对于新手和小型开发团队来说，它是一个更容易上手的选择。但是，要开发高质量的快应用并不容易。 部署速度">
+<meta property="og:type" content="article">
+<meta property="og:title" content="原生应用 vs 快应用">
+<meta property="og:url" content="https://cyc.cool/2023/05/27/mini-program/native-quick/index.html">
+<meta property="og:site_name" content="橙一橙">
+<meta property="og:description" content="在当今移动应用市场，有两种主要的应用类型：原生应用和快应用。这两种应用之间存在一些显著的区别。让我们来看看原生应用和快应用在各方面的对比。 开发难度 🔧原生应用需要开发人员掌握多种编程语言和工具，并具有丰富的开发经验和技能。相反，快应用使用了简单的HTML、CSS和JavaScript技术，所以对于新手和小型开发团队来说，它是一个更容易上手的选择。但是，要开发高质量的快应用并不容易。 部署速度">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-27T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-10T14:30:01.075Z">
+<meta property="article:author" content="橙一橙">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>原生应用 vs 快应用</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/05/27/mini-program/getting-started/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/05/27/mini-program/pain-spot/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/05/27/mini-program/native-quick/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&text=原生应用 vs 快应用"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&is_video=false&description=原生应用 vs 快应用"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=原生应用 vs 快应用&body=Check out this article: https://cyc.cool/2023/05/27/mini-program/native-quick/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&name=原生应用 vs 快应用&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/05/27/mini-program/native-quick/&t=原生应用 vs 快应用"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E9%9A%BE%E5%BA%A6-%F0%9F%94%A7"><span class="toc-number">1.</span> <span class="toc-text">开发难度 🔧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E9%80%9F%E5%BA%A6-%E2%8F%B1%EF%B8%8F"><span class="toc-number">2.</span> <span class="toc-text">部署速度 ⏱️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%92%8C%E6%80%A7%E8%83%BD-%F0%9F%92%BB"><span class="toc-number">3.</span> <span class="toc-text">功能和性能 💻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1-%E2%98%81%EF%B8%8F"><span class="toc-number">4.</span> <span class="toc-text">云服务 ☁️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%88%86%E5%8F%91-%F0%9F%8C%90"><span class="toc-number">5.</span> <span class="toc-text">应用分发 🌐</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        原生应用 vs 快应用
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">橙一橙</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-27T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-05-27</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/">微信小程序</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p>在当今移动应用市场，有两种主要的应用类型：原生应用和快应用。这两种应用之间存在一些显著的区别。让我们来看看原生应用和快应用在各方面的对比。</p>
+<h2 id="开发难度-🔧"><a href="#开发难度-🔧" class="headerlink" title="开发难度 🔧"></a>开发难度 🔧</h2><p>原生应用需要开发人员掌握多种编程语言和工具，并具有丰富的开发经验和技能。相反，快应用使用了简单的HTML、CSS和JavaScript技术，所以对于新手和小型开发团队来说，它是一个更容易上手的选择。但是，要开发高质量的快应用并不容易。</p>
+<h2 id="部署速度-⏱️"><a href="#部署速度-⏱️" class="headerlink" title="部署速度 ⏱️"></a>部署速度 ⏱️</h2><p>原生应用需要通过应用商店进行下载和安装，这需要用户等待和网络连接。而快应用是预安装在设备上的，无需用户下载和安装。这使得快应用在启动速度和用户体验方面更胜一筹。</p>
+<h2 id="功能和性能-💻"><a href="#功能和性能-💻" class="headerlink" title="功能和性能 💻"></a>功能和性能 💻</h2><p>原生应用可以访问设备的所有功能和资源，并可以为用户提供更流畅的操作和更佳的性能。相比之下，快应用受到设备限制，例如有时快应用的界面和功能会受到限制，因此可能不像原生应用具有更高的性能。</p>
+<h2 id="云服务-☁️"><a href="#云服务-☁️" class="headerlink" title="云服务 ☁️"></a>云服务 ☁️</h2><p>原生应用可以利用云服务来完善应用，例如储存和同步数据等。在快应用中，由于受到设备限制，对于涉及到大量数据的应用，需要通过第三方后端服务进行处理。</p>
+<h2 id="应用分发-🌐"><a href="#应用分发-🌐" class="headerlink" title="应用分发 🌐"></a>应用分发 🌐</h2><p>在应用分发方面，原生应用可以通过多个应用商店和市场进行分发。而快应用是通过设备厂商的应用商店进行分发，因此要想快速推广和覆盖更多用户，开发团队需要和设备厂商合作。</p>
+<p>综上所述，原生应用和快应用在多个方面都具有不同的优势。关键是，在选择应用类型时，需要考虑到应用的目标、用户体验和开发成本。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E9%9A%BE%E5%BA%A6-%F0%9F%94%A7"><span class="toc-number">1.</span> <span class="toc-text">开发难度 🔧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E9%80%9F%E5%BA%A6-%E2%8F%B1%EF%B8%8F"><span class="toc-number">2.</span> <span class="toc-text">部署速度 ⏱️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E5%92%8C%E6%80%A7%E8%83%BD-%F0%9F%92%BB"><span class="toc-number">3.</span> <span class="toc-text">功能和性能 💻</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%91%E6%9C%8D%E5%8A%A1-%E2%98%81%EF%B8%8F"><span class="toc-number">4.</span> <span class="toc-text">云服务 ☁️</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%88%86%E5%8F%91-%F0%9F%8C%90"><span class="toc-number">5.</span> <span class="toc-text">应用分发 🌐</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/05/27/mini-program/native-quick/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&text=原生应用 vs 快应用"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&is_video=false&description=原生应用 vs 快应用"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=原生应用 vs 快应用&body=Check out this article: https://cyc.cool/2023/05/27/mini-program/native-quick/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&title=原生应用 vs 快应用"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/05/27/mini-program/native-quick/&name=原生应用 vs 快应用&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/05/27/mini-program/native-quick/&t=原生应用 vs 快应用"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    橙一橙
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

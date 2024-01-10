@@ -1,227 +1,212 @@
 <!DOCTYPE html>
-<html lang="cn" dir="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>vscode | 🍊</title>
-<meta name="keywords" content="">
-<meta name="description" content="https://cyc.cool/">
-<meta name="author" content="🍊">
-<link rel="canonical" href="https://cyc.cool/tags/vscode/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.48f08253a7c069e52e8b166ba8bb1019749eea476e13bb453cb009882636454c.css" integrity="sha256-SPCCU6fAaeUuixZrqLsQGXSe6kduE7tFPLAJiCY2RUw=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://cyc.cool/avatar.svg">
-<link rel="icon" type="image/png" sizes="16x16" href="https://cyc.cool/avatar.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="https://cyc.cool/avatar.svg">
-<link rel="apple-touch-icon" href="https://cyc.cool/apple-touch-icon.png">
-<link rel="mask-icon" href="https://cyc.cool/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://cyc.cool/tags/vscode/index.xml">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
-            }
-        }
-
-    </style>
-</noscript><meta property="og:title" content="vscode" />
-<meta property="og:description" content="https://cyc.cool/" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://cyc.cool/tags/vscode/" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="vscode"/>
-<meta name="twitter:description" content="https://cyc.cool/"/>
-
-</head>
-
-<body class="list" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="https://cyc.cool/" accesskey="h" title="🍊 (Alt + H)">🍊</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="https://cyc.cool/categories" title="categories">
-                    <span>categories</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://cyc.cool/search" title="search (Alt &#43; /)" accesskey=/>
-                    <span>search</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    vscode
-  </h1>
-</header>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">vscode 所有配置对照表
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>{ // 在保存时自动格式化代码 &#34;editor.formatOnSave&#34;: true, // 在按下“Commit”字符(如&#34;.&#34;或&#34;;&#34;)时接受建议 &#34;editor.acceptSuggestionOnCommitCharacter&#34;: true, // 在按下“Enter”时接受建议 &#34;editor.acceptSuggestionOnEnter&#34;: &#34;on&#34;, // 自动启用辅助功能 &#34;editor.accessibilitySupport&#34;: &#34;auto&#34;, // 启用背景颜色样式，在编辑器中显示错误和警告等 &#34;editor.colorDecorators&#34;: true, // 光标闪烁类型(&#34;blink&#34;、&#34;smooth&#34; 或 &#34;phase&#34;) &#34;editor.cursorBlinking&#34;: &#34;blink&#34;, // 开启平滑光标动画 &#34;editor.cursorSmoothCaretAnimation&#34;: false, // 光标样式(&#34;block&#34;, &#34;line&#34; 或 &#34;underline&#34;) &#34;editor.cursorStyle&#34;: &#34;line&#34;, // 高亮当前行周围的行数(Highlight current line plus n lines) &#34;editor.cursorSurroundingLines&#34;: 3, // 光标宽度，0 表示使用默认值 &#34;editor.cursorWidth&#34;: 0, // 禁用字形图层提示 &#34;editor.disableLayerHinting&#34;: true, // 禁用等宽字体的优化 &#34;editor.disableMonospaceOptimizations&#34;: false, // 启用拖放支持 &#34;editor.dragAndDrop&#34;: true, // 在空文本中复制时复制当前行或上次选区内容 &#34;editor.emptySelectionClipboard&#34;: true, // 额外的编辑器类名 &#34;editor....</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;🍊</footer>
-  <a class="entry-link" aria-label="post link to vscode 所有配置对照表" href="https://cyc.cool/posts/vscode/setting/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">用VSCode配置ESLint自动保存校验
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>简介 ESLint是一个开源的 JavaScript 代码检查工具，可以帮助我们发现代码中存在的错误和潜在问题，并给出推荐的修复方案，从而提高代码的质量和可读性。
-本文将要介绍如何在VSCode中配置ESLint，实现自动保存校验功能，让我们的代码更加健康。
-步骤 第一步：安装ESLint插件 如果没有安装ESLint插件的话，我们需要先到VSCode插件商店中安装ESLint插件，安装过程非常简单，只需要在搜索框中输入“ESLint”即可。
-第二步：安装ESLint模块 在项目中安装ESLint模块依赖，可以使用npm或yarn，如下：
-npm install eslint --save-dev 或
-yarn add eslint --dev 第三步：创建ESLint配置文件 创建一个名为.eslintrc.json的文件，用来存放ESLint配置信息。
-{ &#34;extends&#34;: &#34;eslint:recommended&#34;, &#34;rules&#34;: {} } 这里使用了eslint:recommended作为配置的扩展，这些规则是由ESLint核心团队定义的一组推荐的规则。当然你也可以自定义一些规则，具体可参考官方文档。
-第四步：配置VSCode 我们需要在VSCode的配置文件中，添加以下内容实现自动保存校验。
-{ &#34;editor.codeActionsOnSave&#34;: { &#34;source.fixAll.eslint&#34;: true }, &#34;editor.formatOnSave&#34;: false, &#34;eslint.alwaysShowStatus&#34;: true, &#34;eslint.validate&#34;: [ &#34;javascript&#34;, &#34;javascriptreact&#34;, { &#34;language&#34;: &#34;vue&#34;, &#34;autoFix&#34;: true }, { &#34;language&#34;: &#34;html&#34;, &#34;autoFix&#34;: true } ] } 这里通过&#34;editor.codeActionsOnSave&#34;属性实现自动保存校验，当我们保存文件时，如果存在ESLint报错，VSCode会自动执行修复操作。
-同时将&#34;editor.formatOnSave&#34;设置为false，表示不对存储时代码格式进行调整。
-最后配置&#34;eslint.validate&#34;即可，这里我们对&#34;javascript&#34;和&#34;javascriptreact&#34;进行校验和自动修复，同时对Vue和HTML代码添加支持。
-总结 通过这个简单的配置，我们可以让ESLint与VSCode紧密地结合在一起，实现在保存代码之前、常规编写过程中进行代码检查校验。这将使我们能够更快地发现并修复潜在的问题，从而提高代码的质量和可读性。</p>
-  </div>
-  <footer class="entry-footer"><span title='2023-05-29 00:00:00 +0000 UTC'>May 29, 2023</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;🍊</footer>
-  <a class="entry-link" aria-label="post link to 用VSCode配置ESLint自动保存校验" href="https://cyc.cool/posts/vscode/eslint/"></a>
-</article>
-    </main>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta property="og:type" content="website">
+<meta property="og:title" content="橙一橙">
+<meta property="og:url" content="https://cyc.cool/tags/vscode/index.html">
+<meta property="og:site_name" content="橙一橙">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="橙一橙">
+<meta name="twitter:card" content="summary">
     
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>Tag: vscode</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
 
-<script>
-    let menu = document.getElementById('menu')
-    if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
+    <!-- Umami Analytics -->
 
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
 
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
 
-</script>
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+    <div class="content index py4 ">
+        
+          <header id="header">
+  <a class="u-url u-uid" href="/">
+  
+    
+      <img id="logo" alt class="u-logo" src="/images/logo.png" />
+    
+  
+    <div id="title">
+      <h1 class="p-name">橙一橙</h1>
+    </div>
+  </a>
+  <div id="nav">
+    <ul>
+      <li class="icon">
+        <a href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-2x"></i></a>
+      </li>
+      <!--
+     --><li><a href="/">Home</a></li><!--
+   --><!--
+     --><li><a href="/tags/">Tag</a></li><!--
+   --><!--
+     --><li><a href="/categories/">Category</a></li><!--
+   --><!--
+     --><li><a href="/archives/">Writing</a></li><!--
+   --><!--
+     --><li><a href="/search/">Search</a></li><!--
+   -->
+    </ul>
+  </div>
+</header>
+
+        
+        <div id="archive">
+  <ul class="post-list">
+    
+    
+    
+    
+      
+      
+      
+      
+        <li class="post-year"><h2>2023</h2></li>
+      
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2023-05-29T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-05-29</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2023/05/29/vscode/eslint/">用VSCode配置ESLint自动保存校验</a>
+    
+
+
+</span>
+      </li>
+    
+      
+      
+      
+      
+      <li class="post-item">
+        
+    <div class="meta">
+      
+        
+          <time datetime="2023-05-29T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-05-29</time>
+        
+      
+    </div>
+
+
+        <span>
+    
+        <a class="" href="/2023/05/29/vscode/setting/">vscode 所有配置对照表</a>
+    
+
+
+</span>
+      </li>
+    
+  </ul>
+  
+
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    橙一橙
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
 </body>
-
 </html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="HSTS (HTTP Strict Transport Security) 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。 🛡️ HSTS 的工作原理HSTS 通过在 HTTPS 响应头中添加 Strict-Transport-Security 参数来实现。当用户第一次访问一个网站时，服务器返">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HSTS 强制 https">
+<meta property="og:url" content="https://cyc.cool/2023/06/07/http/hsts/index.html">
+<meta property="og:site_name" content="橙一橙">
+<meta property="og:description" content="HSTS (HTTP Strict Transport Security) 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。 🛡️ HSTS 的工作原理HSTS 通过在 HTTPS 响应头中添加 Strict-Transport-Security 参数来实现。当用户第一次访问一个网站时，服务器返">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-06-07T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-10T14:30:01.075Z">
+<meta property="article:author" content="橙一橙">
+<meta property="article:tag" content="http">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>HSTS 强制 https</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/06/28/typescript/generic/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/06/06/other/picsum/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/06/07/http/hsts/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/06/07/http/hsts/&text=HSTS 强制 https"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/06/07/http/hsts/&is_video=false&description=HSTS 强制 https"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HSTS 强制 https&body=Check out this article: https://cyc.cool/2023/06/07/http/hsts/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/06/07/http/hsts/&name=HSTS 强制 https&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/06/07/http/hsts/&t=HSTS 强制 https"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A1%EF%B8%8F-HSTS-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">🛡️ HSTS 的工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%91-HSTS-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">🔑 HSTS 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9A%99%EF%B8%8F-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE-HSTS"><span class="toc-number">3.</span> <span class="toc-text">⚙️ 如何设置 HSTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.1.</span> <span class="toc-text">Apache 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text">Nginx 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IIS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">IIS 服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%A8-HSTS-%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">🚨 HSTS 的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%A1-%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">💡 总结</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        HSTS 强制 https
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">橙一橙</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-07T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-06-07</time>
+        
+      
+    </div>
+
+
+      
+
+      
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/http/" rel="tag">http</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <p><code>HSTS (HTTP Strict Transport Security)</code> 是一种安全策略，用于强制浏览器使用 HTTPS 进行安全连接，防止恶意攻击者使用中间人攻击 (Man-in-the-middle攻击) 窃取用户数据。</p>
+<h2 id="🛡️-HSTS-的工作原理"><a href="#🛡️-HSTS-的工作原理" class="headerlink" title="🛡️ HSTS 的工作原理"></a>🛡️ HSTS 的工作原理</h2><p>HSTS 通过在 HTTPS 响应头中添加 <code>Strict-Transport-Security</code> 参数来实现。当用户第一次访问一个网站时，服务器返回的响应头中包含了 <code>Strict-Transport-Security</code> 参数，浏览器会记住该网站的 HSTS 头，之后再次访问该网站时，浏览器就会自动强制使用 HTTPS 进行连接，而不再允许使用 HTTP 协议进行访问。</p>
+<h2 id="🔑-HSTS-的作用"><a href="#🔑-HSTS-的作用" class="headerlink" title="🔑 HSTS 的作用"></a>🔑 HSTS 的作用</h2><p>使用 HSTS 可以提供以下的安全保障：</p>
+<ul>
+<li>防止中间人攻击：通过强制使用 HTTPS，HSTS 可以防止攻击者在用户和服务器之间插入恶意的中间人攻击，在传输过程中窃取用户的敏感信息。</li>
+<li>安全可靠：HSTS 可以确保通过 HTTPS 连接的安全性和效率，从而更好地保护用户的隐私和安全。</li>
+<li>提高搜索引擎排名：使用 HTTPS 进行加密的网站可以获得更高的搜索引擎排名，并提高用户的信任度和转化率。</li>
+<li>提高网站性能：使用 HTTPS 加密通信可以降低网络拥塞和提高网站的性能。</li>
+</ul>
+<h2 id="⚙️-如何设置-HSTS"><a href="#⚙️-如何设置-HSTS" class="headerlink" title="⚙️ 如何设置 HSTS"></a>⚙️ 如何设置 HSTS</h2><p>要在网站中启用 HSTS，您需要在 HTTPS 响应头中添加一个 HSTS headers。您可以在 Web 服务器或应用程序中实现此功能，以下是一些具体步骤：</p>
+<h3 id="Apache-服务器"><a href="#Apache-服务器" class="headerlink" title="Apache 服务器"></a>Apache 服务器</h3><p>在 Apache 中，您可以通过编辑您的网站的 .htaccess 文件或 Apache 配置文件来添加 HSTS headers。编辑您的 .htaccess 文件，添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Header set Strict-Transport-Security &quot;max-age=63072000; includeSubDomains; preload&quot;</span><br></pre></td></tr></table></figure>
+
+<p>或者您可以编辑上面配置文件中的 VirtualHost 来全局设置 HSTS headers ，在 VirtualHost 中添加以下配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName www.example.com</span><br><span class="line">    Redirect permanent / https://www.example.com/</span><br><span class="line">    Header set Strict-Transport-Security &quot;max-age=63072000; includeSubDomains; preload&quot;</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这将把所有请求重定向到 HTTPS 并将 HSTS headers 添加到响应头中。</p>
+<h3 id="Nginx-服务器"><a href="#Nginx-服务器" class="headerlink" title="Nginx 服务器"></a>Nginx 服务器</h3><p>在 Nginx 中，编辑 Nginx 配置文件中与您的网站相关的配置。使用 <code>add_header</code> 命令添加 HSTS headers：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name www.example.com;</span><br><span class="line">    return 301 https://$server_name$request_uri;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">server &#123;</span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line">    server_name www.example.com;</span><br><span class="line">    add_header Strict-Transport-Security &quot;max-age=63072000; includeSubDomains; preload;&quot;;</span><br><span class="line">    # other ssl settings</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="IIS-服务器"><a href="#IIS-服务器" class="headerlink" title="IIS 服务器"></a>IIS 服务器</h3><p>在 IIS 中，您可以通过编辑您的网站的 web.config 文件来添加 HSTS headers。编辑 web.config 文件，添加以下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;system.webServer&gt;</span><br><span class="line">  &lt;httpProtocol&gt;</span><br><span class="line">    &lt;customHeaders&gt;</span><br><span class="line">      &lt;add name=&quot;Strict-Transport-Security&quot; value=&quot;max-age=63072000; includeSubDomains; preload&quot; /&gt;</span><br><span class="line">    &lt;/customHeaders&gt;</span><br><span class="line">  &lt;/httpProtocol&gt;</span><br><span class="line">&lt;/system.webServer&gt;</span><br></pre></td></tr></table></figure>
+
+<p>添加 HSTS headers 之后，访问您的网站时，浏览器将会自动强制使用 HTTPS 进行连接，并且有效期 <code>max-age</code> 将在访问期间被记住，直到过期或 HSTS headers 被删除。</p>
+<p>在实现 HSTS 的时候，最好先使用小的 <code>max-age</code> 值进行测试，以确保一切正常工作，之后再设定长期的值。另外，请注意不要在生产环境之前添加 HSTS 的预加载指令 <code>preload</code>。该指令会将网站加入到浏览器的 HSTS 预加载列表中，必须遵守极其严格的要求和审核才能添加，预加载一旦结束就无法回退。</p>
+<h2 id="🚨-HSTS-的注意事项"><a href="#🚨-HSTS-的注意事项" class="headerlink" title="🚨 HSTS 的注意事项"></a>🚨 HSTS 的注意事项</h2><ul>
+<li>HSTS 只能保证浏览器和网站之间的通信是安全的，但无法防止其他形式的攻击。</li>
+<li>如果网站使用了 HSTS，在浏览器上访问该网站时，会自动强制使用 HTTPS，请确保网站已正确配置 SSL 证书，否则用户无法访问该网站。</li>
+<li>HSTS 不适用于不支持 HTTPS 加密通信的浏览器或旧版浏览器。</li>
+</ul>
+<h2 id="💡-总结"><a href="#💡-总结" class="headerlink" title="💡 总结"></a>💡 总结</h2><p>HSTS 是一种用于强制浏览器使用 HTTPS 进行安全连接的安全策略，它可以有效地保护用户的隐私和安全，并提高网站的搜索引擎排名和性能。使用 HSTS 需要注意一些细节问题，但只要正确地实现和配置，可以轻松地提供更可靠和安全的服务。</p>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A1%EF%B8%8F-HSTS-%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">🛡️ HSTS 的工作原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%91-HSTS-%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text">🔑 HSTS 的作用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9A%99%EF%B8%8F-%E5%A6%82%E4%BD%95%E8%AE%BE%E7%BD%AE-HSTS"><span class="toc-number">3.</span> <span class="toc-text">⚙️ 如何设置 HSTS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Apache-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.1.</span> <span class="toc-text">Apache 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.2.</span> <span class="toc-text">Nginx 服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IIS-%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">3.3.</span> <span class="toc-text">IIS 服务器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9A%A8-HSTS-%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">4.</span> <span class="toc-text">🚨 HSTS 的注意事项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%A1-%E6%80%BB%E7%BB%93"><span class="toc-number">5.</span> <span class="toc-text">💡 总结</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/06/07/http/hsts/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/06/07/http/hsts/&text=HSTS 强制 https"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/06/07/http/hsts/&is_video=false&description=HSTS 强制 https"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=HSTS 强制 https&body=Check out this article: https://cyc.cool/2023/06/07/http/hsts/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/06/07/http/hsts/&title=HSTS 强制 https"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/06/07/http/hsts/&name=HSTS 强制 https&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/06/07/http/hsts/&t=HSTS 强制 https"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    橙一橙
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="HTML + CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（gracefu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题合集">
+<meta property="og:url" content="https://cyc.cool/2023/07/11/interview/interview-list/index.html">
+<meta property="og:site_name" content="橙一橙">
+<meta property="og:description" content="HTML + CSS​ 什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？ CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​ 三栏布局有什么实现方式？​ css calc 属性作用是什么？主要用于解决什么问题？ ​ 有一个固定长宽div，怎么实现在屏幕上垂直水平居中​ 描述一下渐进增强（progressive enhancement）和优雅降级（gracefu">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-07-11T00:00:00.000Z">
+<meta property="article:modified_time" content="2024-01-10T14:30:01.075Z">
+<meta property="article:author" content="橙一橙">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>面试题合集</title>
+    <!-- async scripts -->
+    <!-- Google Analytics -->
+
+
+    <!-- Umami Analytics -->
+
+
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" aria-label="Previous post" href="/2023/11/05/other/navigator-registerProtocolHandler/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2023/07/04/other/url-scheme/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/07/11/interview/interview-list/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/07/11/interview/interview-list/&text=面试题合集"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/07/11/interview/interview-list/&is_video=false&description=面试题合集"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=面试题合集&body=Check out this article: https://cyc.cool/2023/07/11/interview/interview-list/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/07/11/interview/interview-list/&name=面试题合集&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/07/11/interview/interview-list/&t=面试题合集"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    
+    
+      <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-CSS%E2%80%8B"><span class="toc-number">1.</span> <span class="toc-text">HTML + CSS​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript%E2%80%8B"><span class="toc-number">2.</span> <span class="toc-text">Javascript​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E7%94%9F%E6%80%81"><span class="toc-number">3.</span> <span class="toc-text">Vue生态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%8B"><span class="toc-number">4.</span> <span class="toc-text">计算机网络​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">5.</span> <span class="toc-text">网络安全</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E2%80%8B"><span class="toc-number">6.</span> <span class="toc-text">前端工程化​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E2%80%8B"><span class="toc-number">7.</span> <span class="toc-text">性能优化​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8-web-%E5%BC%80%E5%8F%91%E2%80%8B"><span class="toc-number">8.</span> <span class="toc-text">移动 web 开发​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E5%8F%91%E6%B5%81%E7%A8%8B%E2%80%8B"><span class="toc-number">9.</span> <span class="toc-text">研发流程​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nodejs%E2%80%8B"><span class="toc-number">10.</span> <span class="toc-text">Nodejs​</span></a></li></ol>
+      </div>
+    
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        面试题合集
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-name" itemprop="name">橙一橙</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-07-11T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-07-11</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/interview/">interview</a>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1 id="HTML-CSS​"><a href="#HTML-CSS​" class="headerlink" title="HTML + CSS​"></a>HTML + CSS​</h1><ul>
+<li>什么是 BFC ？如何触发？有何特点？如何解决 margin“塌陷”？</li>
+<li>CSS 如何出来溢出？说一下 overflow 不同值的区别。 ​</li>
+<li>三栏布局有什么实现方式？​</li>
+<li>css calc 属性作用是什么？主要用于解决什么问题？ ​</li>
+<li>有一个固定长宽div，怎么实现在屏幕上垂直水平居中​</li>
+<li>描述一下渐进增强（progressive enhancement）和优雅降级（graceful degradation）​</li>
+<li>iframe 有哪些优点？哪些缺点？用它来解决过什么问题？​</li>
+<li>Google Chrome 如何支持大小小于 12px 的文字？​</li>
+<li>描述一下 css 盒子模型​</li>
+<li>HTML5 的特性有哪些？​</li>
+<li>CSS3 的特性有哪些？​</li>
+<li>如何实现水平居中？​</li>
+<li>如何实现垂直居中？​</li>
+<li>如何实现双圣杯布局？​</li>
+<li>CSS 中选择器的优先级？​</li>
+<li>CSS 权重如何计算？​</li>
+<li>HTML5 input 元素 type 属性有哪些？​</li>
+<li>CSS 中哪些属性可继承，哪些不可以​</li>
+<li>CSS 单位中 px、em 和 rem 的区别？配合 font-size 如何计算？（移动端适配方案）​</li>
+<li>如何画一条 0.5px 的线​</li>
+<li>隐藏一个元素有哪些方法？display: none 与 visibility: hidden 与 opacity: 0 之间的区别？​</li>
+<li>position 的值有哪些，分别有什么特点？​</li>
+<li>什么是浮动，浮动会引起什么问题，有何解决方案？​</li>
+<li>line-height 和 height 的区别​</li>
+<li>设置一个元素的背景颜色，背景颜色会填充哪些区域？​</li>
+<li>inline-block、inline 和 block 的区别；为什么 img 是 inline 还可以设置宽高​</li>
+<li>什么是重绘？什么是回流？如何减少？如何让文档脱离文档流？​</li>
+<li>box-sizing 的作用，如何使用？​</li>
+<li>如何实现清除浮动​</li>
+<li>css 动画如何实现​</li>
+<li>如何实现在某个容器中居中的？​</li>
+<li>如何改变一个 DOM 元素的字体颜色？​</li>
+<li>相对布局和绝对布局，position:relative 和 obsolute。​</li>
+<li>什么是弹性盒子 flex 布局？​</li>
+<li>什么是 rem 布局？​</li>
+<li>less 和 scss 有什么区别？​</li>
+<li>::before 和::after 中双冒号和单冒号的区别？​</li>
+<li>CSS3 新增伪类，以及伪元素？​</li>
+<li>响应式布局实现方案？​</li>
+<li>link 标签和 import 标签的区别？​</li>
+<li>transition 和 animation 的区别？​</li>
+<li>说一下块元素、行元素、置换元素​</li>
+<li>多行元素的文本省略号如何实现？​</li>
+<li>Doctype 作用? 严格模式与混杂模式如何区分？它们有何意义?</li>
+</ul>
+<h1 id="Javascript​"><a href="#Javascript​" class="headerlink" title="Javascript​"></a>Javascript​</h1><ul>
+<li>javascript 的数据类型有哪些？​</li>
+<li>javascript 有哪些引用类型？​</li>
+<li>如何判断 javascript 的数据类型？​</li>
+<li>怎么判断两个对象相等？如何判断空对象？​</li>
+<li>0.1 + 0.2 为什么不等于 0.3 ？（解释原理）​</li>
+<li>强制类型转换、隐式类型转换分别是什么，列举场景说明。​</li>
+<li>创建函数的几种方式？ ​</li>
+<li>javascript 创建对象的几种方式？ ​</li>
+<li>列举宿主对象、内置对象、原生对象并说明其定义。​</li>
+<li>&#x3D;&#x3D;&#x3D; 和 &#x3D;&#x3D;的区别？​</li>
+<li>null，undefined 的区别​</li>
+<li>什么情况下会返回 undefined 值？​</li>
+<li>如何区分数组和对象？​</li>
+<li>多维数组如何降维？​</li>
+<li>怎么获取当前日期（年-月-日 时:分:秒）？​</li>
+<li>什么是类数组（伪数组），如何将其转化为真实的数组？​</li>
+<li>如何遍历对象的属性？​</li>
+<li>如何给一个按钮绑定两个 onclick 事件？​</li>
+<li>变量提升是什么？与函数提升的区别？​</li>
+<li>什么是作用域链？如何延长？​</li>
+<li>如何实现数组的随机排序？​</li>
+<li>dom 节点的 Attribute 和 Property 有何区别？​</li>
+<li>dom 结构操作怎样添加、移除、移动、复制、创建和查找节点？​</li>
+<li>什么是事件冒泡，它是如何工作的？如何阻止事件冒泡？​</li>
+<li>什么是事件捕获，它是如何工作的？​</li>
+<li>如何让事件先冒泡后捕获？​</li>
+<li>JavaScript 动画和 CSS3 动画有什么区别？ ​</li>
+<li>dom 的事件模型​</li>
+<li>事件三要素是什么？​</li>
+<li>获取元素位置？​</li>
+<li>如何绑定事件，如何解除事件？​</li>
+<li>对事件委托的理解​</li>
+<li>setTimeout 和 setInterval 的区别及用法是什么？​</li>
+<li>用 setTimeout 来实现 setInterval​</li>
+<li>document.write 和 innerHTML 的区别？​</li>
+<li>元素拖动如何实现，原理是怎样？​</li>
+<li>什么是重绘(repaint)？什么是回流(reflow)？如何最小化重绘和回流？​</li>
+<li>延迟加载的方式有哪些？​</li>
+<li>垃圾回收机制有哪些？具体怎么如何执行？​</li>
+<li>什么是内存泄漏 ？​</li>
+<li>数组遍历的方法有哪些，分别有什么特点，性能如何 ？​</li>
+<li>ES5 和 ES6 的区别，ES6 新增了什么？​</li>
+<li>ES6 的继承和 ES5 的继承有什么区别？​</li>
+<li>var、let、const 之间的区别？暂时性死区如何理解？​</li>
+<li>Class、extends 是什么，有什么作用？​</li>
+<li>什么是 JS 闭包​</li>
+<li>说一下类的创建和继承，列举一下你所知道的继承方式​</li>
+<li>如何解决异步回调地狱​</li>
+<li>说一下图片的懒加载和预加载​</li>
+<li>mouseover 和 mouseenter 的区别​</li>
+<li>new 操作符做了哪些事情​</li>
+<li>改变函数内部 this 指针的指向函数（bind，apply，call 的区别），内在分别是如何实现的？​</li>
+<li>JS 的各种位置，比如 clientHeight, scrollHeight, offsetHeight ,以及 scrollTop, offsetTop, clientTop * 的区别？​</li>
+<li>异步加载 JS 的方法​</li>
+<li>Ajax 解决浏览器缓存问题​</li>
+<li>节流和防抖​</li>
+<li>eval 是做什么的​</li>
+<li>对象深拷贝的简单实现​</li>
+<li>实现 JS 中所有对象的深度克隆（包装对象，Date 对象，正则对象）​</li>
+<li>实现一个 once 函数，传入函数参数只执行一次​</li>
+<li>将原生的 ajax 封装成 promise​</li>
+<li>JS 监听对象属性的改变​</li>
+<li>如何实现一个私有变量，用 get 可以访问，不能直接访问​</li>
+<li>怎么控制一次加载一张图片，加载完后再加载下一张​</li>
+<li>如何实现 sleep 的效果（es5 或者 es6）​</li>
+<li>Function.<em>proto</em>(getPrototypeOf)是什么？​</li>
+<li>箭头函数中 this 指向​</li>
+<li>数组常用方法有哪些​</li>
+<li>数组去重有哪些方法？​</li>
+<li>如何去除字符串首尾空格​</li>
+<li>说说你所知道的 JS 语言特性？​</li>
+<li>如何判断一个数组？​</li>
+<li>JS 的全排列​</li>
+<li>谈谈你所理解的跨域，为什么会有这个问题？如何解决？​</li>
+<li>null &#x3D;&#x3D; undefined 输出什么？null &#x3D;&#x3D;&#x3D; undefined 呢？​</li>
+<li>什么是按需加载​</li>
+<li>简单介绍一下 symbol​</li>
+<li>介绍一下 promise，及其底层如何实现​</li>
+<li>JS 原型链，原型链的顶端是什么？Object 的原型是什么？Object 的原型的原型是什么？​</li>
+<li>promise+Generator+Async 的使用​</li>
+<li>JS 中 string 的 startwith 和 indexof 两种方法的区别​</li>
+<li>JS 字符串转数字的方法​</li>
+<li>平时是怎么调试 JS 的​</li>
+<li>怎么获得对象上的属性​</li>
+<li>async 和 await 具体该怎么用？​</li>
+<li>知道哪些 ES6，ES7 的语法 ​</li>
+<li>promise 和 await&#x2F;async 的关系​</li>
+<li>JS 加载过程阻塞，解决方法。​</li>
+<li>JS 对象类型，基本对象类型以及引用对象类型的区别​</li>
+<li>轮播的实现原理？假如一个页面上有两个轮播，你会怎么实现？</li>
+<li>解释一下 JS 的事件循​</li>
+<li>Localstorage、sessionStorage、cookie 的区别​</li>
+<li>解释一下 HTML5 Drag API​</li>
+<li>解释一下 webworker ​</li>
+<li>{} 和 [] 的 valueOf 和 toString 的结果是什么？​</li>
+<li>三种事件模型是什么？​</li>
+<li>介绍一下 V8 隐藏类​</li>
+<li>AMD 和 CMD 规范的区别？说一下 CommonJS、AMD 和 CMD？​</li>
+<li>谈谈 JS 的运行机制​</li>
+</ul>
+<h1 id="Vue生态"><a href="#Vue生态" class="headerlink" title="Vue生态"></a>Vue生态</h1><ul>
+<li>说说你对 Vue 的理解，有何优缺点？​</li>
+<li>Vue 和 React 有什么不同？​</li>
+<li>什么是虚拟 DOM？​</li>
+<li>描述下 vue 的生命周期有哪些？分别做了什么事情？​</li>
+<li>watch 怎么深度监听对象变化​</li>
+<li>删除数组用 delete 和 Vue.delete 有什么区别？​</li>
+<li>watch 和 computed 有什么区别？​</li>
+<li>v-for 没有 key 会发生什么问题？​</li>
+<li>谈谈 Vue 双向绑定原理​</li>
+<li>v-model 是什么？有什么用呢？​</li>
+<li>在 vue 项目中如何引入第三方库？有哪些具体操作方法？​</li>
+<li>Vue3.0 里为什么要用 Proxy API 替代 defineProperty API？​</li>
+<li>Vue3.0 编译做了哪些优化？​</li>
+<li>Vue3.0 新特性 —— Composition API 与 React.js 中 Hooks 的异同点​</li>
+<li>Vue3.0 是如何变得更快的？dom diff 算法有何优化？​</li>
+<li>vue 要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？​</li>
+<li>vue 在 created 和 mounted 这两个生命周期中请求数据有什么区别呢？​</li>
+<li>说说你对 Proxy 的理解。​</li>
+<li>Vue3.0性能提升主要是体现在哪些方面？​</li>
+<li>vue3有哪些新的组件？​</li>
+<li>Vue2.0 和 Vue3.0 有什么区别？​</li>
+<li>Composition Api 与 Options Api 有什么不同？​</li>
+<li>对Vue项目你做过哪些性能优化？​</li>
+<li>Vue组件通信的方式有哪些？​</li>
+<li>Vue常用的修饰符有哪些？​</li>
+<li>Vue中的$nextTick有什么作用？底层如何实现？​</li>
+<li>v-show和v-if有什么区别？​</li>
+<li>有用过keep-alive吗？它有什么作用？​</li>
+<li>如何实现一个虚拟DOM吗？​</li>
+<li>为什么data属性是一个函数而不是一个对象，具体原因是什么？​</li>
+<li>Vue2的初始化过程你有过了解吗，做了哪些事情？​</li>
+<li>Vue3初始化的一个大概流程？​</li>
+<li>vue3响应式api如何编写？​</li>
+<li>在Vue项目中你是如何做的SSR渲染？​</li>
+</ul>
+<h1 id="计算机网络​"><a href="#计算机网络​" class="headerlink" title="计算机网络​"></a>计算机网络​</h1><ul>
+<li>什么是 Ajax，Ajax 都有哪些优点和缺点？​</li>
+<li>请介绍一下 XMLHTTPrequest 对象及常用方法和属性​</li>
+<li>Ajax 的实现流程是怎样的？​</li>
+<li>Ajax 接收到的数据类型有哪些，数据如何处理？​</li>
+<li>封装好的 Ajax 里的常见参数及其代表的含义 ​</li>
+<li>Ajax 注意事项及适用和不适用场景​</li>
+<li>常见的 HTTP 状态码以及代表的意义​</li>
+<li>301 302 303 状态码的区别？​</li>
+<li>什么是同源策略​</li>
+<li>为什么会有跨域的问题出现，如何解决跨域问题​</li>
+<li>Get 和 Post 的区别以及使用场景​</li>
+<li>解释 jsonp 的原理​</li>
+<li>HTTP 与 HTTPS 的区别 ​</li>
+<li>简述 web 前端 Cookie 机制，并结合该机制说明会话保持原理​</li>
+<li>你知道的 HTTP 请求方式有几种​</li>
+<li>谈谈你理解的 RESTFUL  规范​</li>
+<li>解释一下三次握手是什么，具体流程。变为二次握手会发生什么问题？​</li>
+<li>TCP 和 UDP  分别是什么？​</li>
+<li>WebSocket 的实现和应用。​</li>
+<li>一个图片 url 访问后直接下载怎样实现？       ​</li>
+<li>说一下 http2.0 ​</li>
+<li>补充 400 和 401、403 状态码       ​</li>
+<li>fetch发送2次请求的原因       ​</li>
+<li>对 HTML 语义化标签的理解       ​</li>
+<li>Cookie 和 session 的区别    ​</li>
+<li>强缓存 和 协商缓存  区别？什么时候用哪个 ？本质是？​</li>
+<li>cache-control 的值有哪些       ​</li>
+<li>谈谈 304 状态码      ​</li>
+<li>什么是 CDN，以及如何优化？​</li>
+<li>DNS是什么​</li>
+<li>什么是四层、七层网络模型？​<br>​</li>
+</ul>
+<h1 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h1><ul>
+<li>什么是 xss 攻击及如何防范    ​</li>
+<li>什么是 ddox 攻击及如何防范？​</li>
+<li>什么是 csrf 攻击及如何防范？​<br>​</li>
+</ul>
+<h1 id="前端工程化​"><a href="#前端工程化​" class="headerlink" title="前端工程化​"></a>前端工程化​</h1><ul>
+<li>如何理解前端模块化、前端组件化，二者有何区别？​</li>
+<li>如何理解前后端分离？​</li>
+<li>webpack​</li>
+<li>有自己配置过 webpack 吗？如果需求是多页面与单页面并行，需要如何配置？​</li>
+<li>Webpack 的优点是什么？​</li>
+<li>Webpack 的构建流程是什么?从读取配置到输出文件这个过程尽量说全​</li>
+<li>说一下 Webpack 的热更新原理​</li>
+<li>有哪些常见的 Loader？他们是解决什么问题的？​</li>
+<li>Loader 和 Plugin 的不同？​</li>
+<li>如何利用 Webpack 来优化前端性能​</li>
+<li>是否写过 Loader 和 Plugin？描述一下编写 loader 或 plugin 的思路？​</li>
+<li>使用 Webpack 开发时，你用过哪些可以提高效率的插件？​</li>
+<li>什么是长缓存？在 Webpack 中如何做到长缓存优化？​</li>
+<li>如何提高 Webpack 的构建速度？​</li>
+<li>怎么实现 Webpack 的按需加载？什么是神奇注释？​</li>
+<li>Babel 的原理是什么? ​</li>
+<li>如何写一个 babel 插件？​</li>
+<li>rebase 与 merge 的区别？​</li>
+<li>git reset、git revert 和 git checkout 有什么区别 ？​</li>
+<li>webpack 和 vite 区别（模块化与流的区别）​</li>
+<li>webpack文件指纹策略：hash chunkhash contenthash​<br>​</li>
+</ul>
+<h1 id="性能优化​"><a href="#性能优化​" class="headerlink" title="性能优化​"></a>性能优化​</h1><ul>
+<li>做过哪些前端性能优化相关的事情？​</li>
+<li>要加载大量图片，你有哪些方法优化方案？​</li>
+<li>列表无限滚动，数据越来越多，页面卡顿，如何解决？ ​</li>
+<li>for（let i&#x3D;0;i&lt;1000000;i++）{console.log(i)} 如何优化？​</li>
+<li>谈谈你是如何判断网站的性能的？​</li>
+<li>解释一下，性能指标 FP FCP FMP，如何查看 。​</li>
+<li>谈谈浏览器的渲染过程，DOM 树和渲染树的区别。​</li>
+<li>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么。​</li>
+<li>什么是SPA单页面应用，首屏加载你是如何优化的</li>
+</ul>
+<h1 id="移动-web-开发​"><a href="#移动-web-开发​" class="headerlink" title="移动 web 开发​"></a>移动 web 开发​</h1><ul>
+<li>知道 PWA 吗​</li>
+<li>移动布局方案​</li>
+<li>Rem 布局及其优缺点​</li>
+<li>讲讲 viewport 和移动端布局       ​</li>
+<li>移动端适配 1px 的问题​</li>
+<li>移动端性能优化相关经验​</li>
+<li>移动端兼容性​</li>
+<li>小程序​</li>
+<li>2X 图 3X 图适配​</li>
+<li>图片在安卓上，有些设备模糊问题​</li>
+<li>固定定位布局键盘挡住输入框内容​</li>
+<li>click 的 300ms 延迟问题和点击穿透问题​</li>
+<li>防止手机中页面放大和缩小​</li>
+<li>px、em、rem、%、vw、vh、vm 这些单位的区别​</li>
+<li>移动端适配- dpr 浅析​</li>
+<li>移动端扩展点击区域​</li>
+<li>上下拉动滚动条时卡顿、慢​</li>
+<li>长时间按住页面出现闪退​</li>
+<li>webkit mask 兼容处理​</li>
+<li>transiton 闪屏​<br>​</li>
+</ul>
+<h1 id="研发流程​"><a href="#研发流程​" class="headerlink" title="研发流程​"></a>研发流程​</h1><ul>
+<li>技术设计​</li>
+<li>设计文档需要涵盖哪些部分？​</li>
+<li>代码规范​</li>
+<li>谈谈 eslint​</li>
+<li>谈谈 commit message 规范​</li>
+<li>研发协同（Git）​</li>
+<li>git 的基本使用方法​</li>
+<li>git 工作流程​</li>
+<li>需要合并别人代码进来 ​</li>
+<li>需要切换分支​</li>
+<li>我们如何使用 git 和开源的码云或 github 上面的远端仓库的项目进行工作呢​</li>
+<li>git、github、gitlab 三者之间的联系以及区别​</li>
+<li>github 和码云的区别​</li>
+<li>提交时发生冲突，你能解释冲突是如何产生的吗？你是如何解决的​</li>
+<li>如果本次提交误操作，如何撤销​</li>
+<li>git 修改提交的历史信息​</li>
+<li>如何删除 github 和 gitlab 上的文件夹​</li>
+<li>如何查看分支提交的历史记录？查看某个文件的历史记录呢​</li>
+<li>git 跟 svn 有什么区别​</li>
+<li>我们在本地工程常会修改一些配置文件，这些文件不需要被提交，而我们又不想每次执行 git status 时都让这些文件显示出来，我们该如何操作？​</li>
+<li>git fetch 和 git merge 和 git pull 的区别。​</li>
+<li>如何把本地仓库的内容推向一个空的远程仓库​</li>
+<li>测试​</li>
+<li>单元测试如何做？​</li>
+<li>如何解决联调依赖问题？​</li>
+<li>提测阶段bug 和 线上bug 解决过程有和区别？​</li>
+<li>发布上线​</li>
+<li>流水线如何搭建​</li>
+<li>对 Docker 理解​</li>
+<li>pm2 与 docker 有何区别？​<br>​</li>
+</ul>
+<h1 id="Nodejs​"><a href="#Nodejs​" class="headerlink" title="Nodejs​"></a>Nodejs​</h1><ul>
+<li>对 Node.js 有没有了解，它有什么特点，适合做什么业务​</li>
+<li>Node 和 前端项目怎么解决跨域的​</li>
+<li>Node 的优点是什么？缺点是什么​</li>
+<li>commonJS 中的 require&#x2F;exports 和 ES6 中import&#x2F;export 的区别是什么​</li>
+<li>简述同步和异步的区别，如何避免回调地狱，Node 的异步问题是如何解决的</li>
+<li>dependencies 和 devDependencies 两者区别​</li>
+<li>描述一下从接到 url 开始，到逻辑处理，到DB查询，到返回结果，整个过程是怎么处理的？​</li>
+<li>谈谈你对 Koa 和 Express 的理解，二者的区别是？​</li>
+<li>谈谈对 egg 和 nest.js 的理解，二者的区别是？​</li>
+</ul>
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">Home</a></li>
+        
+          <li><a href="/tags/">Tag</a></li>
+        
+          <li><a href="/categories/">Category</a></li>
+        
+          <li><a href="/archives/">Writing</a></li>
+        
+          <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </div>
+
+    
+    
+      <div id="toc-footer" style="display: none">
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML-CSS%E2%80%8B"><span class="toc-number">1.</span> <span class="toc-text">HTML + CSS​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript%E2%80%8B"><span class="toc-number">2.</span> <span class="toc-text">Javascript​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue%E7%94%9F%E6%80%81"><span class="toc-number">3.</span> <span class="toc-text">Vue生态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%8B"><span class="toc-number">4.</span> <span class="toc-text">计算机网络​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">5.</span> <span class="toc-text">网络安全</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%8C%96%E2%80%8B"><span class="toc-number">6.</span> <span class="toc-text">前端工程化​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E2%80%8B"><span class="toc-number">7.</span> <span class="toc-text">性能优化​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8-web-%E5%BC%80%E5%8F%91%E2%80%8B"><span class="toc-number">8.</span> <span class="toc-text">移动 web 开发​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E5%8F%91%E6%B5%81%E7%A8%8B%E2%80%8B"><span class="toc-number">9.</span> <span class="toc-text">研发流程​</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Nodejs%E2%80%8B"><span class="toc-number">10.</span> <span class="toc-text">Nodejs​</span></a></li></ol>
+      </div>
+    
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/07/11/interview/interview-list/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/07/11/interview/interview-list/&text=面试题合集"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/07/11/interview/interview-list/&is_video=false&description=面试题合集"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=面试题合集&body=Check out this article: https://cyc.cool/2023/07/11/interview/interview-list/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/07/11/interview/interview-list/&title=面试题合集"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/07/11/interview/interview-list/&name=面试题合集&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/07/11/interview/interview-list/&t=面试题合集"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        
+          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2016-2024
+    橙一橙
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/tags/">Tag</a></li><!--
+     --><!--
+       --><li><a href="/categories/">Category</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a href="/search/">Search</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
