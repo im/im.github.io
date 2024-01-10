@@ -39,12 +39,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 20.x
-      - name: install pnpm
-        run: npm install pnpm -g
       - name: install hexo..
         run: |
-          npm install hexo-cli -g
-          pnpm install
+          npm install
       - name: hexo generate...
         run: |
           hexo clean
