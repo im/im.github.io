@@ -1,13 +1,18 @@
 ---
-title: HTML5 <dialog>
+title: HTML5 dialog
 date: "2023-11-28"
 categories:
   - 笔记
 tags: ["html"]
+
 ---
 
 
 HTML5 中引入了 `<dialog>` 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。
+{% asset_img https://notes.iissnan.com/uploads/next-documentations-reload/brand-new.png [alt text] %}
+![](https://notes.iissnan.com/uploads/next-documentations-reload/brand-new.png)
+
+<!--more-->
 
 ## 使用 `<dialog>` 元素
 
