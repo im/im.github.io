@@ -1,174 +1,249 @@
 <!DOCTYPE html>
-<html lang=en>
+<html lang="zh-CN">
 <head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="介绍 📝Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。 ref解构的使用 🧩在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/logo.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/logo.jpg">
+  <link rel="mask-icon" href="/images/logo.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"cyc.cool","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":10,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍 📝Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。 ref解构的使用 🧩在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue3中的ref解构与响应式问题">
 <meta property="og:url" content="https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/index.html">
-<meta property="og:site_name" content="橙一橙">
+<meta property="og:site_name" content="🍊">
 <meta property="og:description" content="介绍 📝Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用ref函数来创建响应式数据。然而，当我们尝试对ref解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中ref解构的使用、为什么会丢失响应式以及如何解决相关的问题。 ref解构的使用 🧩在Vue 3中，我们可以使用ref函数创建一个响应式的数据对象。下面是一个">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-29T00:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-10T14:30:01.075Z">
-<meta property="article:author" content="橙一橙">
+<meta property="article:modified_time" content="2024-01-24T07:51:46.072Z">
+<meta property="article:author" content="🍊">
 <meta property="article:tag" content="vue3">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Vue3中的ref解构与响应式问题</title>
-    <!-- async scripts -->
-    <!-- Google Analytics -->
+
+<link rel="canonical" href="https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/">
 
 
-    <!-- Umami Analytics -->
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
 
-
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 7.0.0"></head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa-solid fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/tags/">Tag</a></li><!--
-     --><!--
-       --><li><a href="/categories/">Category</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a href="/search/">Search</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2023/06/30/git/submodule/"><i class="fa-solid fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2023/06/28/typescript/generic/"><i class="fa-solid fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fa-solid fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&text=Vue3中的ref解构与响应式问题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&is_video=false&description=Vue3中的ref解构与响应式问题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Vue3中的ref解构与响应式问题&body=Check out this article: https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/"><i class="fa-solid fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&name=Vue3中的ref解构与响应式问题&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&t=Vue3中的ref解构与响应式问题"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    
-    
-      <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-%F0%9F%93%9D"><span class="toc-number">1.</span> <span class="toc-text">介绍 📝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8-%F0%9F%A7%A9"><span class="toc-number">2.</span> <span class="toc-text">ref解构的使用 🧩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E9%97%AE%E9%A2%98-%F0%9F%9A%AB"><span class="toc-number">3.</span> <span class="toc-text">ref解构的响应式问题 🚫</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%B8%A2%E5%A4%B1%E5%93%8D%E5%BA%94%E5%BC%8F%EF%BC%9F-%F0%9F%A4%94"><span class="toc-number">4.</span> <span class="toc-text">为什么会丢失响应式？ 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%F0%9F%9B%A0%EF%B8%8F"><span class="toc-number">5.</span> <span class="toc-text">解决方案 🛠️</span></a></li></ol>
-      </div>
-    
-  </span>
-</div>
-
-    
-    <div class="content index py4 ">
-        
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle p-name" itemprop="name headline">
-        Vue3中的ref解构与响应式问题
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author p-author h-card" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span class="p-name" itemprop="name">橙一橙</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2023-06-29T00:00:00.000Z" class="dt-published" itemprop="datePublished">2023-06-29</time>
-        
-      
-    </div>
-
-
-      
-    <div class="article-category">
-        <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/vue/" rel="tag">vue</a>, <a class="p-category" href="/tags/vue3/" rel="tag">vue3</a>
-    </div>
-
-
-    </div>
-  </header>
+  <title>Vue3中的ref解构与响应式问题 | 🍊</title>
   
 
-  <div class="content e-content" itemprop="articleBody">
-    <h2 id="介绍-📝"><a href="#介绍-📝" class="headerlink" title="介绍 📝"></a>介绍 📝</h2><p>Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用<code>ref</code>函数来创建响应式数据。然而，当我们尝试对<code>ref</code>解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中<code>ref</code>解构的使用、为什么会丢失响应式以及如何解决相关的问题。</p>
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">🍊</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo.jpg">
+      <meta itemprop="name" content="🍊">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="🍊">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Vue3中的ref解构与响应式问题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-29 00:00:00" itemprop="dateCreated datePublished" datetime="2023-06-29T00:00:00+00:00">2023-06-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-01-24 07:51:46" itemprop="dateModified" datetime="2024-01-24T07:51:46+00:00">2024-01-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="介绍-📝"><a href="#介绍-📝" class="headerlink" title="介绍 📝"></a>介绍 📝</h2><p>Vue 3是一种流行的JavaScript框架，它提供了一种声明式的方式来构建用户界面。在Vue 3中，我们可以使用<code>ref</code>函数来创建响应式数据。然而，当我们尝试对<code>ref</code>解构进行操作时，可能会遇到一些响应式问题。本文将探讨Vue 3中<code>ref</code>解构的使用、为什么会丢失响应式以及如何解决相关的问题。</p>
 <h2 id="ref解构的使用-🧩"><a href="#ref解构的使用-🧩" class="headerlink" title="ref解构的使用 🧩"></a><code>ref</code>解构的使用 🧩</h2><p>在Vue 3中，我们可以使用<code>ref</code>函数创建一个响应式的数据对象。下面是一个简单的例子：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ref &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> count = <span class="title function_">ref</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count.<span class="property">value</span>); <span class="comment">// 输出：0</span></span><br><span class="line"></span><br><span class="line">count.<span class="property">value</span>++; <span class="comment">// 修改数据</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(count.<span class="property">value</span>); <span class="comment">// 输出：1</span></span><br></pre></td></tr></table></figure>
 
@@ -187,147 +262,215 @@
 <p>在上面的例子中，我们使用<code>toRef</code>函数将<code>count.value</code>转换为一个新的响应式引用<code>value</code>。通过访问<code>value.value</code>属性，我们可以获取和修改数据的值。</p>
 <p>使用<code>toRef</code>函数后，<code>value</code>将与<code>count</code>保持同步，可以正确地跟踪和更新数据的变化。</p>
 
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/vue3/" rel="tag"><i class="fa fa-tag"></i> vue3</a>
+              <a href="/tags/vue/" rel="tag"><i class="fa fa-tag"></i> vue</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/28/typescript/generic/" rel="prev" title="TypeScript泛型">
+      <i class="fa fa-chevron-left"></i> TypeScript泛型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/06/30/git/submodule/" rel="next" title="git submodule">
+      git submodule <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
-</article>
 
+  <aside class="sidebar">
+    <div class="sidebar-inner">
 
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-        
-          <li><a href="/">Home</a></li>
-        
-          <li><a href="/tags/">Tag</a></li>
-        
-          <li><a href="/categories/">Category</a></li>
-        
-          <li><a href="/archives/">Writing</a></li>
-        
-          <li><a href="/search/">Search</a></li>
-        
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
       </ul>
-    </div>
 
-    
-    
-      <div id="toc-footer" style="display: none">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D-%F0%9F%93%9D"><span class="toc-number">1.</span> <span class="toc-text">介绍 📝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8-%F0%9F%A7%A9"><span class="toc-number">2.</span> <span class="toc-text">ref解构的使用 🧩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E9%97%AE%E9%A2%98-%F0%9F%9A%AB"><span class="toc-number">3.</span> <span class="toc-text">ref解构的响应式问题 🚫</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%B8%A2%E5%A4%B1%E5%93%8D%E5%BA%94%E5%BC%8F%EF%BC%9F-%F0%9F%A4%94"><span class="toc-number">4.</span> <span class="toc-text">为什么会丢失响应式？ 🤔</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%F0%9F%9B%A0%EF%B8%8F"><span class="toc-number">5.</span> <span class="toc-text">解决方案 🛠️</span></a></li></ol>
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D-%F0%9F%93%9D"><span class="nav-number">1.</span> <span class="nav-text">介绍 📝</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8-%F0%9F%A7%A9"><span class="nav-number">2.</span> <span class="nav-text">ref解构的使用 🧩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ref%E8%A7%A3%E6%9E%84%E7%9A%84%E5%93%8D%E5%BA%94%E5%BC%8F%E9%97%AE%E9%A2%98-%F0%9F%9A%AB"><span class="nav-number">3.</span> <span class="nav-text">ref解构的响应式问题 🚫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BC%9A%E4%B8%A2%E5%A4%B1%E5%93%8D%E5%BA%94%E5%BC%8F%EF%BC%9F-%F0%9F%A4%94"><span class="nav-number">4.</span> <span class="nav-text">为什么会丢失响应式？ 🤔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-%F0%9F%9B%A0%EF%B8%8F"><span class="nav-number">5.</span> <span class="nav-text">解决方案 🛠️</span></a></li></ol></div>
       </div>
-    
+      <!--/noindex-->
 
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&text=Vue3中的ref解构与响应式问题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&is_video=false&description=Vue3中的ref解构与响应式问题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Vue3中的ref解构与响应式问题&body=Check out this article: https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&title=Vue3中的ref解构与响应式问题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&name=Vue3中的ref解构与响应式问题&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://cyc.cool/2023/06/29/vue/vue3-responsive-lose/&t=Vue3中的ref解构与响应式问题"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="🍊"
+      src="/images/logo.jpg">
+  <p class="site-author-name" itemprop="name">🍊</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
         
-          <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/im" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;im" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wojiaochengyicheng@gmail.com" title="E-Mail → mailto:wojiaochengyicheng@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
   </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">🍊</span>
 </div>
 
         
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2016-2024
-    橙一橙
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
   </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/tags/">Tag</a></li><!--
-     --><!--
-       --><li><a href="/categories/">Category</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a href="/search/">Search</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
-
-
-
-
-<!-- clipboard -->
 
   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
   
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="fa-regular fa-clone"></i>';
-    btn += '</span>';
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
 
 
-<script src="/js/main.js"></script>
 
-<!-- search -->
 
-<!-- Baidu Analytics -->
+  
+<script src="/js/local-search.js"></script>
 
-<!-- Cloudflare Analytics -->
 
-<!-- Disqus Comments -->
 
-<!-- utterances Comments -->
+
+
+
+
+
+
+
+
+
+
+  
+
+  
 
 </body>
 </html>
