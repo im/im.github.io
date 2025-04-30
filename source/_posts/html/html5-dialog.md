@@ -4,14 +4,10 @@ date: "2023-11-28"
 categories:
   - 笔记
 tags: ["html"]
-
 ---
 
-
 HTML5 中引入了 `<dialog>` 元素，它提供了一种简单的方式来创建对话框或模态框，用于与用户进行交互、显示信息或接收输入。
-![](/images/logo.jpg)
-
-
+![](/images/logo.jpeg)
 
 <!--more-->
 
@@ -30,22 +26,22 @@ HTML5 中引入了 `<dialog>` 元素，它提供了一种简单的方式来创�
 要打开对话框，我们可以使用 JavaScript 的 `showModal()` 方法：
 
 ```javascript
-const dialog = document.getElementById('myDialog');
+const dialog = document.getElementById("myDialog");
 dialog.showModal();
 ```
 
 要关闭对话框，我们可以使用 `close()` 方法：
 
 ```javascript
-const dialog = document.getElementById('myDialog');
+const dialog = document.getElementById("myDialog");
 dialog.close();
 ```
 
 可以通过监听 `close` 事件来执行对话框关闭时的操作：
 
 ```javascript
-const dialog = document.getElementById('myDialog');
-dialog.addEventListener('close', () => {
+const dialog = document.getElementById("myDialog");
+dialog.addEventListener("close", () => {
   // 对话框关闭时执行的操作
 });
 ```
@@ -53,8 +49,8 @@ dialog.addEventListener('close', () => {
 类似地，可以监听 `show` 事件来执行对话框打开时的操作：
 
 ```javascript
-const dialog = document.getElementById('myDialog');
-dialog.addEventListener('show', () => {
+const dialog = document.getElementById("myDialog");
+dialog.addEventListener("show", () => {
   // 对话框打开时执行的操作
 });
 ```
