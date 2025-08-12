@@ -1,25 +1,4 @@
+theme: minima
 title: 我的个人网站
 description: 这是我的第一个 GitHub Pages 站点，分享技术文章和生活点滴。
-url: https://username.github.io/my-pages-demo  # 你的网站地址，方便生成绝对链接
-baseurl: /my-pages-demo  # 如果仓库不是用户名仓库，填写仓库名
-author:
-  name: 名侦探嗑糖
-  email: your-email@example.com
 
-theme: minima
-
-# 社交链接（部分主题支持）
-social_links:
-  - name: GitHub
-    url: https://github.com/username
-  - name: Twitter
-    url: https://twitter.com/username
-
-# 自定义导航菜单（某些主题支持）
-nav:
-  - title: 首页
-    url: /
-  - title: 博客
-    url: /blog/
-  - title: 关于
-    url: /about/
