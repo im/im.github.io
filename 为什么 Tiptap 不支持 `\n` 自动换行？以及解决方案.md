@@ -1,7 +1,4 @@
----
-layout: post
-title: 为什么 Tiptap 不支持 `\n` 自动换行？以及解决方案
----
+# 为什么 Tiptap 不支持 `\n` 自动换行？以及解决方案
 
 在使用 [Tiptap](https://tiptap.dev) 编辑器时，你可能会遇到一个问题：
 
