@@ -1,4 +1,5 @@
 ---
+layout: post
 title: 为什么 Tiptap 不支持 `\n` 自动换行？以及解决方案
 ---
 
