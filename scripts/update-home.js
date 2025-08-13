@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const notesDir = path.resolve(__dirname, '../notes');
-const homeFile = path.resolve(__dirname, '../Home.md');
-const wikiBaseUrl = 'https://github.com/im/im.github.io/wiki';
+const notesDir = path.resolve(__dirname, '../docs');
+const homeFile = path.resolve(__dirname, '../_sidebar.md');
+const wikiBaseUrl = '/docs';
 
 function formatDate(date) {
     const pad = n => n.toString().padStart(2, '0');
@@ -44,7 +44,7 @@ function readDirTree(dirPath, relativePath = '', level = 0) {
         const filePath = path.posix.join(relativePath, file.name);
         const stat = fs.statSync(path.join(dirPath, file.name));
         const createdDate = formatDate(stat.mtime || stat.birthtime);
-        output += `${indent}- [${fileNameWithoutExt}](${wikiBaseUrl}/${encodeURIComponent(fileNameWithoutExt)}) [${createdDate}]\n`;
+        output += `${indent}* [${fileNameWithoutExt}](${wikiBaseUrl}/${encodeURIComponent(filePath)}) \n`;
     });
 
     return output;
@@ -62,4 +62,5 @@ function updateHomeMd() {
     console.log(`目录结构已写入到 ${homeFile}`);
 }
 
+updateHomeMd()
 module.exports = updateHomeMd;
