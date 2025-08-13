@@ -17,4 +17,51 @@ img[alt="logo"] {
     background: url('/images/avatar.png') no-repeat;
     background-size: 100%;
     border-radius: 50%;
+
+}
+
+#tom span {
+    font-family: "Moo Lah Lah", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+    letter-spacing: 10px;
+}
+
+/* -------- WebKit: Chrome/Edge/Safari -------- */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    width: 0;
+    /* 默认隐藏 */
+    height: 0;
+}
+
+body:hover html::-webkit-scrollbar,
+body:hover body::-webkit-scrollbar {
+    width: 4px;
+    /* 鼠标移入页面时显示为 4px */
+    height: 4px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .4);
+    border-radius: 999px;
+}
+
+/* 防止滚动条出现时布局抖动（支持的浏览器生效） */
+html {
+    scrollbar-gutter: stable both-edges;
+}
+
+/* -------- Firefox -------- */
+html {
+    scrollbar-width: none;
+    /* 默认隐藏 */
+}
+
+html:hover {
+    scrollbar-width: thin;
+    /* 鼠标移入时显示（约等于细条）*/
+    scrollbar-color: rgba(0, 0, 0, .4) transparent;
 }

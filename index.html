@@ -10,15 +10,21 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="images/avatar.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Moo+Lah+Lah&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div id="app"></div>
     <script>
         window.$docsify = {
+            formatUpdated: '{MM}/{DD} {HH}:{mm}',
             name: 'Tom',
             repo: '',
             search: 'auto',
+            autoHeader: true,
+            auto2top: true,
             // loadNavbar: true,
             // loadNavbar: '_nav.md',
             loadSidebar: true,
