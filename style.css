@@ -28,27 +28,31 @@ img[alt="logo"] {
     letter-spacing: 10px;
 }
 
-/* WebKit: Chrome / Edge / Safari */
-html::-webkit-scrollbar {
-    width: 8px;
-    /* 宽度随便设，用户不可见 */
-    height: 8px;
+/* ① 全局：保留滚动能力但隐藏滚动条（Chrome/Edge/Safari/Opera） */
+*::-webkit-scrollbar {
+    width: 0;
+    /* 垂直滚动条宽度为 0 */
+    height: 0;
+    /* 水平滚动条高度为 0 */
 }
 
-html::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: transparent;
-    /* 滚动条透明 */
 }
 
-html::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: transparent;
-    /* 滚动轨道透明 */
 }
 
-/* Firefox */
-html {
-    scrollbar-width: thin;
-    /* 固定窄条 */
+/* ② Firefox：彻底隐藏滚动条 */
+* {
+    scrollbar-width: none;
+    /* 隐藏 */
     scrollbar-color: transparent transparent;
-    /* 滚动条透明 */
+    /* 保险起见 */
+}
+
+/* ③ 旧版 Edge/IE（如果还需要兼容） */
+* {
+    -ms-overflow-style: none;
 }
