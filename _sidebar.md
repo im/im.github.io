@@ -1,5 +1,5 @@
+* [Node.js + AppleScript 使用教程](/docs/node-applescript-guide.md) 
+* [为什么 Tiptap 不支持 `\n` 自动换行？以及解决方案](/docs/tiptap-no-newline-solution.md) 
 * [linux-common-commands-reference](/docs/linux-common-commands-reference.md) 
-* [svg-to-file](/docs/svg-to-file.md) 
-* [tiptap-no-newline-solution](/docs/tiptap-no-newline-solution.md) 
 * [Bun](/docs/Bun.md) 
-* [node-applescript-guide](/docs/node-applescript-guide.md) 
+* [svg-to-file](/docs/svg-to-file.md) 
