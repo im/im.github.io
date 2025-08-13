@@ -31,6 +31,6 @@ async function gitCommitPush() {
   }
 }
 
-// updateHomeMd()
+updateHomeMd()
 
 gitCommitPush();

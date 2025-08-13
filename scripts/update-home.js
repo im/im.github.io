@@ -62,5 +62,4 @@ function updateHomeMd() {
     console.log(`目录结构已写入到 ${homeFile}`);
 }
 
-updateHomeMd()
 module.exports = updateHomeMd;
