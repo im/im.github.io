@@ -1,5 +1,6 @@
+# Bun 使用教程
 
-## 一、Bun 是什么？
+## Bun 是什么？
 
 Bun 是一个由 **JavaScript/TypeScript** 开发的 **全能运行时（runtime）**，类似于 Node.js 或 Deno，但它更快、更轻量。
 
@@ -14,7 +15,7 @@ Bun 是一个由 **JavaScript/TypeScript** 开发的 **全能运行时（runtime
 > **一句话总结**：Bun 是一个集 **运行 + 打包 + 测试 + 包管理** 于一体的超级工具，速度极快。
 
 
-## 二、Bun 的安装
+## Bun 的安装
 
 ### 1. 官方推荐安装（macOS / Linux）
 ```bash
@@ -36,7 +37,7 @@ curl -fsSL https://bun.sh/install | bash
 ```
 
 
-## 三、npm 安装方式
+## npm 安装方式
 
 如果你已经有 Node.js + npm，可以直接用 npm 安装：
 
@@ -53,7 +54,7 @@ bun --version
 ```
 
 
-## 四、npx 临时使用方式
+## npx 临时使用方式
 
 不想安装 Bun？可以用 **npx** 临时运行（每次会先下载 Bun）。
 
@@ -78,7 +79,7 @@ npx bun run server.ts
 | npx 临时使用    | 不污染全局，随用随走   | 每次运行需下载 | 想试用 Bun 的人 |
 
 
-## 五、Bun 的主要作用与场景
+## Bun 的主要作用与场景
 
 1. **快速启动项目**
    不用装 npm/yarn，`bun init` 一键创建项目。
@@ -96,7 +97,7 @@ npx bun run server.ts
    大部分 npm 包直接可用。
 
 
-## 六、Bun 基础使用教程
+## Bun 基础使用教程
 
 ### 1. 创建新项目
 
@@ -196,7 +197,7 @@ bun test
 
 ---
 
-## 七、Bun 的优缺点
+## Bun 的优缺点
 
 **优点：**
 
@@ -212,7 +213,7 @@ bun test
 
 ---
 
-## 八、小白入门总结
+## 小白入门总结
 
 如果你刚入门前端/全栈：
 
