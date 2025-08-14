@@ -2,7 +2,7 @@
 
 VS Code 的远程开发功能可以让你在本地 VS Code 操作远程环境，保持本地界面一致，但实际运行在远端或容器中。
 
-![](./media/VSCode-remote-development.png)
+![](../media/VSCode-remote-development.png)
 
 ## 1. Remote - SSH
 

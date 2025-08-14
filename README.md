@@ -1,4 +1,3 @@
-- **media**
 * [VS Code 远程开发（Remote Development）教程](/docs/VSCode-remote-development.md) 
 * [dppx 全面指南：高分屏时代的像素度量](/docs/dppx.md) 
 * [Bun 使用教程](/docs/bun.md) 
