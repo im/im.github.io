@@ -60,12 +60,11 @@
 
 ```mermaid
 flowchart TD
-    A[原始文档] --> B[文本清洗\n去除噪音]
-    B --> C[切片/Chunking\n滑动窗口 + 重叠]
+    A[原始文档] --> B[文本清洗 去除噪音]
+    B --> C[切片 Chunking 滑动窗口 + 重叠]
     C --> D[向量化 Embedding]
-    D --> E[存入向量数据库\n(Vector DB)]
-
-    F[用户提问] --> G[向量检索\n找相关切片]
+    D --> E[存入向量数据库 Vector DB]
+    F[用户提问] --> G[向量检索找相关切片]
     G --> H[返回相关切片]
     H --> I[LLM生成答案\n基于检索结果]
 
@@ -76,6 +75,53 @@ flowchart TD
 ```
 
 ---
+
+## **6. 文档 + 切片 + 检索 +模型生成答案 的整体可视化示意图** 
+
+```mermaid
+flowchart TD
+    subgraph Doc[原始文档]
+        D1[段落 1: ...]
+        D2[段落 2: ...]
+        D3[段落 3: ...]
+        D4[段落 4: ...]
+    end
+
+    subgraph Chunk[切片/Chunking]
+        C1["切片 1\n段落1 + 段落2前半"]
+        C2["切片 2\n段落2后半 + 段落3前半"]
+        C3["切片 3\n段落3后半 + 段落4"]
+    end
+
+    subgraph VectorDB[向量数据库]
+        V1["切片1 embedding"]
+        V2["切片2 embedding"]
+        V3["切片3 embedding"]
+    end
+
+    subgraph Retrieval[检索 + 模型]
+        Q[用户提问]
+        R["检索相关切片\n返回C1、C2"]
+        LLM["模型生成答案"]
+    end
+
+    D1 --> C1
+    D2 --> C1
+    D2 --> C2
+    D3 --> C2
+    D3 --> C3
+    D4 --> C3
+
+    C1 --> V1
+    C2 --> V2
+    C3 --> V3
+
+    Q --> R
+    V1 --> R
+    V2 --> R
+    R --> LLM
+
+```
 
 ### **总结**
 
