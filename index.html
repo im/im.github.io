@@ -17,8 +17,25 @@
 
 <body>
     <div id="app"></div>
+    <script type="module">
+
+    </script>
     <script>
+        window.onload = () => {
+            mermaid.initialize({ startOnLoad: true });
+        }
         window.$docsify = {
+            markdown: {
+                renderer: {
+                    code: function (code, lang) {
+                        if (lang === "mermaid") {
+                            // 返回占位div，稍后异步渲染
+                            return `<pre class="mermaid">${code}</pre>`;
+                        }
+                        return this.origin.code.apply(this, arguments);
+                    }
+                }
+            },
             formatUpdated: '{MM}/{DD} {HH}:{mm}',
             name: 'Tom',
             repo: '',
@@ -36,9 +53,11 @@
             subMaxLevel: 2
         }
     </script>
+    <script src="js/mermaid.min.js"></script>
     <script src="js/docsify.js"></script>
     <script src="js/docsify-copy-code.min.js"></script>
     <script src="js/search.min.js"></script>
+
     <script>
         if (typeof navigator.serviceWorker !== 'undefined') {
             navigator.serviceWorker.register('sw.js')
