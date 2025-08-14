@@ -3,6 +3,7 @@ const path = require('path');
 
 const notesDir = path.resolve(__dirname, '../docs');
 const sidebarFile = path.resolve(__dirname, '../_sidebar.md');
+const readmeFile = path.resolve(__dirname, '../README.md');
 const wikiBaseUrl = '/docs';
 
 function formatDate(date) {
@@ -67,6 +68,7 @@ function readDirTree(dirPath, relativePath = '', level = 0) {
 function updateSidebar() {
     const treeStr = readDirTree(notesDir, '');
     fs.writeFileSync(sidebarFile, treeStr, 'utf-8');
+    fs.writeFileSync(readmeFile, treeStr, 'utf-8');
     console.log(`目录结构已写入到 ${sidebarFile}`);
 }
 
