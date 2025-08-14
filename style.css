@@ -1,5 +1,5 @@
 img[alt="logo"] {
-    height: 200px;
+    height: 150px;
     border-radius: 50%;
 }
 
@@ -24,7 +24,7 @@ img[alt="logo"] {
     font-family: "Moo Lah Lah", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 70px;
+    font-size: 55px;
     letter-spacing: 10px;
 }
 
