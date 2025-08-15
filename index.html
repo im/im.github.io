@@ -29,7 +29,6 @@
                 renderer: {
                     code: function (code, lang) {
                         if (lang === "mermaid") {
-                            // 返回占位div，稍后异步渲染
                             return `<pre class="mermaid">${code}</pre>`;
                         }
                         return this.origin.code.apply(this, arguments);
