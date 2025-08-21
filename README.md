@@ -1,3 +1,4 @@
+* [Git 移除大文件的方法详解](/docs/%08git-remove-big-file.md) 
 * [VS Code Webview 中的 Service Worker 注册错误解决方案](/docs/VS-Code-Webview-Service-Worker.md) 
 * [RAG（检索增强生成）简介与工作流程](/docs/rag.md) 
 * [VS Code 远程开发（Remote Development）教程](/docs/VSCode-remote-development.md) 
