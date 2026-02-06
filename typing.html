@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Typing 练习</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap");
+    :root {
+      --bg: #0e1116;
+      --card: #0f141b;
+      --text: #e6e6e6;
+      --muted: #9aa3ad;
+      --accent: #7fb3ff;
+      --ok: #4fd6a1;
+      --bad: #ff6b6b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "JetBrains Mono", "Fira Code", ui-monospace, "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      background:
+        radial-gradient(1100px 700px at 10% -10%, #1b2a3f, transparent),
+        radial-gradient(900px 700px at 110% 10%, #2a1f1a, transparent),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      overflow: hidden;
+    }
+    .card {
+      width: 100vw;
+      min-height: 100vh;
+      background: var(--card);
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      overflow: hidden;
+    }
+    .panel {
+      display: grid;
+      height: 100%;
+      padding: 40px;
+      overflow: visible;
+    }
+    .box {
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      background: transparent;
+    }
+    .target {
+      font-size: clamp(20px, 2.8vw, 34px);
+      line-height: 1.7;
+      letter-spacing: 0.4px;
+      min-height: 100%;
+      padding: 8px 4px;
+      overflow: visible;
+    }
+    .word {
+      position: relative;
+      display: inline-block;
+      padding: 0 1px;
+    }
+    .show-meaning .word.current-word::after {
+      content: attr(data-meaning);
+      position: absolute;
+      left: 50%;
+      bottom: 100%;
+      transform: translate(-50%, -6px);
+      background: #162033;
+      border: 1px solid #2c3d57;
+      color: var(--accent);
+      padding: 4px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 1;
+    }
+    .target .ok { color: var(--ok); }
+    .target .bad { color: var(--bad); text-decoration: underline; }
+    .target .current {
+      background: #1a2636;
+      border-radius: 4px;
+      padding: 0 2px;
+    }
+    .statusbar {
+      height: 44px;
+      background: #0c1117;
+      border-top: 1px solid #1e2630;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 0 16px;
+      font-size: 13px;
+      color: #a7b0ba;
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .18s ease, opacity .18s ease;
+      z-index: 20;
+    }
+    .status-reveal {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 14px;
+      z-index: 10;
+    }
+    .status-reveal:hover + .statusbar,
+    .statusbar:hover,
+    .statusbar:focus-within {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .status-left,
+    .status-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+    }
+    .status-center {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .mode-article .lesson-only,
+    .mode-article .meaning-only {
+      display: none;
+    }
+    .mode-words .article-only {
+      display: none;
+    }
+    .btn {
+      border: 1px solid #243040;
+      background: #101621;
+      padding: 4px 10px;
+      border-radius: 0;
+      cursor: pointer;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .btn.active {
+      border-color: #2c3d57;
+      background: #162033;
+      color: var(--accent);
+    }
+    select, input[type="number"] {
+      border: 1px solid #2a3442;
+      border-radius: 10px;
+      padding: 6px 8px;
+      background: #0f141b;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 12px;
+    }
+    .select {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #0f141b;
+      border: 1px solid #2a3442;
+      border-radius: 999px;
+      padding: 2px 10px;
+    }
+    .select select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background: transparent;
+      border: 0;
+      padding: 4px 18px 4px 6px;
+      color: var(--text);
+      font-size: 12px;
+    }
+    .select::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 5px solid #7f8a96;
+      position: absolute;
+      right: 10px;
+      pointer-events: none;
+    }
+    .toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      border: 1px solid #2a3442;
+      background: #0f141b;
+      font-size: 12px;
+      color: var(--text);
+    }
+    .toggle input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .switch {
+      width: 32px;
+      height: 18px;
+      border-radius: 999px;
+      background: #1a2230;
+      border: 1px solid #2a3442;
+      position: relative;
+      transition: background .15s ease, border-color .15s ease;
+    }
+    .switch::after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #9aa3ad;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: transform .15s ease, background .15s ease;
+    }
+    .toggle input:checked + .switch {
+      background: #162033;
+      border-color: #2c3d57;
+    }
+    .toggle input:checked + .switch::after {
+      transform: translateX(14px);
+      background: #7fb3ff;
+    }
+    @media (max-width: 760px) {
+      .panel { padding: 24px; }
+      .statusbar {
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 12px;
+      }
+      .status-left,
+      .status-right { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="panel">
+      <section class="box">
+        <div id="target" class="target" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <div class="status-reveal" aria-hidden="true"></div>
+    <footer class="statusbar">
+      <div class="status-left">
+        <button class="btn active" data-mode="article">文章模式</button>
+        <button class="btn" data-mode="words">单词模式</button>
+        <button id="new" class="btn article-only">换一段</button>
+      </div>
+      <div class="status-center">
+        <label class="article-only select">
+          文章
+          <select id="articleSelect"></select>
+        </label>
+        <label class="lesson-only select">
+          课次
+          <select id="lessonSelect"></select>
+        </label>
+        <label class="meaning-only toggle">
+          翻译
+          <input id="toggleMeaning" type="checkbox" />
+          <span class="switch" aria-hidden="true"></span>
+        </label>
+      </div>
+      <div class="status-right">
+        <span>准确率 <strong id="acc">0%</strong></span>
+        <span>速度 <strong id="wpm">0</strong> WPM</span>
+        <span>进度 <strong id="progress">0/0</strong></span>
+        <span>用时 <strong id="time">0s</strong></span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="data.js"></script>
+  <script>
+    const LESSONS = (window.NCE_DATA && window.NCE_DATA.lessons) || [];
+    const ARTICLES = (window.NCE_DATA && window.NCE_DATA.articles) || [];
+    const state = {
+      mode: "article",
+      target: "",
+      words: [],
+      lessonId: null,
+      wordIndex: 0,
+      articles: [],
+      articleIndex: 0,
+      input: "",
+      start: null,
+      timer: null
+    };
+
+    const elTarget = document.getElementById("target");
+    const elAcc = document.getElementById("acc");
+    const elWpm = document.getElementById("wpm");
+    const elProgress = document.getElementById("progress");
+    const elTime = document.getElementById("time");
+    const elLessonSelect = document.getElementById("lessonSelect");
+    const elArticleSelect = document.getElementById("articleSelect");
+    const elToggleMeaning = document.getElementById("toggleMeaning");
+
+    function initLessons() {
+      if (!LESSONS.length) return;
+      elLessonSelect.innerHTML = LESSONS.map(lesson => {
+        const label = lesson.title ? `Lesson ${lesson.id} ${lesson.title}` : `Lesson ${lesson.id}`;
+        return `<option value="${lesson.id}">${label}</option>`;
+      }).join("");
+      state.lessonId = LESSONS[0].id;
+      elLessonSelect.value = String(state.lessonId);
+    }
+
+    function initArticles() {
+      if (!ARTICLES.length) return;
+      elArticleSelect.innerHTML = ARTICLES.map((article, idx) => {
+        const label = article.author ? `${article.title} - ${article.author}` : article.title;
+        return `<option value="${idx}">${label}</option>`;
+      }).join("");
+      state.articleIndex = 0;
+      elArticleSelect.value = "0";
+    }
+
+    function getCurrentLesson() {
+      const id = Number(elLessonSelect.value);
+      return LESSONS.find(l => l.id === id) || LESSONS[0] || { words: [], articles: [] };
+    }
+
+    function generateTarget() {
+      if (state.mode === "article") {
+        state.articles = ARTICLES;
+        state.articleIndex = Number(elArticleSelect.value || 0);
+        const article = state.articles[state.articleIndex] || { text: "" };
+        state.target = article.text || "";
+        state.words = [];
+      } else {
+        const lesson = getCurrentLesson();
+        state.lessonId = lesson.id || state.lessonId;
+        state.words = lesson.words || [];
+        state.wordIndex = 0;
+        state.target = state.words.length ? state.words.map(w => w.word).join(" ") : "";
+      }
+      state.input = "";
+      renderTarget(state.input);
+      updateStats(state.input, 0);
+      stopTimer();
+    }
+
+    function normalize(str) {
+      return str.toLowerCase();
+    }
+
+    function normalizeWord(str) {
+      return str.toLowerCase().replace(/[^a-z0-9\\s]/gi, "").replace(/\\s+/g, " ").trim();
+    }
+
+    function isSkippableChar(ch) {
+      return /[^a-z0-9\\s]/i.test(ch);
+    }
+
+    function advanceOverSkippables() {
+      while (state.input.length < state.target.length) {
+        const expected = state.target[state.input.length];
+        if (isSkippableChar(expected)) {
+          state.input += expected;
+        } else {
+          break;
+        }
+      }
+    }
+
+    function renderTarget(input) {
+      if (state.mode === "words" && state.words.length) {
+        renderWordLine(input);
+        return;
+      }
+      renderParagraph(input);
+    }
+
+    function renderWordLine(input) {
+      const words = state.words.map(w => w.word);
+      const meanings = state.words.map(w => w.meaning || "");
+      const currentWordIndex = findCurrentWordIndex(input, words);
+      let indexCursor = 0;
+      const html = words.map((word, wi) => {
+        const start = indexCursor;
+        const end = start + word.length;
+        const segment = renderWordSegment(word, input.slice(start, end), start);
+        indexCursor = end + 1;
+        const currentClass = wi === currentWordIndex ? " current-word" : "";
+        return `<span class="word${currentClass}" data-meaning="${escapeHtml(meanings[wi])}">${segment}</span>`;
+      }).join(" ");
+      elTarget.innerHTML = html;
+    }
+    function renderParagraph(input) {
+      const chars = state.target.split("");
+      const typed = input.split("");
+      const targetNormalized = normalize(state.target);
+      const typedNormalized = normalize(input);
+      const html = chars.map((ch, i) => {
+        if (i < typed.length) {
+          return `<span class="${typedNormalized[i] === targetNormalized[i] ? "ok" : "bad"}">${escapeHtml(ch)}</span>`;
+        }
+        if (i === typed.length) {
+          return `<span class="current">${escapeHtml(ch)}</span>`;
+        }
+        return `<span>${escapeHtml(ch)}</span>`;
+      }).join("");
+      elTarget.innerHTML = html;
+    }
+
+    function renderWordSegment(word, typedSegment, offset) {
+      const chars = word.split("");
+      const typed = typedSegment.split("");
+      const targetNormalized = normalize(word);
+      const typedNormalized = normalize(typedSegment);
+      return chars.map((ch, i) => {
+        if (i < typed.length) {
+          return `<span class="${typedNormalized[i] === targetNormalized[i] ? "ok" : "bad"}">${escapeHtml(ch)}</span>`;
+        }
+        if (offset + i === state.input.length) {
+          return `<span class="current">${escapeHtml(ch)}</span>`;
+        }
+        return `<span>${escapeHtml(ch)}</span>`;
+      }).join("");
+    }
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>\"']/g, s => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[s]));
+    }
+
+    function startTimer() {
+      if (state.timer) return;
+      state.start = Date.now();
+      state.timer = setInterval(() => {
+        const seconds = Math.floor((Date.now() - state.start) / 1000);
+        elTime.textContent = `${seconds}s`;
+        updateStats(state.input, seconds);
+      }, 500);
+    }
+
+    function stopTimer() {
+      clearInterval(state.timer);
+      state.timer = null;
+      state.start = null;
+      elTime.textContent = "0s";
+    }
+
+    function updateStats(input, seconds) {
+      const total = state.target.length;
+      const inputNormalized = normalize(input);
+      const targetNormalized = normalize(state.target);
+      const correct = inputNormalized.split("").filter((ch, i) => ch === targetNormalized[i]).length;
+      const acc = total ? Math.round((correct / Math.max(input.length, 1)) * 100) : 0;
+      elAcc.textContent = `${acc}%`;
+      elProgress.textContent = `${Math.min(input.length, total)}/${total}`;
+      const minutes = Math.max(seconds / 60, 1/60);
+      const words = input.trim().length ? input.trim().split(/\s+/).length : 0;
+      const wpm = Math.round(words / minutes);
+      elWpm.textContent = String(isFinite(wpm) ? wpm : 0);
+    }
+
+    function findCurrentWordIndex(input, words) {
+      if (!words.length) return 0;
+      let cursor = 0;
+      for (let i = 0; i < words.length; i++) {
+        const start = cursor;
+        const end = start + words[i].length;
+        if (input.length <= end) return i;
+        cursor = end + 1;
+      }
+      return Math.max(0, words.length - 1);
+    }
+
+    document.querySelectorAll("[data-mode]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll("[data-mode]").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        state.mode = btn.dataset.mode;
+        document.body.classList.toggle("mode-article", state.mode === "article");
+        document.body.classList.toggle("mode-words", state.mode === "words");
+        elToggleMeaning.checked = false;
+        document.body.classList.remove("show-meaning");
+        generateTarget();
+      });
+    });
+
+    document.getElementById("new").addEventListener("click", () => {
+      if (state.mode === "article") {
+        if (ARTICLES.length) {
+          state.articleIndex = (state.articleIndex + 1) % ARTICLES.length;
+          elArticleSelect.value = String(state.articleIndex);
+          state.target = ARTICLES[state.articleIndex].text || "";
+        }
+      } else {
+        state.target = state.words.length ? state.words.map(w => w.word).join(" ") : "";
+      }
+      state.input = "";
+      renderTarget(state.input);
+      updateStats(state.input, 0);
+      stopTimer();
+    });
+
+    function advanceWordIfComplete() {}
+
+    window.addEventListener("keydown", (e) => {
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key === "Backspace") {
+        e.preventDefault();
+        state.input = state.input.slice(0, -1);
+        while (state.input.length > 0) {
+          const last = state.input[state.input.length - 1];
+          if (isSkippableChar(last)) {
+            state.input = state.input.slice(0, -1);
+          } else {
+            break;
+          }
+        }
+      } else if (e.key.length === 1) {
+        if (e.key === " ") {
+          const expected = state.target[state.input.length] || "";
+          if (isSkippableChar(expected)) {
+            state.input += expected;
+          } else {
+            state.input += " ";
+          }
+        } else {
+          state.input += e.key;
+        }
+      } else if (e.key === "Enter") {
+        state.input += "\n";
+      } else {
+        return;
+      }
+      advanceOverSkippables();
+      renderTarget(state.input);
+      if (state.input.length > 0) startTimer();
+      advanceWordIfComplete();
+      const seconds = state.start ? Math.floor((Date.now() - state.start) / 1000) : 0;
+      updateStats(state.input, seconds);
+    });
+
+    elLessonSelect.addEventListener("change", generateTarget);
+    elArticleSelect.addEventListener("change", generateTarget);
+    elToggleMeaning.addEventListener("change", () => {
+      document.body.classList.toggle("show-meaning", elToggleMeaning.checked);
+    });
+    initLessons();
+    initArticles();
+    document.body.classList.add("mode-article");
+    generateTarget();
+  </script>
+</body>
+</html>
